@@ -1,0 +1,31 @@
+# Database
+.warewolf
+
+# Packages
+/vendor
+/node_modules
+
+# Env
+/.env
+
+# Logs
+*.log
+
+# IDE
+/.idea
+/idea
+
+# Ignore everything in the public dir with some whitelist
+/www/*
+!/www/favicon.ico
+!/www/index.php
+!/www/modules
+!/www/plugins
+!/www/storage
+!/www/themes
+
+# Ignore everything these dirs with some whitelisting if necessary.
+# Most of this will be managed by Composer
+/modules/*
+/plugins/*
+!/plugins/castiron/hockney
