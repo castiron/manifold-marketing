@@ -1,0 +1,436 @@
+.one-button-callout {
+  @include respond($break50) {
+    display: block;
+  }
+
+  .icon-bugle {
+    @include iconPost($bugle);
+
+    &::after {
+      display: inline-block;
+      font-size: 24px;
+      color: $accentPrimary;
+
+      @include respond($break20) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .callout-message {
+    padding-right: 100px;
+    color: $white;
+
+    @include respond($break50) {
+      display: block;
+      padding-right: 0;
+    }
+
+    .sign-secondary {
+      padding-left: 44px;
+
+      @include respond($break50) {
+        padding-top: 15px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .button {
+    display: block;
+    width: 136px;
+    min-width: 136px;
+
+    @include respond($break50) {
+      margin-top: 18px;
+    }
+
+    &.primary {
+      color: $white;
+    }
+  }
+}
+
+.two-button-callout {
+  .block-intro {
+    .heading-primary {
+      color: $white;
+    }
+  }
+
+  .flex-row {
+    margin-top: 68px;
+
+    @include respond($break20) {
+      display: block;
+      margin-top: 26px;
+    }
+  }
+
+  .col {
+    padding-right: 42px;
+    padding-left: 42px;
+    margin-right: auto;
+    margin-left: auto;
+    text-decoration: none;
+
+    @include respond($break110) {
+      padding-right: 3.5vw;
+      padding-left: 3.5vw;
+    }
+
+    @include respond($break20) {
+      max-width: 180px;
+      padding-right: 0;
+      padding-left: 0;
+
+      + .col {
+        margin-top: 34px;
+      }
+    }
+
+    &:hover {
+      .button {
+        background-color: $gray05;
+        border-color: $gray05;
+
+        &::after {
+          border-right-color: $gray05;
+          border-bottom-color: $gray05;
+        }
+      }
+    }
+
+    &.col-2 {
+      @include respond($break20) {
+        width: 100%;
+      }
+    }
+
+    .icon-cloud {
+      @include iconPost($cloud-down);
+
+      &::after {
+        font-size: 43px;
+        color: $white;
+
+        @include respond($break20) {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .icon-hand {
+      @include iconPost($hand);
+
+      &::after {
+        font-size: 45px;
+        color: $white;
+
+        @include respond($break20) {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .sign-secondary {
+      flex-grow: 2;
+      margin-top: 15px;
+      color: $gray06;
+      text-align: center;
+    }
+
+    .button {
+      min-width: 150px;
+      margin-top: 26px;
+
+      @include respond($break20) {
+        margin-top: 18px;
+      }
+    }
+  }
+}
+
+.image-to-left-callout {
+  padding-right: 22px;
+  padding-left: 22px;
+
+  @include respond($break110) {
+    padding-right: 1.833vw;
+    padding-left: 1.833vw;
+  }
+
+  @include respond($break20) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .flex-row {
+    @include respond($break50) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .col {
+    width: 40%;
+    min-width: 310px;
+
+    @include respond($break50) {
+      width: 100%;
+      min-width: 0;
+    }
+
+    + .col {
+      width: 60%;
+
+      @include respond($break50) {
+        width: 100%;
+      }
+    }
+  }
+
+  .callout-header {
+    @include respond($break50) {
+      margin-bottom: 30px;
+    }
+
+    .sign-primary {
+      color: $gray06;
+    }
+
+    .heading-primary {
+      margin-top: 5px;
+      color: $gray03;
+      text-align: left;
+    }
+  }
+
+  .callout-description {
+    margin-top: 20px;
+    line-height: 1.375;
+    text-align: left;
+
+    @include respond($break50) {
+      margin-top: 3.333vw;
+    }
+
+    @include respond($break20) {
+      margin-top: 14px;
+    }
+  }
+
+  .image-wrapper {
+    padding-right: 80px;
+
+    @include respond($break110) {
+      padding-right: 6.666vw;
+    }
+
+    @include respond($break50) {
+      max-width: 62.4vw;
+      padding-right: 0;
+    }
+  }
+}
+
+.full-width-image-callout {
+  position: relative;
+
+  .block {
+    @include respond($break50) {
+      padding: 0;
+    }
+
+    @include respond($break20) {
+      padding: 0;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include respond($break50) {
+      position: static;
+
+      .flex-row {
+        display: block;
+
+        .col.col-2 {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .block-intro {
+    .heading-primary, .copy-secondary {
+      text-align: left;
+    }
+  }
+
+  .desktop-image {
+    display: block;
+    max-width: 61vw;
+
+    @include respond($break50) {
+      display: none;
+    }
+  }
+
+  .mobile-image {
+    display: none;
+    width: 100%;
+    margin-top: 35px;
+
+    @include respond($break50) {
+      display: block;
+    }
+  }
+}
+
+.video-callout {
+  .flex-row {
+    @include respond($break100) {
+      flex-flow: wrap row-reverse;
+    }
+  }
+
+  .col.col-2 {
+    @include respond($break100) {
+      width: 100%;
+    }
+  }
+
+  .blurb {
+    padding-right: 5%;
+
+    @include respond($break110) {
+      padding-right: 51px;
+    }
+
+    @include respond($break100) {
+      padding-right: 0;
+    }
+
+    .heading-primary {
+      color: $offBlack;
+
+      + .heading-primary {
+        margin-top: 20px;
+        color: $white;
+      }
+    }
+  }
+}
+
+.video-callout-centered {
+  position: relative;
+  margin-bottom: 150px + $blockPaddingMax;
+  text-align: center;
+
+  @include respond($break110) {
+    margin-bottom: calc(150px + #{$blockPaddingFlex});
+  }
+
+  @include respond($break50) {
+    margin-bottom: 17.5vw + $blockPaddingFlex;
+  }
+
+  @include respond($break20) {
+    margin-bottom: 74px + $blockPaddingMin;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -150px - $blockPaddingMax;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 150px + $blockPaddingMax;
+    content: '';
+    background-color: $white;
+
+    @include respond($break110) {
+      bottom: calc(-150px - #{$blockPaddingFlex});
+      height: calc(150px + #{$blockPaddingFlex});
+    }
+
+    @include respond($break50) {
+      bottom: -17.5vw - $blockPaddingFlex;
+      height: 17.5vw + $blockPaddingFlex;
+    }
+
+    @include respond($break20) {
+      bottom: -74px - $blockPaddingMin;
+      height: 74px + $blockPaddingMin;
+    }
+  }
+
+
+  &.next-background-white::after {
+    background-color: $white;
+  }
+
+  &.next-background-gray::after {
+    background-color: $gray01;
+  }
+
+  &.next-background-primary::after {
+    background-color: $accentPrimary;
+  }
+
+  &.next-background-black::after {
+    background-color: $gray06;
+  }
+
+  &.next-background-patterned::after {
+    background-color: $accentPrimary;
+    background-image: url('/assets/background.png');
+    background-repeat: repeat;
+  }
+
+  .flex-col {
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .blurb {
+    .heading-primary {
+      max-width: 622px;
+      margin: 0 auto;
+      color: $white;
+    }
+
+    .sign-tertiary {
+      margin-top: 22px;
+      color: $offBlack;
+    }
+  }
+
+  .video-link {
+    width: 100%;
+    max-width: 622px;
+    height: 350px;
+    margin: 76px auto -150px - $blockPaddingMax;
+
+    @include respond($break110) {
+      margin: 76px auto calc(-150px - #{$blockPaddingFlex});
+    }
+
+    @include respond($break50) {
+      height: 45.57vw;
+      margin: 9.895vw auto -17.5vw - $blockPaddingFlex;
+    }
+
+    @include respond($break20) {
+      margin: 41px auto -74px - $blockPaddingMin;
+    }
+  }
+}

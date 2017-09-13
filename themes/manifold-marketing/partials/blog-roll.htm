@@ -1,0 +1,17 @@
+<section class="background-gray">
+	<div class="block blog-roll">
+		<a href="{{blog_link}}" class="blog-roll-header flex-row vert-centered">
+			<span class="primary heading-secondary">Building</span><span class="heading-secondary gray">Manifold</span>
+			<i class="icon-arrow-right"></i>
+		</a>
+		<div class="flex-row blog-roll-grid">
+		{% for post in posts %}
+			<a href="{{ post.link }}" class="col">
+				<div class="subheading-primary" data-mh="blog-post-name">{{ post.title }}</div>
+				<div class="copy-tertiary" data-mh="blog-post-description">{{ post.summary|raw }}</div>
+				<span class="link-placeholder">Read More</span>
+			</a>
+		{% endfor %}
+		</div>
+	</div>
+</section>

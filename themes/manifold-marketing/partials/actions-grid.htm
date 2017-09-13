@@ -1,0 +1,8 @@
+<section class="background-white">
+	<div class="block">
+		{% partial 'blocks/intro' title=title subtitle=subtitle %}
+		{% for actions_group in actions_groups %}
+			{% partial 'blocks/actions-group' actions_group=actions_group %}
+		{% endfor %}
+	</div>
+</section>

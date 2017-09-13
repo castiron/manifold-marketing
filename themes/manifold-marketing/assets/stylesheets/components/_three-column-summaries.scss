@@ -1,0 +1,51 @@
+.three-col-summaries {
+  .heading-primary {
+    // margin-top: 48px;
+    text-align: center;
+  }
+
+  .summaries {
+    margin-top: 54px;
+
+    .summary {
+      justify-content: space-between;
+      width: calc(33.333% - 52px);
+      padding-top: 20px;
+      text-decoration: none;
+      border-top: 2px solid $gray02;
+
+      &:hover {
+        color: initial;
+
+        .partner-link {
+          text-decoration: underline;
+        }
+      }
+
+      .image-wrapper {
+        width: 187px;
+        height: 117px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .heading-quaternary {
+        margin-top: 42px;
+      }
+
+      .copy-primary {
+        margin-top: 14px;
+      }
+
+      .partner-link {
+        margin-top: 40px;
+        color: $accentPrimary;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

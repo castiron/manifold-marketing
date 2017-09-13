@@ -1,0 +1,42 @@
+.block-intro {
+  .heading-primary {
+    text-align: center;
+  }
+
+  .copy-secondary {
+    margin-top: 20px;
+    text-align: center;
+
+    @include respond($break20) {
+      margin-top: 14px;
+    }
+  }
+}
+
+.block-label {
+  @include subheadingSecondary;
+  margin-top: 10 - ($blockPaddingMax / 2);
+  text-align: center;
+  text-transform: uppercase;
+
+  @include respond($break110) {
+    margin-top: calc(10px - (#{$blockPaddingFlex} / 2));
+  }
+
+  @include respond($break20) {
+    margin-top: 10 - ($blockPaddingMin / 2);
+  }
+
+  + .heading-primary, + * > .heading-primary, + .tab-triggers {
+    margin-top: $blockPaddingMax / 2;
+    text-align: center;
+
+    @include respond($break110) {
+      margin-top: $blockPaddingFlex / 2;
+    }
+
+    @include respond($break20) {
+      margin-top: $blockPaddingMin / 2;
+    }
+  }
+}

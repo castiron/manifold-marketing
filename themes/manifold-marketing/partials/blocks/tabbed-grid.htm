@@ -1,0 +1,43 @@
+<section class="background-white">
+	<div class="tabbed-grid" data-slider>
+		<div class="block narrow">
+			<div class="block-label">features</div>
+			<div class="tab-triggers">
+				<div class="flex-row" data-slider-nav>
+				{% for trigger in tabs %}
+					<div class="tab-trigger col col-3" data-pager-ordinal="{{ loop.index }}">
+						<div class="actions-badge">
+							<div class="background-circle"></div>
+							<i class="icon icon-{{ trigger.badge }}"></i>
+						</div>
+						<div class="sign-tertiary">
+							{{ trigger.group_name }}
+							<hr>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+				<div class="subheading-primary">{{ description }}</div>
+			</div>
+		</div>
+		<div class="tabs">
+			<div class="flex-row tabs-inner" data-element data-count="{{ tabs|length }}">
+			{% for tab in tabs %}
+				<div class="tab">
+					<div class="inner-container">
+					{% for action in tab.actions %}
+						<div class="action">
+							<div class="action-header">
+								<i class="icon icon-{{ action.icon }}"></i>
+								<span class="subheading-secondary">{{ action.name }}</span>
+							</div>
+							{% partial 'blocks/features-group' features=action.features %}
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,56 @@
+.contact {
+  align-items: baseline;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include respond($break50) {
+    display: block;
+  }
+
+  .contact-summary, .contact-form {
+    width: 50%;
+
+    @include respond($break50) {
+      width: 100%;
+    }
+  }
+
+  .contact-form {
+    padding-left: 10%;
+
+    @include respond($break50) {
+      max-width: 360px;
+      padding-left: 0;
+      margin: 24px auto 0;
+    }
+
+    input[type='email'] {
+      text-align: center;
+    }
+
+    .submit-button {
+      &:hover {
+        input[type='submit'] {
+          background-color: $gray05;
+        }
+      }
+
+      input[type='submit'] {
+        @include buttonPrimary;
+        width: 100%;
+        color: $white;
+        background-color: $gray06;
+        border: 0;
+        transition: background-color $timing $duration;
+      }
+    }
+  }
+
+  .heading-primary {
+    color: $white;
+  }
+
+  .copy-primary {
+    margin-top: 26px;
+  }
+}

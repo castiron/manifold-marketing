@@ -1,0 +1,16 @@
+<div class="actions-group">
+	<div class="actions-badge">
+		<div class="background-circle"></div>
+		<i class="icon icon-{{ actions_group.badge }}"></i>
+	</div>
+	<div class="heading-tertiary">{{ actions_group.group_name }}</div>
+	<ul class="flex-row actions">
+		{% for action in actions_group.actions %}
+			<li class="col action">
+				<i class="icon icon-{{ action.icon }}"></i>
+				<div class="subheading-secondary action-name">{{ action.name }}</div>
+				<div class="copy-tertiary action-description">{{ action.description }}</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

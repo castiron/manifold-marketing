@@ -1,0 +1,111 @@
+.blog-roll {
+  .blog-roll-header {
+    justify-content: flex-start;
+    text-decoration: none;
+
+    &:hover {
+      .gray {
+        color: $accentPrimary;
+      }
+
+      .primary {
+        color: $gray05;
+      }
+
+      .icon-arrow-right {
+        &::after {
+          color: $gray05;
+        }
+      }
+    }
+
+    .heading-secondary {
+      padding-right: 12px;
+      transition: color $timing $duration;
+    }
+
+    .gray {
+      color: $gray05;
+    }
+
+    .primary {
+      color: $accentPrimary;
+    }
+
+    .icon-arrow-right {
+      @include iconPost($arrow-right);
+      padding-left: 4px;
+
+      &::after {
+        font-size: 22px;
+        color: $accentPrimary;
+        vertical-align: middle;
+        transition: color $timing $duration;
+
+        @include respond($break20) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .blog-roll-grid {
+    margin-top: 57px;
+
+    @include respond($break50) {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .col {
+      width: calc(33.333% - 45px);
+      text-decoration: none;
+
+      @include respond($break50) {
+        display: block;
+        width: 100%;
+
+        + .col {
+          margin-top: 24px;
+        }
+      }
+
+      &:hover {
+        .subheading-primary, .copy-tertiary {
+          color: $gray03;
+        }
+
+        .link-placeholder {
+          color: $gray06;
+        }
+      }
+
+      .subheading-primary {
+        color: $gray05;
+      }
+
+      .copy-tertiary {
+        flex-grow: 1;
+        margin-top: 18px;
+
+        @include respond($break50) {
+          margin-top: 8px;
+        }
+      }
+
+      .link-placeholder {
+        display: block;
+        margin-top: 20px;
+        font-size: 13px;
+        color: $accentPrimary;
+        text-transform: uppercase;
+        transition: color $timing $duration;
+
+        @include respond($break50) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+}

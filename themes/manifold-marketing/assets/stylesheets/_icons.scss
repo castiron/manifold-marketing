@@ -1,0 +1,77 @@
+// Donezo Generated Icon File:
+// File will be overwritten if regenerated
+
+// Icon Variables
+// --------------------------------------------------------
+$arrow-right: '\e600';
+$bar-graph: '\e601';
+$binoculars: '\e602';
+$book-page-turn: '\e603';
+$bookpile-small: '\e604';
+$bugle: '\e605';
+$caliper: '\e606';
+$cloud-down: '\e607';
+$cone: '\e608';
+$email: '\e609';
+$github: '\e60a';
+$glasses: '\e60b';
+$hand: '\e60c';
+$human-reading: '\e60d';
+$laptop: '\e60e';
+$magnify: '\e60f';
+$manifold-logo: '\e610';
+$nodes: '\e611';
+$pencil: '\e612';
+$transform-square-to-circle: '\e613';
+$triangle: '\e614';
+$twitter: '\e615';
+$van-diagram: '\e616';
+$watering-can: '\e617';
+$word-bubble-multiple: '\e618';
+$wrench: '\e619';
+
+
+@font-face {
+  font-family: 'manifold-icons';
+  src: url('../../assets/fonts/manifold-icons.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/manifold-icons.woff') format('woff'),
+    url('../../assets/fonts/manifold-icons.ttf') format('truetype'),
+    url('../../assets/fonts/manifold-icons.svg') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+@mixin fontIcon {
+  font-family: 'manifold-icons', sans-serif;
+}
+
+@mixin protoIcon {
+  @include fontIcon;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  vertical-align: middle;
+  speak: none;
+}
+
+@mixin iconPre($icon) {
+  speak: none;
+
+  &::before {
+    @include protoIcon;
+    content: $icon;
+  }
+}
+
+@mixin iconPost($icon) {
+  speak: none;
+
+  &::after {
+    @include protoIcon;
+    content: $icon;
+  }
+}

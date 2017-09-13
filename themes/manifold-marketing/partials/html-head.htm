@@ -1,0 +1,24 @@
+[webpackAssets]
+publicFolder = www
+==
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ this.page.title_tag_value ?: this.page.title }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    {% set favicon = 'assets/images/icons/favicon.png' %}
+    <link rel="shortcut icon" href="{{ favicon | theme }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ favicon | theme }}">
+
+    <!-- Typekit fonts -->
+    <script src="https://use.typekit.net/wso5cuh.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    {% styles %}
+
+    {# Theme CSS #}
+    {# Load Site styles via webpack or built #}
+    {{ webpackAssets.css | raw }}
+</head>

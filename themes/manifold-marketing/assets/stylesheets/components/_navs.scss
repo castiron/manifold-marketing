@@ -1,0 +1,134 @@
+// MAIN HEADER NAV
+.main-header {
+  .main-nav {
+    @include listHorizontal;
+
+    &.desktop-only {
+      display: block;
+
+      @include respond($break60) {
+        display: none;
+      }
+    }
+
+    &.mobile-only {
+      display: none;
+
+      @include respond($break60) {
+        display: block;
+      }
+    }
+
+    .main-nav-item {
+      + .main-nav-item {
+        margin-left: 30px;
+      }
+    }
+
+    a {
+      @include navPrimary;
+      color: $gray06;
+      text-decoration: none;
+      vertical-align: middle;
+
+      &:hover {
+        color: $accentPrimary;
+
+        &::before {
+          color: $accentPrimary;
+        }
+      }
+    }
+
+    .search-link {
+      &::before {
+        color: $gray05;
+        transition: color $timing $duration;
+      }
+
+      &:hover {
+        &::before {
+          color: $accentPrimary;
+        }
+      }
+    }
+  }
+}
+
+.main-header {
+  .mobile-main-nav {
+    @include listUnstyled;
+    height: 100%;
+    padding: 48px 27px 27px calc(50px + 7.5vw);
+
+    @include respond($break20) {
+      padding: 48px 27px 27px 72px;
+    }
+
+    li {
+      display: block;
+
+      + li {
+        margin-top: 10px;
+      }
+
+      a {
+        @include navPrimary;
+        color: $offBlack;
+      }
+
+      .search-link {
+        color: $white;
+
+        &::before {
+          padding-right: 9px;
+          font-size: 18px;
+          color: $white;
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+}
+
+// MAIN HAMBURGER MENU
+.hamburger-toggle {
+  font-size: 16px;
+  font-weight: $medium;
+  vertical-align: middle;
+  cursor: pointer;
+
+  @include respond($break20) {
+    font-size: 13px;
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  max-height: 0;
+  overflow: hidden;
+  background-color: $accentPrimary;
+  transition: max-height $timing 0.5s;
+
+  &.open {
+    max-height: 100vh;
+    overflow: auto;
+  }
+
+  .main-logo {
+    color: $white;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  .hamburger-closer {
+    color: $white;
+  }
+}

@@ -1,0 +1,23 @@
+.main-header {
+  background-color: $white;
+
+  .main-logo {
+    font-size: 17px;
+    color: $gray05;
+
+    &::before {
+      margin-right: 18px;
+      font-size: 35px;
+    }
+
+    &:hover {
+      color: $gray03;
+    }
+  }
+
+  .search-link {
+    &::before {
+      color: $gray05;
+    }
+  }
+}

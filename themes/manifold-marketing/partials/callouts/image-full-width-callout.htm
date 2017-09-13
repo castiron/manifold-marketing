@@ -1,0 +1,14 @@
+<section class="background-gray">
+	<div class="full-width-image-callout block">
+		<div class="overlay block">
+			<div class="flex-row">
+				<div class="col col-2"></div>
+				<div class="col col-2">
+					{% partial 'blocks/intro' title=title subtitle=subtitle %}
+				</div>
+			</div>
+		</div>
+		<img src="{{ desktop_image_path }}" class="desktop-image">
+		<img src="{{ mobile_image_path }}" class="mobile-image">
+	</div>
+</section>

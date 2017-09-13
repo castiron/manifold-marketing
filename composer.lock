@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "092bc734eec21b136f7894f48d42b164",
+    "content-hash": "be0a5df9493be7dc33d2c24a1c169fed",
     "packages": [
+        {
+            "name": "castiron/webpackassets-plugin",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/castiron/webpackassets-plugin.git",
+                "reference": "38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/webpackassets-plugin/zipball/38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d",
+                "reference": "38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d",
+                "shasum": ""
+            },
+            "require": {
+                "october/rain": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "october-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Castiron\\": "plugins/castiron/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gabe Blair",
+                    "email": "gabe@castironcoding.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Webpack hashed files in October CMS",
+            "homepage": "https://github.com/castiron/webpackassets-plugin",
+            "keywords": [
+                "october",
+                "octobercms",
+                "webpack"
+            ],
+            "time": "2017-08-02T01:12:39+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v1.4.0",

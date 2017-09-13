@@ -1,0 +1,70 @@
+.summaries-list {
+  .summaries-title {
+    margin-bottom: 82px;
+    text-align: center;
+  }
+
+  .summary {
+    + .summary {
+      margin-top: 70px;
+    }
+  }
+
+  .summary-header {
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid $accentPrimary;
+
+    .summary-subtitle {
+      padding-left: 10px;
+      color: $accentPrimary;
+    }
+  }
+
+  .summary-body {
+    .flex-row {
+      justify-content: flex-start;
+    }
+
+    .col + .col {
+      margin-left: 160px;
+
+      @include respond($break110) {
+        margin-left: 13vw;
+      }
+    }
+
+    .copy-secondary {
+      + * {
+        margin-top: 28px;
+      }
+    }
+
+    .subheading-secondary {
+      text-transform: uppercase;
+
+      + ul {
+        margin-top: 13px;
+      }
+    }
+
+    ul {
+      @include listPrimary;
+
+      li {
+        margin-left: 14px;
+        text-indent: -14px;
+      }
+
+      ul {
+        @include listSecondary;
+        margin-top: 5px;
+        margin-left: 4px;
+      }
+
+      + .copy-secondary {
+        margin-top: 28px;
+      }
+    }
+  }
+}

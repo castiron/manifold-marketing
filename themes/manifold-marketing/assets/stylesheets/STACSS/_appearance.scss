@@ -1,0 +1,339 @@
+// Component Appearance
+// --------------------
+
+// Appearance mixins contain primarily texture parameters: background-color, transparency, borders, etc. as well
+// as some minor, internal structural properties where abstraction isn't required (to prevent over-abstracting)
+
+// They may contain:
+// Nested classes/elements with other structural or textural properties
+
+// Appearance blocks should not contain typographic classes nor be dependent on the font-size from the element, unless
+// it is as a non-dependent, comprehensive mixin (for now), or if the font size is being used for structural reasons (like the size of an icon-font glyph)
+
+// Contents
+// --------------------------
+// - Imports
+// - Prototypes
+// - Utilities
+// - Layout
+// - Type
+// - Images
+// - Article Lists
+// - Navigation Lists
+// - Buttons/Links
+// - Tables
+// - Forms
+
+// Basic utility patterns
+// --------------------------------------------------------
+// Visually Hidden, for skip links and screen-reader only elements
+@mixin screenReaderText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+// Image replacement, for icons and things with hidden accessibility text
+@mixin imageReplacement {
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  direction: ltr;
+
+  br {
+    display: none;
+  }
+}
+
+
+// Layout
+// --------------------------------------------------------
+
+.background-white {
+  background-color: $white;
+}
+
+.background-black {
+  background-color: $gray06;
+}
+
+.background-gray {
+  background-color: $gray01;
+}
+
+.background-primary {
+  background-color: $accentPrimary;
+}
+
+.background-patterned {
+  background-color: $accentPrimary;
+  background-image: url('/themes/manifold-marketing/assets/images/background.png');
+  background-repeat: repeat;
+}
+
+
+// Images
+// --------------------------------------------------------
+
+.main-logo {
+  @include iconPre($manifold-logo);
+  @include fontHead;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: $semibold;
+  text-decoration: none;
+  transition: color $timing $duration;
+
+  &::before {
+    color: $accentPrimary;
+    text-decoration: none;
+    transition: color $timing $duration;
+  }
+
+  &:hover {
+    color: $gray03;
+
+    &::before {
+      color: $gray03;
+    }
+  }
+}
+
+$icons: (
+  bar-graph: $bar-graph,
+  binoculars: $binoculars,
+  book-page-turn: $book-page-turn,
+  bookpile-small: $bookpile-small,
+  bugle: $bugle,
+  caliper: $caliper,
+  cloud-down: $cloud-down,
+  cone: $cone,
+  glasses: $glasses,
+  hand: $hand,
+  human-reading: $human-reading,
+  laptop: $laptop,
+  magnify: $magnify,
+  nodes: $nodes,
+  pencil: $pencil,
+  transform-square-to-circle: $transform-square-to-circle,
+  triangle: $triangle,
+  van-diagram: $van-diagram,
+  watering-can: $watering-can,
+  word-bubble-multiple: $word-bubble-multiple,
+  wrench: $wrench
+);
+
+@each $name, $char in $icons {
+  .icon-#{$name} {
+    @include iconPost($char);
+  }
+}
+
+
+// Buttons/Links
+// --------------------------------------------------------
+@mixin doubleBox {
+  position: relative;
+  z-index: 0;
+  border: 2px solid transparent;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: -7px;
+    bottom: -7px;
+    left: 0;
+    z-index: -1;
+    content: '';
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+  }
+
+  &.primary {
+    border-color: $accentPrimary;
+
+    &::after {
+      border-right-color: $accentPrimary;
+      border-bottom-color: $accentPrimary;
+    }
+  }
+
+  &.gray {
+    border-color: $gray04;
+
+    &::after {
+      border-right-color: $gray04;
+      border-bottom-color: $gray04;
+    }
+  }
+
+  &.black {
+    border-color: $gray06;
+
+    &::after {
+      border-right-color: $gray06;
+      border-bottom-color: $gray06;
+    }
+  }
+}
+
+.button {
+  @include doubleBox;
+  @include buttonPrimary;
+  padding: 5px 12px 6px;
+  text-align: center;
+  text-decoration: none;
+  transition: color $timing $duration, background-color $timing $duration, border-color $timing $duration;
+
+  &::after {
+    transition: border-right-color $timing $duration, border-bottom-color $timing $duration;
+  }
+
+  &.primary {
+    color: $gray06;
+
+    &:hover {
+      color: $white;
+      background-color: $accentPrimary;
+    }
+  }
+
+  &.gray {
+    color: $white;
+  }
+
+  &.black {
+    color: $white;
+    background-color: $gray06;
+
+    &:hover {
+      background-color: $gray05;
+      border-color: $gray05;
+
+      &::after {
+        border-right-color: $gray05;
+        border-bottom-color: $gray05;
+      }
+    }
+  }
+
+  &.tall {
+    padding: 10px 12px 12px;
+
+    @include respond($break20) {
+      padding: 8px 12px 10px;
+    }
+  }
+}
+
+.search-link {
+  @include iconPre($magnify);
+
+  &::before {
+    font-size: 20px;
+  }
+}
+
+.triangle {
+  position: relative;
+  left: 2px;
+  width: 44px;
+  height: 44px;
+
+  &::before, &::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-left: 46px solid $accentPrimary;
+
+    @include respond($break20) {
+      border-top: 19px solid transparent;
+      border-bottom: 19px solid transparent;
+      border-left: 38px solid $accentPrimary;
+    }
+  }
+
+  &::after {
+    top: 4px;
+    left: 3px;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-left: 38px solid $white;
+    border-left-color: $white;
+    transition: border-left-color $timing $duration;
+
+    @include respond($break20) {
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 30px solid $white;
+    }
+  }
+
+  .background-gray &::after {
+    border-left: 38px solid $gray01;
+    border-left-color: $gray01;
+
+    @include respond($break20) {
+      border-left: 30px solid $gray01;
+    }
+  }
+}
+
+.video-link {
+  @include fontHead;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 306px;
+  font-size: 22px;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include respond($break110) {
+    height: 25.5vw;
+  }
+
+  @include respond($break100) {
+    height: 50vw;
+    margin-top: 35px;
+  }
+
+  @include respond($break20) {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+
+  &:hover {
+    .triangle::after {
+      border-left-color: $accentPrimary;
+    }
+  }
+
+  .video-title {
+    margin-top: 24px;
+
+    @include respond($break20) {
+      margin-top: 9px;
+    }
+  }
+}

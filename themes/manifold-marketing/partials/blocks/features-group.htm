@@ -1,0 +1,10 @@
+<div class="features">
+	<div class="flex-row">
+	{% for feature in features %}
+		<div class="feature col col-3">
+			<div class="feature-name">{{ feature.name }}</div>
+			<div class="feature-description copy-tertiary">{{ feature.description }}</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
