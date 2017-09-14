@@ -74,10 +74,21 @@
   background-color: $accentPrimary;
 }
 
+@keyframes backgroundPan {
+  0% {
+    background-position: 1003px 0;
+  }
+
+  100% {
+    background-position: 0 515px;
+  }
+}
+
 .background-patterned {
   background-color: $accentPrimary;
   background-image: url('/themes/manifold-marketing/assets/images/background.png');
   background-repeat: repeat;
+  animation: 60s linear infinite backgroundPan;
 }
 
 
@@ -85,7 +96,6 @@
 // --------------------------------------------------------
 
 .main-logo {
-  @include iconPre($manifold-logo);
   @include fontHead;
   display: flex;
   flex-direction: row;
@@ -94,18 +104,36 @@
   text-decoration: none;
   transition: color $timing $duration;
 
-  &::before {
-    color: $accentPrimary;
-    text-decoration: none;
-    transition: color $timing $duration;
+  .complete polygon {
+    transition: fill $duration $timing;
   }
+
+  span {
+    opacity: 0;
+  }
+
 
   &:hover {
     color: $gray03;
 
-    &::before {
-      color: $gray03;
+    .complete polygon {
+      fill: $gray03;
     }
+  }
+
+  .animated + span {
+    @keyframes fadeLogoText {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    opacity: 0;
+    animation: 0.5s 1.5s ease-in forwards fadeLogoText;
   }
 }
 

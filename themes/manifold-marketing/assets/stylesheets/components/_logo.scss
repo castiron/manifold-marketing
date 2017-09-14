@@ -1,0 +1,107 @@
+/* stylelint-disable selector-max-id, number-max-precision */
+.manifold-logo {
+  height: 35px;
+  margin-right: 18px;
+
+  svg {
+    height: 100%;
+  }
+
+  .parallelogram,
+  .mask-1,
+  .mask-2,
+  .complete {
+    opacity: 0;
+    transition: opacity $timing $durationSlow;
+  }
+
+  &.animated {
+    .parallelogram {
+      @keyframes stretchSkew {
+        0% {
+          opacity: 1;
+          transform: translate(7.5px, 3.5px) scale(0.05, 1) skewY(-21deg);
+        }
+
+        40% {
+          transform: translate(0, 3.5px) scale(1, 1) skewY(-21deg);
+        }
+
+        70% {
+          transform: translate(0, 0) scale(1, 1) skewY(0);
+        }
+
+        99% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1, 1) skewY(0);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translate(0, 0) scale(1, 1) skewY(0);
+        }
+      }
+
+      opacity: 0;
+      animation: 1.4s ease-in forwards stretchSkew;
+    }
+
+    .mask-1 {
+      @keyframes slideOn1 {
+        0% {
+          opacity: 1;
+          transform: translate(-8px, 8px);
+        }
+
+        50% {
+          transform: translate(0, 0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translate(0, 10px);
+        }
+      }
+
+      opacity: 0;
+      animation: 0.8s 0.9s ease-in forwards slideOn1;
+    }
+
+    .mask-2 {
+      @keyframes slideOn2 {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(0, 0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translate(14px, 0);
+        }
+      }
+
+      opacity: 0;
+      animation: 0.7s 0.9s ease-in forwards slideOn2;
+    }
+
+    .complete {
+      @keyframes popOn {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      opacity: 0;
+      animation: 0.4s 1.3s ease-in forwards popOn;
+    }
+  }
+}
+/* stylelint-enable */

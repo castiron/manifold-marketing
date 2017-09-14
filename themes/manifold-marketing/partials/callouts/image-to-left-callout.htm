@@ -10,7 +10,11 @@
 			</div>
 			<div class="flex-row">
 				<div class="image-wrapper col">
-					<img src="{{ image_path }}">
+          {% if image_path %}
+  					<img src="{{ image_path }}">
+          {% elseif partial_path %}
+            {% partial partial_path %}
+          {% endif %}
 				</div>
 				<div class="col">
 				<div class="copy-secondary callout-description">{{ description|raw }}</div>

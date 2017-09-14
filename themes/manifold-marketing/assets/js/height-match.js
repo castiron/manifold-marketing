@@ -1,12 +1,9 @@
-const debounce = require("./lib/dom-help.js").debounce;
+import { debounce } from "./lib/dom-help.js";
 
 class HeightMatch {
-  constructor(
-    selector = '[data-mh]'
-  ) {
+  constructor(selector = '[data-mh]') {
     this.selector = selector;
     this.sameHeights(this.selector);
-    this.resizeHandler = this.resizeHandler.bind(this);
     window.addEventListener('resize', this.resizeHandler);
   }
 
@@ -37,7 +34,7 @@ class HeightMatch {
     }
   }
 
-  resizeHandler() {
+  resizeHandler = () => {
     debounce(this.sameHeights(this.selector), 300);
   }
 }

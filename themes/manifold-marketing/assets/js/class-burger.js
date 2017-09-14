@@ -1,6 +1,4 @@
-const toggleClass = require("./lib/dom-help.js").toggleClass;
-const removeClass = require("./lib/dom-help.js").removeClass;
-const addEscListener = require("./lib/dom-help.js").addEscListener;
+import { toggleClass, removeClass, addEscListener } from "./lib/dom-help.js";
 
 class ClassBurger {
   constructor(

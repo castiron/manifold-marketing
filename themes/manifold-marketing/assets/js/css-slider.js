@@ -1,6 +1,4 @@
-const hasClass = require("./lib/dom-help.js").hasClass;
-const addClass = require("./lib/dom-help.js").addClass;
-const removeClass = require("./lib/dom-help.js").removeClass;
+import { hasClass, addClass, removeClass } from "./lib/dom-help.js";
 
 class CssSlider {
   constructor(count, node) {

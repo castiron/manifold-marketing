@@ -252,6 +252,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
 
@@ -277,6 +278,7 @@
   .desktop-image {
     display: block;
     max-width: 61vw;
+    // padding-top: 100px;
 
     @include respond($break50) {
       display: none;
@@ -331,6 +333,7 @@
 
 .video-callout-centered {
   position: relative;
+  z-index: 0;
   margin-bottom: 150px + $blockPaddingMax;
   text-align: center;
 

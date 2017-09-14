@@ -144,6 +144,10 @@
 // Layout
 // --------------------------------------------------------
 
+.rel {
+  position: relative;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
