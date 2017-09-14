@@ -16,10 +16,6 @@
   }
 
   &.animated {
-    $step1: 0.7s;
-    $step2: 0.5s;
-    $step3: 0.5s;
-    $step4: 0.5s;
     $specsUpDuration: 0.8s;
     $pileDuration: 0.7s;
     $pilesDuration: (1.375 * $specsUpDuration) + $pileDuration;
@@ -83,10 +79,6 @@
 
       opacity: 0;
       animation: $pileDuration 1.25 * $specsUpDuration ease-in forwards lean2;
-    }
-
-    #book-piled-1 {
-      transform-origin: 50% 50%;
     }
 
     #book-piled-2 {
@@ -190,25 +182,29 @@
 
       @keyframes specsUp1 {
         0% {
-          transform: translate(-3px, $start) rotate(-7deg);
+          transform: translate(-3px, $start) rotate(-15deg);
         }
 
-        50% {
-          transform: translate(0, 12px) rotate(1deg);
+        70% {
+          transform: translate(0, 7px) rotate(15deg);
         }
 
         100% {
-          transform: translate(0, $firstStop) rotate(3deg);
+          transform: translate(0, $firstStop) rotate(0deg);
         }
       }
 
       @keyframes specsUp2 {
         0% {
-          transform: translate(0, $firstStop) rotate(3deg);
+          transform: translate(0, $firstStop) rotate(0deg);
+        }
+
+        10% {
+          transform: translate(0, $firstStop) rotate(5deg);
         }
 
         50% {
-          transform: translate(0, -20px) rotate(-2deg);
+          transform: translate(0, -20px) rotate(-13deg);
         }
 
         100% {
@@ -217,7 +213,7 @@
       }
 
       transform-origin: 50% 50%;
-      animation: $specsUpDuration ease-in forwards specsUp1, $specsUpDuration $specsUpDuration ease-in forwards specsUp2;
+      animation: $specsUpDuration ease-in forwards specsUp1, $specsUpDuration 1.2 * $specsUpDuration ease-in forwards specsUp2;
     }
 
     #arrow {
@@ -260,6 +256,10 @@
           transform: translateY(29px);
         }
 
+        80% {
+          transform: translateY(-6px);
+        }
+
         100% {
           transform: translateY(0);
         }
@@ -268,6 +268,10 @@
       @keyframes sparkUpLeft {
         0% {
           transform: translate(59.54597px, 178.85244px) rotate(-34.1851deg);
+        }
+
+        80% {
+          transform: translate(37.54597px, 147.85244px) rotate(-34.1851deg);
         }
 
         100% {
@@ -280,13 +284,17 @@
           transform: translate(105.94753px, 276.83593px) rotate(-55.80059deg);
         }
 
+        80% {
+          transform: translate(128.94753px, 246.83593px) rotate(-55.80059deg);
+        }
+
         100% {
           transform: translate(123.94753px, 252.83593px) rotate(-55.80059deg);
         }
       }
 
       opacity: 0;
-      animation: 0.8s 0.8 * $phoneAppearanceDuration ease-in forwards fadeOn;
+      animation: 0.8s 0.7 * $phoneAppearanceDuration ease-in forwards fadeOn;
 
       #spark-left {
         animation: 1s $sparksStep ease-in forwards sparkUpLeft;

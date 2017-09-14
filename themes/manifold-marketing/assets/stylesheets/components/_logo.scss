@@ -16,6 +16,8 @@
   }
 
   &.animated {
+    $parallelogramDuration: 2s;
+
     .parallelogram {
       @keyframes stretchSkew {
         0% {
@@ -27,11 +29,15 @@
           transform: translate(0, 3.5px) scale(1, 1) skewY(-21deg);
         }
 
+        50% {
+          transform: translate(0, 3.5px) scale(1, 1) skewY(-21deg);
+        }
+
         70% {
           transform: translate(0, 0) scale(1, 1) skewY(0);
         }
 
-        99% {
+        99.99% {
           opacity: 1;
           transform: translate(0, 0) scale(1, 1) skewY(0);
         }
@@ -43,7 +49,7 @@
       }
 
       opacity: 0;
-      animation: 1.4s ease-in forwards stretchSkew;
+      animation: $parallelogramDuration ease-in forwards stretchSkew;
     }
 
     .mask-1 {
@@ -64,7 +70,7 @@
       }
 
       opacity: 0;
-      animation: 0.8s 0.9s ease-in forwards slideOn1;
+      animation: 0.8s 0.8 * $parallelogramDuration ease-in forwards slideOn1;
     }
 
     .mask-2 {
@@ -85,7 +91,7 @@
       }
 
       opacity: 0;
-      animation: 0.7s 0.9s ease-in forwards slideOn2;
+      animation: 0.7s 0.8 * $parallelogramDuration ease-in forwards slideOn2;
     }
 
     .complete {
@@ -100,7 +106,7 @@
       }
 
       opacity: 0;
-      animation: 0.4s 1.3s ease-in forwards popOn;
+      animation: 0.4s 0.95 * $parallelogramDuration ease-in forwards popOn;
     }
   }
 }
