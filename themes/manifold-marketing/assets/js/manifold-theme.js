@@ -9,7 +9,9 @@ class ManifoldTheme {
   init() {
     domHelp.ready(()=> {
       // Initialize Overlay Burgers
-      const hamburgerOverlay = new ClassBurger();
+      const hamburgerOverlay = new ClassBurger('hamburger', 'open', function() {
+        domHelp.toggleClass(document.body, 'overlay-open');
+      });
 
       // Initialize height matching elements
       const partnerNames = new HeightMatch('[data-mh=partner-name]');

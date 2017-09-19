@@ -70,6 +70,7 @@
       padding-right: 132px;
       padding-bottom: $blockPaddingMax;
       padding-left: 132px;
+      margin: 0 auto;
 
       @include respond($break110) {
         padding-right: 11vw;

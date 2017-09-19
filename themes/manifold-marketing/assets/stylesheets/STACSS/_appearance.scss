@@ -58,6 +58,10 @@
 // Layout
 // --------------------------------------------------------
 
+.overlay-open {
+  overflow: hidden;
+}
+
 .background-white {
   background-color: $white;
 }

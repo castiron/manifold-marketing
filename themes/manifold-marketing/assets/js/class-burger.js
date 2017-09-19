@@ -32,6 +32,7 @@ class ClassBurger {
 
           [...nodes].forEach(toggle => {
             toggleClass(toggle, onClass);
+            callback(toggle);
           });
 
           document.addEventListener("keyup", function onEscHandler(event) {
@@ -42,6 +43,7 @@ class ClassBurger {
 
               [...nodes].forEach(toggle => {
                 removeClass(toggle, onClass);
+                callback(toggle);
               });
 
               document.removeEventListener("keyup", onEscHandler);

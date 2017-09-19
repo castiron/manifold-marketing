@@ -75,6 +75,10 @@
       a {
         @include navPrimary;
         color: $offBlack;
+
+        &:hover {
+          color: $white;
+        }
       }
 
       .search-link {
@@ -82,9 +86,29 @@
 
         &::before {
           padding-right: 9px;
-          font-size: 18px;
+          font-size: 25px;
           color: $white;
           vertical-align: baseline;
+
+          @include respond($break60) {
+            font-size: 25px;
+          }
+
+          @include respond($break30) {
+            font-size: 4.2vw;
+          }
+
+          @include respond($break20) {
+            font-size: 18px;
+          }
+        }
+
+        &:hover {
+          color: $offBlack;
+
+          &::before {
+            color: $offBlack;
+          }
         }
       }
     }
@@ -117,7 +141,7 @@
 
   &.open {
     max-height: 100vh;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .main-logo {
