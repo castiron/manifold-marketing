@@ -4,6 +4,7 @@ import HeightMatch from "./height-match";
 import ScrollTarget from "./scroll-target";
 import CssSlider from "./css-slider";
 import Rellax from "rellax";
+import Modernizr from "./lib/modernizr-custom";
 
 class ManifoldTheme {
   init() {

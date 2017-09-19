@@ -134,6 +134,7 @@
     }
 
     .sign-secondary {
+      width: 100%;
       flex-grow: 2;
       margin-top: 15px;
       color: $gray06;
@@ -405,6 +406,8 @@
   }
 
   .blurb {
+    width: 100%;
+
     .heading-primary {
       max-width: 622px;
       margin: 0 auto;
