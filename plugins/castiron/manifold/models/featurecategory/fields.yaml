@@ -16,9 +16,18 @@ fields:
         label: Icon
         type: dropdown
         options:
+            binoculars: Binoculars
             glasses: Glasses
             pencil: Pencil
-            binoculars: Binoculars
+            word-bubble-multiple: Word Bubbles
+            transform-square-to-circle: Square to Circle
+            nodes: Nodes
+            watering-can: Watering Can
+            bar-graph: Bar Graph
+            bookpile-small: Bookpile
+            cone: Cone
+            caliper: Caliper
+            wrench: Wrench
     user_type:
         label: User Type
         type: dropdown
