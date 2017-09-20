@@ -2,6 +2,7 @@ title = "Learn"
 url = "/learn"
 layout = "default"
 
+[usertypes]
 ==
 
 {% set partners = [
@@ -369,7 +370,7 @@ layout = "default"
 {% partial 'callouts/video-callout-centered' next_background='white' title='You have the content.
 Manifold provides the platform.' subtitle='Manifold is the easy method for academic publishers to move their catalog online and provide a powerful reading, annotation, and community experience for everyone.' video_title='Watch The Tour' video_link='#' %}
 
-{% partial 'blocks/tabbed-grid' description=actions_groups.description tabs=actions_groups.groups %}
+{% partial 'blocks/tabbed-grid' description='Description of why Manifold is a great experience for this category of user.' tabs=usertypes.all %}
 
 {% partial 'blocks/two-column-newspaper' content=newspaper_content %}
 

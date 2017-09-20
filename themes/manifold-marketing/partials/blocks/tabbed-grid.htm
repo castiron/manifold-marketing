@@ -8,10 +8,10 @@
 					<div class="tab-trigger col col-3" data-pager-ordinal="{{ loop.index }}">
 						<div class="actions-badge">
 							<div class="background-circle"></div>
-							<i class="icon icon-{{ trigger.badge }}"></i>
+							<i class="icon icon-{{ trigger.icon }}"></i>
 						</div>
 						<div class="sign-tertiary">
-							{{ trigger.group_name }}
+							{{ trigger.name }}
 							<hr>
 						</div>
 					</div>
@@ -25,13 +25,13 @@
 			{% for tab in tabs %}
 				<div class="tab">
 					<div class="inner-container">
-					{% for action in tab.actions %}
+					{% for feature_category in tab.feature_categories %}
 						<div class="action">
 							<div class="action-header">
-								<i class="icon icon-{{ action.icon }}"></i>
-								<span class="subheading-secondary">{{ action.name }}</span>
+								<i class="icon icon-{{ feature_category.icon }}"></i>
+								<span class="subheading-secondary">{{ feature_category.name }}</span>
 							</div>
-							{% partial 'blocks/features-group' features=action.features %}
+							{% partial 'blocks/features-group' features=feature_category.features %}
 						</div>
 					{% endfor %}
 					</div>

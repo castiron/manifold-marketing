@@ -33,7 +33,8 @@
         "october/cms": "~1.0",
         "laravel/framework": "5.5.*",
         "wikimedia/composer-merge-plugin": "dev-master",
-        "castiron/webpackassets-plugin": "1.0.5"
+        "castiron/webpackassets-plugin": "1.0.5",
+        "rainlab/builder-plugin": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
