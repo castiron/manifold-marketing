@@ -62,4 +62,5 @@
   'RainLab\\Builder\\Classes\\ControlDesignTimeProviderBase' => 'plugins/rainlab/builder/classes/ControlDesignTimeProviderBase.php',
   'RainLab\\Builder\\Widgets\\DefaultControlDesignTimeProvider' => 'plugins/rainlab/builder/widgets/DefaultControlDesignTimeProvider.php',
   'Castiron\\Manifold\\Components\\usertypes' => 'plugins/castiron/manifold/components/usertypes.php',
+  'Castiron\\Manifold\\Components\\UserTypes' => 'plugins/castiron/manifold/components/UserTypes.php',
 );

@@ -5,7 +5,7 @@ use Castiron\Manifold\Models\FeatureCategory;
 use Castiron\Manifold\Models\UserType;
 use Castiron\Manifold\Models\Feature;
 
-class Usertypes extends ComponentBase
+class UserTypes extends ComponentBase
 {
     public function componentDetails()
     {

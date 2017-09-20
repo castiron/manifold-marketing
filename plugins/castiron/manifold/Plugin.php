@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Castiron\Manifold\Components\UserTypes;
 
 /**
  * manifold Plugin Information File
@@ -51,7 +52,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Castiron\Manifold\Components\usertypes' => 'usertypes',
+            UserTypes::class => 'usertypes',
         ];
     }
 
