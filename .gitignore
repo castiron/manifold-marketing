@@ -28,4 +28,6 @@
 # Most of this will be managed by Composer
 /modules/*
 /plugins/*
-!/plugins/castiron/hockney
+/plugins/castiron/*
+!/plugins/castiron
+!/plugins/castiron/manifold

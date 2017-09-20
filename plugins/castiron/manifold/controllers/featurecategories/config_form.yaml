@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Feature Category
+
+# Model Form Field configuration
+form: $/castiron/manifold/models/featurecategory/fields.yaml
+
+# Model Class name
+modelClass: Castiron\Manifold\Models\FeatureCategory
+
+# Default redirect location
+defaultRedirect: castiron/manifold/featurecategories
+
+# Create page
+create:
+    title: Create Feature Category
+    redirect: castiron/manifold/featurecategories/update/:id
+    redirectClose: castiron/manifold/featurecategories
+
+# Update page
+update:
+    title: Edit Feature Category
+    redirect: castiron/manifold/featurecategories
+    redirectClose: castiron/manifold/featurecategories
+
+# Preview page
+preview:
+    title: Preview Feature Category

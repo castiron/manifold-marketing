@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Feature
+
+# Model Form Field configuration
+form: $/castiron/manifold/models/feature/fields.yaml
+
+# Model Class name
+modelClass: Castiron\Manifold\Models\Feature
+
+# Default redirect location
+defaultRedirect: castiron/manifold/features
+
+# Create page
+create:
+    title: Create Feature
+    redirect: castiron/manifold/features/update/:id
+    redirectClose: castiron/manifold/features
+
+# Update page
+update:
+    title: Edit Feature
+    redirect: castiron/manifold/features
+    redirectClose: castiron/manifold/features
+
+# Preview page
+preview:
+    title: Preview Feature

@@ -1,0 +1,31 @@
+1.0.1: 'First version of manifold'
+1.0.2:
+    - 'Created table castiron_manifold_user_types'
+    - builder_table_create_castiron_manifold_user_types.php
+1.0.3:
+    - 'Created table castiron_manifold_feature_categories'
+    - builder_table_create_castiron_manifold_feature_categories.php
+1.0.4:
+    - 'Created table castiron_manifold_features'
+    - builder_table_create_castiron_manifold_features.php
+1.0.5:
+    - 'Updated table castiron_manifold_user_types'
+    - builder_table_update_castiron_manifold_user_types.php
+1.0.6:
+    - 'Updated table castiron_manifold_features'
+    - builder_table_update_castiron_manifold_features.php
+1.0.7:
+    - 'Updated table castiron_manifold_feature_categories'
+    - builder_table_update_castiron_manifold_feature_categories.php
+1.0.8:
+    - 'Updated table castiron_manifold_feature_categories'
+    - builder_table_update_castiron_manifold_feature_categories_2.php
+1.0.9:
+    - 'Updated table castiron_manifold_features'
+    - builder_table_update_castiron_manifold_features_2.php
+1.0.10:
+    - 'Updated table castiron_manifold_feature_categories'
+    - builder_table_update_castiron_manifold_feature_categories_3.php
+1.0.11:
+    - 'Updated table castiron_manifold_features'
+    - builder_table_update_castiron_manifold_features_3.php

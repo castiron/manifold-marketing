@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: User Type
+
+# Model Form Field configuration
+form: $/castiron/manifold/models/usertype/fields.yaml
+
+# Model Class name
+modelClass: Castiron\Manifold\Models\UserType
+
+# Default redirect location
+defaultRedirect: castiron/manifold/usertypes
+
+# Create page
+create:
+    title: Create User Type
+    redirect: castiron/manifold/usertypes/update/:id
+    redirectClose: castiron/manifold/usertypes
+
+# Update page
+update:
+    title: Edit User Type
+    redirect: castiron/manifold/usertypes
+    redirectClose: castiron/manifold/usertypes
+
+# Preview page
+preview:
+    title: Preview User Type

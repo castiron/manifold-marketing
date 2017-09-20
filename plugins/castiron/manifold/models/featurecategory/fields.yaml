@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+        label: Name
+        type: text
+    description:
+        label: Description
+        type: textarea
+    icon:
+        label: Icon
+        type: dropdown
+        options:
+            glasses: Glasses
+            pencil: Pencil
+            binoculars: Binoculars
+    user_type:
+        label: User Type
+        type: dropdown
