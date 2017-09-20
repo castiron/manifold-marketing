@@ -53,6 +53,7 @@ class Plugin extends PluginBase
     {
         return [
             UserTypes::class => 'usertypes',
+            'Castiron\Manifold\Components\Seed' => 'seed'
         ];
     }
 

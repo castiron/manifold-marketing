@@ -63,4 +63,6 @@
   'RainLab\\Builder\\Widgets\\DefaultControlDesignTimeProvider' => 'plugins/rainlab/builder/widgets/DefaultControlDesignTimeProvider.php',
   'Castiron\\Manifold\\Components\\usertypes' => 'plugins/castiron/manifold/components/usertypes.php',
   'Castiron\\Manifold\\Components\\UserTypes' => 'plugins/castiron/manifold/components/UserTypes.php',
+  'Castiron\\Manifold\\Components\\Partners' => 'plugins/castiron/manifold/components/Partners.php',
+  'Castiron\\Manifold\\Components\\Seed' => 'plugins/castiron/manifold/components/Seed.php',
 );
