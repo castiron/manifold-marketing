@@ -11,13 +11,11 @@
       </div>
     </div>
     <ul class="mobile-main-nav">
-      <li class="mobile-main-nav-item"><a href="/">Home</a></li>
-      <li class="mobile-main-nav-item"><a href="/learn">Learn</a></li>
-      <li class="mobile-main-nav-item"><a href="#">Community</a></li>
-      <li class="mobile-main-nav-item"><a href="#">Resources</a></li>
-      <li class="mobile-main-nav-item"><a href="/services">Services</a></li>
-      <li class="mobile-main-nav-item"><a href="#">Get Started</a></li>
-      <li class="mobile-main-nav-item"><a href="#" class="search-link">Search</a></li>
+      {% for item in items %}
+        <li class="mobile-main-nav-item {{item.url == this.page.url or '/' == this.page.url ? 'active' : ''}}"><a href="{{item.url}}">{{item.text}}</a></li>
+      {% endfor %}
+      <li class="mobile-main-nav-item"><a href="http://manifold.umn.edu/">Get Started</a></li>
+      <li class="mobile-main-nav-item"><a href="/search" class="search-link">Search</a></li>
     </ul>
   </div>
 </div>

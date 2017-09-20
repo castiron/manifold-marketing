@@ -1,8 +1,9 @@
 <ul class="main-nav desktop-only">
-  <li class="main-nav-item"><a href="/learn">Learn</a></li>
-  <li class="main-nav-item"><a href="#">Community</a></li>
-  <li class="main-nav-item"><a href="#">Resources</a></li>
-  <li class="main-nav-item"><a href="/services">Services</a></li>
-  <li class="main-nav-item"><a href="#" class="search-link"></a></li>
-  <li class="main-nav-item"><a href="#" class="button primary">Get Started</a></li>
+  {% for item in items %}
+    {% if item.url != '/' %}
+      <li class="main-nav-item {{item.url == this.page.url or '/' == this.page.url ? 'active' : ''}}"><a href="{{item.url}}">{{item.text}}</a></li>
+    {% endif %}
+  {% endfor %}
+  <li class="main-nav-item"><a href="/search" class="search-link"></a></li>
+  <li class="main-nav-item"><a href="http://manifold.umn.edu/" class="button primary">Get Started</a></li>
 </ul>

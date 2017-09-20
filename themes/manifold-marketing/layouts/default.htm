@@ -1,11 +1,22 @@
+{% set navitems = [
+  { url: "/", text: "Home" },
+  { url: "/learn", text: "Learn" },
+  { url: "/community", text: "Community" },
+  { url: "/resources", text: "Resources" },
+  { url: "/services", text: "Services" },
+] %}
+
 <!DOCTYPE html>
 <html>
     {% partial "html-head" %}
     <body>
         <!-- Site Header, Nav -->
-        {% partial "header" %}
+        {% partial "header" navitems=navitems %}
 
-        {% page %}
+        <!-- Main page content -->
+        <main>
+          {% page %}
+        </main>
 
         <!-- Footer navigation, colophon -->
         {% partial "footer" %}

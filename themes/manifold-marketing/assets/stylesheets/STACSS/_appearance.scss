@@ -210,6 +210,7 @@ $icons: (
   text-align: center;
   text-decoration: none;
   transition: color $timing $duration, background-color $timing $duration, border-color $timing $duration;
+  appearance: button;
 
   &::after {
     transition: border-right-color $timing $duration, border-bottom-color $timing $duration;

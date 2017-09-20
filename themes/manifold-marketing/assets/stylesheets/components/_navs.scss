@@ -23,11 +23,17 @@
       + .main-nav-item {
         margin-left: 30px;
       }
+
+      &.active {
+        a {
+          color: $gray06;
+        }
+      }
     }
 
     a {
       @include navPrimary;
-      color: $gray06;
+      color: $gray02;
       text-decoration: none;
       vertical-align: middle;
 

@@ -77,4 +77,123 @@ class Seed extends ComponentBase
 
       return array($partner1, $partner2, $partner3);
     }
+
+    public function services()
+    {
+      $production_services = array(
+        'background' => 'gray',
+        'title' => 'Production Services',
+        'packages' => array(
+          array(
+            'price' => '$3,000',
+            'name' => 'Base Package',
+            'content' => "
+              <div class='copy-secondary'>Includes the following services for one project file and up to ten resources:</div>
+              <div class='flex-row'>
+                <div class='col'>
+                  <div class='subheading-secondary'>book file</div>
+                  <ul>
+                    <li>Cleanup of file structure</li>
+                    <li>Ingestion onto system</li>
+                    <li>Basic metadata curation</li>
+                  </ul>
+                </div>
+                <div class='col'>
+                  <div class='subheading-secondary'>resources</div>
+                  <ul>
+                    <li>Ingestion onto system</li>
+                    <li>Placement within text(s)</li>
+                    <li>Basic metadata curation</li>
+                  </ul>
+                </div>
+              </div>
+            "
+          ),
+          array(
+            'price' => '$1,000',
+            'name' => 'Resource Package',
+            'content' => "
+              <div class='copy-secondary'>Add a block of ten resources (at once or over time) to existing projects, with the following services:</div>
+              <ul>
+                <li>Ingestion onto system</li>
+                <li>Placement within text(s)</li>
+                <li>Metadata curation</li>
+              </ul>
+            "
+          ),
+          array(
+            'price' => 'Variable',
+            'name' => 'Accessibility Package',
+            'content' => "
+              <div class='copy-secondary'>For those who would like customized accessibility metadata crafted for their resources, we offer that service at the above rate for groups of ten resources.</div>
+            "
+          ),
+          array(
+            'price' => 'Variable',
+            'name' => 'Copyediting Package',
+            'content' => "
+              <div class='copy-secondary'>Call to discuss and get a quote for which of the following services are right for your project:</div>
+              <ul>
+                <li>Cleanup of file structure</li>
+                <li>Text tagging and encoding</li>
+                <li>
+                  Copyediting:
+                  <ul>
+                    <li>Evaluating level of edit needed</li>
+                    <li>Preparing bespoke editing instructions for the copy editor</li>
+                    <li>Scheduling and coordinating workflow with freelance copy editor and author(s)</li>
+                    <li>Reviewing and finalizing edit</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class='copy-secondary'>Files will be reviewed upon submission to confirm their level of complexity falls within the expected range. You will be notified if your materials may require extra time or attention before we commence our work.</div>
+            "
+          )
+        )
+      );
+
+      $hosting_services = array(
+        'background' => 'white',
+        'title' => 'Hosting Services',
+        'packages' => array(
+          array(
+            'price' => '$???',
+            'name' => 'Consultation Package',
+            'content' => "
+              <div class='copy-secondary'>For organizations wanting hosting assistance and consultation, we will work with you to examine the best hosting options available for your situation—be they your own servers or cloud based solutions.</div>
+            "
+          ),
+          array(
+            'price' => '$???',
+            'name' => 'Installation Package',
+            'content' => "
+              <div class='copy-secondary'>A one‐time service, deploying and configuring the platform to your or a service‐provider's servers.</div>
+            "
+          ),
+          array(
+            'price' => 'Variable',
+            'name' => 'Maintenance Package',
+            'content' => "
+              <div class='copy-secondary'>To keep pace with new features and enhancements we offer platform upgrades and maintence at a rate of $$$/hour.</div>
+            "
+          )
+        )
+      );
+
+      $customization_services = array(
+        'background' => 'gray',
+        'title' => 'Customization Services',
+        'packages' => array(
+          array(
+            'price' => 'Variable',
+            'name' => 'Feature Package',
+            'content' => "
+              <div class='copy-secondary'>For organizations that want to create custom add-ons to the platform, we will work with you to design, test, and implement those features at a rate of $$$/hour.</div>
+            "
+          )
+        )
+      );
+
+      return [$production_services, $hosting_services, $customization_services];
+    }
 }
