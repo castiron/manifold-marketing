@@ -23,87 +23,6 @@ layout = "default"
   }
 ] %}
 
-{% set actions_groups = [
-  {
-    group_name: 'Readers',
-    badge: 'book-page-turn',
-    actions: [
-      {
-        name: 'read',
-        description: 'Beautiful fonts, control over type sizing and  margins, and a smooth, responsive interface make for a great reading experience.',
-        icon: 'glasses'
-      },
-      {
-        name: 'annotate',
-        description: 'Support for annotations, highlighting, and bookmarking allow you to make each text your own.',
-        icon: 'pencil'
-      },
-      {
-        name: 'engage',
-        description: 'Robust community sharing and discussion threads allow you to interact with other readers and authors to help shape the work.',
-        icon: 'word-bubble-multiple'
-      },
-      {
-        name: 'explore',
-        description: 'Every Manifold project can have iterative texts, drafts, and additional resources; providing depth and  context beyond the printed page.',
-        icon: 'binoculars'
-      }
-    ]
-  },
-  {
-    group_name: 'Authors',
-    badge: 'laptop',
-    actions: [
-      {
-        name: 'iterate',
-        description: 'Support for multiple texts within a Manifold project allows you to post early drafts, research documentation, and other supporting texts.',
-        icon: 'transform-square-to-circle'
-      },
-      {
-        name: 'share',
-        description: 'Easily share links to texts, sections, research materials, resources, and archives. Share directly, or through your preferred social media platforms.',
-        icon: 'nodes'
-      },
-      {
-        name: 'enrich',
-        description: 'Manifold projects can feature collections of media & resources that help your audience move  beyond the limitations of standalone texts.',
-        icon: 'watering-can'
-      },
-      {
-        name: 'analyze',
-        description: 'View detailed metrics showing how and where readers are engaging with your work, and directly reply or interact with them.',
-        icon: 'bar-graph'
-      }
-    ]
-  },
-  {
-    group_name: 'Publishers',
-    badge: 'bookpile-small',
-    actions: [
-      {
-        name: 'integrate',
-        description: 'Every project is an authorized digital counterpart for your printed edition, with the same editorial standards and workflows.',
-        icon: 'van-diagram'
-      },
-      {
-        name: 'adapt',
-        description: 'Seamlessly import most major current digital formats, with support for modern publishing  and metadata standards like DOI and cross ref.',
-        icon: 'cone'
-      },
-      {
-        name: 'measure',
-        description: 'Manifold’s detailed analytics allow you to measure and review reading counts and user engagement for all your projects and texts.',
-        icon: 'caliper'
-      },
-      {
-        name: 'control',
-        description: 'Publishers have nearly unlimited  flexibility with Manifold. Customize colors and branding, or make deeper adjustments to the code itself.',
-        icon: 'wrench'
-      }
-    ]
-  }
-] %}
-
 {% partial 'callouts/video-callout' title='Welcome to Manifold.' subtitle='The intuitive, collaborative, open-source platform for scholarly publishing you’ve been waiting for.' video_title='Why Manifold?' video_link='#' %}
 
 {% partial 'callouts/one-button-callout' icon="bugle" message="Headline description of an announcement, something that summarizes the news or event and intrigues the user" button_text="Learn More" link="#" %}
@@ -115,6 +34,8 @@ layout = "default"
 {% partial 'callouts/two-button-callout' title='Do it yourself, or enlist our experts to help.' subtitle='Different publishers have different needs. If you’ve got the resources and technical skills, you can install and maintain Manifold yourself. If you need assistance, <a href="#">Manifold Publishing Services</a> can help you install and maintain your web publishing workflow.' %}
 
 {% partial 'callouts/image-full-width-callout' desktop_image_path='themes/manifold-marketing/assets/images/background-image-2.png' mobile_image_path='themes/manifold-marketing/assets/images/background-image-1.png' title='Manifold hearts<br/>modern devices.' subtitle='Manifold is built to be responsive, fast, and intuitive on all your digital devices—smartphones, tablets, notebooks, and desktops.' %}
+
+{% partial 'callouts/one-button-callout-centered' title='Manifold is grant-funded, not-for-profit, and 100% open source.' subtitle='Manifold is generously supported by a grant from the Andrew W. Mellon Foundation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.' button_text='Learn more about Manifold' link='#' %}
 
 {% partial 'blog-roll' blog_link="#" posts=blog_posts %}
 

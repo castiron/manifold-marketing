@@ -51,6 +51,23 @@
   }
 }
 
+.one-button-callout-centered {
+  text-align: center;
+
+  .description {
+    margin-top: 32px;
+
+    @include respond($break20) {
+      margin-top: 15px;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 36px;
+  }
+}
+
 .two-button-callout {
   .block-intro {
     .heading-primary {

@@ -140,6 +140,33 @@
   @include containerCalloutSecondary;
 }
 
+@mixin containerCalloutTertiary {
+  @include blockPadding;
+  max-width: $containerWidth;
+  padding-right: 270px;
+  padding-left: 270px;
+  margin: 0 auto;
+
+  @include respond($break110) {
+    padding-right: 22.5vw;
+    padding-left: 22.5vw;
+  }
+
+  @include respond($break50) {
+    padding-right: 4.76vw;
+    padding-left: 4.76vw;
+  }
+
+  @include respond($break20) {
+    padding-right: $containerPaddingMin;
+    padding-left: $containerPaddingMin;
+  }
+}
+
+.container-callout-tertiary {
+  @include containerCalloutTertiary;
+}
+
 
 // Layout
 // --------------------------------------------------------
