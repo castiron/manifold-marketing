@@ -3,16 +3,27 @@ url = "/learn"
 layout = "default"
 
 [usertypes]
-[seed]
 ==
 
 {% partial 'callouts/video-callout-centered' next_background='white' title='You have the content.
 Manifold provides the platform.' subtitle='Manifold is the easy method for academic publishers to move their catalog online and provide a powerful reading, annotation, and community experience for everyone.' video_title='Watch The Tour' video_link='#' %}
 
+{% partial 'blocks/block' title="[What is Manifold?]" subtitle="[Copy TBD]" background="gray" %}
+
 {% partial 'blocks/tabbed-grid' description='Description of why Manifold is a great experience for this category of user.' tabs=usertypes.all %}
 
-{% partial 'blocks/two-column-newspaper' content=seed.newspaper %}
+{% partial 'blocks/two-column-newspaper' label="History" title="Where does Manifold come from?" content=seed.newspaper %}
 
 {% partial 'blocks/three-column-summaries' label='partners' title="Who's making Manifold?" partners=seed.partners %}
 
 {% partial 'contact-form' %}
+
+
+<!--We need this stuff for search:-->
+<div class="qq-invisible">
+    <div data-qq="title">Learn</div>
+    <div data-qq="local_uri">/learn</div>
+    <div data-qq="description">
+        Manifold is the easy method for academic publishers to move their catalog online and provide a powerful reading, annotation, and community experience for everyone.
+    </div>
+</div>

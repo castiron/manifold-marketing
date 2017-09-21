@@ -12,9 +12,9 @@
     </div>
     <ul class="mobile-main-nav">
       {% for item in items %}
-        <li class="mobile-main-nav-item {{item.url == this.page.url or '/' == this.page.url ? 'active' : ''}}"><a href="{{item.url}}">{{item.text}}</a></li>
+        <li class="mobile-main-nav-item {{item.url == this.page.url or '/' and '/get-started' == this.page.url == this.page.url ? 'active' : ''}}"><a href="{{item.url}}">{{item.text}}</a></li>
       {% endfor %}
-      <li class="mobile-main-nav-item"><a href="http://manifold.umn.edu/">Get Started</a></li>
+      <li class="mobile-main-nav-item"><a href="/get-started">Get Started</a></li>
       <li class="mobile-main-nav-item"><a href="/search" class="search-link">Search</a></li>
     </ul>
   </div>

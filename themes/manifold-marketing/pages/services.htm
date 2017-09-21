@@ -2,8 +2,9 @@ title = "Services"
 url = "/services"
 layout = "default"
 
-[seed]
 ==
+
+{% partial 'blocks/block' title="[Manifold Digital Services Overview]" subtitle="<p>[Copy TBD]</p><p>Manifold was built to be easy to install and use by people with minimal technical skills. We realize that you may not have the time or capacity to install and publish a project on your own and offer support for installation and project set up. See our Services Menu for more information about how we can help you install and publish your projects. </p>" background="white" %}
 
 {% for service in seed.services %}
     {% if loop.index % 2 > 0 %}
@@ -14,3 +15,14 @@ layout = "default"
 
     {% partial 'blocks/summaries-list' background=background title=service.title summaries=service.packages %}
 {% endfor %}
+
+{% partial 'blocks/block' title="[MDS Contact Form]" subtitle="<p>[Copy TBD]</p><p>For project production help contact Terence Smyre, Digital Project Editor at the University of Minnesota Press. <a href='#'>tsmyre@umn.edu</a></p>" background="primary" %}
+
+<!--We need this stuff for search:-->
+<div class="qq-invisible">
+    <div data-qq="title">Services</div>
+    <div data-qq="local_uri">/services</div>
+    <div data-qq="description">
+        Manifold Services
+    </div>
+</div>

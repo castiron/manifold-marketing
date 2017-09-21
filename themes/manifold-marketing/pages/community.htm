@@ -2,11 +2,23 @@ title = "Community"
 url = "/community"
 layout = "default"
 
-[seed]
 ==
 
-<section class="background-white">
-  <div class="block">
-    {% partial 'blocks/intro' title='Community' subtitle='Donec quis purus id velit tincidunt efficitur. Etiam iaculis nibh nisi, sed consequat mauris interdum eget.' %}
-  </div>
-</section>
+{% partial 'blocks/block' title="Featured Projects" subtitle="Check out Metagaming: Playing, Competing, Spectating, Cheating, Trading, Making, and Breaking Videogames by Stephanie Boluk and Patrick LeMieux to see a great example of a project that integrates media Resources—including video games, movies, and images—into the text that appears in the print edition." background="gray" %}
+
+{% partial 'blocks/block' title="[Case Study—Manifold at Minnesota]" subtitle="[Copy TBD]" background="white" %}
+
+{% partial 'blocks/block' title="[Testimonials]" subtitle='<p>[Copy TBD]</p><p>“The process of writing a book introduces you to archivists and artists, friends and colleagues. Once published, all of those collaborations are fixed in a static artifact. The promise of Manifold is not only that new communities can continue to form around a book, but also that the book in turn can continue to evolve around its interlocutors.”</p><p>—Grant Wythoff, editor of The Perversity of Things: Hugo Gernsback on Media, Tinkering, and Scientifiction</p>' background="gray" %}
+
+{% partial 'blocks/block' title="[Manifold Community (Gitter Link)]" subtitle='[Copy TBD]' background="white" %}
+
+{% partial 'contact-form' %}
+
+<!--We need this stuff for search:-->
+<div class="qq-invisible">
+    <div data-qq="title">Community</div>
+    <div data-qq="local_uri">/community</div>
+    <div data-qq="description">
+        Manifold Community
+    </div>
+</div>

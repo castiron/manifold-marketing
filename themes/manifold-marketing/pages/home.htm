@@ -3,22 +3,21 @@ url = "/"
 layout = "default"
 
 [usertypes]
-[seed]
 ==
 
 {% partial 'callouts/video-callout' title='Welcome to Manifold.' subtitle='The intuitive, collaborative, open-source platform for scholarly publishing you’ve been waiting for.' video_title='Why Manifold?' video_link='#' %}
 
-{% partial 'callouts/one-button-callout' icon="bugle" message="Headline description of an announcement, something that summarizes the news or event and intrigues the user" button_text="Learn More" link="#" %}
+{% partial 'callouts/announcement-callout' icon="bugle" announcement="<div class='heading-tertiary'>Wecome to Manifold</div><div class='sign-secondar'>The intuitive, collaborative, open-source platform for scholarly publishing you’ve been waiting for.</div>" button_text="Learn More" link="#" %}
 
 {% partial 'callouts/image-to-left-callout' partial_path='svgs/bookpile-to-phone' title='B.Y.O.B.' subtitle='Bring Your Own Books' description="Publishers already work with authors, license copyrights, and create printed books. Let Manifold handle the web-based editions. You can easily convert your existing files into online publications, and Manifold’s open-source platform provides a beautiful, deep reading experience that fosters community and encourages discussion. If you need help getting started, we also offer <a href='#'>Publishing Services</a> to guide you every step of the way." %}
 
 {% partial 'actions-grid' title='Manifold is built with real users in mind.' subtitle='Manifold is designed with thoughtful features and powerful workflows throughout:' actions_groups=usertypes.all %}
 
-{% partial 'callouts/two-button-callout' title='Do it yourself, or enlist our experts to help.' subtitle='Different publishers have different needs. If you’ve got the resources and technical skills, you can install and maintain Manifold yourself. If you need assistance, <a href="#">Manifold Publishing Services</a> can help you install and maintain your web publishing workflow.' %}
+{% partial 'callouts/two-button-callout' title='Do it yourself, or enlist our experts to help.' subtitle='Different publishers have different needs. If you’ve got the resources and technical skills, you can install and maintain Manifold yourself. If you need assistance, <a href="#">Manifold Publishing Services</a> can help you install and maintain your web publishing workflow.' button_one_text="We have the resources and technical skills. Let’s go." button_one_link="#" button_two_text="We need some help getting our workflow setup." button_two_link="#" %}
 
 {% partial 'callouts/image-full-width-callout' desktop_image_path='themes/manifold-marketing/assets/images/background-image-2.png' mobile_image_path='themes/manifold-marketing/assets/images/background-image-1.png' title='Manifold hearts<br/>modern devices.' subtitle='Manifold is built to be responsive, fast, and intuitive on all your digital devices—smartphones, tablets, notebooks, and desktops.' %}
 
-{% partial 'callouts/one-button-callout-centered' title='Manifold is grant-funded, not-for-profit, and 100% open source.' subtitle='Manifold is generously supported by a grant from the Andrew W. Mellon Foundation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.' button_text='Learn more about Manifold' link='#' %}
+{% partial 'callouts/one-button-callout-centered' intro="Manifold is an elegant, robust platform enabling publishers to engage readers with scholarly works published on the web. Publishers and authors can take advantage of archival materials increasingly available on the web, and share with readers research materials, filmed images, field notes, ethnographic materials, sketches, maps, audio recordings, interviews, and other forms of research. " title='Manifold is grant-funded, not-for-profit, and 100% open source.' subtitle='When you combine two public universities, a digital development agency staffed by humanities scholars, and a grant from a scholarly communications funder you get a publishing platform that is free to use and free to adapt and meet your unique needs. We spent three years developing Manifold, ensuring that it is easy for everyone to install and use. Because it is open source, you can develop additional features that you want.' button_text='Learn more about Manifold' link='#' %}
 
 {% partial 'blog-roll' blog_link="#" posts=seed.posts %}
 
