@@ -43,6 +43,7 @@ class Seed extends ComponentBase
     public function newspaper()
     {
         return "
+    <p>[Copy TBD]</p>
     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
     <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
     <p>Et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
@@ -57,22 +58,22 @@ class Seed extends ComponentBase
       $partner1 = array(
           'name' => 'University of Minnesota Press',
           'logo_path' => 'themes/manifold-marketing/assets/images/logo-mn.png',
-          'description' => 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
-          'link' => '#'
+          'description' => 'The University of Minnesota Press is recognized internationally for its innovative, boundary-breaking editorial program in the humanities and social sciences and as publisher of the Minnesota Multiphasic Personality Inventory (MMPI), the most widely used objective tests of personality in the world. Minnesota also maintains as part of its mission a strong commitment to publishing books on the people, history, and natural environment of Minnesota and the Upper Midwest. Established in 1925, Minnesota is among the founding members of the Association of American University Presses (AAUP).',
+          'link' => 'https://www.upress.umn.edu/'
       );
 
       $partner2 = array(
         'name' => 'Cast Iron Coding',
         'logo_path' => 'themes/manifold-marketing/assets/images/logo-cic.svg',
-        'description' => 'issimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
-        'link' => '#'
+        'description' => '[Copy TBD] issimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
+        'link' => 'http://castironcoding.com/'
       );
 
       $partner3 = array(
         'name' => 'GC Digital Scholarship Lab at the Graduate Center, CUNY',
         'logo_path' => 'themes/manifold-marketing/assets/images/logo-cic.svg',
-        'description' => 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
-        'link' => '#'
+        'description' => 'The GC Digital Scholarship Lab is a research and community space at the Graduate Center of the City University of New York that focuses on the creation and use of collaboratively produced, community-based open-source software platforms for scholarly communication.',
+        'link' => 'https://gcdsl.commons.gc.cuny.edu/'
       );
 
       return array($partner1, $partner2, $partner3);
@@ -160,7 +161,7 @@ class Seed extends ComponentBase
             'price' => '$???',
             'name' => 'Consultation Package',
             'content' => "
-              <div class='copy-secondary'>For organizations wanting hosting assistance and consultation, we will work with you to examine the best hosting options available for your situation—be they your own servers or cloud based solutions.</div>
+              <div class='copy-secondary'>For organizations wanting hosting assistance and consultation, we will work with you to examine the best hosting options available for your situation—be they your own servers or cloud‐based solutions.</div>
             "
           ),
           array(
@@ -188,7 +189,7 @@ class Seed extends ComponentBase
             'price' => 'Variable',
             'name' => 'Feature Package',
             'content' => "
-              <div class='copy-secondary'>For organizations that want to create custom add-ons to the platform, we will work with you to design, test, and implement those features at a rate of $$$/hour.</div>
+              <div class='copy-secondary'>For organizations that want to create custom add‐ons to the platform, we will work with you to design, test, and implement those features at a rate of $$$/hour.</div>
             "
           )
         )

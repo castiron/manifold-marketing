@@ -2,6 +2,7 @@ title = "Community"
 url = "/community"
 layout = "default"
 
+[contactform]
 ==
 
 {% partial 'blocks/block' title="Featured Projects" subtitle="Check out Metagaming: Playing, Competing, Spectating, Cheating, Trading, Making, and Breaking Videogames by Stephanie Boluk and Patrick LeMieux to see a great example of a project that integrates media Resources—including video games, movies, and images—into the text that appears in the print edition." background="gray" %}
@@ -12,7 +13,7 @@ layout = "default"
 
 {% partial 'blocks/block' title="[Manifold Community (Gitter Link)]" subtitle='[Copy TBD]' background="white" %}
 
-{% partial 'contact-form' %}
+{% component 'contactform' %}
 
 <!--We need this stuff for search:-->
 <div class="qq-invisible">

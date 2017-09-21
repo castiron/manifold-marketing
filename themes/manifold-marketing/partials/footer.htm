@@ -19,7 +19,7 @@
           </li>
           <li class="col social-nav main-nav-nested">
             <ul class="">
-              <li class="main-nav-item"><a href="mailto:office@castironcoding.com?Subject=manifoldTest" class="icon-email">Email</a></li>
+              <li class="main-nav-item"><a href="/contact" class="icon-email">Email</a></li>
               <li class="main-nav-item"><a href="https://github.com/ManifoldScholar" class="icon-github">Github</a></li>
               <li class="main-nav-item"><a href="https://twitter.com/manifoldscholar" class="icon-twitter">Twitter</a></li>
             </ul>
@@ -32,9 +32,14 @@
       </a>
     </div>
     <div>
-      <span class="search-input gray">
+      <form>
+        <span class="search-input gray">
+          <input  type="text" name="search" placeholder="Search">
+        </span>
+      </form>
+{#       <span class="search-input gray">
         {% component 'manifoldsearchresults::form'  %}
-      </span>
+      </span> #}
     </div>
     <div class="colophon">
       © {{ "now"|date("Y") }} Manifold.

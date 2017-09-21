@@ -31,3 +31,4 @@
 /plugins/castiron/*
 !/plugins/castiron
 !/plugins/castiron/manifold
+!/plugins/castiron/forms

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Contact
+
+# Model Form Field configuration
+form: $/castiron/forms/models/contact/fields.yaml
+
+# Model Class name
+modelClass: Castiron\Forms\Models\Contact
+
+# Default redirect location
+defaultRedirect: castiron/forms/contacts
+
+# Create page
+create:
+    title: Create Contact
+    redirect: castiron/forms/contacts/update/:id
+    redirectClose: castiron/forms/contacts
+
+# Update page
+update:
+    title: Edit Contact
+    redirect: castiron/forms/contacts
+    redirectClose: castiron/forms/contacts
+
+# Preview page
+preview:
+    title: Preview Contact

@@ -24,13 +24,14 @@
   }
 
   .form-input {
-    input[type='text'], input[type='email'] {
+    input[type='text'], input[type='email'], textarea {
       @include subheadingTertiary;
       width: 100%;
       padding: 11px 12px 13px;
       font-weight: $regular;
       color: $gray06;
       background: $white;
+      background-color: $white;
       border: none;
       outline: none;
 
@@ -45,6 +46,10 @@
       &:focus {
         outline: none;
       }
+    }
+
+    textarea {
+      @include copySecondary;
     }
   }
 }

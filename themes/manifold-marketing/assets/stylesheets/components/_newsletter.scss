@@ -1,4 +1,4 @@
-.contact {
+.newsletter {
   align-items: baseline;
   max-width: 900px;
   margin: 0 auto;
@@ -7,11 +7,7 @@
     display: block;
   }
 
-  .full-width & {
-    max-width: none;
-  }
-
-  .contact-summary, .contact-container {
+  .newsletter-summary, .newsletter-container {
     width: 50%;
 
     @include respond($break50) {
@@ -19,25 +15,17 @@
     }
   }
 
-  .contact-container {
+  .newsletter-form {
     padding-left: 10%;
 
     @include respond($break50) {
+      max-width: 360px;
       padding-left: 0;
-    }
-  }
-
-  .contact-form {
-    @include respond($break50) {
       margin: 24px auto 0;
     }
 
-    .form-row {
-      .form-input {
-        + .form-input {
-          margin-left: 20px;
-        }
-      }
+    input[type='email'] {
+      text-align: center;
     }
 
     .submit-button {
@@ -58,6 +46,7 @@
         border: 0;
         transition: background-color $timing $duration;
       }
+
     }
   }
 
@@ -67,26 +56,5 @@
 
   .copy-primary {
     margin-top: 26px;
-  }
-}
-
-.contact-thank-you {
-  .title {
-    color: $white;
-  }
-
-  .message {
-    margin-top: 20px;
-    color: $offBlack;
-  }
-}
-
-.contact-errors {
-  margin-bottom: 20px;
-  color: $gray06;
-
-  ul {
-    @include listTertiary;
-    padding-top: 20px;
   }
 }

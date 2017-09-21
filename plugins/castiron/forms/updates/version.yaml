@@ -1,0 +1,22 @@
+1.0.1: 'First version of Forms'
+1.0.2:
+    - 'Create Castiron.Forms Contacts table'
+    - create_contacts_table.php
+1.0.3:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts.php
+1.0.4:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts_2.php
+1.0.5:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts.php
+1.0.6:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts_2.php
+1.0.7:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts_3.php
+1.0.8:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts_4.php

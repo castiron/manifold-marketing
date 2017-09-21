@@ -4,8 +4,184 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b038f3ac6fde6fb0892173d149c10bc",
+    "content-hash": "fc04f8e4f506e08f6930ffeb8ceda35d",
     "packages": [
+        {
+            "name": "castiron/castiron",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/castiron-module.git",
+                "reference": "257301c8732e5d6003bf7c908c329977bb77af2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/castiron-module/zipball/257301c8732e5d6003bf7c908c329977bb77af2c",
+                "reference": "257301c8732e5d6003bf7c908c329977bb77af2c",
+                "shasum": ""
+            },
+            "type": "october-module",
+            "extra": {
+                "installer-name": "castiron"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Castiron\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Peter Soots",
+                    "email": "peter@castironcoding.com"
+                }
+            ],
+            "description": "Cast Iron Coding's utility module for October CMS",
+            "support": {
+                "source": "https://github.com/castiron/castiron-module/tree/master",
+                "issues": "https://github.com/castiron/castiron-module/issues"
+            },
+            "time": "2015-08-24T23:36:58+00:00"
+        },
+        {
+            "name": "castiron/lib-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/castiron-plugin.git",
+                "reference": "5f9b1d376455c8b6248d4112398150289659338c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/castiron-plugin/zipball/5f9b1d376455c8b6248d4112398150289659338c",
+                "reference": "5f9b1d376455c8b6248d4112398150289659338c",
+                "shasum": ""
+            },
+            "require": {
+                "castiron/peaches": "dev-master"
+            },
+            "type": "october-plugin",
+            "authors": [
+                {
+                    "name": "Peter Soots",
+                    "email": "peter@castironcoding.com"
+                }
+            ],
+            "description": "Base plugin for October CMS for Cast Iron Coding products",
+            "support": {
+                "source": "https://github.com/castiron/castiron-plugin/tree/master",
+                "issues": "https://github.com/castiron/castiron-plugin/issues"
+            },
+            "time": "2017-02-15T22:23:30+00:00"
+        },
+        {
+            "name": "castiron/peaches",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/peaches.git",
+                "reference": "fc682fa458cdcc5c109050b538ca8064463b7574"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/peaches/zipball/fc682fa458cdcc5c109050b538ca8064463b7574",
+                "reference": "fc682fa458cdcc5c109050b538ca8064463b7574",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Castiron\\Peaches\\": "src/"
+                }
+            },
+            "description": "A myriad of framework agnostic PHP utilities",
+            "support": {
+                "source": "https://github.com/castiron/peaches/tree/master",
+                "issues": "https://github.com/castiron/peaches/issues"
+            },
+            "time": "2015-11-11T00:46:03+00:00"
+        },
+        {
+            "name": "castiron/queequeg",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/queequeg-module.git",
+                "reference": "44c50c3e4ddbeb02ba66a3af253d4b8804bab824"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/queequeg-module/zipball/44c50c3e4ddbeb02ba66a3af253d4b8804bab824",
+                "reference": "44c50c3e4ddbeb02ba66a3af253d4b8804bab824",
+                "shasum": ""
+            },
+            "require": {
+                "castiron/peaches": "dev-master",
+                "guzzlehttp/guzzle": "~6.0"
+            },
+            "type": "october-module",
+            "extra": {
+                "installer-name": "queequeg"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Queequeg\\": ""
+                }
+            },
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Soots",
+                    "email": "peter@castironcoding.com"
+                }
+            ],
+            "description": "Queequeg client",
+            "support": {
+                "source": "https://github.com/castiron/queequeg-module/tree/1.1.1",
+                "issues": "https://github.com/castiron/queequeg-module/issues"
+            },
+            "time": "2017-05-12T22:24:22+00:00"
+        },
+        {
+            "name": "castiron/search-plugin",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/search-plugin.git",
+                "reference": "de1014e648c896d40a23390b18d6473364966d6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/search-plugin/zipball/de1014e648c896d40a23390b18d6473364966d6a",
+                "reference": "de1014e648c896d40a23390b18d6473364966d6a",
+                "shasum": ""
+            },
+            "require": {
+                "castiron/castiron": "dev-master",
+                "october/rain": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "october-plugin",
+            "autoload-dev": {
+                "psr-4": {
+                    "Castiron\\": "plugins/castiron/"
+                }
+            },
+            "description": "An October CMS plugin for a search component frontend for the queequeg module backend.",
+            "homepage": "https://github.com/castiron/search-plugin",
+            "support": {
+                "source": "https://github.com/castiron/search-plugin/tree/1.1.3",
+                "issues": "https://github.com/castiron/search-plugin/issues"
+            },
+            "time": "2017-05-12T22:30:18+00:00"
+        },
         {
             "name": "castiron/webpackassets-plugin",
             "version": "1.0.5",
@@ -814,6 +990,234 @@
             "time": "2015-11-01T10:19:22+00:00"
         },
         {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.0 || ^5.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2017-06-22T18:50:49+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20T10:07:11+00:00"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "abandoned": "laravelcollective/html",
+            "time": "2015-01-01T16:31:18+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1044,16 +1448,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.3",
+            "version": "v5.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "779a98d3b2ebed2128db1a668dcc10a65c9b01be"
+                "reference": "a0fdfd2c90318c107b6a8d69189ec9a6607379e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/779a98d3b2ebed2128db1a668dcc10a65c9b01be",
-                "reference": "779a98d3b2ebed2128db1a668dcc10a65c9b01be",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a0fdfd2c90318c107b6a8d69189ec9a6607379e3",
+                "reference": "a0fdfd2c90318c107b6a8d69189ec9a6607379e3",
                 "shasum": ""
             },
             "require": {
@@ -1172,7 +1576,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-07T13:50:21+00:00"
+            "time": "2017-09-20T13:45:36+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1821,16 +2225,16 @@
         },
         {
             "name": "october/rain",
-            "version": "v1.0.423",
+            "version": "v1.0.424",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "d9a9adcc20b110c5516bc69910e7459dd025aa9d"
+                "reference": "f1966a0ffe02ace7d8dc89ce75ca8dbc38454f8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/d9a9adcc20b110c5516bc69910e7459dd025aa9d",
-                "reference": "d9a9adcc20b110c5516bc69910e7459dd025aa9d",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/f1966a0ffe02ace7d8dc89ce75ca8dbc38454f8a",
+                "reference": "f1966a0ffe02ace7d8dc89ce75ca8dbc38454f8a",
                 "shasum": ""
             },
             "require": {
@@ -1916,7 +2320,7 @@
                 "october",
                 "rain"
             ],
-            "time": "2017-09-12T02:31:23+00:00"
+            "time": "2017-09-13T23:00:17+00:00"
         },
         {
             "name": "october/system",
@@ -2131,6 +2535,56 @@
             "time": "2017-02-14T16:28:37+00:00"
         },
         {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.2",
             "source": {
@@ -2304,12 +2758,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rainlab/builder-plugin.git",
-                "reference": "b12cb8e6a6ab3a2294a1d6a4d78675e0ca3971db"
+                "reference": "1d98767e3d8a2cbecc89fe959a8da2f81a7b8fd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rainlab/builder-plugin/zipball/b12cb8e6a6ab3a2294a1d6a4d78675e0ca3971db",
-                "reference": "b12cb8e6a6ab3a2294a1d6a4d78675e0ca3971db",
+                "url": "https://api.github.com/repos/rainlab/builder-plugin/zipball/1d98767e3d8a2cbecc89fe959a8da2f81a7b8fd0",
+                "reference": "1d98767e3d8a2cbecc89fe959a8da2f81a7b8fd0",
                 "shasum": ""
             },
             "require": {
@@ -2340,7 +2794,7 @@
                 "october",
                 "octobercms"
             ],
-            "time": "2017-09-06 02:38:36"
+            "time": "2017-09-06T02:38:36+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -4863,6 +5317,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
+        "castiron/lib-plugin": 20,
+        "castiron/peaches": 20,
+        "castiron/castiron": 20,
         "rainlab/builder-plugin": 20
     },
     "prefer-stable": true,

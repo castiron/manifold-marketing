@@ -1,0 +1,58 @@
+{% set results = results() %}
+{% set subtitle = 'Search Results for: ' ~ activeQuery() ?: '' %}
+
+<section class="background-gray">
+  <div class="block">
+    <% partial 'blocks/intro' title="Search Results" subtitle=subtitle %>
+  </div>
+</section>
+
+<section class="background-white">
+    <div class="block search-results">
+        {% component 'manifoldsearchresults::form' %}
+
+        <div class="container section-spacing small">
+            {% if results.total == 0 %}
+                <p class="content-default heading-secondary">
+                    Your search returned 0 results.<br/>
+                    Please try a different search, or return to the
+                    <a href="/">home page</a>
+                </p>
+            {% else %}
+                <p class="content-default heading-secondary">
+                    Your search returned {{ results.total }} results.<br/>
+                </p>
+            {% endif %}
+            <nav class="results-list">
+                {% if results.total > 0 %}
+                <ul>
+                    {% for hit in results.hits %}
+                    <li>
+                        <a href="{{ hit._source.url }}">
+                            <header>
+                                <h3 class="title">
+                                    {{ hit._source.title }}
+                                </h3>
+                            </header>
+
+                            <div class="description content-default">
+                                {{ hit._source.description | raw }}
+                            </div>
+
+                            <div class="arrow-right-link"><span>See More</span></div>
+                            <div class="border-bottom"></div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </nav>
+
+            <nav class="pagination">
+                <ul>
+                    {{ paginationDetails().render(paginationPresenter()) | raw }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

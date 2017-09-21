@@ -3,6 +3,13 @@
 use Backend;
 use System\Classes\PluginBase;
 use Castiron\Manifold\Components\UserTypes;
+use Castiron\Manifold\Components\SearchResults;
+use App;
+
+use Queequeg\ServiceProvider as QueequegServiceProvider;
+use Castiron\Manifold\Searchables\CmsPagesSearchable;
+use Castiron\Search\Contracts\SearchQuery;
+use Castiron\Search\Models\Query;
 
 /**
  * manifold Plugin Information File
@@ -45,6 +52,53 @@ class Plugin extends PluginBase
     }
 
     /**
+     * Initialize search functionality
+     */
+    protected function initSearch() {
+        App::register(QueequegServiceProvider::class);
+
+        $this->app->bind(SearchQuery::class, function ($app) {
+            return new Query(function($index = 'manifold', $type = null) {
+                if (!$index) {
+                    $index = 'manifold';
+                }
+                if ($type) {
+                    return "/search/$index/$type/_search";
+                }
+                return "/search/$index/_search";
+            });
+        });
+    }
+
+    /**
+     * Register searchable models
+     *
+     * @return mixed
+     */
+    public function registerSearchables()
+    {
+        $models = [
+            PagesSearchable::class
+        ];
+
+        foreach ($models as $m) {
+            $types[$m::beKey()] = [
+                'label'     => $m::beSearchLabel(),
+                'icon'      => $m::beIcon(),
+                'searchable'=> $m,
+            ];
+        }
+
+        $out['manifold'] = [
+            'icon'  => static::GENERAL_ICON,
+            'label' => 'SITE SEARCH',
+            'types' => $types,
+        ];
+
+        return $out;
+    }
+
+    /**
      * Registers any front-end components implemented in this plugin.
      *
      * @return array
@@ -53,6 +107,7 @@ class Plugin extends PluginBase
     {
         return [
             UserTypes::class => 'usertypes',
+            SearchResults::class => 'manifoldsearchresults',
             'Castiron\Manifold\Components\Seed' => 'seed'
         ];
     }

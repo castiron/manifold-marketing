@@ -1,0 +1,9 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+export:
+    title: Export contacts
+    modelClass: Castiron\Forms\ImportExport\ContactExport
+    list: $/castiron/forms/models/contact/columns.yaml
+    fileName: contacts.csv

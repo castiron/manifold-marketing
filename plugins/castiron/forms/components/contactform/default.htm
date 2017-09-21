@@ -1,0 +1,48 @@
+<script src="modules/backend/assets/js/vendor/jquery.min.js"></script>
+{% framework %}
+
+<section class="background-primary">
+  <div class="block">
+    <div class="flex-row contact">
+      <div class="contact-summary">
+        <div class="heading-primary">[Contact Manifold]</div>
+        <div class="copy-primary">[Copy TBD]</div>
+      </div>
+      <div class="contact-container">
+        <div id="errors"></div>
+        <div id="success">
+          {{form_ajax(
+            'onSubmit',
+            {
+              class: 'form-primary contact-form',
+              update: {'contactform::errors':'#errors'},
+            }
+          )}}
+            <div class="form-row">
+              <div class="form-input">
+                <input type="text" value="{{form_value('first_name')}}" name="first_name" placeholder="First name">
+              </div>
+              <div class="form-input">
+                <input type="text" value="{{form_value('last_name')}}" name="last_name" placeholder="Last name">
+              </div>
+            </div>
+            <div class="form-input">
+              <input type="email" value="{{form_value('email')}}" name="email" placeholder="Enter your email address">
+            </div>
+            <div class="form-input">
+              <input type="text" value="{{form_value('subject')}}" name="subject" placeholder="Subject">
+            </div>
+            <div class="form-input">
+              <textarea value="{{form_value('body')}}" name="body" placeholder="Body" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-input">
+              <div class="submit-button button black">
+                <input type="submit" value="Contact Manifold" class="button black">
+              </div>
+            </div>
+          {{form_close}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

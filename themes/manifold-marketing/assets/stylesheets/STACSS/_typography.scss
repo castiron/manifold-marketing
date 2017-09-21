@@ -271,6 +271,20 @@
   @include listSecondary;
 }
 
+@mixin listTertiary {
+  @include listPrimary;
+
+  li {
+    &::before {
+      color: $white;
+    }
+  }
+}
+
+.list-tertiary {
+  @include listTertiary;
+}
+
 // Navs
 // --------------------------------------------------------
 
