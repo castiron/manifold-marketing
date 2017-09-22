@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Castiron\Forms\Models\Contact;
+use Castiron\Forms\Models\ContactConfig;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
@@ -9,6 +10,7 @@ use Backend\Facades\Backend;
 
 class ContactForm extends ComponentBase
 {
+
     public function componentDetails()
     {
         return [
@@ -76,7 +78,7 @@ class ContactForm extends ComponentBase
             'body'          => $input['body'],
             'url'           => Backend::url('castiron/forms/contacts/update/' . $newContact->id)
         ], function($message) {
-            $message->to(env('CONTACT_NOTIFICATION_EMAIL'));
+            $message->to(ContactConfig::first()['email']);
         });
 
         if ($this->confirmed) {

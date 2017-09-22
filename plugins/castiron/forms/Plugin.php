@@ -78,8 +78,13 @@ class Plugin extends PluginBase
                         'icon'  => 'icon-users',
                         'url'   => Backend::url('castiron/forms/contacts'),
                     ],
+                    'config' => [
+                        'label' => 'Contact Configuration',
+                        'icon'  => 'icon-gear',
+                        'url'   => Backend::url('castiron/forms/contactconfig'),
+                    ]
                 ]
-            ],
+            ]
         ];
     }
 

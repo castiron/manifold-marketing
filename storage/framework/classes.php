@@ -80,4 +80,6 @@
   'castiron\\forms\\Controllers\\contacts' => 'plugins/castiron/forms/controllers/contacts.php',
   'Castiron\\Forms\\ImportExport\\ContactExport' => 'plugins/castiron/forms/importexport/ContactExport.php',
   'Castiron\\Search\\Contracts\\SearchQuery' => 'plugins/castiron/search/contracts/SearchQuery.php',
+  'castiron\\forms\\Controllers\\contactconfig' => 'plugins/castiron/forms/controllers/contactconfig.php',
+  'Castiron\\Forms\\Models\\ContactConfig' => 'plugins/castiron/forms/models/ContactConfig.php',
 );
