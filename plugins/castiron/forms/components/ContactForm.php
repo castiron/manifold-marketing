@@ -78,7 +78,7 @@ class ContactForm extends ComponentBase
             'body'          => $input['body'],
             'url'           => Backend::url('castiron/forms/contacts/update/' . $newContact->id)
         ], function($message) {
-            $message->to(ContactConfig::first()['email']);
+            $message->to(env('NOTIFICATION_CONTACT_EMAIL'));
         });
 
         if ($this->confirmed) {
