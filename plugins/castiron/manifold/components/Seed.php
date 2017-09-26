@@ -43,7 +43,6 @@ class Seed extends ComponentBase
     public function newspaper()
     {
         return "
-    <p>[Copy TBD]</p>
     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
     <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
     <p>Et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
@@ -65,7 +64,7 @@ class Seed extends ComponentBase
       $partner2 = array(
         'name' => 'Cast Iron Coding',
         'logo_path' => 'themes/manifold-marketing/assets/images/logo-cic.svg',
-        'description' => '[Copy TBD] issimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.',
+        'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet ipsum at arcu tempus dictum ut aliquet sapien. Etiam risus est, suscipit in consectetur eget, euismod non nunc. Sed ut erat et erat scelerisque rutrum eget vitae diam. Sed mollis nulla et elit dapibus, a convallis felis fermentum.',
         'link' => 'http://castironcoding.com/'
       );
 
