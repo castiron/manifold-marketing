@@ -7,6 +7,60 @@
     display: block;
   }
 
+  &.small {
+    max-width: none;
+
+    .newsletter-summary {
+      width: 40%;
+
+      @include respond($break50) {
+        width: 100%;
+      }
+    }
+
+    .newsletter-container {
+      width: 60%;
+
+      @include respond($break50) {
+        width: 100%;
+      }
+    }
+
+    .newsletter-form {
+      @include respond($break50) {
+        margin: 24px 0 0;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+
+
+      @include respond($break50) {
+        display: block;
+      }
+    }
+
+    .form-input {
+      width: calc(100% - (138px + 16px));
+
+      @include respond($break50) {
+        width: 100%;
+      }
+
+      + .form-input {
+        width: 138px;
+        margin-top: 0;
+
+        @include respond($break50) {
+          width: 100%;
+          margin-top: 18px;
+        }
+      }
+    }
+  }
+
   .newsletter-summary, .newsletter-container {
     width: 50%;
 
@@ -23,38 +77,37 @@
       padding-left: 0;
       margin: 24px auto 0;
     }
-
-    input[type='email'] {
-      text-align: center;
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 11px 12px;
-
-      &:hover {
-        input[type='submit'] {
-          background-color: $gray05;
-        }
-      }
-
-      input[type='submit'] {
-        @include buttonPrimary;
-        width: 100%;
-        color: $white;
-        background-color: $gray06;
-        border: 0;
-        transition: background-color $timing $duration;
-      }
-
-    }
   }
 
-  .heading-primary {
+  .heading-primary, .sign-tertiary {
     color: $white;
   }
 
   .copy-primary {
     margin-top: 26px;
+  }
+
+  input[type='email'] {
+    text-align: center;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 11px 12px;
+
+    &:hover {
+      input[type='submit'] {
+        background-color: $gray06;
+      }
+    }
+
+    input[type='submit'] {
+      @include buttonPrimary;
+      width: 100%;
+      color: $white;
+      background-color: $gray07;
+      border: 0;
+      transition: background-color $timing $duration;
+    }
   }
 }

@@ -72,7 +72,7 @@
 }
 
 .background-black {
-  background-color: $gray06;
+  background-color: $gray07;
 }
 
 .background-gray {
@@ -122,10 +122,10 @@
   }
 
   &:hover {
-    color: $gray03;
+    color: $gray04;
 
     .complete polygon {
-      fill: $gray03;
+      fill: $gray04;
     }
   }
 }
@@ -190,20 +190,20 @@ $icons: (
   }
 
   &.gray {
-    border-color: $gray04;
+    border-color: $gray05;
 
     &::after {
-      border-right-color: $gray04;
-      border-bottom-color: $gray04;
+      border-right-color: $gray05;
+      border-bottom-color: $gray05;
     }
   }
 
   &.black {
-    border-color: $gray06;
+    border-color: $gray07;
 
     &::after {
-      border-right-color: $gray06;
-      border-bottom-color: $gray06;
+      border-right-color: $gray07;
+      border-bottom-color: $gray07;
     }
   }
 }
@@ -222,7 +222,7 @@ $icons: (
   }
 
   &.primary {
-    color: $gray06;
+    color: $gray07;
 
     &:hover {
       color: $white;
@@ -236,15 +236,15 @@ $icons: (
 
   &.black {
     color: $white;
-    background-color: $gray06;
+    background-color: $gray07;
 
     &:hover {
-      background-color: $gray05;
-      border-color: $gray05;
+      background-color: $gray06;
+      border-color: $gray06;
 
       &::after {
-        border-right-color: $gray05;
-        border-bottom-color: $gray05;
+        border-right-color: $gray06;
+        border-bottom-color: $gray06;
       }
     }
   }

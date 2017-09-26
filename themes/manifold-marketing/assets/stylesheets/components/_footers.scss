@@ -91,7 +91,7 @@
     }
 
     &:hover {
-      color: $gray03;
+      color: $gray04;
     }
   }
 
@@ -108,7 +108,7 @@
     &::before {
       margin-bottom: 1px;
       font-size: 17px;
-      color: $gray04;
+      color: $gray05;
     }
 
     input {
@@ -116,7 +116,7 @@
       padding: 8px 6px;
       font-size: 18px;
       color: $white;
-      background-color: $gray06;
+      background-color: $gray07;
       border: 0;
 
       @include respond($break20) {
@@ -136,7 +136,7 @@
   .colophon {
     margin-top: 56px;
     font-size: 14px;
-    color: $gray02;
+    color: $gray03;
     letter-spacing: 0.015em;
 
     @include respond($break20) {

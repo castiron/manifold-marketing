@@ -16,3 +16,6 @@ fields:
             laptop: Laptop
             book-page-turn: Book
             bookpile-small: Books
+    description:
+        label: Description
+        type: textarea

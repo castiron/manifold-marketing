@@ -46,7 +46,7 @@
 
       &:hover {
         input[type='submit'] {
-          background-color: $gray05;
+          background-color: $gray06;
         }
       }
 
@@ -54,7 +54,7 @@
         @include buttonPrimary;
         width: 100%;
         color: $white;
-        background-color: $gray06;
+        background-color: $gray07;
         border: 0;
         transition: background-color $timing $duration;
       }
@@ -83,7 +83,7 @@
 
 .contact-errors {
   margin-bottom: 20px;
-  color: $gray06;
+  color: $gray07;
 
   ul {
     @include listTertiary;

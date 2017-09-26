@@ -20,8 +20,14 @@
       width: calc(33.33% - 40px);
     }
 
-    &.active hr {
-      background-color: $gray05;
+    &.active {
+      .sign-tertiary {
+        color: $gray07;
+      }
+
+      hr {
+        background-color: $gray06;
+      }
     }
 
     .actions-badge {
@@ -44,11 +50,8 @@
     .sign-tertiary {
       align-self: center;
       margin-top: 30px;
+      color: $gray04;
     }
-  }
-
-  .subheading-primary {
-    margin-top: 62px;
   }
 }
 
@@ -86,9 +89,17 @@
     }
   }
 
+  .description {
+    max-width: 700px;
+    margin-top: 45px;
+    margin-right: auto;
+    margin-left: auto;
+    color: $gray02;
+  }
+
   .action {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 84px;
     text-align: left;
 
     .action-header {

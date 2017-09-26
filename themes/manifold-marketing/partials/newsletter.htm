@@ -1,13 +1,17 @@
 <section class="background-primary">
 	<div class="block">
-		<div class="flex-row newsletter">
+		<div class="flex-row newsletter {{ small ? 'small' : '' }}">
 			<div class="newsletter-summary">
-				<div class="heading-primary">Follow our evolution. Sign up for the Manifold newsletter.</div>
-				<div class="copy-primary">We’re not inbox monsters. We only say something when we have something worth saying. </div>
+        {% if small %}
+  				<div class="sign-tertiary">Sign up for the Manifold newsletter.</div>
+        {% else %}
+          <div class="heading-primary">Follow our evolution. Sign up for the Manifold newsletter.</div>
+  				<div class="copy-primary">We’re not inbox monsters. We only say something when we have something worth saying. </div>
+        {% endif %}
 			</div>
       <div class="newsletter-container">
         <form class="form-primary newsletter-form">
-            <div class="form-groups">
+            <div class="form-group">
                 <div class="form-input">
                   <input type="email" value="" name="email" placeholder="Enter your email address">
                 </div>

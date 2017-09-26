@@ -117,12 +117,12 @@
 
     &:hover {
       .button {
-        background-color: $gray05;
-        border-color: $gray05;
+        background-color: $gray06;
+        border-color: $gray06;
 
         &::after {
-          border-right-color: $gray05;
-          border-bottom-color: $gray05;
+          border-right-color: $gray06;
+          border-bottom-color: $gray06;
         }
       }
     }
@@ -163,7 +163,7 @@
       flex-grow: 2;
       width: 100%;
       margin-top: 15px;
-      color: $gray06;
+      color: $gray07;
       text-align: center;
     }
 
@@ -222,12 +222,12 @@
     }
 
     .title {
-      color: $gray06;
+      color: $gray07;
     }
 
     .subtitle {
       margin-top: 5px;
-      color: $gray03;
+      color: $gray04;
       text-align: left;
     }
   }
@@ -416,7 +416,7 @@
   }
 
   &.next-background-black::after {
-    background-color: $gray06;
+    background-color: $gray07;
   }
 
   &.next-background-patterned::after {

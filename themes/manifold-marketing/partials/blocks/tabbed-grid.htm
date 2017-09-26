@@ -17,14 +17,14 @@
 					</div>
 				{% endfor %}
 				</div>
-				<div class="subheading-primary">{{ description }}</div>
-			</div>
-		</div>
-		<div class="tabs">
-			<div class="flex-row tabs-inner" data-element data-count="{{ tabs|length }}">
-			{% for tab in tabs %}
-				<div class="tab">
-					<div class="inner-container">
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="flex-row tabs-inner" data-element data-count="{{ tabs|length }}">
+      {% for tab in tabs %}
+        <div class="tab">
+          <div class="inner-container">
+  				<div class="subheading-primary description">{{ tab.description }}</div>
 					{% for feature_category in tab.feature_categories %}
 						<div class="action">
 							<div class="action-header">

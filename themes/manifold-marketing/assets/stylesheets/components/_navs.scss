@@ -26,13 +26,13 @@
 
       &.active {
         a {
-          color: $gray06;
+          color: $gray07;
         }
       }
 
       a {
         @include navPrimary;
-        color: $gray02;
+        color: $gray03;
         text-decoration: none;
         vertical-align: middle;
 
@@ -48,7 +48,7 @@
 
     .search-link {
       &::before {
-        color: $gray05;
+        color: $gray06;
         transition: color $timing $duration;
       }
 

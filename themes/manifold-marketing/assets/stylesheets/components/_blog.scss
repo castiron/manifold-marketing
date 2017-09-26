@@ -9,12 +9,12 @@
       }
 
       .primary {
-        color: $gray05;
+        color: $gray06;
       }
 
       .icon-arrow-right {
         &::after {
-          color: $gray05;
+          color: $gray06;
         }
       }
     }
@@ -25,7 +25,7 @@
     }
 
     .gray {
-      color: $gray05;
+      color: $gray06;
     }
 
     .primary {
@@ -72,16 +72,16 @@
 
       &:hover {
         .subheading-primary, .copy-tertiary {
-          color: $gray03;
+          color: $gray04;
         }
 
         .link-placeholder {
-          color: $gray06;
+          color: $gray07;
         }
       }
 
       .subheading-primary {
-        color: $gray05;
+        color: $gray06;
       }
 
       .copy-tertiary {

@@ -70,7 +70,7 @@ class Seed extends ComponentBase
 
       $partner3 = array(
         'name' => 'GC Digital Scholarship Lab at the Graduate Center, CUNY',
-        'logo_path' => 'themes/manifold-marketing/assets/images/logo-cic.svg',
+        'logo_path' => 'themes/manifold-marketing/assets/images/logo-cuny.svg',
         'description' => 'The GC Digital Scholarship Lab is a research and community space at the Graduate Center of the City University of New York that focuses on the creation and use of collaboratively produced, community-based open-source software platforms for scholarly communication.',
         'link' => 'https://gcdsl.commons.gc.cuny.edu/'
       );

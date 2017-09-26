@@ -1,7 +1,7 @@
 .actions-grid {
   .block-intro {
     .heading-primary, .copy-secondary {
-      color: $gray06;
+      color: $gray07;
     }
   }
 
@@ -12,12 +12,16 @@
   width: 94px;
   height: 94px;
   margin: 0 auto;
-  background-color: $accentPale;
+  background-color: $gray01;
   border-radius: 50%;
 
   @include respond($break20) {
     width: 66px;
     height: 66px;
+  }
+
+  &.active {
+    background-color: $accentPale;
   }
 
   .icon {
@@ -30,17 +34,26 @@
       top: 10px;
     }
 
+
     &::before{
       font-size: 70px;
-      color: $accentPrimary;
+      color: $gray02;
 
       @include respond($break20) {
         font-size: 50px;
       }
+
+      .active & {
+        color: $accentPrimary;
+      }
     }
 
     &::after {
-      color: $gray04;
+      color: $gray03;
+
+      .active & {
+        color: $gray05;
+      }
     }
 
     &.icon-book-page-turn::after {
