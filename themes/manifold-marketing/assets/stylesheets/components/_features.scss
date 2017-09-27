@@ -1,0 +1,40 @@
+.features {
+  .flex-row {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: -124px;
+
+    @include respond($break110) {
+      margin-left: -10.33vw;
+    }
+
+    @include respond($break20) {
+      margin-left: 0;
+    }
+  }
+
+  .feature {
+    padding-left: 124px;
+    margin-top: 28px;
+
+    @include respond($break110) {
+      padding-left: 10.33vw;
+    }
+
+    @include respond($break20) {
+      padding-left: 0;
+    }
+  }
+
+  .feature-name {
+    @include fontHead;
+    font-size: 14px;
+    font-weight: $semibold;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .feature-description {
+    margin-top: 6px;
+  }
+}

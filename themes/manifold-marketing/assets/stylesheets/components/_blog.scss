@@ -19,7 +19,7 @@
       }
     }
 
-    .heading-secondary {
+    .blog-label {
       padding-right: 12px;
       transition: color $timing $duration;
     }
@@ -57,7 +57,7 @@
       margin-top: 20px;
     }
 
-    .col {
+    .blog-post {
       width: calc(33.333% - 45px);
       text-decoration: none;
 
@@ -65,13 +65,13 @@
         display: block;
         width: 100%;
 
-        + .col {
+        + .blog-post {
           margin-top: 24px;
         }
       }
 
       &:hover {
-        .subheading-primary, .copy-tertiary {
+        .blog-post-title, .blog-post-summary {
           color: $gray04;
         }
 
@@ -80,11 +80,11 @@
         }
       }
 
-      .subheading-primary {
+      .blog-post-title {
         color: $gray06;
       }
 
-      .copy-tertiary {
+      .blog-post-summary {
         flex-grow: 1;
         margin-top: 18px;
 
@@ -93,7 +93,7 @@
         }
       }
 
-      .link-placeholder {
+      .blog-post-link {
         display: block;
         margin-top: 20px;
         font-size: 13px;
@@ -107,5 +107,4 @@
       }
     }
   }
-
 }

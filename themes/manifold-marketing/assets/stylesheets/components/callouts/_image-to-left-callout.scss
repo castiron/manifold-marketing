@@ -1,0 +1,81 @@
+.image-to-left-callout {
+  padding-right: 22px;
+  padding-left: 22px;
+
+  @include respond($break110) {
+    padding-right: 1.833vw;
+    padding-left: 1.833vw;
+  }
+
+  @include respond($break20) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .flex-row {
+    @include respond($break50) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .col {
+    width: 40%;
+    min-width: 310px;
+
+    @include respond($break50) {
+      width: 100%;
+      min-width: 0;
+    }
+
+    + .col {
+      width: 60%;
+
+      @include respond($break50) {
+        width: 100%;
+      }
+    }
+  }
+
+  .callout-header {
+    @include respond($break50) {
+      margin-bottom: 30px;
+    }
+
+    .title {
+      color: $gray07;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      color: $gray04;
+      text-align: left;
+    }
+  }
+
+  .callout-description {
+    margin-top: 20px;
+    line-height: 1.375;
+    text-align: left;
+
+    @include respond($break50) {
+      margin-top: 3.333vw;
+    }
+
+    @include respond($break20) {
+      margin-top: 14px;
+    }
+  }
+
+  .image-wrapper {
+    padding-right: 80px;
+
+    @include respond($break110) {
+      padding-right: 6.666vw;
+    }
+
+    @include respond($break50) {
+      max-width: 62.4vw;
+      padding-right: 0;
+    }
+  }
+}

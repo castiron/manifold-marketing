@@ -7,60 +7,6 @@
     display: block;
   }
 
-  &.small {
-    max-width: none;
-
-    .newsletter-summary {
-      width: 40%;
-
-      @include respond($break50) {
-        width: 100%;
-      }
-    }
-
-    .newsletter-container {
-      width: 60%;
-
-      @include respond($break50) {
-        width: 100%;
-      }
-    }
-
-    .newsletter-form {
-      @include respond($break50) {
-        margin: 24px 0 0;
-      }
-    }
-
-    .form-group {
-      display: flex;
-      justify-content: space-between;
-
-
-      @include respond($break50) {
-        display: block;
-      }
-    }
-
-    .form-input {
-      width: calc(100% - (138px + 16px));
-
-      @include respond($break50) {
-        width: 100%;
-      }
-
-      + .form-input {
-        width: 138px;
-        margin-top: 0;
-
-        @include respond($break50) {
-          width: 100%;
-          margin-top: 18px;
-        }
-      }
-    }
-  }
-
   .newsletter-summary, .newsletter-container {
     width: 50%;
 
@@ -79,11 +25,11 @@
     }
   }
 
-  .heading-primary, .sign-tertiary {
+  .title {
     color: $white;
   }
 
-  .copy-primary {
+  .description {
     margin-top: 26px;
   }
 
@@ -108,6 +54,60 @@
       background-color: $gray07;
       border: 0;
       transition: background-color $timing $duration;
+    }
+  }
+}
+
+.newsletter.small {
+  max-width: none;
+
+  .newsletter-summary {
+    width: 40%;
+
+    @include respond($break50) {
+      width: 100%;
+    }
+  }
+
+  .newsletter-container {
+    width: 60%;
+
+    @include respond($break50) {
+      width: 100%;
+    }
+  }
+
+  .newsletter-form {
+    @include respond($break50) {
+      margin: 24px 0 0;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+
+
+    @include respond($break50) {
+      display: block;
+    }
+  }
+
+  .form-input {
+    width: calc(100% - (138px + 16px));
+
+    @include respond($break50) {
+      width: 100%;
+    }
+
+    + .form-input {
+      width: 138px;
+      margin-top: 0;
+
+      @include respond($break50) {
+        width: 100%;
+        margin-top: 18px;
+      }
     }
   }
 }

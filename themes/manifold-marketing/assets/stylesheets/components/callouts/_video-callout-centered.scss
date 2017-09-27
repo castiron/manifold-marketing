@@ -1,0 +1,108 @@
+.video-callout-centered {
+  position: relative;
+  z-index: 0;
+  margin-bottom: 150px + $blockPaddingMax;
+  text-align: center;
+
+  @include respond($break110) {
+    margin-bottom: calc(150px + #{$blockPaddingFlex});
+  }
+
+  @include respond($break50) {
+    margin-bottom: 17.5vw + $blockPaddingFlex;
+  }
+
+  @include respond($break20) {
+    margin-bottom: 74px + $blockPaddingMin;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -150px - $blockPaddingMax;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 150px + $blockPaddingMax;
+    content: '';
+    background-color: $white;
+
+    @include respond($break110) {
+      bottom: calc(-150px - #{$blockPaddingFlex});
+      height: calc(150px + #{$blockPaddingFlex});
+    }
+
+    @include respond($break50) {
+      bottom: -17.5vw - $blockPaddingFlex;
+      height: 17.5vw + $blockPaddingFlex;
+    }
+
+    @include respond($break20) {
+      bottom: -74px - $blockPaddingMin;
+      height: 74px + $blockPaddingMin;
+    }
+  }
+
+
+  &.next-background-white::after {
+    background-color: $white;
+  }
+
+  &.next-background-gray::after {
+    background-color: $gray01;
+  }
+
+  &.next-background-primary::after {
+    background-color: $accentPrimary;
+  }
+
+  &.next-background-black::after {
+    background-color: $gray07;
+  }
+
+  &.next-background-patterned::after {
+    background-color: $accentPrimary;
+    background-image: url('/assets/background.png');
+    background-repeat: repeat;
+  }
+
+  .flex-col {
+    align-items: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .blurb {
+    width: 100%;
+
+    .blurb-title {
+      max-width: 622px;
+      margin: 0 auto;
+      color: $white;
+    }
+
+    .blurb-subtitle {
+      margin-top: 22px;
+      color: $offBlack;
+    }
+  }
+
+  .video-link {
+    width: 100%;
+    max-width: 622px;
+    height: 350px;
+    margin: 76px auto -150px - $blockPaddingMax;
+
+    @include respond($break110) {
+      margin: 76px auto calc(-150px - #{$blockPaddingFlex});
+    }
+
+    @include respond($break50) {
+      height: 45.57vw;
+      margin: 9.895vw auto -17.5vw - $blockPaddingFlex;
+    }
+
+    @include respond($break20) {
+      margin: 41px auto -74px - $blockPaddingMin;
+    }
+  }
+}

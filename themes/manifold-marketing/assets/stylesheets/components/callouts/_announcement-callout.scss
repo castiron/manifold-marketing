@@ -1,0 +1,69 @@
+.announcement-callout {
+  text-decoration: none;
+
+  @include respond($break50) {
+    display: block;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .announcement {
+      color: $gray03;
+      text-decoration: none;
+      transition: color $timing $duration;
+    }
+
+    .button {
+      background-color: $accentPrimary;
+    }
+  }
+
+  .icon-bugle {
+    @include iconPost($bugle);
+
+    &::after {
+      display: inline-block;
+      font-size: 24px;
+      color: $accentPrimary;
+
+      @include respond($break20) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .callout-message {
+    padding-right: 100px;
+    color: $white;
+
+    @include respond($break50) {
+      display: block;
+      padding-right: 0;
+    }
+
+    .announcement {
+      padding-left: 44px;
+      text-decoration: none;
+
+      @include respond($break50) {
+        padding-top: 15px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .button {
+    display: block;
+    width: 136px;
+    min-width: 136px;
+
+    @include respond($break50) {
+      margin-top: 18px;
+    }
+
+    &.primary {
+      color: $white;
+    }
+  }
+}

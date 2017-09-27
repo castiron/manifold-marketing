@@ -1,16 +1,16 @@
 <section class="background-white">
 	<div class="block three-col-summaries">
 		<div class="block-label">{{ label }}</div>
-		<div class="heading-primary">{{ title }}</div>
+		<div class="heading-primary summaries-title">{{ title }}</div>
 		<div class="summaries flex-row">
 		{% for partner in partners %}
-			<a href="{{ partner.link }}" class="summary col col-3">
+			<a href="{{ partner.link }}" class="summary">
 				<div class="image-wrapper">
 					<img src="{{ partner.logo_path }}">
 				</div>
-				<div class="heading-quaternary" data-mh="partner-name">{{ partner.name }}</div>
-				<div class="copy-primary" data-mh="partner-description">{{ partner.description|raw }}</div>
-				<span class="partner-link">visit website</span>
+				<div class="heading-quaternary name" data-mh="summary-name">{{ partner.name }}</div>
+				<div class="copy-quaternary description">{{ partner.description|raw }}</div>
+				<span class="link">visit website</span>
 			</a>
 		{% endfor %}
 		</div>

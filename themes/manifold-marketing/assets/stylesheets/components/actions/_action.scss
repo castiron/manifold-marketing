@@ -1,0 +1,113 @@
+.action {
+  width: calc(25% - 48px);
+  text-align: center;
+
+  @include respond($break110) {
+    width: calc(25% - 2.33vw);
+  }
+
+  @include respond($break60) {
+    width: calc(50% - 3.095vw);
+    margin-top: 20px;
+  }
+
+  @include respond($break20) {
+    width: calc(50% - 13px);
+  }
+
+  .icon {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 45px;
+    font-size: 40px;
+    color: $accentPrimary;
+    vertical-align: middle;
+
+    @include respond($break20) {
+      font-size: 30px;
+    }
+
+    &.icon-glasses,
+    &.icon-binoculars {
+      font-size: 28px;
+
+      @include respond($break20) {
+        font-size: 21px;
+      }
+    }
+
+    &.icon-pencil {
+      font-size: 31px;
+
+      @include respond($break20) {
+        font-size: 23px;
+      }
+    }
+
+    &.icon-wrench {
+      font-size: 33px;
+
+      @include respond($break20) {
+        font-size: 25px;
+      }
+    }
+
+    &.icon-word-bubble-multiple,
+    &.transform-square-to-circle,
+    &.icon-bar-graph {
+      font-size: 36px;
+
+      @include respond($break20) {
+        font-size: 27px;
+      }
+    }
+
+    &.icon-van-diagram {
+      font-size: 44px;
+
+      @include respond($break20) {
+        font-size: 33px;
+      }
+    }
+  }
+
+  .action-name {
+    margin-top: 30px;
+    text-transform: uppercase;
+
+    @include respond($break20) {
+      margin-top: 15px;
+    }
+  }
+
+  .action-description {
+    margin-top: 10px;
+
+    @include respond($break20) {
+      margin-top: 2.8vw;
+    }
+  }
+}
+
+.tab .action {
+  width: 100%;
+  margin-top: 84px;
+  text-align: left;
+
+  .action-header {
+    padding-bottom: 20px;
+    text-align: left;
+    border-bottom: 2px solid $accentPrimary;
+
+    .icon {
+      display: inline-block;
+      padding-right: 11px;
+    }
+
+    .action-name {
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+  }
+}

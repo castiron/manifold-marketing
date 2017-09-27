@@ -1,0 +1,98 @@
+.actions-badge {
+  position: relative;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto;
+  background-color: $gray01;
+  border-radius: 50%;
+
+  @include respond($break20) {
+    width: 66px;
+    height: 66px;
+  }
+
+  &.active {
+    background-color: $accentPale;
+
+    .icon {
+      &::before {
+        color: $accentPrimary;
+      }
+
+      &::after {
+        color: $gray05;
+      }
+    }
+  }
+
+  .icon {
+    @include iconPre($human-reading);
+    position: absolute;
+    top: 14px;
+    left: 0;
+
+    @include respond($break20) {
+      top: 10px;
+    }
+
+
+    &::before{
+      font-size: 70px;
+      color: $gray02;
+
+      @include respond($break20) {
+        font-size: 50px;
+      }
+
+      .active & {
+        color: $accentPrimary;
+      }
+    }
+
+    &::after {
+      color: $gray03;
+
+      .active & {
+        color: $gray05;
+      }
+    }
+
+    &.icon-book-page-turn::after {
+      margin-top: -18px;
+      font-size: 28px;
+
+      @include respond($break20) {
+        margin-top: -25px;
+        font-size: 20px;
+      }
+    }
+
+    &.icon-laptop::before {
+      transform: scale(-1, 1);
+    }
+
+    &.icon-laptop::after {
+      margin-top: -26px;
+      font-size: 32px;
+
+      @include respond($break20) {
+        font-size: 23px;
+      }
+    }
+
+    &.icon-bookpile-small::after {
+      margin-top: -22px;
+      font-size: 25px;
+
+      @include respond($break20) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.tab-trigger .actions-badge {
+  .icon-bookpile-small::before {
+    transform: scale(-1, 1);
+  }
+}

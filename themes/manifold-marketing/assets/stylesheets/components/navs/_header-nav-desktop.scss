@@ -1,0 +1,59 @@
+.main-header {
+  .main-nav {
+    @include listHorizontal;
+
+    &.desktop-only {
+      @include respond($break60) {
+        display: none;
+      }
+    }
+
+    &.mobile-only {
+      display: none;
+
+      @include respond($break60) {
+        display: block;
+      }
+    }
+
+    .main-nav-item {
+      + .main-nav-item, + .nav-item {
+        margin-left: 30px;
+      }
+
+      &.active {
+        a {
+          color: $gray07;
+        }
+      }
+
+      a {
+        @include navPrimary;
+        color: $gray03;
+        text-decoration: none;
+        vertical-align: middle;
+
+        &:hover {
+          color: $accentPrimary;
+
+          &::before {
+            color: $accentPrimary;
+          }
+        }
+      }
+    }
+
+    .search-link {
+      &::before {
+        color: $gray06;
+        transition: color $timing $duration;
+      }
+
+      &:hover {
+        &::before {
+          color: $accentPrimary;
+        }
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
 							<div class="background-circle"></div>
 							<i class="icon icon-{{ trigger.icon }}"></i>
 						</div>
-						<div class="sign-tertiary">
+						<div class="sign-tertiary tab-trigger-name">
 							{{ trigger.name }}
 							<hr>
 						</div>
@@ -24,12 +24,12 @@
       {% for tab in tabs %}
         <div class="tab">
           <div class="inner-container">
-  				<div class="subheading-primary description">{{ tab.description }}</div>
+  				<div class="subheading-primary tab-description">{{ tab.description }}</div>
 					{% for feature_category in tab.feature_categories %}
 						<div class="action">
 							<div class="action-header">
 								<i class="icon icon-{{ feature_category.icon }}"></i>
-								<span class="subheading-secondary">{{ feature_category.name }}</span>
+								<span class="subheading-secondary action-name">{{ feature_category.name }}</span>
 							</div>
 							{% partial 'blocks/features-group' features=feature_category.features %}
 						</div>

@@ -1,0 +1,40 @@
+.hamburger-toggle {
+  font-size: 16px;
+  font-weight: $medium;
+  vertical-align: middle;
+  cursor: pointer;
+
+  @include respond($break20) {
+    font-size: 13px;
+  }
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  max-height: 0;
+  overflow: hidden;
+  background-color: $accentPrimary;
+  transition: max-height $timing 0.5s;
+
+  &.open {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  a.main-logo {
+    color: $white;
+
+    &::before {
+      color: $white;
+    }
+  }
+
+  .hamburger-closer {
+    color: $white;
+  }
+}

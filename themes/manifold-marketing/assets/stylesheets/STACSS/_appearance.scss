@@ -160,6 +160,33 @@ $icons: (
   }
 }
 
+.icon-email {
+  @include iconPre($email);
+
+  &::before {
+    margin-right: 9px;
+    font-size: 9px;
+  }
+}
+
+.icon-github {
+  @include iconPre($github);
+
+  &::before {
+    margin-right: 9px;
+    font-size: 13px;
+  }
+}
+
+.icon-twitter {
+  @include iconPre($twitter);
+
+  &::before {
+    margin-right: 9px;
+    font-size: 13px;
+  }
+}
+
 
 // Buttons/Links
 // --------------------------------------------------------

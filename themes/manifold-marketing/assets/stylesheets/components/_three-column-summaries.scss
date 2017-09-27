@@ -1,5 +1,5 @@
 .three-col-summaries {
-  .heading-primary {
+  .summaries-title {
     text-align: center;
   }
 
@@ -11,7 +11,7 @@
     }
 
     .summary {
-      justify-content: space-between;
+      // justify-content: space-between;
       width: calc(33.333% - 52px);
       padding-top: 20px;
       text-decoration: none;
@@ -29,7 +29,7 @@
       &:hover {
         color: initial;
 
-        .partner-link {
+        .link {
           text-decoration: underline;
         }
       }
@@ -48,24 +48,26 @@
         }
       }
 
-      .heading-quaternary, .copy-primary {
+      .name {
+        margin-top: 42px;
+        color: $gray06;
+
         @include respond($break50) {
+          /* stylelint-disable declaration-no-important */
           height: auto !important;
+          /* stylelint-enable */
         }
       }
 
-      .heading-quaternary {
-        margin-top: 42px;
-        color: $gray06;
-      }
-
-      .copy-primary {
+      .description {
         margin-top: 14px;
         color: $gray07;
       }
 
-      .partner-link {
-        margin-top: 40px;
+      .link {
+        display: inline-block;
+        margin-top: 30px;
+        font-size: 12px;
         color: $accentPrimary;
         text-decoration: none;
         text-transform: uppercase;

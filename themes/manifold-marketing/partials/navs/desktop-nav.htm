@@ -1,4 +1,4 @@
-<ul class="main-nav desktop-only">
+<ul class="main-nav flex-row vert-centered desktop-only">
   {% for item in items %}
     {% if item.url != '/' %}
       <li class="main-nav-item {{item.url == this.page.url or '/' == this.page.url and '/get-started' != this.page.url ? 'active' : ''}}"><a href="{{item.url}}">{{item.text}}</a></li>

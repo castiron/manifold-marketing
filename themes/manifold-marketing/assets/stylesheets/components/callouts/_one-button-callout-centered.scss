@@ -1,0 +1,24 @@
+.one-button-callout-centered {
+  text-align: center;
+
+  .intro + .title {
+    margin-top: 32px;
+
+    @include respond($break20) {
+      margin-top: 15px;
+    }
+  }
+
+  .title + .description {
+    margin-top: 32px;
+
+    @include respond($break20) {
+      margin-top: 15px;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 36px;
+  }
+}

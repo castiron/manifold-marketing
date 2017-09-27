@@ -1,0 +1,26 @@
+.actions-group {
+  margin-top: 56px;
+  text-align: center;
+
+  @include respond($break20) {
+    margin-top: 35px;
+  }
+
+  .action-group-name {
+    margin-top: 26px;
+
+    @include respond($break20) {
+      margin-top: 10px;
+    }
+  }
+
+  .actions {
+    @include listUnstyled;
+    flex-wrap: wrap;
+    margin-top: 44px;
+
+    @include respond($break60) {
+      margin-top: -4px;
+    }
+  }
+}

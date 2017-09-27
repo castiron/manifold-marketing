@@ -1,21 +1,21 @@
 // Components Manifest
 // -------------------
 
-@import 'actions';
+@import 'actions/index';
+@import 'animations/index';
 @import 'base';
 @import 'blocks';
 @import 'blog';
-@import 'bookpile';
-@import 'callouts';
+@import 'callouts/index';
 @import 'contact';
+@import 'features';
 @import 'footers';
 @import 'forms';
 @import 'headers';
-@import 'logo';
-@import 'navs';
+@import 'navs/index';
 @import 'newsletter';
 @import 'summaries-list';
-@import 'tabbed-grid';
+@import 'tabs/index';
 @import 'three-column-summaries';
 @import 'two-column-newspaper';
 

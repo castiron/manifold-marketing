@@ -1,0 +1,42 @@
+.tabs {
+  width: 100%;
+  overflow: hidden;
+
+  .tabs-inner {
+    flex-wrap: nowrap;
+    transition: transform $timing $durationSlow;
+  }
+
+  .tab {
+    width: 100vw;
+    min-width: 100vw;
+
+    .inner-container {
+      max-width: $containerWidth;
+      padding-right: 132px;
+      padding-bottom: $blockPaddingMax;
+      padding-left: 132px;
+      margin: 0 auto;
+
+      @include respond($break110) {
+        padding-right: 11vw;
+        padding-bottom: $blockPaddingFlex;
+        padding-left: 11vw;
+      }
+
+      @include respond($break20) {
+        padding-right: $containerPaddingMin;
+        padding-bottom: $blockPaddingMin;
+        padding-left: $containerPaddingMin;
+      }
+    }
+  }
+
+  .tab-description {
+    max-width: 700px;
+    margin-top: 45px;
+    margin-right: auto;
+    margin-left: auto;
+    color: $gray02;
+  }
+}

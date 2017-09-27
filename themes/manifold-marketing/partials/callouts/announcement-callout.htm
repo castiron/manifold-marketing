@@ -1,11 +1,11 @@
 <section class="background-black">
 	<div class="container-callout-primary">
-		<div class="announcement-callout flex-row vert-centered">
+		<a href="{{ link }}" class="announcement-callout flex-row vert-centered">
 			<div class="callout-message flex-row vert-centered">
 				<i class="icon-{{ icon }}"></i>
-				<div class="sign-secondary">{{ announcement | raw }}</div>
+				<div class="sign-secondary announcement">{{ announcement | raw }}</div>
 			</div>
-			<a href="{{ link }}" class="button primary tall">{{ button_text }}</a>
-		</div>
+			<span class="button primary tall">{{ button_text }}</span>
+		</a>
 	</div>
 </section>

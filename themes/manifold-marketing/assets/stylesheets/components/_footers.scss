@@ -8,71 +8,6 @@
     }
   }
 
-  .main-nav {
-    @include listUnstyled;
-
-    @include respond($break50) {
-      margin-top: 40px;
-    }
-
-    .main-nav-nested {
-      + .main-nav-nested {
-        margin-left: 67px;
-
-        @include respond($break20) {
-          margin-left: 40px;
-        }
-      }
-
-      ul {
-        @include listUnstyled;
-      }
-
-      .main-nav-item {
-        + .main-nav-item {
-          margin-top: 12px;
-        }
-      }
-    }
-
-    a {
-      @include navSecondary;
-      color: $white;
-      text-decoration: none;
-
-      &:hover {
-        color: $accentPrimary;
-      }
-    }
-  }
-
-  .icon-email {
-    @include iconPre($email);
-
-    &::before {
-      margin-right: 9px;
-      font-size: 9px;
-    }
-  }
-
-  .icon-github {
-    @include iconPre($github);
-
-    &::before {
-      margin-right: 9px;
-      font-size: 13px;
-    }
-  }
-
-  .icon-twitter {
-    @include iconPre($twitter);
-
-    &::before {
-      margin-right: 9px;
-      font-size: 13px;
-    }
-  }
-
   .main-logo {
     font-size: 22px;
     color: $white;
@@ -156,3 +91,4 @@
     }
   }
 }
+

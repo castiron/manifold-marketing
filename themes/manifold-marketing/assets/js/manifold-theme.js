@@ -16,10 +16,7 @@ class ManifoldTheme {
       });
 
       // Initialize height matching elements
-      const partnerNames = new HeightMatch('[data-mh=partner-name]');
-      const partnerDescriptions = new HeightMatch(
-        '[data-mh=partner-description]'
-      );
+      const summaryNames = new HeightMatch('[data-mh=summary-name]');
 
       const blogPostNames = new HeightMatch('[data-mh=blog-post-name]');
       const blogPostDescriptions = new HeightMatch(
