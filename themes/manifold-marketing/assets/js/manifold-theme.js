@@ -1,5 +1,6 @@
 import domHelp from "./lib/dom-help";
 import ClassBurger from "./class-burger";
+import Accordions from "./accordions";
 import HeightMatch from "./height-match";
 import ScrollTarget from "./scroll-target";
 import CssSlider from "./css-slider";
@@ -14,6 +15,9 @@ class ManifoldTheme {
       const hamburgerOverlay = new ClassBurger('hamburger', 'open', function() {
         domHelp.toggleClass(document.body, 'overlay-open');
       });
+
+      // Initialize Accordions
+      const accordions = new Accordions();
 
       // Initialize height matching elements
       const summaryNames = new HeightMatch('[data-mh=summary-name]');

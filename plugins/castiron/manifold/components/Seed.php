@@ -196,4 +196,50 @@ class Seed extends ComponentBase
 
       return [$production_services, $hosting_services, $customization_services];
     }
+
+    public function faqs()
+    {
+      return [
+        array(
+          'question' => 'What files are supported for upload into Manifold?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'What if I don’t have an epub? Can I still upload a text to Manifold?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'Can I turn off the commenting feature?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        ),
+        array(
+          'question' => 'How can I customize the Project landing page?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'Can I customize the branding in my installation of Manifold?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'What types of media are supported to upload into the Resource section?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'What is the size limit for media uploaded into the Resource section?',
+          'answer' => 'Lorem ipsum dolor sit amet.'
+        ),
+        array(
+          'question' => 'What if I don’t have permission to upload media to the Resource section?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus.'
+        ),
+        array(
+          'question' => 'Do I need an internet connection to use Manifold?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        ),
+        array(
+          'question' => 'What is the minimum metadata requirement for starting a project?',
+          'answer' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, purus sit amet tincidunt ultrices, lectus justo sagittis tortor, pharetra euismod orci velit ut metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        )
+      ];
+    }
 }

@@ -1,0 +1,38 @@
+.faqs {
+
+}
+
+.faq {
+  + .faq {
+    margin-top: 10px;
+  }
+
+  .accordion-toggle {
+    position: relative;
+    border-bottom: 1px solid $gray03;
+
+    &::after {
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 0;
+    }
+
+    &:hover, &.open {
+      .question {
+        color: $gray07;
+      }
+    }
+  }
+
+
+  .question {
+    display: inline-block;
+    padding: 10px;
+    color: $accentDark;
+  }
+
+  .answer {
+    padding: 10px;
+    color: $gray05;
+  }
+}
