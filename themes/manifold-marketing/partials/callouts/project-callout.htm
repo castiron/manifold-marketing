@@ -1,0 +1,20 @@
+<section class="background-patterned">
+  <div class="project-callout block">
+    <div class="flex-row">
+      <a href="{{ link }}" class="col project-link">
+        <span class="image-wrapper black">
+          <img src="{{ image_path }}">
+        </span>
+      </a>
+      <div class="col blurb">
+        <div class="subheading-secondary blurb-label">Featured Project</div>
+        <div class="heading-primary blurb-title">
+          {{ title | raw}}
+        </div>
+        <div class="copy-secondary blurb-subtitle">
+          {{ subtitle | raw}}
+        </div>
+        <a href="{{ link }}" class="button tall black">See the Project</a>
+      </div>
+  </div>
+</section>

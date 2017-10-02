@@ -1,0 +1,72 @@
+.project-callout {
+  .flex-row {
+    max-width: 860px;
+    margin:  0 auto;
+
+    @include respond($break50) {
+      display: block;
+    }
+  }
+
+  .project-link {
+    width: 260px;
+    padding-right: 70px;
+
+    @include respond($break110) {
+      padding-right: 5.83vw;
+    }
+
+    @include respond($break50) {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .image-wrapper {
+      @include doubleBox;
+      display: inline-block;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .blurb {
+    align-items: flex-start;
+    width: calc(100% - 260px);
+
+    @include respond($break110) {
+      padding-right: 51px;
+    }
+
+    @include respond($break100) {
+      padding-right: 0;
+    }
+
+    @include respond($break50) {
+      width: 100%;
+      margin-top: 35px;
+    }
+
+    .blurb-label {
+      text-transform: uppercase;
+    }
+
+    .blurb-title {
+      margin-top: 20px;
+      color: $white;
+    }
+
+    .blurb-subtitle {
+      margin-top: 20px;
+      color: $gray07;
+    }
+
+    .button {
+      margin-top: 35px;
+    }
+  }
+}
