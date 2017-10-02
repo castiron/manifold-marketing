@@ -17,6 +17,14 @@
     @include respond($break50) {
       width: 100%;
     }
+
+    .title, .subtitle {
+      color: $gray07;
+    }
+
+    .subtitle {
+      margin-top: 28px;
+    }
   }
 
   .contact-container {
@@ -37,26 +45,33 @@
         + .form-input {
           margin-left: 20px;
         }
+
+        input::placeholder {
+          color: $gray03;
+        }
       }
     }
 
     .submit-button {
       width: 100%;
       padding: 11px 12px;
+      cursor: pointer;
 
       &:hover {
         input[type='submit'] {
-          background-color: $gray06;
+          color: $white;
+          background-color: $accentPrimary;
         }
       }
 
       input[type='submit'] {
         @include buttonPrimary;
         width: 100%;
-        color: $white;
-        background-color: $gray07;
+        color: $gray07;
+        cursor: pointer;
+        background-color: $gray01;
         border: 0;
-        transition: background-color $timing $duration;
+        transition: background-color $timing $duration, color $timing $duration;
       }
     }
   }
