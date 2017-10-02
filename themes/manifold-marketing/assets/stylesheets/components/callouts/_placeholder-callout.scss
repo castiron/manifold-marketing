@@ -1,0 +1,53 @@
+.placeholder-callout-container {
+  height: 100%;
+
+  .background-patterned {
+    height: 100%;
+  }
+
+}
+
+.placeholder-callout {
+  .flex-row {
+    @include respond($break100) {
+      flex-flow: wrap row-reverse;
+    }
+  }
+
+  .col.col-2 {
+    @include respond($break100) {
+      width: 100%;
+    }
+  }
+
+  .blurb {
+    padding-right: 5%;
+
+    @include respond($break110) {
+      padding-right: 51px;
+    }
+
+    @include respond($break100) {
+      padding-right: 0;
+    }
+
+    .blurb-title {
+      color: $offBlack;
+    }
+
+    .blurb-subtitle {
+      margin-top: 20px;
+      color: $white;
+    }
+
+    .blurb-body {
+      margin-top: 20px;
+      line-height: 1.5em;
+      color: $white;
+
+      a:hover {
+        color: $offBlack;
+      }
+    }
+  }
+}
