@@ -238,7 +238,8 @@ $icons: (
 .button {
   @include doubleBox;
   @include buttonPrimary;
-  padding: 5px 12px 6px;
+  min-width: 150px;
+  padding: 5px 32px 6px;
   text-align: center;
   text-decoration: none;
   transition: color $timing $duration, background-color $timing $duration, border-color $timing $duration;
@@ -277,10 +278,10 @@ $icons: (
   }
 
   &.tall {
-    padding: 10px 12px 12px;
+    padding: 10px 32px 12px;
 
     @include respond($break20) {
-      padding: 8px 12px 10px;
+      padding: 8px 32px 10px;
     }
   }
 }

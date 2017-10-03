@@ -1,11 +1,11 @@
 .one-button-callout-centered {
   text-align: center;
 
-  .intro + .title {
-    margin-top: 32px;
+  img + .title {
+    margin-top: 42px;
 
     @include respond($break20) {
-      margin-top: 15px;
+      margin-top: 25px;
     }
   }
 
