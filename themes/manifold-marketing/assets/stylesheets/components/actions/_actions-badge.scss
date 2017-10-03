@@ -80,6 +80,15 @@
       }
     }
 
+    &.icon-laptop-dev::after {
+      margin-top: -26px;
+      font-size: 32px;
+
+      @include respond($break20) {
+        font-size: 23px;
+      }
+    }
+
     &.icon-bookpile-small::after {
       margin-top: -22px;
       font-size: 25px;

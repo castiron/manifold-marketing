@@ -1,0 +1,98 @@
+.links-callout {
+  .title {
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .links-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      margin: 60px 60px 0;
+      text-align: center;
+      text-decoration: none;
+
+      @include respond($break110) {
+        margin: 5vw 5vw 0;
+      }
+    }
+
+    .link-badge {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto;
+      background-color: $white;
+      border-radius: 50%;
+
+      .icon {
+        @include iconPre($human-reading);
+        position: absolute;
+        top: 10px;
+        left: 0;
+        text-align: center;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 9px;
+          font-size: 50px;
+          color: $accentPrimary;
+        }
+
+        &::after {
+          position: absolute;
+          color: $gray09;
+        }
+
+        &.icon-book-page-turn::before {
+          transform: scale(-1, 1);
+        }
+
+        &.icon-book-page-turn::after {
+          top: 43px;
+          left: 20px;
+          font-size: 22px;
+        }
+
+        &.icon-laptop::after {
+          top: 39px;
+          left: 15px;
+          font-size: 26px;
+        }
+
+        &.icon-laptop-dev::after {
+          top: 43px;
+          left: 16px;
+          font-size: 20px;
+        }
+
+        &.icon-bookpile-small::before {
+          transform: scale(-1, 1);
+        }
+
+        &.icon-bookpile-small::after {
+          top: 43px;
+          left: 14px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .link-text {
+      @include iconPost($arrow-short-right);
+      margin-top: 23px;
+      color: $gray07;
+      text-decoration: none;
+      white-space: nowrap;
+
+      &::after {
+        padding-left: 10px;
+        color: $gray03;
+        vertical-align: middle;
+      }
+    }
+  }
+}

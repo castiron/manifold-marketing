@@ -268,4 +268,30 @@ class Seed extends ComponentBase
         )
       ];
     }
+
+    public function links()
+    {
+      return [
+        array(
+          "text" => "Publishers",
+          "url" => "#",
+          "icon" => "bookpile-small"
+        ),
+        array(
+          "text" => "Developers",
+          "url" => "#",
+          "icon" => "laptop-dev"
+        ),
+        array(
+          "text" => "Readers",
+          "url" => "#",
+          "icon" => "book-page-turn"
+        ),
+        array(
+          "text" => "Authors",
+          "url" => "#",
+          "icon" => "laptop"
+        ),
+      ];
+    }
 }
