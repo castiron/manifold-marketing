@@ -242,4 +242,30 @@ class Seed extends ComponentBase
         )
       ];
     }
+
+    public function testimonials()
+    {
+      return [
+        array(
+          'quotation' => 'The process of writing a book introduces you to archivists and artists, friends and colleagues. Once published, all of those collaborations are fixed in a static artifact. The promise of Manifold is not only that new communities can continue to form around a book, but also that the book in turn can continue to evolve around its interlocutors.',
+          'author' => 'Grant Wythoff',
+          'source' => 'editor of <em>The Perversity of Things: Hugo Gernsback on Media, Tinkering, and Scientifiction</em>'
+        ),
+        array(
+          'quotation' => 'Donec tristique, turpis non viverra auctor, leo justo sagittis lectus, eu molestie orci nunc in dui. Sed tristique aliquam dui non accumsan. Praesent blandit id massa sit amet varius. Phasellus commodo nec lorem at consequat. Cras sit amet nulla nec est elementum pulvinar. Vestibulum in sem egestas, finibus nibh nec, rutrum nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'author' => 'Quisque arcu risus',
+          'source' => 'editor of <em>Donec aliquam, elit et ultricies volutpat, erat nisi iaculis neque</em>'
+        ),
+        array(
+          'quotation' => 'Quisque arcu risus, condimentum at ligula vitae, condimentum facilisis lacus. Etiam lectus turpis, scelerisque non malesuada sit amet, egestas blandit nibh. Morbi sollicitudin odio eu consectetur bibendum. Phasellus pulvinar sodales nisi a vulputate.',
+          'author' => 'Duis pretium',
+          'source' => 'editor of <em>Duis quis nunc id enim tempus vehicula</em>'
+        ),
+        array(
+          'quotation' => 'Suspendisse semper in diam eu lacinia. Sed lacus elit, pharetra vel sagittis eget, laoreet ut quam. Donec tristique, turpis non viverra auctor, leo justo sagittis lectus, eu molestie orci nunc in dui. Sed tristique aliquam dui non accumsan. Praesent blandit id massa sit amet varius. Phasellus commodo nec lorem at consequat.',
+          'author' => 'Nulla dictum',
+          'source' => 'editor of <em>Integer sed dui at nisi dignissim sagittis ut ut lectus</em>'
+        )
+      ];
+    }
 }

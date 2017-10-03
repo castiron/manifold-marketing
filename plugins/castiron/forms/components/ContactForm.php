@@ -28,10 +28,9 @@ class ContactForm extends ComponentBase
      * @var array Field validation rules
      */
     protected $rules = [
-        'first_name'    => ['required'],
-        'last_name'     => ['required'],
+        'name'    => ['required'],
         'email'         => ['required', 'email'],
-        'subject'       => ['required'],
+        'organization'       => ['required'],
         'body'       => ['required']
     ];
 

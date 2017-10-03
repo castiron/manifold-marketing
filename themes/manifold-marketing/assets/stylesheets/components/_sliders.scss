@@ -1,0 +1,124 @@
+.slider-container {
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+
+  .slider-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform $timing $durationSlow;
+  }
+
+  .slide {
+    width: 100vw;
+    min-width: 100vw;
+
+    .slide-inner {
+      max-width: $containerWidth;
+      padding-right: 132px;
+      padding-left: 132px;
+      margin: 0 auto;
+
+      @include respond($break110) {
+        padding-right: 11vw;
+        padding-left: 11vw;
+      }
+
+      @include respond($break20) {
+        padding-right: $containerPaddingMin;
+        padding-left: $containerPaddingMin;
+      }
+    }
+  }
+}
+
+.slider-ordinals {
+  max-width: $containerWidth;
+  margin: 60px auto 0;
+  text-align: center;
+
+  .slider-ordinal {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    background-color: $gray08;
+    border-radius: 50%;
+    transition: background-color $timing $duration;
+
+    &:hover {
+      background-color: $accentPrimary;
+    }
+
+    &.active {
+      background-color: $gray07;
+    }
+
+    + .slider-ordinal {
+      margin-left: 9px;
+    }
+  }
+}
+
+.slider-pagers {
+  @include clearfix;
+  position: absolute;
+  top: calc(50% - 22px);
+  right: 66px;
+  left: 66px;
+
+  @include respond($break110) {
+    right: 5.5vw;
+    left: 5.5vw;
+  }
+
+  @include respond($break70) {
+    top: 100%;
+  }
+
+  @include respond($break20) {
+    right: $containerPaddingMin / 2;
+    left: $containerPaddingMin / 2;
+  }
+
+  .slider-pager {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: $gray08;
+    border-radius: 50%;
+    transition: background-color $timing $duration;
+
+    &::before {
+      margin-top: 10px;
+      font-size: 20px;
+      color: $gray02;
+      vertical-align: middle;
+      transition: color $timing $duration;
+    }
+
+    &:hover {
+      background-color: $accentPrimary;
+
+      &::before {
+        color: $white;
+      }
+    }
+  }
+
+  .slider-pager-left {
+    @include iconPre($arrow-short-left);
+    float: left;
+  }
+
+  .slider-pager-right {
+    @include iconPre($arrow-short-right);
+    float: right;
+  }
+}

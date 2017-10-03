@@ -1,0 +1,16 @@
+<div class="slider-container" data-slider>
+  <div class="slider-nav" data-slider-nav>
+    {% for slide in slides %}
+      <div class="slider-ordinal" data-pager-ordinal="{{ loop.index }}"></div>
+    {% endfor %}
+  </div>
+  <div class="slider">
+    <div class="" data-element data-count="{{ tabs|length }}">
+      {% for slide in slides %}
+        <div class="slide">
+          {{slide}}
+        </div>
+      % endfor %}
+    </div>
+  </div>
+</div>

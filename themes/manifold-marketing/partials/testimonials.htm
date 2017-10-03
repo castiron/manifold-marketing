@@ -1,0 +1,29 @@
+<div class="background-{{background}}">
+  <div class="slider-container testimonials" data-slider>
+    <div class="title subheading-secondary">{{title}}</div>
+    <div class="slider">
+      <div class="slider-inner" data-element data-count="{{ testimonials|length }}">
+        {% for testimonial in testimonials %}
+          <div class="slide">
+            <div class="slide-inner">
+              <div class="testimonial">
+                <div class="quotation sign-tertiary">{{testimonial.quotation | raw}}</div>
+                <div class="author sign-secondary">— {{testimonial.author | raw}}</div>
+                <div class="source copy-primary">{{testimonial.source | raw}}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="slider-ordinals" data-slider-nav>
+      {% for testimonial in testimonials %}
+        <div class="slider-ordinal" data-pager-ordinal="{{ loop.index }}"></div>
+      {% endfor %}
+    </div>
+    <div class="slider-pagers">
+      <div class="slider-pager-left slider-pager" data-pager="left"></div>
+      <div class="slider-pager-right slider-pager" data-pager="right"></div>
+    </div>
+  </div>
+</div>

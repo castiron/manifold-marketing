@@ -15,22 +15,22 @@ class CssSlider {
     // Keep track of slides in current
     this.current = 0;
     this.initOrdinals();
-    // this.initPagers();
+    this.initPagers();
     this.updateOrdinals();
     this.autoAdvance();
 
-    // node.addEventListener('custom_swipe', (event) => {
-    //   switch(event.detail) {
-    //     case 'left':
-    //       this.pageLeft();
-    //       break;
-    //     case 'right':
-    //       this.pageRight();
-    //       break;
-    //     default:
-    //       return;
-    //   }
-    // });
+    node.addEventListener('custom_swipe', (event) => {
+      switch(event.detail) {
+        case 'left':
+          this.pageLeft();
+          break;
+        case 'right':
+          this.pageRight();
+          break;
+        default:
+          return null;
+      }
+    });
   }
 
   initOrdinals() {

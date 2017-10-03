@@ -32,11 +32,16 @@
       color: $gray07;
       background: $white;
       background-color: $white;
-      border: none;
+      border: 2px solid transparent;
       outline: none;
+      transition: border-color $timing $duration;
 
       &::placeholder {
-        color: $gray07;
+        color: $gray03;
+      }
+
+      &:focus {
+        border-color: $gray02;
       }
     }
 
@@ -46,10 +51,6 @@
       &:focus {
         outline: none;
       }
-    }
-
-    textarea {
-      @include copySecondary;
     }
   }
 }

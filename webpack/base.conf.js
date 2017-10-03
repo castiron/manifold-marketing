@@ -91,16 +91,14 @@ const ruleScss = {
         loader: "css-loader"
       },
       {
-        loader: "sass-loader"
-      },
-      {
         loader: "postcss-loader",
         options: {
           syntax: "postcss-scss",
-          plugins: loader => {
-            autoprefixer();
-          }
+          plugins: [autoprefixer()]
         }
+      },
+      {
+        loader: "sass-loader"
       }
     ],
     // use style-loader in development
