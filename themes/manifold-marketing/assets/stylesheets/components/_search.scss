@@ -1,0 +1,47 @@
+.search-block {
+  justify-content: center;
+
+  .icon-manifold-doc {
+    @include iconPre($manifold-doc);
+    display: inline-block;
+    padding-right: 32px;
+
+    &::before {
+      font-size: 58px;
+      color: $accentPrimary;
+    }
+  }
+
+  &.form-primary .form-input {
+    @include iconPre($magnify);
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+
+    &::before {
+      position: absolute;
+      top: calc(50% - 7px);
+      font-size: 15px;
+      color: $accentPrimary;
+    }
+
+    input {
+      @include fontCopy;
+      padding: 11px 6px 7px 28px;
+      font-size: 22px;
+      font-weight: $regular;
+      line-height: 1.2;
+      color: $white;
+      background-color: $gray07;
+      border-bottom: 2px solid $accentPrimary;
+
+      &::placeholder {
+        color: $gray04;
+      }
+
+      &:focus {
+        border-color: transparent transparent $accentPrimary transparent;
+      }
+    }
+  }
+}

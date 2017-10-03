@@ -55,8 +55,8 @@
 
   .button {
     display: block;
-    width: 136px;
-    min-width: 136px;
+    width: 158px;
+    min-width: 158px;
 
     @include respond($break50) {
       margin-top: 18px;
