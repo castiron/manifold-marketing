@@ -22,7 +22,7 @@
     }
   }
 
-  .title + .description {
+  .title + .subtitle {
     margin-top: 32px;
 
     @include respond($break20) {
@@ -30,8 +30,30 @@
     }
   }
 
-  .description, .title {
+  .title {
     .background-black & {
+      color: $white;
+    }
+
+    .background-patterned & {
+      color: $white;
+    }
+
+    .background-patterned-dark & {
+      color: $accentPrimary;
+    }
+  }
+
+  .subtitle {
+    .background-black & {
+      color: $white;
+    }
+
+    .background-patterned & {
+      color: $black;
+    }
+
+    .background-patterned-dark & {
       color: $white;
     }
   }
@@ -41,6 +63,10 @@
     margin-top: 36px;
 
     .background-black & {
+      color: $white;
+    }
+
+    .background-patterned-dark & {
       color: $white;
     }
   }

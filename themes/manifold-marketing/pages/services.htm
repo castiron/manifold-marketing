@@ -4,7 +4,7 @@ layout = "default"
 
 ==
 
-{% partial 'blocks/block' title="Manifold Digital Services Overview" subtitle="<p>Manifold was built to be easy to install and use by people with minimal technical skills. We realize that you may not have the time or capacity to install and publish a project on your own and offer support for installation and project set up. See our Services Menu for more information about how we can help you install and publish your projects. </p>" background="white" %}
+{% partial 'callouts/one-button-hero' title='Manifold Digital Services' subtitle='<span class="color-primary">Manifold</span> was built to be easy to install and use. But we realize not everyone has the time or capacity to install and publish projects on their own. Which is why we offer a range of digital services to help you. We can help you set up your installation, publish projects, and follow through with technical support.' button_text="Contact Us" link='#' background="patterned-dark" %}
 
 {% for service in seed.services %}
     {% if loop.index % 2 > 0 %}

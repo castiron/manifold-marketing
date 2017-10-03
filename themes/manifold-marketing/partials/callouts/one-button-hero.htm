@@ -1,6 +1,6 @@
 <section class="background-{{background}}">
   <div class="container-callout-tertiary">
-    <div class="one-button-callout-centered">
+    <div class="one-button-hero">
       {% if label %}
         <div class="label subheading-secondary">{{label}}</div>
       {% endif %}
@@ -8,7 +8,7 @@
         <img src="{{ image_path }}">
       {% endif %}
       <div class="heading-primary title">{{ title }}</div>
-      <div class="copy-primary subtitle">{{ subtitle }}</div>
+      <div class="sign-secondary subtitle">{{ subtitle | raw }}</div>
       <a href="{{ link }}" class="button tall {{background == 'patterned' ? 'black' : 'primary' }}">{{ button_text }}</a>
     </div>
   </div>

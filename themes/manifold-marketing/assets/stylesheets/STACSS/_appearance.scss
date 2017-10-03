@@ -100,6 +100,25 @@
   animation: 60s linear infinite backgroundPan;
 }
 
+.background-patterned-dark {
+  background-color: $gray07;
+  background-image: url('/themes/manifold-marketing/assets/images/background-dark.png');
+  background-repeat: repeat;
+  animation: 60s linear infinite backgroundPan;
+}
+
+.color-primary {
+  color: $accentPrimary;
+}
+
+.color-black {
+  color: $offBlack;
+}
+
+.color-white {
+  color: $white;
+}
+
 
 // Images
 // --------------------------------------------------------
