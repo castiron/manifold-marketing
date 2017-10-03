@@ -1,8 +1,10 @@
 .testimonials {
-  @include blockPadding;
+  padding-top: 60px;
+  padding-bottom: 40px;
 
   .title {
     text-align: center;
+    text-transform: uppercase;
   }
 
   .slider {
@@ -12,12 +14,7 @@
   .slider-pagers {
     @include respond($break70) {
       top: auto;
-      bottom: calc(#{$blockPaddingFlex} - 16px);
-    }
-
-    @include respond($break20) {
-      top: auto;
-      bottom: calc(#{$blockPaddingMin} - 16px);
+      bottom: 24px;
     }
   }
 }

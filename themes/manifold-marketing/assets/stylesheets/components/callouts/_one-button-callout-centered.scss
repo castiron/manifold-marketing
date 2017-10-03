@@ -1,6 +1,19 @@
 .one-button-callout-centered {
   text-align: center;
 
+  .label {
+    color: $black;
+    text-transform: uppercase;
+
+    .background-black & {
+      color: $accentPrimary;
+    }
+
+    + img {
+      margin-top: 48px;
+    }
+  }
+
   img + .title {
     margin-top: 42px;
 
@@ -17,8 +30,18 @@
     }
   }
 
+  .description, .title {
+    .background-black & {
+      color: $white;
+    }
+  }
+
   .button {
     display: inline-block;
     margin-top: 36px;
+
+    .background-black & {
+      color: $white;
+    }
   }
 }

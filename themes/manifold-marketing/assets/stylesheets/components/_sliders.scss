@@ -75,10 +75,6 @@
     left: 5.5vw;
   }
 
-  @include respond($break70) {
-    top: 100%;
-  }
-
   @include respond($break20) {
     right: $containerPaddingMin / 2;
     left: $containerPaddingMin / 2;
