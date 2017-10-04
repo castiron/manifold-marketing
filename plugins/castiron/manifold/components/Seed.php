@@ -299,22 +299,22 @@ class Seed extends ComponentBase
     {
       return [
         array(
-          'button_text' => 'GitHub',
+          'text' => 'GitHub',
           'link' => '#',
-          'icon' => 'github'
+          'icon' => 'github-logo'
         ),
         array(
-          'button_text' => 'Documentation',
+          'text' => 'Documentation',
           'link' => '#',
           'icon' => 'manifold-doc'
         ),
         array(
-          'button_text' => 'Gitter',
+          'text' => 'Gitter',
           'link' => '#',
           'icon' => 'gitter-logo'
         ),
         array(
-          'button_text' => 'Services',
+          'text' => 'Services',
           'link' => '#',
           'icon' => 'hand'
         )

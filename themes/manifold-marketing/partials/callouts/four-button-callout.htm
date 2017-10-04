@@ -1,0 +1,14 @@
+<div class="background-{{background}}">
+  <div class="block four-button-callout">
+    <div class="title heading-primary">{{title}}</div>
+    <div class="subtitle copy-secondary">{{subtitle | raw}}</div>
+    <div class="button-row flex-row">
+      {% for button in buttons %}
+        <a href="{{button.link}}" class="col lat-centered">
+          <i class="icon col lat-centered icon-{{button.icon}}"></i>
+          <span class="button black tall">{{button.text}}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
