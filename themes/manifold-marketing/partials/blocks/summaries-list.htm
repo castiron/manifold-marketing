@@ -1,16 +1,14 @@
-<section class="background-{{background}}">
-    <div class="block narrow summaries-list">
-        <div class="heading-primary summaries-title">{{ title }}</div>
-        {% for summary in summaries %}
-            <div class="summary">
-                <div class="summary-header">
-                    <span class="summary-name sign-tertiary">{{ summary.name }}</span>
-                    <span class="summary-subtitle sign-tertiary">{{summary.price}}</span>
-                </div>
-                <div class="summary-body">
-                    {{summary.content | raw}}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
+<div class="summaries-list black">
+  <div class="heading-primary summaries-title">{{ title }}</div>
+  {% for summary in summaries %}
+      <div class="summary">
+          <div class="summary-header">
+              <span class="summary-name sign-tertiary">{{ summary.name }}</span>
+              <span class="summary-subtitle sign-tertiary">{{summary.price}}</span>
+          </div>
+          <div class="summary-body">
+              {{summary.content | raw}}
+          </div>
+      </div>
+  {% endfor %}
+</div>

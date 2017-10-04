@@ -81,8 +81,7 @@ class Seed extends ComponentBase
     public function services()
     {
       $production_services = array(
-        'background' => 'gray',
-        'title' => 'Production Services',
+        'title' => 'Production',
         'packages' => array(
           array(
             'price' => '$3,000',
@@ -153,8 +152,7 @@ class Seed extends ComponentBase
       );
 
       $hosting_services = array(
-        'background' => 'white',
-        'title' => 'Hosting Services',
+        'title' => 'Hosting',
         'packages' => array(
           array(
             'price' => '$???',
@@ -181,8 +179,7 @@ class Seed extends ComponentBase
       );
 
       $customization_services = array(
-        'background' => 'gray',
-        'title' => 'Customization Services',
+        'title' => 'Customization ',
         'packages' => array(
           array(
             'price' => 'Variable',

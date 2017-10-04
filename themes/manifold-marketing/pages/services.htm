@@ -6,17 +6,30 @@ layout = "default"
 
 {% partial 'callouts/one-button-hero' title='Manifold Digital Services' subtitle='<span class="color-primary">Manifold</span> was built to be easy to install and use. But we realize not everyone has the time or capacity to install and publish projects on their own. Which is why we offer a range of digital services to help you. We can help you set up your installation, publish projects, and follow through with technical support.' button_text="Contact Us" link='#' background="patterned-dark" %}
 
-{% for service in seed.services %}
-    {% if loop.index % 2 > 0 %}
-        {% set background = 'gray' %}
-    {% else %}
-        {% set background = 'white' %}
-    {% endif %}
+<section class="background-primary">
+  <div class="block narrow services">
+    <div class="title heading-primary">Our Service Packages</div>
+    {% for service in seed.services %}
+      {% partial 'blocks/summaries-list' title=service.title summaries=service.packages %}
+    {% endfor %}
+  </div>
+</section>
 
-    {% partial 'blocks/summaries-list' background=background title=service.title summaries=service.packages %}
-{% endfor %}
+{% partial 'callouts/one-button-hero' title='Ready to start digitally publishing?' subtitle='If one of our Digital Services packages looks right for your needs, send us a contact form and we’ll get in touch.' button_text="Contact Us" link='#' background="patterned-dark" %}
 
-{% partial 'blocks/block' title="MDS Contact Form" subtitle="<p>For project production help contact Terence Smyre, Digital Project Editor at the University of Minnesota Press. <a href='#'>tsmyre@umn.edu</a></p>" background="primary" %}
+<section class="background-gray">
+  <div class="container-callout-secondary digital-services">
+    <div class="heading-primary color-primary title">Digital Services Support</div>
+    <div class="sign-secondary subtitle">If you are already a Digital Services client and need project production help, contact our Digital Project Editor.</div>
+    <div class="contact">
+      <div class="sign-secondary name">Terence Smyre</div>
+      <div class="copy-quinary organization">University of Minnesota Press</div>
+      <a href="mailto:smyre@umn.edu?Subject=Digital%20Services%20Support" class="email-link">smyre@umn.edu</a>
+    </div>
+  </div>
+</section>
+
+{% partial 'newsletter' small=1 %}
 
 <!--We need this stuff for search:-->
 <div class="qq-invisible">

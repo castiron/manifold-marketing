@@ -1,7 +1,16 @@
 .summaries-list {
+  @include doubleBox;
+  padding: 60px;
+  margin-right: 43px;
+  margin-left: 43px;
+  background-color: $white;
+
+  + .summaries-list {
+    margin-top: 63px;
+  }
+
   .summaries-title {
-    margin-bottom: 82px;
-    text-align: center;
+    margin-bottom: 48px;
   }
 
   .summary {
@@ -11,9 +20,9 @@
   }
 
   .summary-header {
-    padding-bottom: 5px;
+    padding-bottom: 11px;
     margin-bottom: 25px;
-    border-bottom: 2px solid $accentPrimary;
+    border-bottom: 3px solid $accentPrimary;
 
     .summary-subtitle {
       padding-left: 10px;
@@ -57,7 +66,7 @@
       }
 
       ul {
-        @include listTertiary;
+        @include listSecondary;
         margin-top: 5px;
         margin-left: 4px;
       }

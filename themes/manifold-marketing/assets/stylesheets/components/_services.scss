@@ -1,0 +1,40 @@
+.services {
+  .title {
+    margin-bottom: 54px;
+    margin-left: 106px;
+    color: $white;
+  }
+}
+
+.digital-services {
+  color: $gray07;
+
+  .subtitle {
+    margin-top: 20px;
+  }
+
+  .contact {
+    margin-top: 50px;
+
+    .organization {
+      margin-top: 5px;
+    }
+
+    .email-link {
+      @include iconPre($email);
+      margin-top: 5px;
+      color: $gray07;
+      vertical-align: middle;
+
+      &::before {
+        padding-right: 8px;
+        font-size: 12px;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        color: $accentPrimary;
+      }
+    }
+  }
+}
