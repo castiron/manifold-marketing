@@ -1,23 +1,34 @@
 .faqs {
-
+  .title {
+    margin-bottom: 24px;
+    color: $accentPrimary;
+  }
 }
 
 .faq {
-  + .faq {
-    margin-top: 10px;
-  }
+  border-bottom: 2px solid $gray02;
 
   .accordion-toggle {
     position: relative;
-    border-bottom: 1px solid $gray03;
 
     &::after {
       position: absolute;
       top: calc(50% - 6px);
       right: 0;
+      transition: color $timing $duration;
     }
 
-    &:hover, &.open {
+    &:hover {
+      &::after {
+        color: $accentPrimary;
+      }
+
+      .question {
+        color: $accentPrimary;
+      }
+    }
+
+    &.open {
       .question {
         color: $gray07;
       }
@@ -27,12 +38,17 @@
 
   .question {
     display: inline-block;
-    padding: 10px;
-    color: $accentDark;
+    padding: 14px 10px 17px 0;
+    color: $gray07;
+    transition: color $timing $duration;
   }
 
   .answer {
-    padding: 10px;
-    color: $gray05;
+    @include fontCopy;
+    padding: 6px 0 24px;
+    font-size: 20px;
+    font-weight: $regular;
+    line-height: 1.2;
+    color: $gray07;
   }
 }

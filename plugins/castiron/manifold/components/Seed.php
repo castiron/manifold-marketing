@@ -294,4 +294,30 @@ class Seed extends ComponentBase
         ),
       ];
     }
+
+    public function supporters()
+    {
+      return [
+        array(
+          'button_text' => 'GitHub',
+          'link' => '#',
+          'icon' => 'github'
+        ),
+        array(
+          'button_text' => 'Documentation',
+          'link' => '#',
+          'icon' => 'manifold-doc'
+        ),
+        array(
+          'button_text' => 'Gitter',
+          'link' => '#',
+          'icon' => 'gitter-logo'
+        ),
+        array(
+          'button_text' => 'Services',
+          'link' => '#',
+          'icon' => 'hand'
+        )
+      ];
+    }
 }

@@ -1,16 +1,16 @@
 <section class="background-{{background}}">
-  <div class="block">
-    {% partial 'blocks/intro' title='FAQs' %}
-    <div class="faqs">
+  <div class="faqs block">
+    <div class="heading-primary title">Frequently Asked Questions</div>
+    <div class="">
       <ul class="accordions-list">
         {% for faq in faqs %}
           <li class="faq">
             <div class="accordion-toggle" data-accordion-toggle="faq-{{loop.index}}" data-accordion-group="faqs">
-              <div class="subheading-tertiary question">{{faq.question}}</div>
+              <div class="copy-secondary question">{{faq.question}}</div>
             </div>
             <div class="accordion" data-accordion="faq-{{loop.index}}" data-accordion-group="faqs">
               <div class="accordion-inner">
-                <div class="copy-tertiary answer">{{faq.answer}}</div>
+                <div class="answer">{{faq.answer}}</div>
               </div>
             </div>
           </li>
