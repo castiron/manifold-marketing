@@ -62,7 +62,7 @@
   max-width: none;
 
   .newsletter-summary {
-    width: 40%;
+    width: 50%;
 
     @include respond($break50) {
       width: 100%;

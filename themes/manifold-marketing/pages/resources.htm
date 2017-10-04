@@ -2,6 +2,7 @@ title = "Resources"
 url = "/resources"
 layout = "default"
 
+[contactform]
 ==
 
 {% partial 'callouts/one-button-hero' title='Questions? We have documentation.' subtitle='Visit our Documentation to find help and guides for many common Manifold questions.' button_text="Visit Documentation" link='#' background="patterned" %}
@@ -13,6 +14,10 @@ layout = "default"
 {% partial 'faqs' faqs=seed.faqs background="white" %}
 
 {% partial 'callouts/four-button-callout' title="Need more support?" subtitle="Manifold offers open source support through <a href='https://github.com/manifoldscholar/manifold'>GitHub</a>, our <a href='#'>documentation</a>, and <a href='#'>Gitter</a>. We also offer paid support through our <a href='/services'>Digital Services</a>. Choose the method that best fits your support needs." background="primary" buttons=seed.supporters %}
+
+{% component 'contactform' %}
+
+{% partial 'newsletter' small=1 %}
 
 <!--We need this stuff for search:-->
 <div class="qq-invisible">
