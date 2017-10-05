@@ -268,7 +268,7 @@
   font-weight: $semibold;
   line-height: 1.2;
 
-  li {
+  > li {
     vertical-align: middle;
 
     &::before {
@@ -290,7 +290,7 @@
 @mixin listSecondary {
   @include listPrimary;
 
-  li {
+  > li {
     &::before {
       color: $gray03;
     }
@@ -304,7 +304,7 @@
 @mixin listTertiary {
   @include listPrimary;
 
-  li {
+  > li {
     &::before {
       color: $white;
     }

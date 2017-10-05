@@ -4,6 +4,7 @@ use Backend;
 use System\Classes\PluginBase;
 use Castiron\Manifold\Components\UserTypes;
 use Castiron\Manifold\Components\SearchResults;
+
 use App;
 
 use Queequeg\ServiceProvider as QueequegServiceProvider;
@@ -108,7 +109,7 @@ class Plugin extends PluginBase
         return [
             UserTypes::class => 'usertypes',
             SearchResults::class => 'manifoldsearchresults',
-            'Castiron\Manifold\Components\Seed' => 'seed'
+            'Castiron\Manifold\Components\Seed' => 'seed',
         ];
     }
 

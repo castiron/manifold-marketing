@@ -1,0 +1,57 @@
+.docs {
+  max-width: 2062px;
+
+  .flex-row {
+    position: relative;
+    justify-content: flex-start;
+  }
+}
+
+.docs-sidebar {
+  @include blockPadding;
+  min-width: $sidebarWidth;
+  padding-right: 24px;
+  padding-left: 24px;
+  background-color: $gray01;
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    @include fontHead;
+    margin-bottom: 0.65em;
+  }
+
+  ul {
+    @include listPrimary;
+    padding-left: 14px;
+    margin-left: 14px;
+    text-indent: -14px;
+
+    > li > ul {
+      @include listSecondary;
+      padding-left: 15px;
+
+      > li > ul {
+        @include listTertiary;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+.docs-main {
+  @include blockPadding;
+  max-width: $containerWidth - $containerPaddingMax;
+  padding-left: $containerPaddingMax;
+
+  @include respond($break110 + $containerPaddingMax) {
+    max-width: calc(100% - #{$sidebarWidth});
+    padding-left: $containerPaddingFlex;
+  }
+
+  @include respond($break20) {
+    padding-left: $containerPaddingMin;
+  }
+}
