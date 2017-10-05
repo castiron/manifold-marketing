@@ -134,6 +134,6 @@ class StaticPageRequest
    */
   protected function markdownFileLocationOptions($contentPath, $requestPath)
   {
-    return [$contentPath.'/'.$requestPath.'.md', $contentPath.'/'.$requestPath.'.MD'];
+    return [$contentPath.'/'.$requestPath.'.md', $contentPath.'/'.$requestPath.'.MD', $contentPath.'/README.md', $contentPath.'/README.MD'];
   }
 }

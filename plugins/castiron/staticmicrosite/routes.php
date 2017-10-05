@@ -9,9 +9,8 @@ use October\Rain\Support\Facades\Markdown;
 
 $config = new Config();
 $config->setEntryUrlPath('docs');
-$config->setPathRegex('[A-Za-z0-9_/\.\-]+');
+$config->setPathRegex('[A-Za-z0-9_/\.\-]*');
 $config->setContentRootPath('./storage/docs/manifold-docs');
-
 
 Route::get($config->getEntryUrlPath().'/{path}', function ($path) use($config) {
   $request = new Request($config);
