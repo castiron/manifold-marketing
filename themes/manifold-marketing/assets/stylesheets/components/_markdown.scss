@@ -1,0 +1,84 @@
+.markdown {
+  *:first-child() {
+    /* stylelint-disable declaration-no-important */
+    margin-top: 0 !important;
+    /* stylelint-enable */
+  }
+
+  blockquote, dl, ol, p, table, {
+    margin-bottom: 0.85em;
+  }
+
+  h1, h2, h3, h4, h5, h6, {
+    @include fontHead;
+    margin-bottom: 0.65em;
+
+    * + & {
+      margin-top: 0.85em;
+    }
+  }
+
+  p {
+    @include fontCopy;
+  }
+
+  a {
+    color: $accentPrimary;
+    text-decoration: none;
+
+    &:hover {
+      color: $accentDark;
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-weight: $bold;
+  }
+
+  ul {
+    @include listPrimary;
+    padding-left: 14px;
+    margin-bottom: 0.85em;
+    margin-left: 14px;
+    text-indent: -14px;
+
+    > li > ul {
+      @include listSecondary;
+      padding-left: 15px;
+
+      > li > ul {
+        @include listTertiary;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  ol {
+    @include fontHead;
+    padding-left: 28px;
+    font-size: 16px;
+    font-weight: $semibold;
+    line-height: 1.2;
+
+    li + li {
+      margin-top: 5px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    border: 0;
+    page-break-inside: avoid;
+  }
+
+  pre {
+    padding: 0.85em 1em;
+    background-color: $gray01;
+  }
+
+  code {
+    padding: 0.2em;
+    background-color: $gray01;
+  }
+}

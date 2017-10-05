@@ -23,6 +23,7 @@
 !/www/plugins
 !/www/storage
 !/www/themes
+/storage/docs
 
 # Ignore everything these dirs with some whitelisting if necessary.
 # Most of this will be managed by Composer
@@ -32,3 +33,4 @@
 !/plugins/castiron
 !/plugins/castiron/manifold
 !/plugins/castiron/forms
+!/plugins/castiron/staticmicrosite

@@ -34,6 +34,8 @@ $blockPaddingMax: 100px;
 $blockPaddingFlex: 8.33vw;
 $blockPaddingMin: 50px;
 
+$sidebarWidth: 340px;
+
 $baseLineHeight: 1.2;
 $verticalSpace: $baseLineHeight * 1em;
 
@@ -48,7 +50,7 @@ $timing: ease;
 $regular: 400;
 $medium: 500;
 $semibold: 600;
-// $bold: 700;
+$bold: 700;
 
 // Responsive breakpoints
 // --------------------------------------------------------
