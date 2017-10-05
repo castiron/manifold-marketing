@@ -1,17 +1,12 @@
 .docs {
-  max-width: 2062px;
-
   .flex-row {
-    position: relative;
     justify-content: flex-start;
   }
 }
 
 .docs-sidebar {
-  @include blockPadding;
   min-width: $sidebarWidth;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding: 50px 24px 100px;
   background-color: $gray01;
 
   a {
@@ -24,30 +19,31 @@
   }
 
   ul {
-    @include listPrimary;
-    padding-left: 14px;
-    margin-left: 14px;
-    text-indent: -14px;
+    @include fontHead;
+    @include listUnstyled;
+    font-size: 16px;
+    font-weight: $regular;
+    line-height: 1.2;
 
-    > li > ul {
-      @include listSecondary;
-      padding-left: 15px;
+    > li {
+      + li {
+        padding-top: 6px;
+      }
 
-      > li > ul {
-        @include listTertiary;
-        padding-left: 15px;
+      ul {
+        padding: 6px 0 0 15px;
       }
     }
   }
 }
 
 .docs-main {
-  @include blockPadding;
-  max-width: $containerWidth - $containerPaddingMax;
+  width: calc(100% - 340px);
+  padding-top: 50px;
+  padding-bottom: 100px;
   padding-left: $containerPaddingMax;
 
   @include respond($break110 + $containerPaddingMax) {
-    max-width: calc(100% - #{$sidebarWidth});
     padding-left: $containerPaddingFlex;
   }
 

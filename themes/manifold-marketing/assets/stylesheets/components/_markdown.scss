@@ -41,15 +41,18 @@
     padding-left: 14px;
     margin-bottom: 0.85em;
     margin-left: 14px;
+    font-weight: $regular;
     text-indent: -14px;
 
     > li > ul {
       @include listSecondary;
       padding-left: 15px;
+      font-weight: $regular;
 
       > li > ul {
         @include listTertiary;
         padding-left: 15px;
+        font-weight: $regular;
       }
     }
   }
@@ -58,7 +61,7 @@
     @include fontHead;
     padding-left: 28px;
     font-size: 16px;
-    font-weight: $semibold;
+    font-weight: $regular;
     line-height: 1.2;
 
     li + li {
