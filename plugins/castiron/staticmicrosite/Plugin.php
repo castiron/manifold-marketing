@@ -95,7 +95,14 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerSettings()
+    public function registerFormWidgets()
+    {
+      return [
+        'Castiron\StaticMicrosite\FormWidgets\RepoPullButton' => 'repopullbutton',
+      ];
+    }
+
+  public function registerSettings()
     {
         return [
             'route_settings' => [
