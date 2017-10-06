@@ -73,6 +73,10 @@ class StaticPageRequest
     return $this->resolvePath();
   }
 
+  public function validateResourcePath($path) {
+    return !preg_match('/\.\//', $path);
+  }
+
   /**
    * @return bool
    */
@@ -104,6 +108,7 @@ class StaticPageRequest
   }
 
   protected function fileLocationOptions($contentPath, $requestPath, $ext) {
+    if (!$this->validateResourcePath($requestPath)) return []; // If the request path fails validation, don't return any locations
     switch(strtolower($ext)) {
       case '':
         $this->isAsset = false;

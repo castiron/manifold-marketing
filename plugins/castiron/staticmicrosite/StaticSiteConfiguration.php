@@ -1,5 +1,7 @@
 <?php namespace Castiron\StaticMicrosite;
 
+use Castiron\StaticMicrosite\Models\RouteSettings;
+
 class StaticSiteConfiguration {
 
   /**
@@ -66,5 +68,22 @@ class StaticSiteConfiguration {
   public function getContentRootPath()
   {
     return $this->contentRootPath;
+  }
+
+  public static function getAll() {
+    $routeSettings = RouteSettings::get('settings');
+    $configs = [];
+
+    if ($routeSettings === null) return $configs;
+    foreach ($routeSettings as $route) {
+      $config = new self();
+      $config->setEntryUrlPath($route['entry_url_path']);
+      $config->setPathRegex($route['path_regex']);
+      $config->setContentRootPath($route['content_root_path']);
+
+      array_push($configs, $config);
+    }
+
+    return $configs;
   }
 }
