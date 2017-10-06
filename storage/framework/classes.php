@@ -236,4 +236,5 @@
   'RainLab\\Builder\\Classes\\IconList' => 'plugins/rainlab/builder/classes/IconList.php',
   'castiron\\lib\\Controllers\\categorygroups' => 'plugins/castiron/lib/controllers/categorygroups.php',
   'Castiron\\Manifold\\StaticMicroSite\\ManifoldDocs' => 'plugins/castiron/manifold/staticmicrosite/ManifoldDocs.php',
+  'Castiron\\StaticMicrosite\\FormWidgets\\RepoPullButton' => 'plugins/castiron/staticmicrosite/formwidgets/RepoPullButton.php',
 );

@@ -70,6 +70,7 @@ class StaticSiteConfiguration {
     return $this->contentRootPath;
   }
 
+  # TODO: Add presence validation for these fields, dude
   public static function getAll() {
     $routeSettings = RouteSettings::get('settings');
     $configs = [];
@@ -79,7 +80,7 @@ class StaticSiteConfiguration {
       $config = new self();
       $config->setEntryUrlPath($route['entry_url_path']);
       $config->setPathRegex($route['path_regex']);
-      $config->setContentRootPath($route['content_root_path']);
+      $config->setContentRootPath($route['repo']['content_root_path']);
 
       array_push($configs, $config);
     }

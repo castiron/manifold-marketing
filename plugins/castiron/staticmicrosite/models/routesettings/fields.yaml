@@ -17,6 +17,9 @@ fields:
                     span: left
                     comment: <p class='help-block'>Single string, no slashes</p><p class='help-block'><em>docs</em></p>
                     commentHtml: true
+                repo:
+                    type: repopullbutton
+                    span: right
                 path_regex:
                     label: Path Regex
                     type: text
