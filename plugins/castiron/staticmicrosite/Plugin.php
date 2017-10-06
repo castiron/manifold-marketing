@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Castiron\StaticMicrosite\Models\RouteSettings;
 
 /**
  * StaticMicrosite Plugin Information File
@@ -91,6 +92,20 @@ class Plugin extends PluginBase
                 'permissions' => ['castiron.staticmicrosite.*'],
                 'order'       => 500,
             ],
+        ];
+    }
+
+    public function registerSettings()
+    {
+        return [
+            'route_settings' => [
+                'label' => 'Configuration',
+                'description' => '',
+                'category' => 'Static Microsites',
+                'icon' => 'icon-exchange',
+                'class' => RouteSettings::class,
+                'order' => 100
+            ]
         ];
     }
 }
