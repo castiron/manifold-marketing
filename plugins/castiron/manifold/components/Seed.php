@@ -302,7 +302,7 @@ class Seed extends ComponentBase
         ),
         array(
           'text' => 'Documentation',
-          'link' => '#',
+          'link' => '/docs/README',
           'icon' => 'manifold-doc'
         ),
         array(
