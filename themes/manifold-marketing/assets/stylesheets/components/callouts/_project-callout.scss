@@ -9,7 +9,7 @@
   }
 
   .project-link {
-    width: 260px;
+    height: 300px;
     padding-right: 70px;
 
     @include respond($break110) {
@@ -17,26 +17,28 @@
     }
 
     @include respond($break50) {
-      width: 100%;
       padding-right: 0;
     }
 
     .image-wrapper {
       @include doubleBox;
       display: inline-block;
-      max-width: 260px;
-      margin: 0 auto;
+      height: 100%;
+
+      @include respond($break50) {
+        margin: 0 auto;
+      }
     }
 
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
     }
   }
 
   .blurb {
     align-items: flex-start;
-    width: calc(100% - 260px);
+    width: 100%;
 
     @include respond($break110) {
       padding-right: 51px;
