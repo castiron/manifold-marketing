@@ -7,20 +7,22 @@
     height: 100%;
   }
 
-  .no-smil & {
-    .parallelogram,
-    .mask-1,
-    .mask-2 {
-      opacity: 0;
-    }
+  .parallelogram,
+  .mask-1,
+  .mask-2 {
+    opacity: 0;
   }
 
   .smil & {
     .parallelogram,
     .mask-1,
-    .mask-2,
-    .complete {
-      opacity: 0;
+    .mask-2 {
+      transition: opacity $timing $durationSlow;
+    }
+
+    .complete,
+    + span {
+      opacity: 1;
       transition: opacity $timing $durationSlow;
     }
 

@@ -1,0 +1,32 @@
+description = "Homepage layout"
+
+[seed]
+==
+
+{% set navitems = [
+  { url: "/", text: "Home" },
+  { url: "/learn", text: "Learn" },
+  { url: "/community", text: "Community" },
+  { url: "/resources", text: "Resources" },
+  { url: "/services", text: "Services" },
+] %}
+
+<!DOCTYPE html>
+<html>
+    {% partial "html-head" %}
+    <body>
+        <!-- Site Header, Nav -->
+        {% partial "header" navitems=navitems animatedlogo='true' %}
+
+        <!-- Main page content -->
+        <main>
+          {% page %}
+        </main>
+
+        <!-- Footer navigation, colophon -->
+        {% partial "footer" animatedlogo='true' %}
+
+        <!-- Footer Scripts (Load Javscript) -->
+        {% partial "footer-scripts" %}
+    </body>
+</html>
