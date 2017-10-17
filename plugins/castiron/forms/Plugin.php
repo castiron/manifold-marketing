@@ -58,6 +58,21 @@ class Plugin extends PluginBase
         ];
     }
 
+  /**
+   * Registers backend permissions for this plugin.
+   *
+   * @return array
+   */
+    public function registerPermissions()
+    {
+        return [
+            'castiron.forms.*' => [
+                'label' => 'Manage the Forms plugin and access Contacts list',
+                'tab' => 'Forms',
+            ]
+        ];
+    }
+
     /**
      * Registers back-end navigation items for this plugin.
      *

@@ -65,12 +65,11 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
 
         return [
-            'castiron.staticmicrosite.some_permission' => [
-                'tab' => 'StaticMicrosite',
-                'label' => 'Some permission'
+            'castiron.staticmicrosite.*' => [
+                'tab' => 'Static Microsites',
+                'label' => 'Configure static microsites'
             ],
         ];
     }
@@ -111,7 +110,8 @@ class Plugin extends PluginBase
                 'category' => 'Static Microsites',
                 'icon' => 'icon-exchange',
                 'class' => RouteSettings::class,
-                'order' => 100
+                'order' => 100,
+                'permissions' => ['castiron.staticmicrosite.*']
             ]
         ];
     }

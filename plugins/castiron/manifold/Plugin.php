@@ -236,20 +236,18 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Registers any back-end permissions used by this plugin.
+     * Registers backend permissions for this plugin.
      *
      * @return array
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
-        return [
-            'castiron.manifold.some_permission' => [
-                'tab' => 'manifold',
-                'label' => 'Some permission'
-            ],
-        ];
+      return [
+        'castiron.manifold.*' => [
+          'label' => 'Manage the Manifold plugin',
+          'tab' => 'Manifold',
+        ]
+      ];
     }
 
     /**
