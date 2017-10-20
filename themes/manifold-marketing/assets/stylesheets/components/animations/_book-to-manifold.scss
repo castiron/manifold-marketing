@@ -1,0 +1,152 @@
+/* stylelint-disable selector-max-id, number-max-precision */
+.no-smil {
+  #cover {
+    display: none;
+  }
+}
+
+.smil .book-to-manifold {
+  &.animated {
+    $bookColorChangeDuration: 1.5s;
+    $bookOpeningDuration: $bookColorChangeDuration + 0.4s;
+    $pagePileStart: 0.9 * $bookOpeningDuration + 0.6s;
+    $glassesStart: $pagePileStart + 0.5s;
+    $stackStart: $glassesStart + 0.8s;
+
+    svg {
+      overflow: visible;
+    }
+
+    @keyframes fadeOn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #cover {
+      @keyframes coverOpen {
+        0% {
+          opacity: 1;
+          transform: rotateY(0deg);
+          transform-origin: left;
+        }
+
+        99% {
+          opacity: 1;
+          transform: perspective(62px) rotateY(-101deg);
+          transform-origin: left;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      transform-style: preserve-3d;
+      animation: 0.4s linear $bookColorChangeDuration forwards coverOpen;
+
+      polygon {
+        @keyframes coverColorChange {
+          0% {
+            fill: $white;
+          }
+
+          100% {
+            fill: $accentSvg;
+          }
+        }
+
+        fill: $white;
+        animation: 0.5s linear 0.5s forwards coverColorChange;
+      }
+    }
+
+    #cover-opened {
+      @keyframes coverAppears {
+        0% {
+          opacity: 0;
+        }
+
+        98% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      opacity: 0;
+      animation: 0.4s linear $bookColorChangeDuration forwards coverAppears;
+    }
+
+    #arrow {
+      $start: -15px;
+
+      @keyframes arrowRight {
+        0% {
+          opacity: 0;
+          transform: translateX($start);
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        80% {
+          transform: translateX(5px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      opacity: 0;
+      animation: 0.6s ease-in-out 0.9 * $bookOpeningDuration forwards arrowRight;
+    }
+
+    #page-1 {
+      opacity: 0;
+      animation: 0.3s ease-in-out $stackStart + 0.3s forwards fadeOn;
+    }
+
+    #page-2 {
+      opacity: 0;
+      animation: 0.3s ease-in-out $stackStart forwards fadeOn;
+    }
+
+    #page-3 {
+      opacity: 0;
+      animation: 0.5s ease-in-out $pagePileStart forwards fadeOn;
+    }
+
+    #page-contents {
+      #glasses {
+        opacity: 0;
+        animation: 0.3s ease-in-out $glassesStart forwards fadeOn;
+      }
+
+      #pencil {
+        opacity: 0;
+        animation: 0.3s ease-in-out $glassesStart + 0.3s forwards fadeOn;
+      }
+
+      #balloon {
+        opacity: 0;
+        animation: 0.3s ease-in-out $glassesStart + 0.3s + 0.3s forwards fadeOn;
+      }
+    }
+
+    #background {
+      opacity: 0;
+      animation: 0.5s ease-in-out $pagePileStart forwards fadeOn;
+    }
+  }
+}
+/* stylelint-enable */
