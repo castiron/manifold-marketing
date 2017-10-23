@@ -18,6 +18,7 @@
       a {
         @include navPrimary;
         color: $offBlack;
+        text-decoration: none;
 
         &:hover {
           color: $white;

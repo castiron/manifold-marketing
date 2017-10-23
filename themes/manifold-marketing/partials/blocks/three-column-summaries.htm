@@ -4,14 +4,14 @@
 		<div class="heading-primary summaries-title">{{ title }}</div>
 		<div class="summaries flex-row">
 		{% for partner in partners %}
-			<a href="{{ partner.link }}" class="summary">
+			<div class="summary">
 				<div class="image-wrapper">
 					<img src="{{ partner.logo_path }}">
 				</div>
 				<div class="heading-quaternary name" data-mh="summary-name">{{ partner.name }}</div>
 				<div class="copy-quaternary description">{{ partner.description|raw }}</div>
-				<span class="link">visit website</span>
-			</a>
+				<a class="link" href="{{ partner.link }}">visit website</a>
+			</div>
 		{% endfor %}
 		</div>
 	</div>

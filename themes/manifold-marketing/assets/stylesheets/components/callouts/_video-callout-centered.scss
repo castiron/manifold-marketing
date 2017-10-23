@@ -13,7 +13,7 @@
   }
 
   @include respond($break20) {
-    margin-bottom: 74px + $blockPaddingMin;
+    margin-bottom: 0;
   }
 
   &::after {
@@ -37,8 +37,9 @@
     }
 
     @include respond($break20) {
-      bottom: -74px - $blockPaddingMin;
-      height: 74px + $blockPaddingMin;
+      display: none;
+      // bottom: -74px - $blockPaddingMin;
+      // height: 74px + $blockPaddingMin;
     }
   }
 
@@ -102,7 +103,7 @@
     }
 
     @include respond($break20) {
-      margin: 41px auto -74px - $blockPaddingMin;
+      margin: 41px auto 0;
     }
   }
 }

@@ -24,13 +24,9 @@
         @include respond($break50) {
           margin-top: 70px;
         }
-      }
 
-      &:hover {
-        color: initial;
-
-        .link {
-          text-decoration: underline;
+        @include respond($break20) {
+          margin-top: 50px;
         }
       }
 
@@ -71,6 +67,15 @@
         color: $accentPrimary;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @include respond($break50) {
+          display: block;
+          font-size: 13px;
+        }
       }
     }
   }
