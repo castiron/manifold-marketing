@@ -7,7 +7,11 @@
 
   .links-grid {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+
+    @include respond($break50) {
+      display: block;
+    }
 
     a {
       margin: 60px 60px 0;
@@ -15,8 +19,42 @@
       text-decoration: none;
 
       @include respond($break110) {
-        margin: 5vw 5vw 0;
+        margin: 5vw 3vw 0;
       }
+
+      @include respond($break50) {
+        display: flex;
+        justify-content: space-between;
+        max-width: 320px;
+        margin: 5vw auto 0;
+      }
+
+      @include respond($break30) {
+        margin: 29px auto 0;
+      }
+
+      /* stylelint-disable max-nesting-depth */
+      &:hover {
+        .link-text {
+          &::after {
+            color: $accentDark;
+            transform: translateX(15px);
+
+            @include respond($break110) {
+              transform: translateX(2vw);
+            }
+          }
+
+          @include respond($break50) {
+            transform: translateX(5vw);
+
+            &::after {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+      /* stylelint-enable */
     }
 
     .link-badge {
@@ -26,6 +64,10 @@
       margin: 0 auto;
       background-color: $white;
       border-radius: 50%;
+
+      @include respond($break50) {
+        margin: 0 5vw;
+      }
 
       .icon {
         @include iconPre($human-reading);
@@ -87,11 +129,18 @@
       color: $gray07;
       text-decoration: none;
       white-space: nowrap;
+      transition: transform $timing $durationSlow, color $timing $duration;
+
+      @include respond($break20) {
+        margin-top: 25px;
+        margin-right: 5vw;
+      }
 
       &::after {
         padding-left: 10px;
         color: $gray03;
         vertical-align: middle;
+        transition: transform $timing $durationSlow;
       }
     }
   }
