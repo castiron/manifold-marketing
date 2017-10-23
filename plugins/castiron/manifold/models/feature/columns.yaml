@@ -11,4 +11,6 @@ columns:
         searchable: true
     feature_category_id:
         label: Category Type
+        relation: feature_category
+        valueFrom: name
         searchable: true

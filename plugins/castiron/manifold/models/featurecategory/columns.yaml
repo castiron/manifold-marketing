@@ -11,4 +11,6 @@ columns:
         searchable: true
     user_type_id:
         label: User Type
+        relation: user_type
+        valueFrom: name
         searchable: true

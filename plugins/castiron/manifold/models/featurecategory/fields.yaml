@@ -31,4 +31,4 @@ fields:
             wrench: Wrench
     user_type:
         label: User Type
-        type: dropdown
+        type: relation

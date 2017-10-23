@@ -14,4 +14,4 @@ fields:
         type: textarea
     feature_category:
         label: Feature Category
-        type: dropdown
+        type: relation
