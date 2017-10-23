@@ -10,6 +10,18 @@
       font-size: 58px;
       color: $accentPrimary;
     }
+
+    &::after {
+      display: none;
+    }
+
+    @include respond($break30) {
+      padding-right: 5vw;
+
+      &::before {
+        font-size: 10vw;
+      }
+    }
   }
 
   &.form-primary .form-input {
