@@ -93,11 +93,10 @@ class CssSlider {
 
   autoAdvance() {
     clearTimeout(this.autoplayTimer);
-
-    if (this.autoplay === 1) {
+    if (this.autoplay) {
       this.autoplayTimer = setTimeout(() => {
         this.pageRight();
-      }, 6000);
+      }, 10000);
     }
   }
 
