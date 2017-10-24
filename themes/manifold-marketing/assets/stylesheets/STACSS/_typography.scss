@@ -188,6 +188,10 @@
   font-size: 18px;
   font-weight: $regular;
   line-height: 1.2;
+
+  @include respond($break20) {
+    font-size: 16px;
+  }
 }
 
 .subheading-tertiary {

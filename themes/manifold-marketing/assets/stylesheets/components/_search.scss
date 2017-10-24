@@ -28,7 +28,7 @@
     @include iconPre($magnify);
     position: relative;
     width: 100%;
-    max-width: 360px;
+    max-width: 400px;
 
     &::before {
       position: absolute;
@@ -38,14 +38,20 @@
     }
 
     input {
-      @include fontCopy;
       padding: 11px 6px 7px 28px;
       font-size: 22px;
-      font-weight: $regular;
-      line-height: 1.2;
       color: $white;
       background-color: $gray07;
       border-bottom: 2px solid $accentPrimary;
+
+      @include respond($break50) {
+        max-width: 332px;
+        font-size: 18px;
+      }
+
+      @include respond($break50) {
+        font-size: 16px;
+      }
 
       &::placeholder {
         color: $gray04;
