@@ -1,0 +1,35 @@
+<section class="background-gray">
+  <div class="block">
+    <div class="image-to-left-callout">
+      <div class="flex-row callout-header">
+        <div class="col"></div>
+        <div class="col">
+          {% if type == 'small' %}
+            <div class="heading-primary title">{{ title }}</div>
+          {% else %}
+            <div class="sign-primary title">{{ title }}</div>
+          {% endif %}
+          {% if subtitle %}
+            <div class="heading-primary subtitle">{{ subtitle }}</div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="image-wrapper col">
+          {% if animation == 'book' %}
+            {% include 'bookpile-to-phone.htm' %}
+          {% elseif animation == 'discussion' %}
+            {% include 'book-to-manifold.htm' %}
+          {% endif %}
+        </div>
+        <div class="col">
+          {% if type == 'small' %}
+            <div class="copy-quaternary callout-description">{{ description|raw }}</div>
+          {% else %}
+            <div class="copy-secondary callout-description">{{ description|raw }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

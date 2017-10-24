@@ -8,6 +8,7 @@ use Castiron\Manifold\Components\SearchResults;
 use Castiron\Contentment\Content\Manager as ContentManager;
 use Castiron\Manifold\Content\VideoHero;
 use Castiron\Manifold\Content\Announcement;
+use Castiron\Manifold\Content\AnimatedCallout;
 
 use App;
 
@@ -134,6 +135,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(Announcement::class, [
           'icon' => 'icon-bullhorn',
           'label' => 'Announcement',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(AnimatedCallout::class, [
+          'icon' => 'icon-film',
+          'label' => 'Animated Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
