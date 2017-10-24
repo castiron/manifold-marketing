@@ -1,4 +1,4 @@
-import { addClass, removeClass, hasClass } from "./lib/dom-help.js";
+import { debounce, addClass, removeClass, hasClass } from "./lib/dom-help.js";
 import { expand, collapse } from "./lib/height-help.js";
 
 // Accordions are a special case of height-reveal toggles+reveals;
@@ -48,7 +48,7 @@ class AccordionTrigger {
   constructor(triggerNode, revealNodes, onClass, revealAttr, groupAttr) {
     this.trigger = triggerNode;
     this.reveals = revealNodes;
-
+    this.onClass = onClass;
     // Group to which the nodes belong
     this.revealSelector = revealAttr;
     // Find all members of the group
@@ -57,44 +57,88 @@ class AccordionTrigger {
     );
 
     // Bind click handler
+    this.bindTrigger();
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  resizeHandler = () => {
+    debounce(this.collapseAll(), 500);
+  }
+
+  bindTrigger() {
     this.trigger.addEventListener("click", event => {
       event.preventDefault();
 
       // Loop through group members
-      for (const group of [...this.groupAccordions]) {
-        if (group === this.trigger) {
-          // Toggle onClass on group member if it's the reveals' trigger
-          if (!hasClass(this.trigger, onClass)) {
-            addClass(this.trigger, onClass);
-          } else {
-            removeClass(this.trigger, onClass);
-          }
-          // If it's not the trigger remove onClass
-        } else {
-          removeClass(group, onClass);
-          // If it's also a 'reveal' node collapse it
-          if (group.getAttribute(this.revealSelector)) {
-            collapse(group);
-          }
-        }
-      }
+      this.updateGroups();
 
       // Loop through all of this trigger's reveals, expand/collapse them
       // and add the onClass
-      for (const reveal of [...this.reveals]) {
-        // Element needs to be opened;
-        if (!hasClass(this.trigger, onClass)) {
-          // Already handled class removal above
-          collapse(reveal);
+      this.updateReveals();
+    });
+  }
+
+  updateGroups() {
+    for (const group of [...this.groupAccordions]) {
+      if (group === this.trigger) {
+        // Toggle onClass on group member if it's the reveals' trigger
+        if (!hasClass(this.trigger, this.onClass)) {
+          addClass(this.trigger, this.onClass);
         } else {
-          addClass(reveal, onClass);
-          expand(reveal);
-          // setTimeout(function() {
-          //   reveal.style.maxHeight = "none";
-          // }, 1000);
+          removeClass(this.trigger, this.onClass);
+        }
+        // If it's not the trigger remove onClass
+      } else {
+        removeClass(group, this.onClass);
+        // If it's also a 'reveal' node collapse it
+        if (group.getAttribute(this.revealSelector)) {
+          collapse(group);
         }
       }
-    });
+    }
+  }
+
+  updateReveals() {
+    for (const reveal of [...this.reveals]) {
+      // Element needs to be opened;
+      if (!hasClass(this.trigger, this.onClass)) {
+        // Already handled class removal above
+        collapse(reveal);
+      } else {
+        addClass(reveal, this.onClass);
+        expand(reveal);
+      }
+    }
+  }
+
+  collapseGroups() {
+    for (const group of [...this.groupAccordions]) {
+      if (group === this.trigger) {
+        // Toggle onClass on group member if it's the reveals' trigger
+        if (hasClass(this.trigger, this.onClass)) {
+          removeClass(this.trigger, this.onClass);
+        }
+
+        if (group.getAttribute(this.revealSelector)) {
+          removeClass(this.group, this.onClass);
+          collapse(group);
+        }
+      }
+    }
+  }
+
+  collapseReveals() {
+    for (const reveal of [...this.reveals]) {
+      if (hasClass(reveal, this.onClass)) {
+        removeClass(reveal, this.onClass);
+        collapse(reveal);
+      }
+    }
+  }
+
+  collapseAll() {
+    this.collapseGroups();
+    this.collapseReveals();
   }
 }
 
