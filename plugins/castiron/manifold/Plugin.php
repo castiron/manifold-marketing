@@ -9,6 +9,7 @@ use Castiron\Contentment\Content\Manager as ContentManager;
 use Castiron\Manifold\Content\VideoHero;
 use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\AnimatedCallout;
+use Castiron\Manifold\Content\ActionsListing;
 
 use App;
 
@@ -144,6 +145,13 @@ class Plugin extends PluginBase
           'label' => 'Animated Callout',
           'position' => 100,
           'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(ActionsListing::class, [
+          'icon' => 'icon-list-alt',
+          'label' => 'Actions Listing',
+          'position' => 100,
+          'category' => 'Block',
         ]);
     }
 
