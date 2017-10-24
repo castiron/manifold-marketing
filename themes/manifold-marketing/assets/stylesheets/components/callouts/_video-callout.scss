@@ -24,6 +24,14 @@
 
     .blurb-title {
       color: $offBlack;
+
+      .background-primary &, .background-patterned & {
+        color: $offBlack;
+      }
+
+      .background-patterned-dark &, .background-black &, .background-gray & {
+        color: $accentPrimary;
+      }
     }
 
     .blurb-subtitle {

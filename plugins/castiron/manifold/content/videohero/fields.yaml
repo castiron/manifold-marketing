@@ -1,0 +1,38 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  type:
+    label: Type
+    type: dropdown
+    options:
+        columnar: Columnar
+        stacked: Stacked
+    required: true
+  background:
+    label: Background Style
+    type: dropdown
+    options:
+        black: Dark
+        gray: Gray
+        primary: Primary
+        patterend: Primary Pattern
+        patterned-dark: Dark Pattern
+    placeholder: Override default Background Style
+  title:
+    label: Title
+    type: text
+    required: true
+  subtitle:
+    label: Subtitle
+    type: text
+    required: true
+  video_link:
+    label: Video Link
+    type: text
+    required: true
+  video_title:
+    label: Video Title
+    type: text
+    required: true

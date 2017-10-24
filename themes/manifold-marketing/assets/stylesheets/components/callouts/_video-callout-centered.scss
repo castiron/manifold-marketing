@@ -79,11 +79,27 @@
       max-width: 622px;
       margin: 0 auto;
       color: $white;
+
+      .background-primary &, .background-patterned & {
+        color: $white;
+      }
+
+      .background-patterned-dark &, .background-black &, .background-gray & {
+        color: $accentPrimary;
+      }
     }
 
     .blurb-subtitle {
       margin-top: 22px;
       color: $offBlack;
+
+      .background-primary &, .background-patterned & {
+        color: $offBlack;
+      }
+
+      .background-patterned-dark &, .background-black &, .background-gray & {
+        color: $white;
+      }
     }
   }
 

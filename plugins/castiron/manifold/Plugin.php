@@ -5,6 +5,9 @@ use System\Classes\PluginBase;
 use Castiron\Manifold\Components\UserTypes;
 use Castiron\Manifold\Components\SearchResults;
 
+use Castiron\Contentment\Content\Manager as ContentManager;
+use Castiron\Manifold\Content\VideoHero;
+
 use App;
 
 use Queequeg\ServiceProvider as QueequegServiceProvider;
@@ -111,6 +114,21 @@ class Plugin extends PluginBase
             SearchResults::class => 'manifoldsearchresults',
             'Castiron\Manifold\Components\Seed' => 'seed',
         ];
+    }
+
+    /**
+     * Registers any contentment components implemented in this plugin.
+     *
+     * @return array
+     */
+    public function registerContentElements()
+    {
+        ContentManager::registerElement(VideoHero::class, [
+          'icon' => 'icon-bars',
+          'label' => 'Video Hero',
+          'position' => 100,
+          'category' => 'Hero',
+        ]);
     }
 
     /**
