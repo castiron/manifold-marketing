@@ -5,17 +5,46 @@
   margin-left: 43px;
   background-color: $white;
 
+  @include respond($break110) {
+    padding: 5vw;
+    margin-right: 3.58vw;
+    margin-left: 3.58vw;
+  }
+
+  @include respond($break50) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  @include respond($break30) {
+    margin-right: 0;
+    margin-left: 0;
+    // border: 0;
+
+    // &::after {
+    //   display: none;
+    // }
+  }
+
   + .summaries-list {
     margin-top: 63px;
   }
 
   .summaries-title {
     margin-bottom: 48px;
+
+    @include respond($break50) {
+      margin-bottom: 28px;
+    }
   }
 
   .summary {
     + .summary {
       margin-top: 70px;
+
+      @include respond($break50) {
+        margin-top: 48px;
+      }
     }
   }
 
@@ -33,6 +62,16 @@
   .summary-body {
     .flex-row {
       justify-content: flex-start;
+
+      @include respond($break50) {
+        display: block;
+      }
+    }
+
+    .col {
+      @include respond($break50) {
+        display: block;
+      }
     }
 
     .col + .col {
@@ -40,6 +79,11 @@
 
       @include respond($break110) {
         margin-left: 13vw;
+      }
+
+      @include respond($break50) {
+        margin-top: 28px;
+        margin-left: 0;
       }
     }
 

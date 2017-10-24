@@ -3,6 +3,19 @@
     margin-bottom: 54px;
     margin-left: 106px;
     color: $white;
+
+    @include respond($break110) {
+      margin-left: 8.58vw;
+      margin-bottom: 4.5vw;
+    }
+
+    @include respond($break50) {
+      margin-left: 5vw;
+    }
+
+    @include respond($break20) {
+      margin-bottom: $blockPaddingMin;
+    }
   }
 }
 
