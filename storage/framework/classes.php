@@ -266,4 +266,5 @@
   'Castiron\\Contentment\\Content\\SimplePage' => 'plugins/castiron/contentment/content/SimplePage.php',
   'Castiron\\Contentment\\Content\\Pages\\SampleHeaderTextImage' => 'plugins/castiron/contentment/content/pages/SampleHeaderTextImage.php',
   'Castiron\\Manifold\\Content\\VideoHero' => 'plugins/castiron/manifold/content/VideoHero.php',
+  'Castiron\\Manifold\\Content\\Announcement' => 'plugins/castiron/manifold/content/Announcement.php',
 );

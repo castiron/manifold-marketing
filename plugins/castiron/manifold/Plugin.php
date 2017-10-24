@@ -7,6 +7,7 @@ use Castiron\Manifold\Components\SearchResults;
 
 use Castiron\Contentment\Content\Manager as ContentManager;
 use Castiron\Manifold\Content\VideoHero;
+use Castiron\Manifold\Content\Announcement;
 
 use App;
 
@@ -124,10 +125,17 @@ class Plugin extends PluginBase
     public function registerContentElements()
     {
         ContentManager::registerElement(VideoHero::class, [
-          'icon' => 'icon-bars',
+          'icon' => 'icon-video-camera',
           'label' => 'Video Hero',
           'position' => 100,
           'category' => 'Hero',
+        ]);
+
+        ContentManager::registerElement(Announcement::class, [
+          'icon' => 'icon-bullhorn',
+          'label' => 'Announcement',
+          'position' => 100,
+          'category' => 'Callout',
         ]);
     }
 
