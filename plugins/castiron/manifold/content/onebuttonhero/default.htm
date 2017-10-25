@@ -1,0 +1,19 @@
+{% if not background %}
+  {% set background = 'patterned' %}
+{% endif %}
+
+{% if background == 'black' or background == 'gray' or background == 'dark-patterned' %}
+  {% set button_style = 'primary' %}
+{% elseif background == 'patterned' or background == 'primary' %}
+  {% set button_style = 'black' %}
+{% endif %}
+
+<section class="background-{{background}}">
+  <div class="container-callout-tertiary">
+    <div class="one-button-hero">
+      <div class="heading-primary title">{{ title }}</div>
+      <div class="sign-tertiary subtitle">{{ subtitle | raw }}</div>
+      <a href="{{ link }}" class="button tall {{button_style}}">{{ button_text }}</a>
+    </div>
+  </div>
+</section>

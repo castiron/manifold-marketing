@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  faqs:
+    label: Testimonial
+    type: repeater
+    form:
+      fields:
+        question:
+          label: Question
+          type: richeditor
+          size: small
+          required: true
+        answer:
+          label: Answer
+          type: richeditor
+          size: small
+          required: true

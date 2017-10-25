@@ -5,6 +5,20 @@ use System\Classes\PluginBase;
 use Castiron\Manifold\Components\UserTypes;
 use Castiron\Manifold\Components\SearchResults;
 
+use Castiron\Contentment\Content\Manager as ContentManager;
+use Castiron\Manifold\Content\VideoHero;
+use Castiron\Manifold\Content\ActionsListing;
+use Castiron\Manifold\Content\AnimatedCallout;
+use Castiron\Manifold\Content\Announcement;
+use Castiron\Manifold\Content\DocumentationNav;
+use Castiron\Manifold\Content\Faq;
+use Castiron\Manifold\Content\MultiButtonCallout;
+use Castiron\Manifold\Content\OneButtonCallout;
+use Castiron\Manifold\Content\OneButtonHero;
+use Castiron\Manifold\Content\ParallaxCallout;
+use Castiron\Manifold\Content\Testimonials;
+use Castiron\Manifold\Content\ServicePackages;
+
 use App;
 
 use Queequeg\ServiceProvider as QueequegServiceProvider;
@@ -111,6 +125,98 @@ class Plugin extends PluginBase
             SearchResults::class => 'manifoldsearchresults',
             'Castiron\Manifold\Components\Seed' => 'seed',
         ];
+    }
+
+    /**
+     * Registers any contentment components implemented in this plugin.
+     *
+     * @return array
+     */
+    public function registerContentElements()
+    {
+        ContentManager::registerElement(VideoHero::class, [
+          'icon' => 'icon-video-camera',
+          'label' => 'Video Hero',
+          'position' => 100,
+          'category' => 'Hero',
+        ]);
+
+        ContentManager::registerElement(OneButtonHero::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'One Button Hero',
+          'position' => 100,
+          'category' => 'Hero',
+        ]);
+
+        ContentManager::registerElement(AnimatedCallout::class, [
+          'icon' => 'icon-film',
+          'label' => 'Animated Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(Announcement::class, [
+          'icon' => 'icon-bullhorn',
+          'label' => 'Announcement',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(MultiButtonCallout::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'Multi-Button Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(OneButtonCallout::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'One Button Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(ParallaxCallout::class, [
+          'icon' => 'icon-arrows-v',
+          'label' => 'Parallax Image Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(ActionsListing::class, [
+          'icon' => 'icon-list-alt',
+          'label' => 'Actions Listing',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(DocumentationNav::class, [
+          'icon' => 'icon-search-plus',
+          'label' => 'Documentation Navigation',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(Testimonials::class, [
+          'icon' => 'icon-comments-o',
+          'label' => 'Testimonials',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(Faq::class, [
+          'icon' => 'icon-list',
+          'label' => 'FAQs',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(ServicePackages::class, [
+          'icon' => 'icon-list',
+          'label' => 'Services',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
     }
 
     /**

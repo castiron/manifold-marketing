@@ -1,0 +1,9 @@
+{% if not background %}
+  {% set background = 'patterned' %}
+{% endif %}
+
+{% if type == 'stacked' %}
+  {% include 'video-hero-centered.htm' %}
+{% elseif type == 'columnar' %}
+  {% include 'video-hero.htm' %}
+{% endif %}

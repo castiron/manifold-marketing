@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  type:
+    label: Type
+    type: dropdown
+    options:
+      summarized: Summarized
+      tabbed: Tabbed
+  title:
+    label: Title
+    trigger:
+      action: hide
+      field: type
+      condition: value[tabbed]
+  subtitle:
+    label: Subtitle
+    trigger:
+      action: hide
+      field: type
+      condition: value[tabbed]

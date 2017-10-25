@@ -1,0 +1,31 @@
+{% if not background %}
+  {% set background = 'white' %}
+{% endif %}
+
+{% if background == 'black' or background == 'white' or background == 'gray' or background == 'dark-patterned' %}
+  {% set button_style = 'primary' %}
+{% elseif background == 'patterned' or background == 'primary' %}
+  {% set button_style = 'black' %}
+{% endif %}
+
+<section class="background-{{background}}">
+  <div class="container-callout-tertiary">
+    <div class="one-button-callout-centered">
+      {% if section_heading %}
+        <div class="label subheading-secondary">{{section_heading}}</div>
+      {% endif %}
+      {% if image %}
+        <img src="/storage/app/media{{ image }}">
+      {% endif %}
+      {% if title %}
+      <div class="heading-primary title">{{ title }}</div>
+      {% endif %}
+      {% if description %}
+      <div class="copy-primary subtitle">{{ description | raw }}</div>
+      {% endif %}
+      {% if button_link or button_text %}
+      <a href="{{ button_link }}" class="button tall {{button_style}}">{{ button_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

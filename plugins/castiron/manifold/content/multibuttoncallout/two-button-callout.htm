@@ -1,0 +1,23 @@
+<section class="background-primary">
+    <div class="container-callout-secondary">
+        <div class="multi-button-callout two-button-callout">
+            <section class="block-intro">
+              <div class="title heading-primary">{{ title }}</div>
+              <div class="subtitle copy-secondary">{{ subtitle | raw }}</div>
+            </section>
+            <div class="flex-row">
+                {% for button in buttons %}
+                  <a href="{{button.button_link}}" class="col col-2 lat-centered">
+                      {% if button.button_icon %}
+                        <i class="icon icon-{{button.button_icon}}"></i>
+                      {% endif %}
+                      {% if button.button_description %}
+                        <div class="sign-secondary button-caption">{{button.button_description}}</div>
+                      {% endif %}
+                      <span class="button black tall">{{button.button_text}}</span>
+                  </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

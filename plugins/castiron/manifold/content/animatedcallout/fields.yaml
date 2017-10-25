@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  type:
+    label: Type
+    type: dropdown
+    options:
+      normal: Normal
+      small: Small
+  title:
+    label: Title
+  subtitle:
+    label: Subtitle
+  description:
+    label: Description
+    type: richeditor
+  animation:
+    label: Animated Image
+    type: dropdown
+    options:
+      book: Bookpile
+      discussion: Book Discussion

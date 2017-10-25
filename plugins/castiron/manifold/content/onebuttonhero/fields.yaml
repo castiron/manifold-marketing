@@ -1,0 +1,26 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  background:
+    label: Background Style
+    type: dropdown
+    options:
+      black: Dark
+      gray: Gray
+      primary: Primary
+      patterned: Primary Pattern
+      patterned-dark: Dark Pattern
+    placeholder: Override default Background Style
+  title:
+    label: Title
+  subtitle:
+    label: Subtitle
+    type: richeditor
+    size: small
+  button_text:
+    label: Button Text
+  button_link:
+    label: Button Link
+

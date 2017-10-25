@@ -33,10 +33,14 @@
 !/plugins/castiron
 !/plugins/castiron/manifold
 !/plugins/castiron/forms
+!/plugins/castiron/news
+!/plugins/castiron/search
 !/plugins/castiron/staticmicrosite
 
 
 /storage/*
+/storage/framework/classes.php
+/storage/framework/services.php
 !/storage/app/.keep
 !/storage/app/media/.keep
 !/storage/app/uploads/.keep

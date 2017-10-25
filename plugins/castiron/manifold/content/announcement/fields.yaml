@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  announcement:
+    label: Announcement
+    commentAbove: Override the teaser of the Newest Announcement News Record
+    placeholder: Newest Announcement News Record Teaser
+  link:
+    label: Link
+    commentAbove: Override the link of the Newest Announcement News Record
+    placeholder: Newest Announcement News Record Link
+  button_text:
+    label: Button Text
+    comment: Defaults to "Learn More"
+    placeholder: Learn More

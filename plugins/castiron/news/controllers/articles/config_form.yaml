@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Article
+
+# Model Form Field configuration
+form: $/castiron/news/models/article/fields.yaml
+
+# Model Class name
+modelClass: Castiron\News\Models\Article
+
+# Default redirect location
+defaultRedirect: castiron/news/articles
+
+# Create page
+create:
+    title: Create Article
+    redirect: castiron/news/articles/update/:id
+    redirectClose: castiron/news/articles
+
+# Update page
+update:
+    title: Edit Article
+    redirect: castiron/news/articles
+    redirectClose: castiron/news/articles
+
+# Preview page
+preview:
+    title: Preview Article

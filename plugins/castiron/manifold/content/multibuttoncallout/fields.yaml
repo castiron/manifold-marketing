@@ -1,0 +1,35 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Title
+  subtitle:
+    label: Description
+    type: richeditor
+    size: small
+  buttons:
+    label: Buttons
+    type: repeater
+    maxItems: 4
+    form:
+      fields:
+        button_text:
+          label: Button Text
+          required: true
+        button_link:
+          label: Button Link
+          required: true
+        button_description:
+          label: Description
+        button_icon:
+          label: Icon
+          type: dropdown
+          emptyOption: No Icon
+          options:
+            cloud: cloud
+            github-logo: Gihub Logo
+            gitter-logo: Gitter Logo
+            hand: Hand
+            manifold-doc: Manifold Document

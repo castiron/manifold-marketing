@@ -1,10 +1,4 @@
 .two-button-callout {
-  .block-intro {
-    .title {
-      color: $white;
-    }
-  }
-
   .flex-row {
     margin-top: 68px;
 
@@ -36,64 +30,9 @@
       }
     }
 
-    &:hover {
-      .button {
-        background-color: $gray06;
-        border-color: $gray06;
-
-        &::after {
-          border-right-color: $gray06;
-          border-bottom-color: $gray06;
-        }
-      }
-    }
-
     &.col-2 {
       @include respond($break20) {
         width: 100%;
-      }
-    }
-
-    .icon-cloud {
-      @include iconPost($cloud-down);
-
-      &::after {
-        font-size: 43px;
-        color: $white;
-
-        @include respond($break20) {
-          font-size: 28px;
-        }
-      }
-    }
-
-    .icon-hand {
-      @include iconPost($hand);
-
-      &::after {
-        font-size: 45px;
-        color: $white;
-
-        @include respond($break20) {
-          font-size: 30px;
-        }
-      }
-    }
-
-    .button-caption {
-      flex-grow: 2;
-      width: 100%;
-      margin-top: 15px;
-      color: $gray07;
-      text-align: center;
-    }
-
-    .button {
-      min-width: 150px;
-      margin-top: 26px;
-
-      @include respond($break20) {
-        margin-top: 18px;
       }
     }
   }

@@ -1,0 +1,92 @@
+.multi-button-callout {
+  .title {
+    color: $white;
+  }
+
+  a {
+    &:hover {
+      .icon {
+        &::after {
+          color: $gray06;
+        }
+      }
+
+      .button {
+        background-color: $gray06;
+        border-color: $gray06;
+
+        &::after {
+          border-right-color: $gray06;
+          border-bottom-color: $gray06;
+        }
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    color: $white;
+    transition: color $timing $duration;
+  }
+
+  .icon-cloud {
+    font-size: 43px;
+
+    @include respond($break20) {
+      font-size: 28px;
+    }
+  }
+
+  .icon-hand {
+    font-size: 45px;
+
+    @include respond($break20) {
+      font-size: 30px;
+    }
+  }
+
+  .icon-github-logo {
+    font-size: 45px;
+
+    @include respond($break20) {
+      font-size: 30px;
+    }
+  }
+
+  .icon-manifold-doc {
+    font-size: 57px;
+
+    @include respond($break20) {
+      font-size: 38px;
+    }
+  }
+
+  .icon-gitter-logo {
+    font-size: 20px;
+
+    @include respond($break20) {
+      font-size: 13px;
+    }
+  }
+
+  .button-caption {
+    flex-grow: 2;
+    width: 100%;
+    margin-top: 15px;
+    color: $gray07;
+    text-align: center;
+  }
+
+  .button {
+    min-width: 150px;
+    padding: 10px 2px 12px;
+    margin-top: 26px;
+
+    @include respond($break20) {
+      padding: 8px 32px 10px;
+      margin-top: 18px;
+    }
+  }
+}

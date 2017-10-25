@@ -1,0 +1,20 @@
+{% set desktop_image_path ='themes/manifold-marketing/assets/images/background-image-2.png' %}
+{% set mobile_image_path = 'themes/manifold-marketing/assets/images/background-image-1.png' %}
+
+<section class="background-gray">
+  <div class="full-width-image-callout block">
+    <div class="overlay block">
+      <div class="flex-row">
+        <div class="col col-2"></div>
+        <div class="col col-2">
+          <section class="block-intro">
+            <div class="title heading-primary">{{ title }}</div>
+            <div class="subtitle copy-secondary">{{ subtitle }}</div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <img src="{{ desktop_image_path }}" class="rellax-image desktop-image">
+    <img src="{{ mobile_image_path }}" class="mobile-image">
+  </div>
+</section>

@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  services:
+    label: Services
+    type: repeater
+    form:
+      fields:
+        title:
+          label: Title
+          required: true
+        packages:
+          label: Packages
+          type: repeater
+          form:
+            fields:
+              title:
+                label: Title
+                required: true
+              subtitle:
+                label: Subtitle
+              body:
+                label: Body
+                type: codeeditor
+                language: html
+

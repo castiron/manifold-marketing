@@ -1,0 +1,26 @@
+<section class="background-white">
+  <div class="block">
+    <section class="block-intro">
+      <div class="title heading-primary">{{ title }}</div>
+      <div class="subtitle copy-secondary">{{ subtitle }}</div>
+    </section>
+    {% for actions_group in model.allUserTypes() %}
+      <div class="actions-group">
+        <div class="actions-badge active">
+          <div class="background-circle"></div>
+          <i class="icon icon-{{ actions_group.icon }}"></i>
+        </div>
+        <div class="heading-tertiary action-group-name">{{ actions_group.name }}</div>
+        <ul class="flex-row actions">
+          {% for feature_category in actions_group.feature_categories %}
+            <li class="col action">
+              <i class="icon icon-{{ feature_category.icon }}"></i>
+              <div class="subheading-secondary action-name">{{ feature_category.name }}</div>
+              <div class="copy-tertiary action-description">{{ feature_category.description }}</div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</section>
