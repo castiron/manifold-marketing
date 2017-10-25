@@ -1,0 +1,24 @@
+{
+  "name": "castiron/news-plugin",
+  "description": "An October CMS plugin for news/blog lists and details.",
+  "homepage": "https://github.com/castiron/news-plugin",
+  "type": "october-plugin",
+  "version": "0.0.5",
+  "repositories": [],
+  "require": {
+    "php": ">=5.4",
+    "october/rain": "~1.0",
+    "castiron/castiron": "dev-master"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Castiron\\": "plugins/castiron/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
+

@@ -1,9 +1,11 @@
+{% set new_announcement = model.newAnnouncement() %}
+
 <section class="background-black">
   <div class="container-callout-primary">
-    <a href="{{ link }}" class="announcement-callout flex-row vert-centered">
+    <a href="{% if link %}{{ link }}{% else %}{{new_announcement.slug}}{% endif %}" class="announcement-callout flex-row vert-centered">
       <div class="callout-message flex-row vert-centered">
         <i class="icon-bugle"></i>
-        <div class="sign-secondary announcement">{{ announcement }}</div>
+        <div class="sign-secondary announcement">{% if link %}{{ announcement }}{% else %}{{new_announcement.teaser}}{% endif %}</div>
       </div>
       <span class="button primary tall">{% if button_text %}{{ button_text }}{% else %}Learn More{% endif %}</span>
     </a>

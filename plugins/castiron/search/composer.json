@@ -1,0 +1,23 @@
+{
+    "name": "castiron/search-plugin",
+    "description": "An October CMS plugin for a search component frontend for the queequeg module backend.",
+    "homepage": "https://github.com/castiron/search-plugin",
+    "type": "october-plugin",
+    "repositories": [],
+    "require": {
+        "php": ">=5.4",
+        "october/rain": "~1.0",
+        "castiron/castiron": "dev-master"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Castiron\\": "plugins/castiron/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
+

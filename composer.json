@@ -40,6 +40,10 @@
         {
           "type": "vcs",
           "url": "git@github.com:castiron/search-plugin.git"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:castiron/news-plugin.git"
         }
     ],
     "support": {
@@ -67,6 +71,7 @@
         "castiron/webpackassets-plugin": "1.0.5",
         "castiron/queequeg": "^1.1",
         "castiron/search-plugin": "1.1.3",
+        "castiron/news-plugin": "0.0.5",
         "rainlab/builder-plugin": "dev-master"
     },
     "require-dev": {

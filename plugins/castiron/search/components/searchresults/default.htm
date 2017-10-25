@@ -1,0 +1,122 @@
+<span id="search-top" data-rescroll></span>
+<section id="search-results">
+
+    <form method="get"
+          id="site-search"
+          action="/search"
+          class="invisible"
+          data-fragmented-form>
+        <input type="text" name="q" value="{{ activeQuery() }}" />
+        <input type="text" name="type" value="{{ activeType() }}" />
+        <input type="text" name="page" value="{{ activePage() }}" />
+        {% if boostType() %}<input type="text" name="boost_type" value="{{ boostType() }}" />{% endif %}
+    </form>
+
+    <section>
+        <header class="space-bottom-sub">
+            <h2 class="sign-primary">
+                Search Results:
+            </h2>
+            {% if activeQuery() %}
+                <h1 class="subheading-primary space-bottom-subheading">
+                    <span>"</span>{{ activeQuery() }}<span>"</span>
+                </h1>
+            {% endif %}
+
+            <nav class="flex-selects-header rel">
+                <div class="flex-left-full">
+                    <div class="fw label-tertiary">
+                        {% if results()['total'] > 0 %}
+                            {% if results()['total'] == 1 %}
+                                1 result
+                            {% else %}
+                                {{ results()['total'] }} results
+                            {% endif %}
+                        {% else %}
+                            No results found
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="flex-selects accent-primary visible">
+                    <div class="flex-right input-select">
+                        <select aria-label="Result Types Filter"
+                                data-form-fragement-unset="page"
+                                data-form-fragment="site-search"
+                                name="type">
+                            <option value="" {% if activeType() is not empty %}selected{% endif %}>All</option>
+                            {% for key, type in typeOptions() %}
+                                <option value="{{key}}" {% if activeType() == key %}selected{% endif %}>{{type.label}} ({{ type.count }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </section>
+
+    {% flash %}
+    <section class="space-bottom-sub">
+        {{ message }}
+        </sections>
+        {% endflash %}
+
+        {% if results()['total'] > 0 %}
+            <ul class="list-article-ruled">
+                {% for hit in results().hits %}
+                    <li class="row padded-20 clearfix">
+                        <a href="{{ hit['_source']['url'] }}">
+                            {{ hit['_source']['search-result']|raw }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% set p = paginationDetails() %}
+        {% if p.hasNext or p.hasPrevious %}
+            <div class="space-bottom-sub fw">
+                <ul class="list-ordinal-block">
+                    {% if p.hasPrevious %}
+                        <li class="caret-left">
+                            <button class="previous"
+                                    name="page"
+                                    value="{{ p.previousPage }}"
+                                    data-form-fragment="site-search">
+                                Previous
+                            </button>
+                        </li>
+                        <li class="visible-tablet">
+                            <button name="page"
+                                    value="{{ p.previousPage }}"
+                                    data-form-fragment="site-search">
+                                {{ p.previousPage }}
+                            </button>
+                        </li>
+                    {% endif %}
+                    <li class="visible-tablet active">
+                        <button>
+                            {{ p.currentPage }}
+                        </button>
+                    </li>
+                    {% if p.hasNext %}
+                        <li class="visible-tablet">
+                            <button name="page"
+                                    value="{{ p.nextPage }}"
+                                    data-form-fragment="site-search">
+                                {{ p.nextPage }}
+                            </button>
+                        </li>
+                        <li class="caret-right">
+                            <button class="next"
+                                    name="page"
+                                    value="{{ p.nextPage }}"
+                                    data-form-fragment="site-search">
+                                Next
+                            </button>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+
+    </section>

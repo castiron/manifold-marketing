@@ -33,6 +33,8 @@
 !/plugins/castiron
 !/plugins/castiron/manifold
 !/plugins/castiron/forms
+!/plugins/castiron/news
+!/plugins/castiron/search
 !/plugins/castiron/staticmicrosite
 
 
