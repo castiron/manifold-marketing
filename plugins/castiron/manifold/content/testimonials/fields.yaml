@@ -8,7 +8,7 @@ fields:
     commentAbove: Defaults to "What are people saying?"
     placeholder: What are people saying
   testimonials:
-    label: Testimonial
+    label: Testimonials
     type: repeater
     form:
       fields:

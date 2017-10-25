@@ -17,6 +17,7 @@ use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
 use Castiron\Manifold\Content\ParallaxCallout;
 use Castiron\Manifold\Content\Testimonials;
+use Castiron\Manifold\Content\ServicePackages;
 
 use App;
 
@@ -206,6 +207,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(Faq::class, [
           'icon' => 'icon-list',
           'label' => 'FAQs',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(ServicePackages::class, [
+          'icon' => 'icon-list',
+          'label' => 'Services',
           'position' => 100,
           'category' => 'Block',
         ]);
