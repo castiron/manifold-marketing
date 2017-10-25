@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: Title
+    slug:
+        label: Slug
+    id:
+        label: ID

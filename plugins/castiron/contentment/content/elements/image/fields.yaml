@@ -1,0 +1,11 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  image:
+    label: Image
+    type: mediafinder
+    mode: image
+  caption:
+    label: Caption

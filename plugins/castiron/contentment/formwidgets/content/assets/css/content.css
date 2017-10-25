@@ -1,0 +1,56 @@
+#content-list .content-panel {
+	width: 100%;
+	border: 1px solid darkGray;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+#content-list .content-panel.placeholder {
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(173,173,173,1);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(173,173,173,1);
+	box-shadow: 10px 10px 5px 0px rgba(173,173,173,1);
+	position: relative;
+	top: -10px;
+	left: -10px;
+}
+
+#content-list .content-panel.dragged {
+	display: none;
+}
+
+#content-list .content-panel.content-hidden {
+	opacity: 0.5;
+}
+
+#content-list .content-panel .content-panel-toolbar {
+	background-color: lightGray;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 10px 20px 10px 10px;
+}
+
+#content-list .content-panel .content-panel-toolbar h4 {
+	display: inline;
+}
+
+#content-list .content-panel .content-panel-toolbar a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#content-list .content-panel .content-panel-toolbar a[class^=icon-] {
+	float: right;
+	font-size: large;
+	margin-left: 20px;
+}
+#content-list .content-panel .content-panel-toolbar a[class^=icon-]:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#content-list .content-panel .content-panel-body {
+	padding: 10px;
+}

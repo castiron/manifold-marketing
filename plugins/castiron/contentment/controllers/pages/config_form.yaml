@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Page
+
+# Model Form Field configuration
+form: $/castiron/contentment/models/page/fields.yaml
+
+# Model Class name
+modelClass: Castiron\Contentment\Models\Page
+
+# Default redirect location
+defaultRedirect: castiron/contentment/pages
+
+# Create page
+create:
+    title: Create Page
+    redirect: castiron/contentment/pages/update/:id
+    redirectClose: castiron/contentment/pages
+
+# Update page
+update:
+    title: Edit Page
+    redirect: castiron/contentment/pages/create
+    redirectClose: castiron/contentment/pages
+
+# Preview page
+preview:
+    title: Preview Page

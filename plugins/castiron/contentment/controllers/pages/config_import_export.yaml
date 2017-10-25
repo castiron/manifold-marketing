@@ -1,0 +1,10 @@
+import:
+    title: Import pages
+    modelClass: Castiron\Contentment\Models\PagesImport
+    list: $/castiron/contentment/models/page/import_export_columns.yaml
+
+export:
+    title: Export pages
+    modelClass: Castiron\Contentment\Models\PagesExport
+    list: $/castiron/contentment/models/page/import_export_columns.yaml
+    # useList: true

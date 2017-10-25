@@ -1,0 +1,9 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  body:
+    label: Code
+    type: codeeditor
+    size: huge

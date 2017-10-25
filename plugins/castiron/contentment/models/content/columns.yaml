@@ -1,0 +1,9 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+#  data:
+#    label: Data
+  element_type:
+    label: Element Type

@@ -1,0 +1,23 @@
+<h4>Add Content</h4>
+<?php foreach ($contentElements as $categoryName => $elements): ?>
+    <?php if (empty($elements)) continue ?>
+    <div class="dropdown">
+        <button data-toggle="dropdown" class="btn btn-primary" id="addContent">
+            <i class="oc-icon-plus"></i>
+            <?= $categoryName ?>
+        </button>
+        <ul class="dropdown-menu" role="menu" data-dropdown-title="Add Content">
+            <?php foreach ($elements as $element): ?>
+                <li role="presentation">
+                    <a  class="<?= $element->icon ?>" href="javascript:;"
+                        data-request="<?= $this->getEventHandler('onAddContent') ?>"
+                        data-request-data="identifier: '<?= $element->id ?>', update: '#content-list'"
+                        data-request-success="$(document).trigger('click.bs.dropdown.data-api');"
+                        data-stripe-load-indicator>
+                        <?= $element->label ?>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+<?php endforeach ?>
