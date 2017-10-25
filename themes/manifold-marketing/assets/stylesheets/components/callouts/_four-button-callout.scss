@@ -1,10 +1,6 @@
 .four-button-callout {
   text-align: center;
 
-  .title {
-    color: $white;
-  }
-
   .subtitle {
     max-width: 738px;
     margin: 23px auto 0;
@@ -41,53 +37,6 @@
         padding-right: 0;
         padding-left: 0;
       }
-
-      &:hover {
-        .icon {
-          color: $gray06;
-        }
-
-        .button {
-          background-color: $gray06;
-          border-color: $gray06;
-
-          &::after {
-            border-right-color: $gray06;
-            border-bottom-color: $gray06;
-          }
-        }
-      }
     }
-  }
-
-
-  .icon {
-    justify-content: center;
-    height: 120px;
-    color: $white;
-    transition: color $timing $duration;
-  }
-
-  .icon-github-logo {
-    font-size: 45px;
-  }
-
-  .icon-manifold-doc {
-    font-size: 57px;
-  }
-
-  .icon-gitter-logo {
-    font-size: 20px;
-  }
-
-  .icon-hand {
-    font-size: 45px;
-  }
-
-  .button {
-    width: 148px;
-    padding: 10px 2px 12px;
-    font-size: 15px;
-    text-align: center;
   }
 }

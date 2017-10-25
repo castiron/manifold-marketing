@@ -5,15 +5,12 @@
 fields:
   announcement:
     label: Announcement
-    type: text
     required: true
   link:
     label: Link
-    type: text
     required: true
   button_text:
     label: Button Text
-    type: text
     comment: Defaults to "Learn More"
     placeholder: Learn More
 

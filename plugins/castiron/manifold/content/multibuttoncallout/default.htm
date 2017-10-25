@@ -1,0 +1,5 @@
+{% if buttons|length <= 2 %}
+  {% include 'two-button-callout.htm' %}
+{% elseif buttons|length > 2 %}
+  {% include 'four-button-callout.htm' %}
+{% endif %}

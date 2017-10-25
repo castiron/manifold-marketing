@@ -11,14 +11,12 @@ fields:
       tabbed: Tabbed
   title:
     label: Title
-    type: text
     trigger:
       action: hide
       field: type
       condition: value[tabbed]
   subtitle:
     label: Subtitle
-    type: text
     trigger:
       action: hide
       field: type

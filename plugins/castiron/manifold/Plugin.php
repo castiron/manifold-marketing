@@ -7,9 +7,10 @@ use Castiron\Manifold\Components\SearchResults;
 
 use Castiron\Contentment\Content\Manager as ContentManager;
 use Castiron\Manifold\Content\VideoHero;
-use Castiron\Manifold\Content\Announcement;
-use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\ActionsListing;
+use Castiron\Manifold\Content\AnimatedCallout;
+use Castiron\Manifold\Content\Announcement;
+use Castiron\Manifold\Content\MultiButtonCallout;
 
 use App;
 
@@ -133,6 +134,13 @@ class Plugin extends PluginBase
           'category' => 'Hero',
         ]);
 
+        ContentManager::registerElement(AnimatedCallout::class, [
+          'icon' => 'icon-film',
+          'label' => 'Animated Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
         ContentManager::registerElement(Announcement::class, [
           'icon' => 'icon-bullhorn',
           'label' => 'Announcement',
@@ -140,9 +148,9 @@ class Plugin extends PluginBase
           'category' => 'Callout',
         ]);
 
-        ContentManager::registerElement(AnimatedCallout::class, [
-          'icon' => 'icon-film',
-          'label' => 'Animated Callout',
+        ContentManager::registerElement(MultiButtonCallout::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'Multi-Button Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
