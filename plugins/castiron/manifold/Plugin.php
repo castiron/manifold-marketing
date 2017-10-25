@@ -11,6 +11,7 @@ use Castiron\Manifold\Content\ActionsListing;
 use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\MultiButtonCallout;
+use Castiron\Manifold\Content\OneButtonCallout;
 
 use App;
 
@@ -151,6 +152,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(MultiButtonCallout::class, [
           'icon' => 'icon-dot-circle-o',
           'label' => 'Multi-Button Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(OneBUttonCallout::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'One Button Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);

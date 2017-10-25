@@ -5,7 +5,7 @@
     color: $black;
     text-transform: uppercase;
 
-    .background-black & {
+    .background-black &, .background-patterned-dark & {
       color: $accentPrimary;
     }
 
@@ -39,7 +39,7 @@
       color: $white;
     }
 
-    .background-patterned-dark & {
+    .background-patterned-dark &, .background-gray & {
       color: $accentPrimary;
     }
   }

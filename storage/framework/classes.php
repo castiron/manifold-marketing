@@ -270,4 +270,5 @@
   'Castiron\\Manifold\\Content\\AnimatedCallout' => 'plugins/castiron/manifold/content/AnimatedCallout.php',
   'Castiron\\Manifold\\Content\\ActionsListing' => 'plugins/castiron/manifold/content/ActionsListing.php',
   'Castiron\\Manifold\\Content\\MultiButtonCallout' => 'plugins/castiron/manifold/content/MultiButtonCallout.php',
+  'Castiron\\Manifold\\Content\\OneButtonCallout' => 'plugins/castiron/manifold/content/OneButtonCallout.php',
 );
