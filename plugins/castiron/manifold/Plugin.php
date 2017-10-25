@@ -13,6 +13,7 @@ use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
+use Castiron\Manifold\Content\ParallaxCallout;
 
 use App;
 
@@ -167,6 +168,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(OneButtonCallout::class, [
           'icon' => 'icon-dot-circle-o',
           'label' => 'One Button Callout',
+          'position' => 100,
+          'category' => 'Callout',
+        ]);
+
+        ContentManager::registerElement(ParallaxCallout::class, [
+          'icon' => 'icon-arrows-v',
+          'label' => 'Parallax Image Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
