@@ -10,6 +10,7 @@ use Castiron\Manifold\Content\VideoHero;
 use Castiron\Manifold\Content\ActionsListing;
 use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\Announcement;
+use Castiron\Manifold\Content\DocumentationNav;
 use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
@@ -182,6 +183,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(ActionsListing::class, [
           'icon' => 'icon-list-alt',
           'label' => 'Actions Listing',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(DocumentationNav::class, [
+          'icon' => 'icon-search-plus',
+          'label' => 'Documentation Navigation',
           'position' => 100,
           'category' => 'Block',
         ]);

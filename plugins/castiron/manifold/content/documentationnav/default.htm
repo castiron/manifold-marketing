@@ -1,0 +1,27 @@
+{% set links = model.links() %}
+
+<div class="background-black">
+  <div class="container-callout-primary">
+    <form class="form-primary vert-centered search-block flex-row">
+      <i class="icon-manifold-doc"></i>
+      <div class="form-input">
+        <input type="text" name="search" placeholder="Search Manifold's Documentation...">
+      </div>
+    </form>
+  </div>
+</div>
+<div class="background-gray">
+  <div class="block links-callout">
+    <div class="title sign-secondary">{{title}}</div>
+    <div class="links-grid flex-row">
+      {% for link in links %}
+        <a class="" href="{{link.url}}">
+          <div class="link-badge">
+            <i class="icon icon-{{link.icon}}"></i>
+          </div>
+          <div class="link-text sign-secondary">{{link.text}}</div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

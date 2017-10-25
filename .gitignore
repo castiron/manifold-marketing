@@ -39,6 +39,8 @@
 
 
 /storage/*
+/storage/framework/classes.php
+/storage/framework/services.php
 !/storage/app/.keep
 !/storage/app/media/.keep
 !/storage/app/uploads/.keep
