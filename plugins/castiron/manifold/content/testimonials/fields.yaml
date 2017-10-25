@@ -10,12 +10,12 @@ fields:
   testimonials:
     label: Testimonial
     type: repeater
-    maxItems: 4
     form:
       fields:
         quotation:
           label: Quotation
           type: richeditor
+          size: small
           required: true
         author:
           label: Author
@@ -23,3 +23,4 @@ fields:
         author_title:
           label: Author title
           type: richeditor
+          size: small

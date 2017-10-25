@@ -11,6 +11,7 @@ use Castiron\Manifold\Content\ActionsListing;
 use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\DocumentationNav;
+use Castiron\Manifold\Content\Faq;
 use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
@@ -198,6 +199,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(Testimonials::class, [
           'icon' => 'icon-comments-o',
           'label' => 'Testimonials',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(Faq::class, [
+          'icon' => 'icon-list',
+          'label' => 'FAQs',
           'position' => 100,
           'category' => 'Block',
         ]);

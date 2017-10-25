@@ -18,6 +18,7 @@ fields:
   subtitle:
     label: Subtitle
     type: richeditor
+    size: small
   button_text:
     label: Button Text
   button_link:
