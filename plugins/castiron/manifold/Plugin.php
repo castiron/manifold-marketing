@@ -15,6 +15,7 @@ use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
 use Castiron\Manifold\Content\ParallaxCallout;
+use Castiron\Manifold\Content\Testimonials;
 
 use App;
 
@@ -190,6 +191,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(DocumentationNav::class, [
           'icon' => 'icon-search-plus',
           'label' => 'Documentation Navigation',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(Testimonials::class, [
+          'icon' => 'icon-comments-o',
+          'label' => 'Testimonials',
           'position' => 100,
           'category' => 'Block',
         ]);

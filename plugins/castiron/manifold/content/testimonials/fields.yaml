@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Title
+    commentAbove: Defaults to "What are people saying?"
+    placeholder: What are people saying
+  testimonials:
+    label: Testimonial
+    type: repeater
+    maxItems: 4
+    form:
+      fields:
+        quotation:
+          label: Quotation
+          type: richeditor
+          required: true
+        author:
+          label: Author
+          required: true
+        author_title:
+          label: Author title
+          type: richeditor
