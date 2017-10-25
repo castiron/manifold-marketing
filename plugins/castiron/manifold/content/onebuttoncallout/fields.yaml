@@ -11,7 +11,7 @@ fields:
         black: Dark
         gray: Gray
         primary: Primary
-        patterend: Primary Pattern
+        patterned: Primary Pattern
         patterned-dark: Dark Pattern
     placeholder: Override default Background Style
   section_heading:

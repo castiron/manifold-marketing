@@ -12,6 +12,7 @@ use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
+use Castiron\Manifold\Content\OneButtonHero;
 
 use App;
 
@@ -135,6 +136,13 @@ class Plugin extends PluginBase
           'category' => 'Hero',
         ]);
 
+        ContentManager::registerElement(OneButtonHero::class, [
+          'icon' => 'icon-dot-circle-o',
+          'label' => 'One Button Hero',
+          'position' => 100,
+          'category' => 'Hero',
+        ]);
+
         ContentManager::registerElement(AnimatedCallout::class, [
           'icon' => 'icon-film',
           'label' => 'Animated Callout',
@@ -156,7 +164,7 @@ class Plugin extends PluginBase
           'category' => 'Callout',
         ]);
 
-        ContentManager::registerElement(OneBUttonCallout::class, [
+        ContentManager::registerElement(OneButtonCallout::class, [
           'icon' => 'icon-dot-circle-o',
           'label' => 'One Button Callout',
           'position' => 100,

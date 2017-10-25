@@ -271,4 +271,5 @@
   'Castiron\\Manifold\\Content\\ActionsListing' => 'plugins/castiron/manifold/content/ActionsListing.php',
   'Castiron\\Manifold\\Content\\MultiButtonCallout' => 'plugins/castiron/manifold/content/MultiButtonCallout.php',
   'Castiron\\Manifold\\Content\\OneButtonCallout' => 'plugins/castiron/manifold/content/OneButtonCallout.php',
+  'Castiron\\Manifold\\Content\\OneButtonHero' => 'plugins/castiron/manifold/content/OneButtonHero.php',
 );

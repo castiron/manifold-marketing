@@ -24,7 +24,7 @@
       <div class="copy-primary subtitle">{{ description | raw }}</div>
       {% endif %}
       {% if button_link or button_text %}
-      <a href="{{ button_link }}" class="button tall {{background == 'patterned' ? 'black' : 'primary' }}">{{ button_text }}</a>
+      <a href="{{ button_link }}" class="button tall {{button_style}}">{{ button_text }}</a>
       {% endif %}
     </div>
   </div>
