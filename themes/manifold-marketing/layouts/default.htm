@@ -1,6 +1,5 @@
 description = "Default layout"
 
-[seed]
 ==
 
 {% set navitems = [
@@ -16,7 +15,11 @@ description = "Default layout"
     {% partial "html-head" %}
     <body>
         <!-- Site Header, Nav -->
-        {% partial "header" navitems=navitems %}
+        {% if this.page.url == '/' %}
+          {% partial "header" navitems=navitems animatedlogo='true' %}
+        {% else %}
+          {% partial "header" navitems=navitems %}
+        {% endif %}
 
         <!-- Main page content -->
         <main>
@@ -24,7 +27,11 @@ description = "Default layout"
         </main>
 
         <!-- Footer navigation, colophon -->
-        {% partial "footer" %}
+        {% if this.page.url == '/' %}
+          {% partial "footer" animatedlogo='true' %}
+        {% else %}
+          {% partial "footer" %}
+        {% endif %}
 
         <!-- Footer Scripts (Load Javscript) -->
         {% partial "footer-scripts" %}
