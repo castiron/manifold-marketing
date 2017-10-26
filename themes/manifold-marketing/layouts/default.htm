@@ -10,29 +10,20 @@ description = "Default layout"
   { url: "/services", text: "Services" },
 ] %}
 
+{% set isHome = this.page.url == '/' %}
+
 <!DOCTYPE html>
 <html>
     {% partial "html-head" %}
     <body>
         <!-- Site Header, Nav -->
-        {% if this.page.url == '/' %}
-          {% partial "header" navitems=navitems animatedlogo='true' %}
-        {% else %}
-          {% partial "header" navitems=navitems %}
-        {% endif %}
-
+        {% partial "header" navitems=navitems animatedlogo=isHome %}
         <!-- Main page content -->
         <main>
           {% page %}
         </main>
-
         <!-- Footer navigation, colophon -->
-        {% if this.page.url == '/' %}
-          {% partial "footer" animatedlogo='true' %}
-        {% else %}
-          {% partial "footer" %}
-        {% endif %}
-
+        {% partial "footer" animatedlogo=isHome %}
         <!-- Footer Scripts (Load Javscript) -->
         {% partial "footer-scripts" %}
     </body>
