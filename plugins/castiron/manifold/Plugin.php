@@ -246,7 +246,11 @@ class Plugin extends PluginBase
         'castiron.manifold.*' => [
           'label' => 'Manage the Manifold plugin',
           'tab' => 'Manifold',
-        ]
+        ],
+        'castiron.news.*' => [
+          'tab' => 'Castiron',
+          'label' => 'Access News plugin'
+        ],
       ];
     }
 
