@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Title
+    required: true
+  subtitle:
+    label: Subtitle
+    type: textarea
+    size: small
+    required: true
+  image:
+    label: Image
+    type: mediafinder
+    mode: image
+    required: true
+    imageHeight: 296
+  link:
+    label: Link
+    required: true

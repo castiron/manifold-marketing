@@ -12,6 +12,7 @@ use Castiron\Manifold\Content\AnimatedCallout;
 use Castiron\Manifold\Content\Announcement;
 use Castiron\Manifold\Content\DocumentationNav;
 use Castiron\Manifold\Content\Faq;
+use Castiron\Manifold\Content\FeaturedProjectHero;
 use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
@@ -145,6 +146,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(OneButtonHero::class, [
           'icon' => 'icon-dot-circle-o',
           'label' => 'One Button Hero',
+          'position' => 100,
+          'category' => 'Hero',
+        ]);
+
+        ContentManager::registerElement(FeaturedProjectHero::class, [
+          'icon' => 'icon-picture-o',
+          'label' => 'Featured Project Hero',
           'position' => 100,
           'category' => 'Hero',
         ]);
