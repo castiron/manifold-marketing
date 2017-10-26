@@ -16,8 +16,9 @@ use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
 use Castiron\Manifold\Content\ParallaxCallout;
-use Castiron\Manifold\Content\Testimonials;
 use Castiron\Manifold\Content\ServicePackages;
+use Castiron\Manifold\Content\Testimonials;
+use Castiron\Manifold\Content\TwoColumnBlock;
 
 use App;
 
@@ -214,6 +215,13 @@ class Plugin extends PluginBase
         ContentManager::registerElement(ServicePackages::class, [
           'icon' => 'icon-list',
           'label' => 'Services',
+          'position' => 100,
+          'category' => 'Block',
+        ]);
+
+        ContentManager::registerElement(TwoColumnBlock::class, [
+          'icon' => 'icon-newspaper-o',
+          'label' => 'Two Column Block',
           'position' => 100,
           'category' => 'Block',
         ]);
