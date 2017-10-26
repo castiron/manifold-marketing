@@ -24,7 +24,7 @@
   padding-left: 51px;
   margin: 0 auto;
 
-  .quotation {
+  .quotation p {
     @include iconPre($quotes);
     text-indent: -25px;
 
