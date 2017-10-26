@@ -80,8 +80,9 @@
   }
 
   .button {
+    width: 150px;
     min-width: 150px;
-    padding: 10px 2px 12px;
+    padding: 10px 12px 12px;
     margin-top: 26px;
 
     @include respond($break20) {
