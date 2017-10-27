@@ -2,7 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
-use Castiron\Manifold\Components\UserTypes;
+use Castiron\Manifold\Components\Navigation;
 use Castiron\Manifold\Components\SearchResults;
 
 use Castiron\Contentment\Content\Manager as ContentManager;
@@ -123,9 +123,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            UserTypes::class => 'usertypes',
-            SearchResults::class => 'manifoldsearchresults',
-            'Castiron\Manifold\Components\Seed' => 'seed',
+            Navigation::class => 'navigation'
         ];
     }
 

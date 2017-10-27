@@ -1,23 +1,16 @@
 description = "Default layout"
 
+[navigation]
 ==
 
-{% set navitems = [
-  { url: "/", text: "Home" },
-  { url: "/learn", text: "Learn" },
-  { url: "/community", text: "Community" },
-  { url: "/resources", text: "Resources" },
-  { url: "/services", text: "Services" },
-] %}
-
-{% set isHome = this.page.url == '/' %}
+{% set isHome = this.page.url == navigation.getRootPage().url %}
 
 <!DOCTYPE html>
 <html>
     {% partial "html-head" %}
     <body>
         <!-- Site Header, Nav -->
-        {% partial "header" navitems=navitems animatedlogo=isHome %}
+        {% partial "header" animatedlogo=isHome %}
         <!-- Main page content -->
         <main>
           {% page %}

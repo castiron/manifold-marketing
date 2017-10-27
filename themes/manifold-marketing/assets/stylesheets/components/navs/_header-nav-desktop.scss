@@ -43,6 +43,15 @@
       }
     }
 
+    .nav-item {
+      &.active {
+        a {
+          font-weight: $medium;
+          background-color: $accentPrimary;
+        }
+      }
+    }
+
     .search-link {
       &::before {
         color: $gray06;

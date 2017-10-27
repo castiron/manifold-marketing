@@ -8,10 +8,14 @@
       padding: 48px 27px 27px 72px;
     }
 
-    li {
+    .mobile-main-nav-item {
       display: block;
 
-      + li {
+      &.active a {
+        color: $white;
+      }
+
+      + .mobile-main-nav-item {
         margin-top: 10px;
       }
 
