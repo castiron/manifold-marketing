@@ -51,11 +51,13 @@ class Navigation extends ComponentBase
       $navItems = [];
       $rootSlug = $this->getRootPage()['slug'];
 
-      foreach ($this->children() as $child) {
-        $fullUrl = '/' . $rootSlug . '/' . $child['slug'];
-        $active = ($fullUrl == $this->activeUrl()) ? 'active' : '';
-        $url = strpos($this->activeUrl(), $rootSlug) !== false ? $child['slug'] : $fullUrl;
-        array_push($navItems, array('url' => $url, 'text' => $child['title'], 'active' => $active));
+      if ($this->children()) {
+        foreach ($this->children() as $child) {
+          $fullUrl = '/' . $rootSlug . '/' . $child['slug'];
+          $active = ($fullUrl == $this->activeUrl()) ? 'active' : '';
+          $url = strpos($this->activeUrl(), $rootSlug) !== false ? $child['slug'] : $fullUrl;
+          array_push($navItems, array('url' => $url, 'text' => $child['title'], 'active' => $active));
+        }
       }
 
       return $navItems;
