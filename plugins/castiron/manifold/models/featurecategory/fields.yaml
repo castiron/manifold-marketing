@@ -25,7 +25,7 @@ fields:
             nodes: Nodes
             pencil: Pencil
             transform-square-to-circle: Square to Circle
-            van-diagram: Van Diagram
+            venn-diagram: Venn Diagram
             watering-can: Watering Can
             word-bubble-multiple: Word Bubbles
             wrench: Wrench
