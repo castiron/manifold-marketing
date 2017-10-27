@@ -1,9 +1,9 @@
 <section class="background-white">
-  <div class="tabbed-grid" data-slider>
+  <div class="tabbed-grid" data-tabbed>
     <div class="block narrow">
       <div class="block-label">features</div>
       <div class="tab-triggers">
-        <div class="flex-row" data-slider-nav>
+        <div class="flex-row" data-tabs-nav>
         {% for trigger in model.allUserTypes() %}
           <div class="tab-trigger col col-3" data-pager-ordinal="{{ loop.index }}">
             <div class="actions-badge">
@@ -22,7 +22,7 @@
     <div class="tabs">
       <div class="flex-row tabs-inner" data-element data-count="{{ tabs|length }}">
       {% for tab in model.allUserTypes() %}
-        <div class="tab">
+        <div class="tab" data-tab="{{ loop.index }}">
           <div class="inner-container">
           <div class="subheading-primary tab-description">{{ tab.description }}</div>
           {% for feature_category in tab.feature_categories %}

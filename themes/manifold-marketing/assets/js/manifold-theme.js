@@ -4,6 +4,7 @@ import Accordions from "./accordions";
 import HeightMatch from "./height-match";
 import ScrollTarget from "./scroll-target";
 import CssSlider from "./css-slider";
+import Tabs from "./tabs";
 import Rellax from "rellax";
 import AjaxListener from "./lib/ajax-listener";
 import Modernizr from "./lib/modernizr-custom";
@@ -33,6 +34,14 @@ class ManifoldTheme {
         const sliderEl = slider.querySelector('[data-element]');
         const count = sliderEl.getAttribute('data-count');
         const cssSlider = new CssSlider(count, slider);
+      });
+
+      // Initialize tabs
+      const tabbedSections = document.querySelectorAll('[data-tabbed]');
+      [...tabbedSections].forEach(function(tabbedSection) {
+        const sliderEl = tabbedSection.querySelector('[data-element]');
+        const count = sliderEl.getAttribute('data-count');
+        const tabs = new Tabs(count, tabbedSection);
       });
 
       // Initialize Parallaxes

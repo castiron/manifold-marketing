@@ -4,12 +4,19 @@
 
   .tabs-inner {
     flex-wrap: nowrap;
+    align-items: flex-start;
     transition: transform $timing $durationSlow;
   }
 
   .tab {
     width: 100vw;
     min-width: 100vw;
+    max-height: none;
+    transition: max-height $timing $duration;
+
+    &.inactive {
+      max-height: 0;
+    }
 
     .inner-container {
       max-width: $containerWidth;
