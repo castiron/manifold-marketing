@@ -351,3 +351,9 @@
   }
 }
 
+@mixin navSidebar {
+  @include fontHead;
+  font-size: 17px;
+  font-weight: $medium;
+}
+
