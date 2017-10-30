@@ -5,10 +5,16 @@ is_hidden = 1
 is_content_page = 0
 ==
 
-<section class="background-white">
+<section class="background-white docs-container">
   <div class="container-main docs">
     <div class="flex-row">
       <aside class="docs-sidebar" data-sidebar="docs">
+        <form class="form-primary search-block">
+          <div class="form-input">
+            <input type="text" name="search" placeholder="Search...">
+            <i class="icon icon-magnify"></i>
+          </div>
+        </form>
         {{ navigation | raw }}
       </aside>
       <div class="docs-main markdown">

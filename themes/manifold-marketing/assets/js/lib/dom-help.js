@@ -85,6 +85,15 @@ var domHelp = {
     } else {
       document.addEventListener("DOMContentLoaded", f);
     }
+  },
+
+  prefixedEvent: function(element, type, callback) {
+    const prefixes = ["webkit", "moz", "MS", "o", ""];
+
+    for (var p = 0; p < prefixes.length; p++) {
+      if (!prefixes[p]) type = type.toLowerCase();
+      element.addEventListener(prefixes[p]+type, callback);
+    }
   }
 };
 

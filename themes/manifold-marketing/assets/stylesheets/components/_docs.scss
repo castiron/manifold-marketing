@@ -5,17 +5,53 @@
 }
 
 .docs-sidebar {
-  min-width: $sidebarWidth;
-  padding: 30px 33px 100px;
-  background-color: $gray01;
-
-  a {
-    text-decoration: none;
-  }
+  width: $sidebarWidth;
+  padding: 25px 50px 100px 0;
+  border-right: 2px solid $gray03;
 
   h1 {
-    @include fontHead;
-    margin-bottom: 0.65em;
+    display: none;
+  }
+
+  .search-block.form-primary {
+    margin-bottom: 46px;
+
+    .form-input {
+      position: relative;
+
+      &::before {
+        display: none;
+      }
+
+      .icon {
+        position: absolute;
+        top: calc(50% - 7px);
+        left: 0;
+        font-size: 15px;
+        color: $gray05;
+        transition: color $duration $timing;
+      }
+
+      input {
+        @include navSecondary;
+        color: $gray05;
+        background-color: $white;
+        border-bottom-color: $gray05;
+        transition: border-bottom-color $duration $timing;
+
+        &::placeholder {
+          color: $gray03;
+        }
+
+        &:focus {
+          border-bottom-color: $accentPrimary;
+
+          + .icon {
+            color: $accentPrimary;
+          }
+        }
+      }
+    }
   }
 
   ul {
@@ -27,12 +63,60 @@
 
     > li {
       + li {
-        padding-top: 6px;
+        padding-top: 15px;
       }
 
       ul {
-        padding: 6px 0 0 15px;
+        padding: 0 0 0 20px;
+
+        li:first-child {
+          padding-top: 23px;
+        }
+
+        li:last-child {
+          padding-bottom: 8px;
+        }
       }
+    }
+  }
+
+  a {
+    @include navSidebar;
+    display: inline-block;
+    padding-left: 24px;
+    color: $gray05;
+    text-decoration: none;
+
+    &:hover, &.active {
+      color: $accentSecondary;
+    }
+  }
+
+  .toggle-indicator {
+    @include iconPre($caret);
+    display: inline-block;
+    padding-right: 16px;
+    font-size: 12px;
+    color: $gray05;
+    cursor: pointer;
+
+    &:hover {
+      color: $accentSecondary;
+    }
+
+    &::before {
+      transition: transform $duration $timing;
+      transform: rotate(0deg);
+    }
+
+    &.open {
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+
+    + a {
+      padding-left: 0;
     }
   }
 }
