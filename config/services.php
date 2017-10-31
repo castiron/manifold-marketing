@@ -34,4 +34,8 @@ return [
         'secret' => '',
     ],
 
+    'queequeg' => [
+      'host' => env('QUEEQUEG_HOST'),
+      'port' => env('QUEEQUEG_PORT', 80),
+    ],
 ];

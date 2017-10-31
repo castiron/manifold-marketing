@@ -95,7 +95,7 @@ class Plugin extends PluginBase
     public function registerSearchables()
     {
         $models = [
-            PagesSearchable::class
+            CmsPagesSearchable::class
         ];
 
         foreach ($models as $m) {
@@ -107,7 +107,7 @@ class Plugin extends PluginBase
         }
 
         $out['manifold'] = [
-            'icon'  => static::GENERAL_ICON,
+            'icon'  => 'icon-book',
             'label' => 'SITE SEARCH',
             'types' => $types,
         ];
