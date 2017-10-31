@@ -1,9 +1,3 @@
-.docs {
-  .flex-row {
-    justify-content: flex-start;
-  }
-}
-
 .docs-sidebar {
   width: $sidebarWidth;
   padding: 25px 50px 100px 0;
@@ -25,7 +19,7 @@
 
       .icon {
         position: absolute;
-        top: calc(50% - 7px);
+        bottom: 0;
         left: 0;
         font-size: 15px;
         color: $gray05;
@@ -34,6 +28,10 @@
 
       input {
         @include navSecondary;
+        width: auto;
+        padding-bottom: 3px;
+        padding-left: 0;
+        margin-left: 28px;
         color: $gray05;
         background-color: $white;
         border-bottom-color: $gray05;
@@ -67,7 +65,7 @@
       }
 
       ul {
-        padding: 0 0 0 20px;
+        padding: 0 0 0 24px;
 
         li:first-child {
           padding-top: 23px;
@@ -118,20 +116,5 @@
     + a {
       padding-left: 0;
     }
-  }
-}
-
-.docs-main {
-  width: calc(100% - 340px);
-  padding-top: 30px;
-  padding-bottom: 100px;
-  padding-left: $containerPaddingMax;
-
-  @include respond($break110 + $containerPaddingMax) {
-    padding-left: $containerPaddingFlex;
-  }
-
-  @include respond($break20) {
-    padding-left: $containerPaddingMin;
   }
 }
