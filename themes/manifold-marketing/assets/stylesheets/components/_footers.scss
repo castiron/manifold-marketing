@@ -1,4 +1,8 @@
 .main-footer {
+  &.documentation-footer {
+    z-index: 1;
+  }
+
   .top {
     margin-bottom: 80px;
 

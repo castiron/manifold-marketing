@@ -1,0 +1,43 @@
+.documentation-pagination {
+  @include clearfix;
+  padding-top: 26px;
+  padding-bottom: 18px;
+  margin-top: 55px;
+  border-top: 1px solid $gray05;
+
+  a {
+    @include navSidebar;
+    color: $gray05;
+    text-decoration: none;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .pager:hover {
+    color: $accentSecondary;
+  }
+
+  .page-left {
+    @include iconPre($arrow-short-left);
+    float: left;
+
+    &::before {
+      padding-right: 10px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  }
+
+  .page-right {
+    @include iconPost($arrow-short-right);
+    float: right;
+
+    &::after {
+      padding-left: 10px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  }
+}
