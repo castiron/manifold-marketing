@@ -1,0 +1,14 @@
+.docs-main {
+  width: calc(100% - #{$sidebarWidth});
+  padding-top: 30px;
+  padding-bottom: 100px;
+  padding-left: $containerPaddingMax;
+
+  @include respond($break110 + $containerPaddingMax) {
+    padding-left: $containerPaddingFlex;
+  }
+
+  @include respond($break20) {
+    padding-left: $containerPaddingMin;
+  }
+}

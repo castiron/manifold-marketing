@@ -18,6 +18,9 @@ is_content_page = 0
         {{ navigation | raw }}
       </aside>
       <div class="docs-main markdown">
+        <div class="documentation-breadcrumb" data-documentation-breadcrumb="documentation">
+          <a class="breadcrumb-link" href="/{{root}}/README">Documentation</a>
+        </div>
         {{ content | raw }}
       </div>
     </div>

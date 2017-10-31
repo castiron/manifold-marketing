@@ -319,6 +319,21 @@
   @include listTertiary;
 }
 
+@mixin listQuaternary {
+  @include listPrimary;
+  @include copySecondary;
+
+  > li {
+    &::before {
+      color: $accentSecondary;
+    }
+  }
+}
+
+.list-quaternary {
+  @include listQuaternary;
+}
+
 // Navs
 // --------------------------------------------------------
 

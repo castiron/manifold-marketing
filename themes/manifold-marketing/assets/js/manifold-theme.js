@@ -20,7 +20,7 @@ class ManifoldTheme {
 
       // Initialize Accordions
       const accordions = new Accordions();
-      const documentationSidebar = new DocumentationSidebar()
+      const documentationSidebar = new DocumentationSidebar();
 
       // Initialize height matching elements
       const summaryNames = new HeightMatch('[data-mh=summary-name]');

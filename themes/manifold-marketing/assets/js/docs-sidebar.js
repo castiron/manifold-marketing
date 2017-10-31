@@ -6,6 +6,7 @@ import {
   prefixedEvent
 } from "./lib/dom-help.js";
 import { expand, collapse } from "./lib/height-help.js";
+import DocsBreadcrumb from "./docs-breadcrumb";
 
 // Accordions are a special case of height-reveal toggles+reveals;
 // They behave the same as height-reveal elements but utilize the
@@ -14,71 +15,65 @@ import { expand, collapse } from "./lib/height-help.js";
 // accordion's toggle collapses it )i.e. returns it to its start state
 class DocumentationSidebar {
   constructor(
-    toggleSelector = "li",
-    onClass = "open",
-    dataSidebar = "[data-sidebar]"
+    toggleSelector = 'li',
+    onClass = 'open',
+    dataSidebar = '[data-sidebar]'
   ) {
-    // console.log(toggleSelector, revealSelector, onClass, dataGroup);
     // Get attribute names for each selector
-    const sidebars = document.querySelectorAll(dataSidebar);
+    const sidebar = document.querySelector(dataSidebar);
     const path = window.location.pathname.split('/');
-    // Find all elements with toggle data attribute
-    for (const sidebar of [...sidebars]) {
-      const toggles = sidebar.querySelectorAll(toggleSelector);
-      for (const [index, toggle] of [...toggles].entries()) {
-        const link = toggle.firstChild;
-        const fileName = link.innerHTML.toLowerCase().replace(/ /g, "_");
-        const href = link.href;
-        let startOpen = false;
+    const toggles = sidebar.querySelectorAll(toggleSelector);
+    let activeNode = null;
 
-        if (window.location.href === href) {
-          addClass(link, 'active');
-          startOpen = true;
-        }
+    for (const [index, toggle] of [...toggles].entries()) {
+      const link = toggle.firstChild;
+      const fileName = link.innerHTML.toLowerCase().replace(/ /g, "_");
+      const href = link.href;
 
-        if (!link.nextElementSibling) {
-          startOpen = false;
-        } else if (link.nextElementSibling.tagName === 'UL') {
-          // Add accordion toggle
-          const toggleIndicator = document.createElement("span");
-          addClass(toggleIndicator, 'toggle-indicator');
-          toggleIndicator.dataset.toggle = index;
-          toggle.insertBefore(toggleIndicator, link);
-          addClass(toggle, 'toggle');
-
-          // Identify toggle target
-          const reveal = link.nextElementSibling;
-          reveal.dataset.reveal = index;
-          addClass(reveal, 'accordion');
-
-          if (path.includes(fileName)) {
-            startOpen = true;
-          }
-
-          const accordionTrigger = new AccordionTrigger(
-            toggleIndicator,
-            reveal,
-            onClass,
-            startOpen
-          );
-        }
+      if (window.location.href === href) {
+        addClass(link, 'active');
+        activeNode = link;
       }
+
+      if (!link.nextElementSibling) {
+        continue;
+      } else if (link.nextElementSibling.tagName === 'UL') {
+        // Add accordion toggle
+        const toggleIndicator = document.createElement("span");
+        addClass(toggleIndicator, 'toggle-indicator');
+        toggleIndicator.dataset.toggle = index;
+        toggle.insertBefore(toggleIndicator, link);
+        addClass(toggle, 'toggle');
+
+        // Identify toggle target
+        const reveal = link.nextElementSibling;
+        reveal.dataset.reveal = index;
+        addClass(reveal, 'accordion');
+
+        const accordionTrigger = new AccordionTrigger(
+          toggleIndicator,
+          reveal,
+          onClass
+        );
+      }
+
+    }
+
+    if (activeNode) {
+      const breadcrumb = new DocsBreadcrumb(sidebar, activeNode);
     }
   }
 }
 
 class AccordionTrigger {
-  constructor(triggerNode, revealNode, onClass, startOpen) {
+  constructor(triggerNode, revealNode, onClass) {
     this.trigger = triggerNode;
     this.reveal = revealNode;
     this.onClass = onClass;
-    this.startOpen = startOpen;
 
     // Bind click handler
     this.bindTriggers();
     // window.addEventListener('resize', this.resizeHandler);
-
-    if (startOpen) this.open();
   }
 
   resizeHandler = () => {
