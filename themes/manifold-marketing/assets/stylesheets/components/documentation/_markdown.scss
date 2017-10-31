@@ -38,6 +38,16 @@
     margin-bottom: 14px;
   }
 
+  h3 {
+    @include subheadingPrimary;
+    margin-bottom: 14px;
+  }
+
+  h4 {
+    @include subheadingPrimary;
+    margin-bottom: 5px;
+  }
+
   p {
     @include copySecondary;
   }
@@ -70,7 +80,6 @@
   ol {
     @include copySecondary;
     padding-left: 28px;
-    font-size: 16px;
     font-weight: $regular;
     line-height: 1.2;
 
