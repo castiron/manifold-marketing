@@ -71,7 +71,7 @@ class ManifoldDocs
         $markdownTransformer = new MarkdownTransformer('', $config->getEntryUrlPath());
         $controller->vars['navigation'] = Markdown::parse($markdownTransformer->transform(file_get_contents($config->getContentRootPath().'/SUMMARY.md')));
 
-        // $controller->vars['path'] = $path;
+        $controller->vars['path'] = $path;
         $controller->vars['root'] = $config->getEntryUrlPath();
         // Naive implementation of page titling
         if(preg_match('/^#(.*)$/m', $content, $matches)) {

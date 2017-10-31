@@ -20,17 +20,23 @@ class DocumentationSidebar {
     dataSidebar = '[data-sidebar]'
   ) {
     // Get attribute names for each selector
+    const baseUrl = document.querySelector('[data-base-url]').dataset.baseUrl;
     const sidebar = document.querySelector(dataSidebar);
+    const location = window.location.href;
     const path = window.location.pathname.split('/');
     const toggles = sidebar.querySelectorAll(toggleSelector);
     let activeNode = null;
 
     for (const [index, toggle] of [...toggles].entries()) {
       const link = toggle.firstChild;
-      const fileName = link.innerHTML.toLowerCase().replace(/ /g, "_");
       const href = link.href;
 
-      if (window.location.href === href) {
+      if (location === href) {
+        addClass(link, 'active');
+        activeNode = link;
+      }
+
+      if (location === baseUrl && href === location + '/README') {
         addClass(link, 'active');
         activeNode = link;
       }
