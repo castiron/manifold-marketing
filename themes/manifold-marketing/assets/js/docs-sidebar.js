@@ -19,26 +19,27 @@ class DocumentationSidebar {
     onClass = 'open',
     dataSidebar = '[data-sidebar]'
   ) {
-    // Get attribute names for each selector
+    this.activeNode = null;
+    this.sidebar = document.querySelector(dataSidebar);
+    this.previousToggle = null;
+    this.nextToggle = null;
     const baseUrl = document.querySelector('[data-base-url]').dataset.baseUrl;
-    const sidebar = document.querySelector(dataSidebar);
     const location = window.location.href;
     const path = window.location.pathname.split('/');
-    const toggles = sidebar.querySelectorAll(toggleSelector);
-    let activeNode = null;
+    const toggles = this.sidebar.querySelectorAll(toggleSelector);
 
     for (const [index, toggle] of [...toggles].entries()) {
       const link = toggle.firstChild;
       const href = link.href;
+      const isIntro = href === location + '/README';
 
-      if (location === href) {
+      if (location === href || (location === baseUrl && isIntro)) {
         addClass(link, 'active');
-        activeNode = link;
-      }
-
-      if (location === baseUrl && href === location + '/README') {
-        addClass(link, 'active');
-        activeNode = link;
+        this.activeNode = link;
+        const isGreater = index > 0;
+        const isLessThan = index < toggles.length - 1;
+        this.previousToggle = isGreater ? toggles[index - 1] : null;
+        this.nextToggle = isLessThan ? toggles[index + 1] : null;
       }
 
       if (!link.nextElementSibling) {
@@ -62,11 +63,6 @@ class DocumentationSidebar {
           onClass
         );
       }
-
-    }
-
-    if (activeNode) {
-      const breadcrumb = new DocsBreadcrumb(sidebar, activeNode);
     }
   }
 }

@@ -2,11 +2,11 @@
 {% if '/' == this.page.url %}
   {% partial 'newsletter' %}
 {% else %}
-  {% partial 'newsletter' small=1 %}
+  {% partial 'newsletter' small=1 extra_class=extra_class %}
 {% endif %}
 
 
-<footer class="main-footer background-black">
+<footer class="main-footer background-black {{extra_class}}">
   <div class="container-footer">
     <div class="flex-row top vert-top">
       <nav>

@@ -8,7 +8,12 @@
     padding-left: $containerPaddingFlex;
   }
 
+  @include respond($break60) {
+    width: 100%;
+    padding-left: 45px;
+  }
+
   @include respond($break20) {
-    padding-left: $containerPaddingMin;
+    // padding-left: $containerPaddingMin;
   }
 }

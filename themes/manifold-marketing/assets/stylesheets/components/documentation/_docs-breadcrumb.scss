@@ -1,13 +1,15 @@
 .documentation-breadcrumb {
   padding-top: 8px;
+  padding-bottom: 44px;
 
   .breadcrumb-link {
     @include fontHead;
     font-size: 15px;
     font-weight: $medium;
     color: $gray04;
+    text-decoration: none;
 
-    &.active {
+    &.active, &:hover {
       color: $accentSecondary;
     }
 

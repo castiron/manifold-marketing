@@ -51,24 +51,23 @@ class ClassBurger {
           });
 
           document.addEventListener("click", function onClickHandler(event) {
-            const target = event.target;
-            const parent = target.parentNode;
-            const grand = parent.parentNode;
-            const toggleId = target.dataset.hamburgerToggle;
-            const dropdownId = target.dataset.hamburgerTogglable;
-            const toggleParentId = parent.dataset.hamburgerToggle;
-            const dropdownParentId = parent.dataset.hamburgerTogglable;
-            const dropdownGrandId = grand.dataset.hamburgerTogglable;
+            let parenting = true;
+            let parent = event.target;
             let shouldClose = true;
 
-            if (
-              toggleId === label ||
-              dropdownId === label ||
-              toggleParentId === label ||
-              dropdownParentId === label ||
-              dropdownGrandId === label
-            ) {
-              shouldClose = false;
+            while (parenting) {
+              if (parent === null || parent === document) {
+                shouldClose = true;
+                parenting = false;
+                break;
+              } else if (parent.hasAttribute('data-hamburger-togglable') ||
+                  parent.hasAttribute('data-hamburger-toggle')) {
+                shouldClose = false;
+                parenting = false;
+                break;
+              }
+
+              parent = parent.parentNode;
             }
 
             if (shouldClose) {

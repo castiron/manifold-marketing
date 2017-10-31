@@ -1,6 +1,6 @@
 title = "Two Column"
 url = "/route-defined-in-routes-php"
-layout = "default"
+layout = "documentation"
 is_hidden = 1
 is_content_page = 0
 ==
@@ -9,7 +9,8 @@ is_content_page = 0
 <section class="background-white docs-container">
   <div class="container-main docs">
     <div class="flex-row">
-      <aside class="docs-sidebar" data-sidebar="docs">
+      <aside class="docs-sidebar" data-sidebar="docs" data-hamburger-togglable="sidebar">
+        <div class="sidebar-toggle" data-hamburger-toggle="sidebar"></div>
         <form class="form-primary search-block">
           <div class="form-input">
             <input type="text" name="search" placeholder="Search...">
@@ -18,11 +19,17 @@ is_content_page = 0
         </form>
         {{ navigation | raw }}
       </aside>
-      <div class="docs-main markdown">
+      <div class="docs-main">
         <div class="documentation-breadcrumb" data-documentation-breadcrumb="documentation">
           <a class="breadcrumb-link" href="/{{root}}/README">Documentation</a>
         </div>
-        {{ content | raw }}
+        <div class="markdown">
+          {{ content | raw }}
+        </div>
+        <div class="documentation-pagination" data-documentation-pagination="documentation">
+          <a href="#" class="pager page-left" data-docs-pager="left"></a>
+          <a href="#" class="pager page-right" data-docs-pager="right"></a>
+        </div>
       </div>
     </div>
   </div>

@@ -89,6 +89,10 @@
   @include containerFooter;
 }
 
+.documentation-footer {
+  z-index: 1;
+}
+
 @mixin containerCalloutPrimary {
   max-width: $containerWidth;
   padding-top: 40px;
@@ -165,10 +169,6 @@
 
 .container-callout-tertiary {
   @include containerCalloutTertiary;
-}
-
-.docs-container {
-  border-top: 2px solid $gray03;
 }
 
 
