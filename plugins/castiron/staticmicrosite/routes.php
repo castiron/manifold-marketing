@@ -9,6 +9,7 @@ App::before(function() {
 
   foreach ($configs as $config) {
     ManifoldDocs::buildRoute($config);
+    ManifoldDocs::buildRootRoute($config);
   }
 });
 
