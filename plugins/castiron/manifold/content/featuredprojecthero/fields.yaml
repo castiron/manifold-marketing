@@ -16,7 +16,8 @@ fields:
     type: mediafinder
     mode: image
     required: true
-    imageHeight: 296
+    imageWidth: 100
+    imageHeight: 100
   link:
     label: Link
     required: true

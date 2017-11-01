@@ -20,6 +20,8 @@ fields:
     label: Image
     type: mediafinder
     mode: image
+    imageWidth: 100
+    imageHeight: 100
   title:
     label: Title
   description:
