@@ -1,5 +1,29 @@
-{% set links = model.links() %}
+{% if title %}
+  <div><strong>Title: </strong>{{title}}</div>
+{% else %}
+  <div><strong>Title: </strong><em>No title</em></div>
+{% endif %}
 
-{% if links %}
-  <div>Documentation Navigation</div>
+{% if publishers_link %}
+  <div><strong>Link to the Publishers Resource Page: </strong>{{publishers_link}}</div>
+{% else %}
+  <div><strong>Link to the Publishers Resource Page: </strong><span>/docs/contents/presses/README</span></div>
+{% endif %}
+
+{% if developers_link %}
+  <div><strong>Link to the Developers Resource Page: </strong>{{developers_link}}</div>
+{% else %}
+  <div><strong>Link to the Developers Resource Page: </strong><span>/docs/contents/developers/README</span></div>
+{% endif %}
+
+{% if readers_link %}
+  <div><strong>Link to the Readers Resource Page: </strong>{{readers_link}}</div>
+{% else %}
+  <div><strong>Link to the Readers Resource Page: </strong><span>/docs/contents/readers/README</span></div>
+{% endif %}
+
+{% if authors_link %}
+  <div><strong>Link to the Authors Resource Page: </strong>{{authors_link}}</div>
+{% else %}
+  <div><strong>Link to the Authors Resource Page: </strong><span>/docs/contents/authors/README</span></div>
 {% endif %}

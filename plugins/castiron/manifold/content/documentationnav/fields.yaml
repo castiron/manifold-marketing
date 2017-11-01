@@ -5,4 +5,15 @@
 fields:
   title:
     label: Title
-
+  publishers_link:
+    label: Link to the Publishers Resource Page
+    placeholder: /docs/contents/presses/README
+  developers_link:
+    label: Link to the Developers Resource Page
+    placeholder: /docs/contents/developers/README
+  readers_link:
+    label: Link to the Readers Resource Page
+    placeholder: /docs/contents/readers/README
+  authors_link:
+    label: Link to the Authors Resource Page
+    placeholder: /docs/contents/authors/README

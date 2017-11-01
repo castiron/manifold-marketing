@@ -14,14 +14,30 @@
   <div class="block links-callout">
     <div class="title sign-secondary">{{title}}</div>
     <div class="links-grid flex-row">
-      {% for link in links %}
-        <a class="" href="{{link.url}}">
-          <div class="link-badge">
-            <i class="icon icon-{{link.icon}}"></i>
-          </div>
-          <div class="link-text sign-secondary">{{link.text}}</div>
-        </a>
-      {% endfor %}
+      <a class="" href="{{(publishers_link) ? publishers_link : '/docs/contents/presses/README'}}">
+        <div class="link-badge">
+          <i class="icon icon-bookpile-small"></i>
+        </div>
+        <div class="link-text sign-secondary">Publishers</div>
+      </a>
+      <a class="" href="{{(developers_link) ? developers_link : '/docs/contents/developers/README'}}">
+        <div class="link-badge">
+          <i class="icon icon-laptop-dev"></i>
+        </div>
+        <div class="link-text sign-secondary">Developers</div>
+      </a>
+      <a class="" href="{{(readers_link) ? readers_link : '/docs/contents/readers/README'}}">
+        <div class="link-badge">
+          <i class="icon icon-book-page-turn"></i>
+        </div>
+        <div class="link-text sign-secondary">Readers</div>
+      </a>
+      <a class="" href="{{(authors_link) ? authors_link : '/docs/contents/authors/README'}}">
+        <div class="link-badge">
+          <i class="icon icon-laptop"></i>
+        </div>
+        <div class="link-text sign-secondary">Authors</div>
+      </a>
     </div>
   </div>
 </div>
