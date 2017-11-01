@@ -262,6 +262,16 @@
   }
 }
 
+@mixin linkSecondary {
+  @include fontHead;
+  font-size: 12px;
+  font-weight: $semibold;
+  line-height: 1.2;
+  color: $accentPrimary;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 
 // Lists
 // --------------------------------------------------------

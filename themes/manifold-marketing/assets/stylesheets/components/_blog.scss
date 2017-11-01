@@ -94,11 +94,9 @@
       }
 
       .blog-post-link {
+        @include linkSecondary;
         display: block;
         margin-top: 20px;
-        font-size: 13px;
-        color: $accentPrimary;
-        text-transform: uppercase;
         transition: color $timing $duration;
 
         @include respond($break50) {
