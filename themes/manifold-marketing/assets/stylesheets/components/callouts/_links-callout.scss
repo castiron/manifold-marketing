@@ -37,19 +37,15 @@
       &:hover {
         .link-text {
           &::after {
+            right: -15px;
             color: $accentDark;
-            transform: translateX(15px);
-
-            @include respond($break110) {
-              transform: translateX(2vw);
-            }
           }
 
           @include respond($break50) {
-            transform: translateX(5vw);
+            right: -15px;
 
             &::after {
-              transform: translateX(0);
+              right: 0;
             }
           }
         }
@@ -125,11 +121,14 @@
 
     .link-text {
       @include iconPost($arrow-short-right);
+      position: relative;
+      right: 0;
+      padding-right: 32px;
       margin-top: 23px;
       color: $gray07;
       text-decoration: none;
       white-space: nowrap;
-      transition: transform $timing $durationSlow, color $timing $duration;
+      transition: right $timing $durationSlow;
 
       @include respond($break20) {
         margin-top: 25px;
@@ -137,10 +136,16 @@
       }
 
       &::after {
-        padding-left: 10px;
+        position: absolute;
+        top: calc(50% - 8px);
+        right: 0;
         color: $gray03;
         vertical-align: middle;
-        transition: transform $timing $durationSlow;
+        transition: right $timing $durationSlow, color $timing $durationSlow;
+
+        @include respond($break50) {
+          top: 5px;
+        }
       }
     }
   }
