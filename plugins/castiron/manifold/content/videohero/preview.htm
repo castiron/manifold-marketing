@@ -1,5 +1,23 @@
 {% if title %}
-  <h4>{{ title }}</h4>
+  <div><strong>Title: </strong><span>{{ title }}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Title: </strong><em>No title</em></div>
+{% endif %}
+
+{% if subtitle %}
+  <div><strong>Subtitle: </strong><span>{{ subtitle }}</span></div>
+{% else %}
+  <div><strong>Subtitle: </strong><em>No subtitle</em></div>
+{% endif %}
+
+{% if video_title %}
+  <div><strong>Video Title: </strong><span>{{ video_title }}</span></div>
+{% else %}
+  <div><strong>Video Title: </strong><em>No video title</em></div>
+{% endif %}
+
+{% if video_link %}
+  <div><strong>Video Link: </strong><span>{{ video_link }}</span></div>
+{% else %}
+  <div><strong>Video Link: </strong><em>No video link</em></div>
 {% endif %}

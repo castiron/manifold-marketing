@@ -1,5 +1,23 @@
 {% if title %}
-  <h4>{{ title }}</h4>
+  <div><strong>Title: </strong><span>{{ title }}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Title: </strong><em>No title</em></div>
+{% endif %}
+
+{% if subtitle %}
+  <div><strong>Subtitle: </strong><span>{{ subtitle }}</span></div>
+{% else %}
+  <div><strong>Subtitle: </strong><em>No subtitle</em></div>
+{% endif %}
+
+{% if description %}
+  <div><strong>Description: </strong><span>
+    {% if description|length > 500 %}
+        {{description|slice(0,500)|striptags}}...
+    {% else %}
+        {{description|striptags}}
+    {% endif %}
+  </span></div>
+{% else %}
+  <div><strong>Description: </strong><em>No description</em></div>
 {% endif %}

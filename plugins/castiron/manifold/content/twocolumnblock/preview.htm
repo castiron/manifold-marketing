@@ -1,5 +1,23 @@
-{% if title %}
-  <h4>{{ title }}</h4>
+{% if section_heading %}
+  <div><strong>Section Heading: </strong><span>{{ section_heading|capitalize }}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Section Heading: </strong><em>No section heading</em></div>
+{% endif %}
+
+{% if title %}
+  <div><strong>Title: </strong><span>{{ title }}</span></div>
+{% else %}
+  <div><strong>Title: </strong><em>No title</em></div>
+{% endif %}
+
+{% if body %}
+  <div><strong>Body: </strong><span>
+    {% if body|length > 500 %}
+        {{body|slice(0,500)|striptags}}...
+    {% else %}
+        {{body|striptags}}
+    {% endif %}
+  </span></div>
+{% else %}
+  <div><strong>Subtitle: </strong><em>No body</em></div>
 {% endif %}

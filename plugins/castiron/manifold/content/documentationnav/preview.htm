@@ -1,5 +1,5 @@
-{% if title %}
-  <h4>{{ title }}</h4>
-{% else %}
-  <p>No title</p>
+{% set links = model.links() %}
+
+{% if links %}
+  <div>Documentation Navigation</div>
 {% endif %}

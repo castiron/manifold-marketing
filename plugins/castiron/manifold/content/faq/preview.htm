@@ -1,5 +1,6 @@
-{% if title %}
-  <h4>{{ title }}</h4>
+<div>Frequently Asked Questions</div>
+{% if faqs %}
+  <div><strong>Total Number of FAQ's: </strong><span>{{faqs|length}}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Total Number of FAQ's: </strong><span>0</span></div>
 {% endif %}

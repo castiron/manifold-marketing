@@ -1,5 +1,6 @@
-{% if title %}
-  <h4>{{ title }}</h4>
+<div>Service Packages</div>
+{% if services %}
+  <div><strong>Total Number of Services: </strong><span>{{services|length}}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Total Number of Services: </strong><span>0</span></div>
 {% endif %}

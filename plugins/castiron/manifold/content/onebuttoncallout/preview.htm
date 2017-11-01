@@ -1,5 +1,33 @@
-{% if title %}
-  <h4>{{ title }}</h4>
+{% if image %}
+  <div style="margin-bottom: 5px;"><img src="/storage/app/media{{image}}" style="max-height: 100px; max-width: 100px"/></div>
+{% endif %}
+
+{% if section_heading %}
+  <div><strong>Section Heading: </strong><span>{{ section_heading|capitalize }}</span></div>
 {% else %}
-  <p>No title</p>
+  <div><strong>Section Heading: </strong><em>No section heading</em></div>
+{% endif %}
+
+{% if title %}
+  <div><strong>Title: </strong><span>{{ title }}</span></div>
+{% else %}
+  <div><strong>Title: </strong><em>No title</em></div>
+{% endif %}
+
+{% if description %}
+  <div><strong>Description: </strong><span>
+    {% if description|length > 500 %}
+        {{description|slice(0,500)|striptags}}...
+    {% else %}
+        {{description|striptags}}
+    {% endif %}
+  </span></div>
+{% else %}
+  <div><strong>Description: </strong><em>No description</em></div>
+{% endif %}
+
+{% if button_link %}
+  <div><strong>Link: </strong><span>{{ button_link }}</span></div>
+{% else %}
+  <div><strong>Link: </strong><em>No link</em></div>
 {% endif %}

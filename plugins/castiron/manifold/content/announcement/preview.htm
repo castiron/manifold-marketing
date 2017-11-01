@@ -1,5 +1,33 @@
-{% if title %}
-  <h4>{{ announcement }}</h4>
+{% set new_announcement = model.newAnnouncement() %}
+
+{% if announcement or new_announcement %}
+    {% if link %}
+      <div><strong>Teaser: </strong><span>
+        {% if announcement|length > 500 %}
+            {{announcement|slice(0,500)|striptags}}...
+        {% else %}
+            {{announcement|striptags}}
+        {% endif %}
+      </span></div>
+    {% else %}
+      <div><strong>Teaser: </strong><span>
+        {% if new_announcement.teaser|length > 500 %}
+            {{new_announcement.teaser|slice(0,500)|striptags}}...
+        {% else %}
+            {{new_announcement.teaser|striptags}}
+        {% endif %}
+      </span></div>
+    {% endif %}
 {% else %}
-  <p>No announcement</p>
+  <div><strong>Teaser: </strong><em>No teaser</em></div>
+{% endif %}
+
+{% if link or new_announcement %}
+  {% if link %}
+    <div><strong>Link: </strong><span>{{link}}</span></div>
+  {% else %}
+    <div><strong>Link: </strong><span>{{new_announcement.slug}}</span></div>
+  {% endif %}
+{% else %}
+  <div><strong>Link: </strong><em>No link</em></div>
 {% endif %}
