@@ -8,9 +8,11 @@ publicFolder = www
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    {% set favicon = 'assets/images/icons/favicon.png' %}
-    <link rel="shortcut icon" href="{{ favicon | theme }}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{ favicon | theme }}">
+    {% set favicon = 'assets/images/favicons/favicon' %}
+    <link rel="apple-touch-icon" sizes="96x96" href="{{ favicon | theme }}-96x96.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="{{ favicon | theme }}-32x32.png">
+    <link rel="shortcut icon" sizes="16x16" href="{{ favicon | theme }}-16x16.png" type="image/png">
+    <link rel="shortcut icon" href="{{ favicon | theme }}.ico" type="image/x-icon">
 
     <!-- Typekit fonts -->
     <script src="https://use.typekit.net/wso5cuh.js"></script>
