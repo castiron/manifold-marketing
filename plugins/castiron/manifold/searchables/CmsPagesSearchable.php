@@ -1,9 +1,7 @@
 <?php namespace Castiron\Manifold\Searchables;
 
-use Illuminate\Database\Query\Builder;
 use URL;
 use Queequeg\Contracts\Searchable;
-// use Castiron\Contentment\Models\Page;
 /**
  * Class CmsPagesSearchable
  * @package Castiron\Manifold\Searchables

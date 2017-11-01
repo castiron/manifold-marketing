@@ -69,7 +69,7 @@ class MarkdownTransformer {
           $newUrl = '/'.$this->requestPathParent.$matches[2];
         }
 
-        return '[' .$matches[1] . ']' . '(' . $this->urlForPath('/'.$this->entryUrlPath.$newUrl). ')';
+        return '[' .$matches[1] . ']' . '(' . self::urlForPath('/'.$this->entryUrlPath.$newUrl). ')';
       }
     }, $markdownContent);
   }
@@ -80,7 +80,7 @@ class MarkdownTransformer {
    * @param $path
    * @return string
    */
-  protected function urlForPath($path) {
+  public static function urlForPath($path) {
     $fileInfo = pathinfo($path);
     if(array_key_exists('extension', $fileInfo)) {
       if(in_array($fileInfo['extension'], ['md', 'MD'])) {

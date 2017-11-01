@@ -25,6 +25,8 @@ use App;
 
 use Queequeg\ServiceProvider as QueequegServiceProvider;
 use Castiron\Manifold\Searchables\CmsPagesSearchable;
+use Castiron\Manifold\Searchables\PagesSearchable;
+use Castiron\Manifold\Searchables\DocsSearchable;
 use Castiron\Search\Contracts\SearchQuery;
 use Castiron\Search\Models\Query;
 
@@ -95,7 +97,9 @@ class Plugin extends PluginBase
     public function registerSearchables()
     {
         $models = [
-            CmsPagesSearchable::class
+            CmsPagesSearchable::class,
+            PagesSearchable::class,
+            DocsSearchable::class,
         ];
 
         foreach ($models as $m) {
