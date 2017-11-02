@@ -3,8 +3,15 @@
 use Cms\Classes\ComponentBase;
 use Castiron\Contentment\Models\Page;
 
+/**
+ * Class Navigation
+ * @package Castiron\Manifold\Components
+ */
 class Navigation extends ComponentBase
 {
+    /**
+     * @return array
+     */
     public function componentDetails()
     {
         return [
@@ -13,6 +20,9 @@ class Navigation extends ComponentBase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function defineProperties()
     {
         return [];
@@ -21,46 +31,29 @@ class Navigation extends ComponentBase
     /**
      * @return mixed
      */
-    public function getRootPage() {
-        return Page::findByUrl('/');
+    public static function pages() {
+        return Page::where('site_root', 0)->visible()->get();
     }
 
     /**
-     * @return bool
+     * @return array
      */
-    public function hasChildren() {
-        if (count($this->getRootPage()->getVisibleChildren())) {
-            return true;
-        } else {
-           return false;
-        }
-    }
-
-    /**
-     * @return mixed
-     */
-    public function children() {
-        if ($this->hasChildren()) {
-            return $this->getRootPage()->getVisibleChildren();
-        } else {
-          return false;
-        }
-    }
-
     public function navItems() {
-      $navItems = [];
-      $rootSlug = $this->getRootPage()['slug'];
+        $navItems = [];
 
-      if ($this->children()) {
-        foreach ($this->children() as $child) {
-          $fullUrl = '/' . $rootSlug . '/' . $child['slug'];
-          $active = ($fullUrl == $this->activeUrl()) ? 'active' : '';
-          $url = strpos($this->activeUrl(), $rootSlug) !== false ? $child['slug'] : $fullUrl;
-          array_push($navItems, array('url' => $url, 'text' => $child['title'], 'active' => $active));
+        $pages = static::pages();
+        if (!$pages) {
+            return [];
         }
-      }
 
-      return $navItems;
+        $activeUrl = $this->activeUrl();
+        foreach ($pages as $child) {
+            if (strpos($activeUrl, $child->getUrl()) === 0) {
+                $child->active = true;
+            }
+            $navItems[] = $child;
+        }
+        return $navItems;
     }
 
     /**
