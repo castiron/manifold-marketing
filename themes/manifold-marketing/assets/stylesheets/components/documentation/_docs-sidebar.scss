@@ -145,6 +145,14 @@
     }
   }
 
+  .accordion {
+    transition: unset;
+
+    .docs-ready & {
+      transition: transform $duration $timing;
+    }
+  }
+
   .toggle-indicator {
     @include iconPre($caret);
     display: inline-block;
@@ -158,8 +166,11 @@
     }
 
     &::before {
-      transition: transform $duration $timing;
       transform: rotate(0deg);
+
+      .docs-ready & {
+        transition: transform $duration $timing;
+      }
     }
 
     &.open {

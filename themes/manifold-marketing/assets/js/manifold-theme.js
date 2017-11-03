@@ -23,7 +23,8 @@ class ManifoldTheme {
 
       // Initialize Documentation related DOM reconstitution
       if (document.querySelectorAll('[data-sidebar="docs"]').length > 0) {
-        const documentation = new Documentation();
+        const docs = document.querySelector('[data-docs]');
+        const documentation = new Documentation(docs);
 
         // Initialize documentation sidebar slide out menu
         const sidebarMenu = new ClassBurger('sidebar', 'open');

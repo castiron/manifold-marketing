@@ -1,4 +1,7 @@
 .docs-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: calc(100% - #{$sidebarWidth});
   padding-top: 30px;
   padding-bottom: 100px;
@@ -11,9 +14,5 @@
   @include respond($break60) {
     width: 100%;
     padding-left: 45px;
-  }
-
-  @include respond($break20) {
-    // padding-left: $containerPaddingMin;
   }
 }

@@ -1,9 +1,10 @@
+import { addClass } from "./lib/dom-help.js";
 import DocumentationSidebar from "./docs-sidebar";
 import DocumentationBreadcrumb from "./docs-breadcrumb";
 import DocumentationPagination from "./docs-pagination";
 
 class Documentation {
-  constructor() {
+  constructor(docs) {
     const documentationSidebar = new DocumentationSidebar();
 
     if (documentationSidebar.activeNode) {
@@ -17,6 +18,8 @@ class Documentation {
       documentationSidebar.previousToggle,
       documentationSidebar.nextToggle
     );
+
+    addClass(docs, 'docs-ready');
   }
 }
 
