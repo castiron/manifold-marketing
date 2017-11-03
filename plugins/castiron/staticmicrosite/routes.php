@@ -7,7 +7,7 @@ use Castiron\Manifold\StaticMicroSite\ManifoldDocs;
 App::before(function() {
   $configs = Config::getAll();
   foreach ($configs as $config) {
-  	(new ManifoldDocs($config))->build();
+  	(new ManifoldDocs($config))->buildRoutes();
   }
 });
 

@@ -6,6 +6,7 @@ use Cms\Classes\CmsException;
 use Cms\Classes\Page;
 use Cms\Classes\Controller;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\View;
 use October\Rain\Support\Facades\Markdown;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,7 @@ class ManifoldDocs
 
   const PLUGIN_PATH = '../../../plugins/castiron/staticmicrosite/pages/two_column.htm';
   const TOC_FILE_NAME = '/SUMMARY.md';
+  const DEFAULT_PAGE = 'README';
 
   public function __construct($config) {
     $this->config = $config;
@@ -24,12 +26,23 @@ class ManifoldDocs
     $this->contentCache = null;
   }
 
-  public function build() {
+  public function buildRoutes() {
+    $this->buildRootRedirectRoute();
+    $this->buildContentRoute();
+  }
+
+  private function buildRootRedirectRoute() {
+    Route::get($this->basePath, function() {
+      return new RedirectResponse($this->basePath.self::DEFAULT_PAGE, 301);
+    });    
+  }
+
+  private function buildContentRoute() {
     $routeTmpl = $this->basePath.'/{path}';
     Route::get($routeTmpl, function ($path) {
       $this->request->path($path);
       return $this->respond($path);
-    })->where('path', $this->config->getPathRegex());
+    })->where('path', $this->config->getPathRegex());    
   }
 
   private function respond($path) {
