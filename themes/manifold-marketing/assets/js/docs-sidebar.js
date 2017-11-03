@@ -17,12 +17,14 @@ class DocumentationSidebar {
   constructor(
     toggleSelector = 'li',
     onClass = 'open',
-    dataSidebar = '[data-sidebar]'
+    dataSidebar = '[data-sidebar]',
+    callback = function() {return true;}
   ) {
     this.activeNode = null;
     this.sidebar = document.querySelector(dataSidebar);
     this.previousToggle = null;
     this.nextToggle = null;
+    this.callback = callback;
     const baseUrl = document.querySelector('[data-base-url]').dataset.baseUrl;
     const location = window.location.href;
     const path = window.location.pathname.split('/');
@@ -64,6 +66,8 @@ class DocumentationSidebar {
         );
       }
     }
+
+    this.callback();
   }
 }
 

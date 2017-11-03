@@ -5,7 +5,13 @@ import DocumentationPagination from "./docs-pagination";
 
 class Documentation {
   constructor(docs) {
-    const documentationSidebar = new DocumentationSidebar();
+    this.docs = docs;
+    const documentationSidebar = new DocumentationSidebar(
+      'li',
+      'open',
+      '[data-sidebar]',
+      this.onReady
+    );
 
     if (documentationSidebar.activeNode) {
       const breadcrumb = new DocumentationBreadcrumb(
@@ -18,8 +24,10 @@ class Documentation {
       documentationSidebar.previousToggle,
       documentationSidebar.nextToggle
     );
+  }
 
-    addClass(docs, 'docs-ready');
+  onReady = () => {
+    addClass(this.docs, 'docs-ready');
   }
 }
 
