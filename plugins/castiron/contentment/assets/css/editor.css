@@ -1,6 +1,0 @@
-/*
-Prevent Froala popups (e.g. link editor) rendering "behind" contentment modals.
-*/
-.fr-popup {
-    z-index: 700 !important;
-}

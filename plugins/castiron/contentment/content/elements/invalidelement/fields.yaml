@@ -1,8 +1,0 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
-fields:
-  error:
-    label: Error
-    disabled: true

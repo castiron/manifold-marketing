@@ -1,9 +1,0 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
-fields:
-  body:
-    type: richeditor
-    size: huge
-
