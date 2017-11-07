@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "79009553e040b0c4413cbdd45d37b1fb",
+    "content-hash": "7491c3e704975a0b499bada9d038a2ec",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -44,16 +44,16 @@
         },
         {
             "name": "castiron/contentment-plugin",
-            "version": "dev-master",
+            "version": "dev-bugfix/site-root-uris",
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "99bbad79fe9e69e58bbbb5f7bd2dadda707bf724"
+                "reference": "4a8b1c3e73bf2140e11179aa06b1804e2bec616d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/99bbad79fe9e69e58bbbb5f7bd2dadda707bf724",
-                "reference": "99bbad79fe9e69e58bbbb5f7bd2dadda707bf724",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/4a8b1c3e73bf2140e11179aa06b1804e2bec616d",
+                "reference": "4a8b1c3e73bf2140e11179aa06b1804e2bec616d",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2017-10-17T18:21:07+00:00"
+            "time": "2017-11-02T03:36:38+00:00"
         },
         {
             "name": "castiron/lib-plugin",
@@ -5416,8 +5416,7 @@
         "castiron/lib-plugin": 20,
         "castiron/contentment-plugin": 20,
         "castiron/peaches": 20,
-        "castiron/castiron": 20,
-        "owl/list-delete": 20
+        "castiron/castiron": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
