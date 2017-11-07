@@ -30,42 +30,41 @@ class DocumentationSidebar {
     const path = window.location.pathname.split('/');
     const toggles = this.sidebar.querySelectorAll(toggleSelector);
 
-    for (const [index, toggle] of [...toggles].entries()) {
-      const link = toggle.firstChild;
-      const href = link.href;
-      const isIntro = href === location + '/README';
+    // for (const [index, toggle] of [...toggles].entries()) {
+    //   const link = toggle.firstElementChild;
+    //   const href = link.href;
+    //   const isIntro = href === location + '/README';
+    //   if (location === href || (location === baseUrl && isIntro)) {
+    //     addClass(link, 'active');
+    //     this.activeNode = link;
+    //     const isGreater = index > 0;
+    //     const isLessThan = index < toggles.length - 1;
+    //     this.previousToggle = isGreater ? toggles[index - 1] : null;
+    //     this.nextToggle = isLessThan ? toggles[index + 1] : null;
+    //   }
 
-      if (location === href || (location === baseUrl && isIntro)) {
-        addClass(link, 'active');
-        this.activeNode = link;
-        const isGreater = index > 0;
-        const isLessThan = index < toggles.length - 1;
-        this.previousToggle = isGreater ? toggles[index - 1] : null;
-        this.nextToggle = isLessThan ? toggles[index + 1] : null;
-      }
+    //   if (!link.nextElementSibling) {
+    //     continue;
+    //   } else if (link.nextElementSibling.tagName === 'UL') {
+    //     // Add accordion toggle
+    //     const toggleIndicator = document.createElement("span");
+    //     addClass(toggleIndicator, 'toggle-indicator');
+    //     toggleIndicator.dataset.toggle = index;
+    //     toggle.insertBefore(toggleIndicator, link);
+    //     addClass(toggle, 'toggle');
 
-      if (!link.nextElementSibling) {
-        continue;
-      } else if (link.nextElementSibling.tagName === 'UL') {
-        // Add accordion toggle
-        const toggleIndicator = document.createElement("span");
-        addClass(toggleIndicator, 'toggle-indicator');
-        toggleIndicator.dataset.toggle = index;
-        toggle.insertBefore(toggleIndicator, link);
-        addClass(toggle, 'toggle');
+    //     // Identify toggle target
+    //     const reveal = link.nextElementSibling;
+    //     reveal.dataset.reveal = index;
+    //     addClass(reveal, 'accordion');
 
-        // Identify toggle target
-        const reveal = link.nextElementSibling;
-        reveal.dataset.reveal = index;
-        addClass(reveal, 'accordion');
-
-        const accordionTrigger = new AccordionTrigger(
-          toggleIndicator,
-          reveal,
-          onClass
-        );
-      }
-    }
+    //     const accordionTrigger = new AccordionTrigger(
+    //       toggleIndicator,
+    //       reveal,
+    //       onClass
+    //     );
+    //   }
+    // }
 
     this.callback();
   }

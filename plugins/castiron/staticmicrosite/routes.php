@@ -1,13 +1,12 @@
 <?php
 
-use Castiron\StaticMicrosite\StaticSiteConfiguration as Config;
-use Castiron\Manifold\StaticMicroSite\ManifoldDocs;
-
+use Castiron\StaticMicrosite\Configuration;
+use Castiron\StaticMicroSite\Response;
 
 App::before(function() {
-  $configs = Config::getAll();
-  foreach ($configs as $config) {
-  	(new ManifoldDocs($config))->buildRoutes();
+  $allConfig = Configuration::getAll();
+  foreach ($allConfig as $siteConfig) {
+  	(new Response($siteConfig))->buildRoutes();
   }
 });
 

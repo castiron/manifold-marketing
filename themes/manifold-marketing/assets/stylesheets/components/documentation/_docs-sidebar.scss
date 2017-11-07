@@ -180,8 +180,18 @@
     }
 
     &.open {
+      ul {
+        display: block;
+      }
+
       &::before {
         transform: rotate(90deg);
+      }
+    }
+
+    &.closed {
+      ul {
+        display: none;
       }
     }
 

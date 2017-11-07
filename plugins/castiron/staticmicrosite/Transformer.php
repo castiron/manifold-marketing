@@ -1,6 +1,8 @@
 <?php namespace Castiron\StaticMicrosite;
 
-class MarkdownTransformer {
+use October\Rain\Support\Facades\Markdown;
+
+class Transformer {
   /**
    * @var
    */
@@ -29,10 +31,18 @@ class MarkdownTransformer {
   }
 
   /**
+   * @param $content
+   */
+  public function transform($markdown) {
+    $adjustedMarkdown = $this->rewriteRelativePaths($markdown);
+    return Markdown::parse($adjustedMarkdown);
+  }
+
+  /**
    * @param $path
    * @return string
    */
-  public function getRequestPathParentFromPath($path) {
+  private function getRequestPathParentFromPath($path) {
     $parts = array_filter(explode('/', $path));
     if(count($parts) == 0) {
       return '';
@@ -42,20 +52,12 @@ class MarkdownTransformer {
     }
   }
 
-
-  /**
-   * @param $content
-   */
-  public function transform($content) {
-    return $this->resolveAllPaths($content);
-  }
-
   /**
    *
    * @param $markdownContent
    * @return mixed
    */
-  protected function resolveAllPaths($markdownContent) {
+  private function rewriteRelativePaths($markdownContent) {
     return preg_replace_callback( '/\[(.*?)\]\((.*?)\)/', function ($matches) {
       if (strpos($matches[2], '://') !== false) {
         // External path, don't touch
@@ -80,7 +82,7 @@ class MarkdownTransformer {
    * @param $path
    * @return string
    */
-  protected function urlForPath($path) {
+  private function urlForPath($path) {
     $fileInfo = pathinfo($path);
     if(array_key_exists('extension', $fileInfo)) {
       if(in_array($fileInfo['extension'], ['md', 'MD'])) {
