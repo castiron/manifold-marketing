@@ -1,6 +1,6 @@
 <?php namespace Castiron\StaticMicrosite;
 
-class StaticPageRequest
+class ResourceReader
 {
   /**
    * @var StaticSiteConfiguration
@@ -31,7 +31,7 @@ class StaticPageRequest
    * StaticPageRequest constructor.
    * @param StaticSiteConfiguration $staticSiteConfiguration
    */
-  public function __construct(StaticSiteConfiguration $staticSiteConfiguration)
+  public function __construct(Configuration $staticSiteConfiguration)
   {
     $this->staticSiteConfiguration = $staticSiteConfiguration;
   }

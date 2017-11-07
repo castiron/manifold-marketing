@@ -79,7 +79,7 @@ class RepoPullButton extends FormWidgetBase
 
     protected function pullRepo($path, $target) {
       if (!$path || !$target) return null;
-      $command = "cd ".$path."; git fetch --all; git reset --hard ".$target;
+      $command = "cd ".$path."; git fetch --all; git reset --hard ".$target. " && git rev-parse HEAD > revision.txt";
       $output = [];
       $status = null;
       exec($command, $output, $status);

@@ -1,28 +1,30 @@
-<?php namespace Castiron\Manifold\StaticMicroSite;
+<?php namespace Castiron\StaticMicroSite;
 
-use Castiron\StaticMicrosite\StaticPageRequest as Request;
-use Castiron\StaticMicrosite\MarkdownTransformer;
+use Castiron\StaticMicrosite\ResourceReader;
+use Castiron\StaticMicrosite\Transformer;
 use Cms\Classes\CmsException;
 use Cms\Classes\Page;
 use Cms\Classes\Controller;
-use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Response as OctoberResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\View;
-use October\Rain\Support\Facades\Markdown;
 use Illuminate\Support\Facades\Route;
 
-class ManifoldDocs
+class Response
 {
 
   const PLUGIN_PATH = '../../../plugins/castiron/staticmicrosite/pages/two_column.htm';
   const TOC_FILE_NAME = '/SUMMARY.md';
   const DEFAULT_PAGE = 'README';
+  const REVISION_FILE_NAME = 'revision.txt';
 
   public function __construct($config) {
     $this->config = $config;
-    $this->request = new Request($this->config);
+    $this->resourceReader = new ResourceReader($this->config);
     $this->controller = new Controller;
     $this->basePath = $this->config->getEntryUrlPath();
+    $this->currentRevision = $this->readRevision();
     $this->contentCache = null;
   }
 
@@ -40,7 +42,7 @@ class ManifoldDocs
   private function buildContentRoute() {
     $routeTmpl = $this->basePath.'/{path}';
     Route::get($routeTmpl, function ($path) {
-      $this->request->path($path);
+      $this->resourceReader->path($path);
       return $this->respond($path);
     })->where('path', $this->config->getPathRegex());    
   }
@@ -55,24 +57,31 @@ class ManifoldDocs
     return $this->controller->runPage($page);
   }
 
+  private function readRevision() {
+    $path = $this->config->getContentRootPath().'/'.self::REVISION_FILE_NAME;
+    if (!file_exists($path)) return "";
+    $content = file_get_contents($path);
+    return $content;
+  }
+
   private function setPath($path) {
     $this->path = $path;
   }
 
   private function should404() {
-    return !$this->request->resourceExists() || false;
+    return !$this->resourceReader->resourceExists() || false;
   }
 
   private function do404() {
-    return Response::make(View::make('cms::404'), '404');    
+    return OctoberResponse::make(View::make('cms::404'), '404');    
   }
 
   private function shouldReturnAsset() {
-    return $this->request->isAsset();
+    return $this->resourceReader->isAsset();
   }
 
   private function doReturnAsset() {
-    return Response::file($this->request->getResolvedResourcePath());
+    return OctoberResponse::file($this->resourceReader->getResolvedResourcePath());
   }
 
   private function loadPage() {
@@ -86,35 +95,47 @@ class ManifoldDocs
   }
 
   private function transformContent($path, $content) {
-    $markdownTransformer = new MarkdownTransformer($path, $this->basePath);
-    return Markdown::parse($markdownTransformer->transform($content));
+    $markdownTransformer = new Transformer($path, $this->basePath);
+    return $markdownTransformer->transform($content);
   }
 
   private function getRequestContent() {
     if ($this->contentCache === null) {
-      $this->contentCache = $this->request->getResourceContent();
+      $this->contentCache = $this->resourceReader->getResourceContent();
     }
     return $this->contentCache;
   }
 
   private function transformedContent($path) {
-    return $this->transformContent($path, $this->getRequestContent());
+    $cached = Cache::get($path);
+    if ($cached && $cached['revision'] === $this->currentRevision) {
+      return $cached['content'];
+    } else {
+      if ($cached) Cache::forget($path);
+      $toCache = array(
+        'revision' => $this->currentRevision,
+        'content' => $this->transformContent($path, $this->getRequestContent())
+      );
+      Cache::forever($path, $toCache);
+      return $toCache['content'];
+    }
   }
 
-  private function navigationStructure() {
-    $path = $this->config->getContentRootPath().'/'.self::TOC_FILE_NAME;
-    $content = file_get_contents($path);
-    return $this->transformContent('', $content);
+  private function navigationStructure($requestPath) {
+    $tocPath = $this->config->getContentRootPath().'/'.self::TOC_FILE_NAME;
+    $navService = new Navigation($tocPath, $requestPath, $this->currentRevision);
+    $navigation = $navService->buildTree();
+    return $navigation;
   }
 
   private function assignControllerVars($path) {
     $this->controller->vars['content'] = $this->transformedContent($path);
-    $this->controller->vars['navigation'] = $this->navigationStructure();
+    $this->controller->vars['navigation'] = $this->navigationStructure($path);
     $this->controller->vars['root'] = $this->basePath;
   }
 
   private function setPageTitle($page) {
-    $content = $this->request->getResourceContent();
+    $content = $this->resourceReader->getResourceContent();
     if(preg_match('/^#(.*)$/m', $content, $matches)) {
       $page->title = trim($matches[1]);
     } else {

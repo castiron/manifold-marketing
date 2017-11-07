@@ -2,7 +2,7 @@
 
 use Castiron\StaticMicrosite\Models\RouteSettings;
 
-class StaticSiteConfiguration {
+class Configuration {
 
   /**
    * The root URL on the site for the serving of MD-source content, eg "docs"
