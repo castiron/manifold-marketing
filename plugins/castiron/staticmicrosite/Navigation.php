@@ -28,16 +28,18 @@ class Navigation
     return $lines;
   }
 
-  private function lineToLeaf($line) {
+  private function lineToLeaf($line, $id=null) {
     if(!$line) return $line;
     $level = (strlen($line)-strlen(ltrim($line))) / 2;
     $leaf = new \stdClass();
     $leaf->title = $this->titleFromLine($line);
     $leaf->path = $this->urlFromLine($line);
     $leaf->active = false;
+    $leaf->current = ($this->requestPath === $leaf->path);
     $leaf->directory = dirname($leaf->path);
     $leaf->level = $level + 1;
     $leaf->children = array();
+    $leaf->id = $id;
     return $leaf;
   }
 
@@ -84,7 +86,7 @@ class Navigation
 
   public function buildTree() {
     foreach ($this->rawLines as $index => $line) {
-      $leaf = $this->lineToLeaf($line);
+      $leaf = $this->lineToLeaf($line, $index);
       $level = $leaf->level;
       $this->pointers[$level - 1]->children[] = $leaf;
       $this->pointers[$level] = $leaf;

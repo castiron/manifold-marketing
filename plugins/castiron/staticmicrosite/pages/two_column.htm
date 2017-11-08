@@ -6,11 +6,15 @@ is_content_page = 0
 ==
 {% macro recursivePages(page, path) %}
   {% import _self as macros %}
-  <li class="{{ page.active ? 'open' : 'closed' }}">
-    <span class="{{ page.children ? 'toggle-indicator' }} {{ page.active ? 'open' : 'closed' }}"></span>
-    <a href="/docs/{{ page.path }}">{{ page.title }}</a>
+  <li class="{{ page.active ? 'open' : 'closed' }} {{ page.children ? 'toggle' }}">
     {% if page.children %}
-      <ul>
+      <span class="toggle-indicator {{page.current ? 'active' : ''}} {{ page.active ? 'open' : 'closed' }}" data-sidebar-accordion-toggle="accordion-{{page.id}}"></span>
+    {% else %}
+      <span class="placeholder-toggle-indicator {{page.current ? 'active' : ''}}"></span>
+    {% endif %}
+    <a href="/docs/{{ page.path }}" class="{{page.current ? 'active' : ''}}">{{ page.title }}</a>
+    {% if page.children %}
+      <ul class="accordion {{ page.active ? 'open' : 'closed' }}" data-sidebar-accordion-reveal="accordion-{{page.id}}">
         {% for child in page.children %}
           {{ macros.recursivePages(child, path) }}
         {% endfor %}
@@ -21,12 +25,11 @@ is_content_page = 0
 
 {% import _self as macros %}
 
-<div style="width: 0; height: 0; visibility: hidden;" data-base-url="{{url('/')
-}}/{{root}}" data-docs-root="{{root}}"></div>
+<div style="width: 0; height: 0; visibility: hidden;"></div>
 <section class="background-white docs-container">
-  <div class="container-main docs" data-docs>
+  <div class="container-main docs">
     <div class="flex-row">
-      <aside class="docs-sidebar" data-sidebar="docs" data-hamburger-togglable="sidebar">
+      <aside class="docs-sidebar" data-hamburger-togglable="sidebar">
         <div class="sidebar-toggle" data-hamburger-toggle="sidebar"></div>
         <form class="form-primary search-block">
           <div class="form-input">
@@ -45,7 +48,7 @@ is_content_page = 0
           <div class="documentation-breadcrumb" data-documentation-breadcrumb="documentation">
             <a class="breadcrumb-link" href="/{{root}}/README">Documentation</a>
             {% for breadcrumb in navs.breadcrumbs %}
-              <a href="/{{root}}/{{ breadcrumb.path }}" class="breadcrumb-link {{breadcrumb.active ? 'active' : ''}}">{{ breadcrumb.title }}</a>
+              <a href="/{{root}}/{{ breadcrumb.path }}" class="breadcrumb-link {{breadcrumb.current ? 'active' : ''}}">{{ breadcrumb.title }}</a>
             {% endfor %}
           </div>
           <div id="doc-page" class="markdown">
