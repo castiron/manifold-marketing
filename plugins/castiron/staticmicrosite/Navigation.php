@@ -8,6 +8,8 @@ class Navigation
     $this->requestPath = $requestPath;
     $this->revision = $revision;
     $this->rawLines = $this->readRawLines();
+    $this->pagination = array();
+    $this->breadcrumbs = array();
     $rootLeaf = new \stdClass();
     $rootLeaf->url = "";
     $rootLeaf->level = 0;
@@ -16,17 +18,18 @@ class Navigation
   }
 
   private function readRawLines() {
-      $content = file($this->path);
-      $lines = array();
-      foreach ($content as $line) {
-        $firstChar = substr(trim($line), 0, 1);
-        if ($firstChar !== "*") continue;
-        $lines[] = $line;
-      }
-    return $lines;  
+    $content = file($this->path);
+    $lines = array();
+    foreach ($content as $line) {
+      $firstChar = substr(trim($line), 0, 1);
+      if ($firstChar !== "*") continue;
+      $lines[] = $line;
+    }
+    return $lines;
   }
 
   private function lineToLeaf($line) {
+    if(!$line) return $line;
     $level = (strlen($line)-strlen(ltrim($line))) / 2;
     $leaf = new \stdClass();
     $leaf->title = $this->titleFromLine($line);
@@ -57,6 +60,10 @@ class Navigation
         }
       }
     }
+
+    if ($leaf->active === true) {
+      $this->setBreadcrumbs($leaf);
+    }
   }
 
   private function setActiveStates($tree) {
@@ -65,16 +72,39 @@ class Navigation
     }
   }
 
+  private function getPagination($currentLeaf, $currentIndex) {
+    $previous = ($currentIndex > 0 ? $this->rawLines[$currentIndex - 1] : null);
+    $next = ($currentIndex < (count($this->rawLines) - 1) ? $this->rawLines[$currentIndex + 1] : null);
+    return array($this->lineToLeaf($previous), $this->lineToLeaf($next));
+  }
+
+  private function setBreadcrumbs($leaf) {
+    array_unshift($this->breadcrumbs, $leaf);
+  }
+
   public function buildTree() {
-    foreach ($this->rawLines as $index => $line) {      
+    foreach ($this->rawLines as $index => $line) {
       $leaf = $this->lineToLeaf($line);
       $level = $leaf->level;
       $this->pointers[$level - 1]->children[] = $leaf;
       $this->pointers[$level] = $leaf;
+
+      if ($this->requestPath === $leaf->path) {
+        $this->pagination = $this->getPagination($leaf, $index);
+      }
     }
     // This could be cached.
     $tree = $this->pointers[0]->children;
     $this->setActiveStates($tree);
     return $tree;
+  }
+
+  public function buildNavs() {
+    $tree = $this->buildTree();
+    $navs = new \stdClass();
+    $navs->pages = $tree;
+    $navs->breadcrumbs = $this->breadcrumbs;
+    $navs->pagination = $this->pagination;
+    return $navs;
   }
 }

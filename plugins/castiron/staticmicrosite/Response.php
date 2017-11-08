@@ -36,7 +36,7 @@ class Response
   private function buildRootRedirectRoute() {
     Route::get($this->basePath, function() {
       return new RedirectResponse($this->basePath.self::DEFAULT_PAGE, 301);
-    });    
+    });
   }
 
   private function buildContentRoute() {
@@ -44,7 +44,7 @@ class Response
     Route::get($routeTmpl, function ($path) {
       $this->resourceReader->path($path);
       return $this->respond($path);
-    })->where('path', $this->config->getPathRegex());    
+    })->where('path', $this->config->getPathRegex());
   }
 
   private function respond($path) {
@@ -73,7 +73,7 @@ class Response
   }
 
   private function do404() {
-    return OctoberResponse::make(View::make('cms::404'), '404');    
+    return OctoberResponse::make(View::make('cms::404'), '404');
   }
 
   private function shouldReturnAsset() {
@@ -124,13 +124,13 @@ class Response
   private function navigationStructure($requestPath) {
     $tocPath = $this->config->getContentRootPath().'/'.self::TOC_FILE_NAME;
     $navService = new Navigation($tocPath, $requestPath, $this->currentRevision);
-    $navigation = $navService->buildTree();
-    return $navigation;
+    $navs = $navService->buildNavs();
+    return $navs;
   }
 
   private function assignControllerVars($path) {
     $this->controller->vars['content'] = $this->transformedContent($path);
-    $this->controller->vars['navigation'] = $this->navigationStructure($path);
+    $this->controller->vars['navs'] = $this->navigationStructure($path);
     $this->controller->vars['root'] = $this->basePath;
   }
 
@@ -142,5 +142,4 @@ class Response
       $page->title = 'Manifold Documentation';
     }
   }
-
 }
