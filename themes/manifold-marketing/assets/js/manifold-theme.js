@@ -1,7 +1,7 @@
 import domHelp from "./lib/dom-help";
 import ClassBurger from "./class-burger";
 import Accordions from "./accordions";
-import Documentation from "./documentation";
+import DocumentationSidebar from "./docs-sidebar";
 import HeightMatch from "./height-match";
 import ScrollTarget from "./scroll-target";
 import CssSlider from "./css-slider";
@@ -21,14 +21,8 @@ class ManifoldTheme {
       // Initialize Accordions
       const accordions = new Accordions();
 
-      // Initialize Documentation related DOM reconstitution
-      if (document.querySelectorAll('[data-sidebar="docs"]').length > 0) {
-        const docs = document.querySelector('[data-docs]');
-        const documentation = new Documentation(docs);
-
-        // Initialize documentation sidebar slide out menu
-        const sidebarMenu = new ClassBurger('sidebar', 'open');
-      }
+      // Initialize Documentation Sidebar Accordions
+      const docSidebar = new DocumentationSidebar();
 
       // Initialize height matching elements
       const summaryNames = new HeightMatch('[data-mh=summary-name]');
