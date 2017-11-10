@@ -1,9 +1,9 @@
 {% set results = results() %}
-{% set subtitle = 'Search Results for: ' ~ activeQuery() ?: '' %}
+{% set subtitle = activeQuery() ?: '' %}
 
 <section class="background-gray">
   <div class="block">
-    <% partial 'blocks/intro' title="Search Results" subtitle=subtitle %>
+    {% partial 'blocks/intro' title="Search Results" subtitle=subtitle %}
   </div>
 </section>
 
@@ -50,7 +50,7 @@
 
             <nav class="pagination">
                 <ul>
-                    {{ paginationDetails().render(paginationPresenter()) | raw }}
+                    {{ paginationPresenter().render(paginationDetails()) | raw }}
                 </ul>
             </nav>
         </div>

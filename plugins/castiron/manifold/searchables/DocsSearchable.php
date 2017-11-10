@@ -4,7 +4,6 @@ use Castiron\StaticMicrosite\MarkdownTransformer;
 use Illuminate\Support\Facades\Storage;
 use URL;
 use Queequeg\Contracts\Searchable;
-use Castiron\Manifold\StaticMicroSite\ManifoldDocs;
 
 /**
  * Class DocsSearchable

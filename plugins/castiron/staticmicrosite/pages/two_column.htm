@@ -6,7 +6,7 @@ is_content_page = 0
 ==
 <div style="width: 0; height: 0; visibility: hidden;" data-base-url="{{url('/')
 }}/{{root}}" data-docs-root="{{root}}"></div>
-<section class="background-white docs-container">
+<section class="background-white docs-container" data-qq-content>
   <div class="container-main docs">
     <div class="flex-row">
       <aside class="docs-sidebar" data-sidebar="docs" data-hamburger-togglable="sidebar">
@@ -34,3 +34,15 @@ is_content_page = 0
     </div>
   </div>
 </section>
+
+<!--We need this stuff for search:-->
+<div class="invisible">
+  <div data-qq="description">
+    {% set content = pageModel.renderContent()|striptags('<em><strong>') %}
+    {% if content|length > 500 %}
+    {{ content|slice(0,500)|striptags|raw }}&hellip;
+    {% else %}
+    {{ content|raw }}
+    {% endif %}
+  </div>
+</div>

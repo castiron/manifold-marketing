@@ -4,4 +4,20 @@ layout = "default"
 is_hidden = 0
 is_content_page = 1
 ==
-{{pageModel.renderContent()|raw}}
+<div data-qq-content>
+  {{pageModel.renderContent()|raw}}
+</div>
+
+<!--We need this stuff for search:-->
+<div class="invisible">
+  <div data-qq="title">{{ pageModel.title }}</div>
+  <div data-qq="local_uri">{{ pageModel.url }}</div>
+  <div data-qq="description">
+    {% set content = pageModel.renderContent()|striptags('<em><strong>') %}
+    {% if content|length > 500 %}
+    {{ content|slice(0,500)|striptags|raw }}&hellip;
+    {% else %}
+    {{ content|raw }}
+    {% endif %}
+  </div>
+</div>

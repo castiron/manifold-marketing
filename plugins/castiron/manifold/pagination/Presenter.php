@@ -1,6 +1,5 @@
 <?php namespace Castiron\Manifold\Pagination;
 
-use Illuminate\Pagination\BootstrapThreePresenter;
 use Illuminate\Pagination\LengthAwarePaginator;
 use URL;
 use Request;
@@ -9,7 +8,7 @@ use Request;
  * Class PaginationPresenter
  * @package Castiron\Manifold\Presenters
  */
-class Presenter extends BootstrapThreePresenter
+class Presenter
 {
     /**
      * PaginationPresenter constructor.
