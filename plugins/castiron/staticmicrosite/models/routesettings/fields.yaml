@@ -17,6 +17,12 @@ fields:
                     span: left
                     comment: <p class='help-block'>Single string, no slashes</p><p class='help-block'><em>docs</em></p>
                     commentHtml: true
+                secret:
+                    label: Secret
+                    type: text
+                    span: left
+                    comment: <p class='help-block'>Enter a random secret string to be used by webhooks</p>
+                    commentHtml: true
                 repo:
                     type: repopullbutton
                     span: right
