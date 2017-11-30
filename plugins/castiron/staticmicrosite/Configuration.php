@@ -114,7 +114,7 @@ class Configuration {
       $config = new self();
       $config->setEntryUrlPath($route['entry_url_path']);
       $config->setPathRegex($route['path_regex']);
-      $config->setSecret($route['secret']);
+      if (array_key_exists('secret', $route)) $config->setSecret($route['secret']);
       $config->setTarget($route['repo']['branch_or_commit']);
       $config->setContentRootPath($route['repo']['content_root_path']);
       return $config;
