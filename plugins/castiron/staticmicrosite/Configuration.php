@@ -31,6 +31,22 @@ class Configuration {
   }
 
   /**
+   * @param $secret string
+   */
+  public function setSecret($secret)
+  {
+    $this->secret = $secret;
+  }
+
+  /**
+   * @param $secret string
+   */
+  public function getSecret()
+  {
+    return $this->secret;
+  }
+
+  /**
    * @return $entryPath string
    */
   public function getEntryUrlPath()
@@ -44,6 +60,19 @@ class Configuration {
   public function setPathRegex($pathRegex)
   {
     $this->pathRegex = $pathRegex;
+  }
+
+  /**
+   * @param $targetstring
+   */
+  public function setTarget($target)
+  {
+    $this->target = $target;
+  }
+
+  public function getTarget()
+  {
+    return $this->target;
   }
 
   /**
@@ -70,6 +99,27 @@ class Configuration {
     return $this->contentRootPath;
   }
 
+  public static function getByEntry($entry) {
+    $routeSettings = RouteSettings::get('settings');
+    if ($routeSettings === null) return null;
+    foreach ($routeSettings as $route) {
+      if ($route['entry_url_path'] === $entry) {
+        return self::routeToConfig($route);
+      }
+    }
+    return null;
+  }
+
+  public static function routeToConfig($route) {
+      $config = new self();
+      $config->setEntryUrlPath($route['entry_url_path']);
+      $config->setPathRegex($route['path_regex']);
+      $config->setSecret($route['secret']);
+      $config->setTarget($route['repo']['branch_or_commit']);
+      $config->setContentRootPath($route['repo']['content_root_path']);
+      return $config;
+  }
+
   # TODO: Add presence validation for these fields, dude
   public static function getAll() {
     $routeSettings = RouteSettings::get('settings');
@@ -77,12 +127,7 @@ class Configuration {
 
     if ($routeSettings === null) return $configs;
     foreach ($routeSettings as $route) {
-      $config = new self();
-      $config->setEntryUrlPath($route['entry_url_path']);
-      $config->setPathRegex($route['path_regex']);
-      $config->setContentRootPath($route['repo']['content_root_path']);
-
-      array_push($configs, $config);
+      array_push($configs, self::routeToConfig($route));
     }
 
     return $configs;

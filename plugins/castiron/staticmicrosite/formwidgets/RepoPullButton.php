@@ -1,6 +1,8 @@
 <?php namespace Castiron\StaticMicrosite\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
+use Castiron\StaticMicrosite\Configuration;
+use Castiron\StaticMicrosite\Repository;
 use October\Rain\Exception\AjaxException;
 
 /**
@@ -50,49 +52,38 @@ class RepoPullButton extends FormWidgetBase
     /**
      * @inheritDoc
      */
-    public function getSaveValue($value)
-    {
-        return $value;
+    public function getSaveValue($value) {
+      return $value;
+    }
+
+    protected function getConfiguration() {
+      $params = post();
+      $name = $params['name'];
+      $allSettings = $params['RouteSettings']['settings'];
+      preg_match_all("/\[(.*?)\]/", $name, $matches);
+      $key = $matches[1][1];
+      $settings = $allSettings[$key];
+      $config = Configuration::routeToConfig($settings);
+      return $config;
     }
 
     public function onPull() {
-        $params = post();
-        $stringPath = $params['name'];
-        preg_match_all("/\[(.*?)\]/", $stringPath, $rgMatches);
-        $rgResult = $params['RouteSettings'];
-
-        foreach($rgMatches[1] as $sPath) # https://stackoverflow.com/questions/19028963/access-array-using-dynamic-path#answer-19029098
-        {
-          $rgResult=$rgResult[$sPath];
-        }
-        $rgResult = $rgResult['repo'];
-
-        $path = $rgResult['content_root_path'] ?: null;
-
-        if (!$path) throw new AjaxException(['error' => 'No path to repo specified']);
-        $target = $rgResult['branch_or_commit'] ?: 'origin/master';
-
-        $this->pullRepo($path, $target);
-
+        $config = $this->getConfiguration();
+        if (!$config) throw new AjaxException(['error' => 'Unable to extract configuration from request']);
+        $repository = new Repository($config);
+        $status = $repository->pull();
+        if ($status !== 0) throw new AjaxException(['error' => 'Error fetching branch/commit']);
         return [];
-    }
-
-    protected function pullRepo($path, $target) {
-      if (!$path || !$target) return null;
-      $command = "cd ".$path."; git fetch --all; git reset --hard ".$target. " && git rev-parse HEAD > revision.txt";
-      $output = [];
-      $status = null;
-      exec($command, $output, $status);
-
-      if ($status !== 0) throw new AjaxException(['error' => 'Error fetching branch/commit']);
     }
 
     protected function getInputName($attribute) {
         return $this->formField->getName()."[".$attribute."]";
     }
+
     protected function getInputId($attribute) {
         return $this->formField->getId()."-".$attribute;
     }
+
     protected function getInputValue($attribute) {
         if (!is_array($this->vars['values'])) return null;
             if (array_key_exists($attribute, $this->vars['values'])) {
