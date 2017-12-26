@@ -16,6 +16,7 @@
         {% endfor %}
       </div>
     </div>
+    {% if testimonials|length > 1 %}
     <div class="slider-ordinals" data-slider-nav>
       {% for testimonial in testimonials %}
         <div class="slider-ordinal" data-pager-ordinal="{{ loop.index }}"></div>
@@ -25,5 +26,6 @@
       <div class="slider-pager-left slider-pager" data-pager="left"></div>
       <div class="slider-pager-right slider-pager" data-pager="right"></div>
     </div>
+    {% endif %}
   </div>
 </div>
