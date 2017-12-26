@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7491c3e704975a0b499bada9d038a2ec",
+    "content-hash": "8f97c0eb12f0ec15525c33981a0603ae",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -40,26 +40,27 @@
                 "source": "https://github.com/castiron/castiron-module/tree/master",
                 "issues": "https://github.com/castiron/castiron-module/issues"
             },
-            "time": "2015-08-24T23:36:58+00:00"
+            "time": "2015-08-24 23:36:58"
         },
         {
             "name": "castiron/contentment-plugin",
-            "version": "dev-bugfix/site-root-uris",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "4a8b1c3e73bf2140e11179aa06b1804e2bec616d"
+                "reference": "699beba86a2dc370b9c990f3b29c0bc2ec93946f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/4a8b1c3e73bf2140e11179aa06b1804e2bec616d",
-                "reference": "4a8b1c3e73bf2140e11179aa06b1804e2bec616d",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/699beba86a2dc370b9c990f3b29c0bc2ec93946f",
+                "reference": "699beba86a2dc370b9c990f3b29c0bc2ec93946f",
                 "shasum": ""
             },
             "require": {
                 "castiron/peaches": "dev-master",
                 "owl/list-delete": "~1.0@dev",
-                "php": ">=5.4"
+                "php": ">=5.4",
+                "rollbar/rollbar": "~1.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -94,7 +95,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2017-11-02T03:36:38+00:00"
+            "time": "2017-12-26T19:01:34+00:00"
         },
         {
             "name": "castiron/lib-plugin",
@@ -125,7 +126,7 @@
                 "source": "https://github.com/castiron/castiron-plugin/tree/master",
                 "issues": "https://github.com/castiron/castiron-plugin/issues"
             },
-            "time": "2017-02-15T22:23:30+00:00"
+            "time": "2017-02-15 22:23:30"
         },
         {
             "name": "castiron/news-plugin",
@@ -191,7 +192,7 @@
                 "source": "https://github.com/castiron/peaches/tree/master",
                 "issues": "https://github.com/castiron/peaches/issues"
             },
-            "time": "2015-11-11T00:46:03+00:00"
+            "time": "2015-11-11 00:46:03"
         },
         {
             "name": "castiron/queequeg",
@@ -2975,6 +2976,65 @@
             "time": "2017-09-22T20:46:04+00:00"
         },
         {
+            "name": "rollbar/rollbar",
+            "version": "v1.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rollbar/rollbar-php.git",
+                "reference": "a8a977976d62325453ac3366de6f91ae7b6fffcb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/a8a977976d62325453ac3366de6f91ae7b6fffcb",
+                "reference": "a8a977976d62325453ac3366de6f91ae7b6fffcb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "psr/log": "^1.0.1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "0.9.*",
+                "monolog/monolog": "^1.12.0",
+                "packfire/php5.3-compat": "*",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "fluent/logger": "Needed to use the 'fluent' handler for fluentd support",
+                "packfire/php5.3-compat": "for backward compatibility with PHP 5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rollbar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rollbar, Inc.",
+                    "email": "support@rollbar.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Monitors errors and exceptions and reports them to Rollbar",
+            "homepage": "http://github.com/rollbar/rollbar-php",
+            "keywords": [
+                "debugging",
+                "errors",
+                "exceptions",
+                "logging",
+                "monitoring"
+            ],
+            "time": "2017-12-02T10:43:04+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.0.2",
             "source": {
@@ -5416,7 +5476,8 @@
         "castiron/lib-plugin": 20,
         "castiron/contentment-plugin": 20,
         "castiron/peaches": 20,
-        "castiron/castiron": 20
+        "castiron/castiron": 20,
+        "owl/list-delete": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
