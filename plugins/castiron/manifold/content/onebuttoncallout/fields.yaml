@@ -22,6 +22,9 @@ fields:
     mode: image
     imageWidth: 100
     imageHeight: 100
+  image_max_height:
+    label: Image Max Height
+    type: number
   title:
     label: Title
   description:

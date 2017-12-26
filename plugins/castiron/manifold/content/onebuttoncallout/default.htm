@@ -15,7 +15,7 @@
         <div class="label subheading-secondary">{{section_heading}}</div>
       {% endif %}
       {% if image %}
-        <img src="/storage/app/media{{ image }}">
+        <img class="callout-image" {% if image_max_height > 0 %}style="max-height: {{image_max_height}}px"{% endif %} src="/storage/app/media{{ image }}">
       {% endif %}
       {% if title %}
       <div class="heading-primary title">{{ title }}</div>
