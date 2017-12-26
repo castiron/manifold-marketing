@@ -71,6 +71,15 @@
     }
   }
 
+  .icon-slack-logo {
+    font-size: 50px;
+
+    @include respond($break20) {
+      font-size: 33px;
+    }
+  }
+
+
   .button-caption {
     flex-grow: 2;
     width: 100%;

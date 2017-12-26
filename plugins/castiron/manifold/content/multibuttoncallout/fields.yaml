@@ -30,6 +30,6 @@ fields:
           options:
             cloud: cloud
             github-logo: Gihub Logo
-            gitter-logo: Gitter Logo
+            slack-logo: Slack Logo
             hand: Hand
             manifold-doc: Manifold Document
