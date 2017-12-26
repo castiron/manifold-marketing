@@ -36,7 +36,7 @@ namespace :deploy do
   desc 'Run artisan october:up'
   task :october_up do
     on roles(:app) do
-      within current_path do
+      within release_path do
         execute :php, :artisan, 'october:up'
       end
     end
@@ -58,11 +58,11 @@ end
 # Update dependencies
 before 'deploy:publishing', 'deploy:composer_install'
 
+# Run migrations
+before 'deploy:publishing', 'deploy:october_up'
+
 # Build Assets
 before 'deploy:publishing', 'deploy:build_assets'
-
-# Run migrations
-after 'deploy:publishing', 'deploy:october_up'
 
 # Restart PHP (to clear opcaches)
 after 'deploy:publishing', 'deploy:restart'
