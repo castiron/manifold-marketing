@@ -1,8 +1,8 @@
 <section class="background-white">
   <div class="block">
     <section class="block-intro">
-      <div class="title heading-primary">{{ title }}</div>
-      <div class="subtitle copy-secondary">{{ subtitle }}</div>
+      <div class="title heading-primary">{{ title|md }}</div>
+      <div class="subtitle copy-secondary">{{ subtitle|md }}</div>
     </section>
     {% for actions_group in model.allUserTypes() %}
       <div class="actions-group">
