@@ -28,8 +28,8 @@ fields:
           type: dropdown
           emptyOption: No Icon
           options:
-            cloud: cloud
-            github-logo: Gihub Logo
-            slack-logo: Slack Logo
+            cloud: Cloud
+            github-logo: Github
+            slack-logo: Slack
             hand: Hand
-            manifold-doc: Manifold Document
+            manifold-doc: Document
