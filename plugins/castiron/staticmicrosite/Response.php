@@ -35,7 +35,7 @@ class Response
 
   private function buildRootRedirectRoute() {
     Route::get($this->basePath, function() {
-      return new RedirectResponse($this->basePath.self::DEFAULT_PAGE, 301);
+      return new RedirectResponse($this->basePath."/".self::DEFAULT_PAGE, 301);
     });
   }
 
