@@ -1,0 +1,11 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  site_url:
+    label: Site Url
+  feed_url:
+    label: Feed Url
+  num_items:
+    label: Number of Posts to Fetch

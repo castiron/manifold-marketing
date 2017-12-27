@@ -1,0 +1,22 @@
+{% set rssFeed = model.getRssFeed(feed_url, num_items) %}
+
+{% if rssFeed.posts %}
+  <section class="background-gray">
+    <div class="block blog-roll">
+      <a href="{{site_url}}" class="blog-roll-header flex-row vert-centered">
+        <span class="primary heading-secondary blog-label">Building</span><span class="heading-secondary blog-label gray">Manifold</span>
+        <i class="icon-arrow-right"></i>
+      </a>
+      <div class="flex-row blog-roll-grid">
+      <!-- expires: {{ rssFeed.refresh }} fallback: {{ rssFeed.fallback ? 'true' : 'false' }} -->
+      {% for post in rssFeed.posts %}
+        <a href="{{ post.link }}" class="col blog-post">
+          <div class="subheading-primary blog-post-title" data-mh="blog-post-name">{{ post.title }}</div>
+          <div class="copy-tertiary blog-post-summary" data-mh="blog-post-description">{{ post.description|raw }}</div>
+          <span class="blog-post-link">Read More</span>
+        </a>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
