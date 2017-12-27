@@ -31,13 +31,14 @@ is_content_page = 0
     <div class="flex-row">
       <aside class="docs-sidebar" data-hamburger-togglable="sidebar">
         <div class="sidebar-toggle" data-hamburger-toggle="sidebar"></div>
-        <form class="form-primary search-block">
+        <!-- <form class="form-primary search-block">
           <div class="form-input">
             <input type="text" name="search" placeholder="Search...">
             <i class="icon icon-magnify"></i>
           </div>
-        </form>
-        <ul>
+        </form> -->
+        <!-- temporary inline style to bump this down in line with the breadcrumb -->
+        <ul style="margin-top: 11px">
           {% for page in navs.pages %}
             {{ macros.recursivePages(page, path) }}
           {% endfor %}
