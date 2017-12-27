@@ -3,18 +3,16 @@
 # ===================================
 
 fields:
-  first_name:
-    label: First Name
-    span: auto
-  last_name:
-    label: Last Name
+  name:
+    label: Name
     span: auto
   email:
     label: Email
     span: auto
-  subject:
-    label: Subject
+  organization:
+    label: Organization
     span: auto
   body:
     label: Body
     span: auto
+    type: textarea
