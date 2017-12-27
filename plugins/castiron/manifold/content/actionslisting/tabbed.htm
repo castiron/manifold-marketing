@@ -36,7 +36,7 @@
                 {% for feature in feature_category.features %}
                   <div class="feature col col-3">
                     <div class="feature-name">{{ feature.name }}</div>
-                    <div class="feature-description copy-tertiary">{{ feature.description }}</div>
+                    <div class="feature-description copy-tertiary">{{ feature.description|md }}</div>
                   </div>
                 {% endfor %}
                 </div>
