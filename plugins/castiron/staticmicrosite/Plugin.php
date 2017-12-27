@@ -1,6 +1,7 @@
 <?php namespace Castiron\StaticMicrosite;
 
 use Backend;
+use Castiron\Manifold\Console\FetchRss;
 use System\Classes\PluginBase;
 use Castiron\StaticMicrosite\Models\RouteSettings;
 
@@ -31,7 +32,7 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
+      $this->registerConsoleCommand('rss.fetch', FetchRss::class);
     }
 
     /**

@@ -17,6 +17,7 @@ use Castiron\Manifold\Content\MultiButtonCallout;
 use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
 use Castiron\Manifold\Content\ParallaxCallout;
+use Castiron\Manifold\Content\Rss;
 use Castiron\Manifold\Content\ServicePackages;
 use Castiron\Manifold\Content\Testimonials;
 use Castiron\Manifold\Content\TwoColumnBlock;
@@ -231,6 +232,13 @@ class Plugin extends PluginBase
           'position' => 100,
           'category' => 'Block',
         ]);
+
+        ContentManager::registerElement(Rss::class, [
+          'icon' => 'icon-newspaper-o',
+          'label' => 'RSS Feed Items',
+          'position' => 100,
+          'category' => 'Special',
+        ]);
     }
 
     /**
@@ -286,4 +294,11 @@ class Plugin extends PluginBase
             ],
         ];
     }
+
+  public function registerSchedule($schedule)
+  {
+    $schedule->call(function () {
+      (new \Castiron\Manifold\Services\Rss())->fetchAll();
+    })->everyFiveMinutes()->name('Rss::fetchAll')->withoutOverlapping();
+  }
 }
