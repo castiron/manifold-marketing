@@ -2,3 +2,6 @@
 1.0.2:
     - 'Create Castiron.Forms Contacts table'
     - create_contacts_table.php
+1.0.3:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts.php

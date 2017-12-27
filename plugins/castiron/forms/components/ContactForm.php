@@ -28,10 +28,10 @@ class ContactForm extends ComponentBase
      * @var array Field validation rules
      */
     protected $rules = [
-        'name'    => ['required'],
+        'name'          => ['required'],
         'email'         => ['required', 'email'],
-        'organization'       => ['required'],
-        'body'       => ['required']
+        'organization'  => ['required'],
+        'body'          => ['required']
     ];
 
     /**
@@ -70,10 +70,9 @@ class ContactForm extends ComponentBase
         $newContact = Contact::create($input);
 
         Mail::send('castiron.forms::mail.contact-message', [
-            'first_name'    => $input['first_name'],
-            'last_name'     => $input['last_name'],
+            'name'          => $input['name'],
             'email'         => $input['email'],
-            'subject'       => $input['subject'],
+            'organization'  => $input['organization'],
             'body'          => $input['body'],
             'url'           => Backend::url('castiron/forms/contacts/update/' . $newContact->id)
         ], function($message) {

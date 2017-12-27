@@ -6,17 +6,14 @@ columns:
     id:
       label: ID
       searchable: true
-    first_name:
-      label: First Name
-      searchable: true
-    last_name:
-      label: Last Name
+    name:
+      label: Name
       searchable: true
     email:
       label: Email
       searchable: true
-    subject:
-      label: Subject
+    organization:
+      label: Organization
       searchable: true
     body:
       label: Body
