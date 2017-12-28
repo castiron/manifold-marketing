@@ -1,11 +1,24 @@
 {% set errors=contactform.getErrors() %}
-{% if errors|length > 0 %}
-	<div class="contact-errors">
-		<h3>Please correct the following error{{(errors|length > 1) ? 's' : ''}} and try again.</h3>
-		<ul>
-			{% for error in errors %}
-				<li>{{ error.0 }}</li>
-			{% endfor %}
-		</ul>
-	</div>
-{% endif %}
+
+<form id="manifold-contact-form" method="POST" accept-charset="UTF-8" data-request="onSubmit" class="form-primary contact-form" data-request-update="'contactform::errors':'#manifold-contact-form'">
+  {{form_session_key()}}
+  {{form_token()}}
+  <div class="form-input">
+    <input type="text" value="{{form_value('name')}}" name="name" placeholder="First and Last Name">{{errors.name.0}}
+  </div>
+  <div class="form-input">
+    <input type="email" value="{{form_value('email')}}" name="email" placeholder="Enter your email address">{{errors.email.0}}
+  </div>
+  <div class="form-input">
+    <input type="text" value="{{form_value('organization')}}" name="organization" placeholder="Name of Institution or organization">{{errors.organization.0}}
+  </div>
+  <div class="form-input">
+    <textarea value="{{form_value('body')}}" name="body" placeholder="Body" cols="30" rows="10"></textarea>{{errors.body.0}}
+  </div>
+  <div class="form-input">
+    <div class="submit-button button primary outlined">
+      <input type="submit" value="Send">
+    </div>
+  </div>
+</form>
+
