@@ -59,14 +59,14 @@
   @include fontCopy;
   font-size: 16px;
   font-weight: $regular;
-  line-height: 1.3;
+  line-height: 1.3125;
 
   @include respond($break20) {
     font-size: 13px;
   }
 }
 
-.copy-quanternary {
+.copy-quaternary {
   @include copyQuaternary;
 }
 
@@ -139,10 +139,6 @@
   font-size: 22px;
   font-weight: $medium;
   line-height: 1.2;
-
-  @include respond($break20) {
-    // font-size: 17px;
-  }
 }
 
 .heading-quaternary {
@@ -173,6 +169,7 @@
   font-size: 16px;
   font-weight: $semibold;
   line-height: 1.2;
+  letter-spacing: 0.075em;
 }
 
 .subheading-secondary {
@@ -192,6 +189,15 @@
 
 .subheading-tertiary {
   @include subheadingTertiary;
+}
+
+@mixin subheadingQuaternary {
+  @include fontHead;
+  font-size: 14px;
+  font-weight: $semibold;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
 }
 
 
@@ -263,6 +269,7 @@
   font-size: 12px;
   font-weight: $semibold;
   line-height: 1.2;
+  letter-spacing: 0.075em;
   color: $accentPrimary;
   text-decoration: none;
   text-transform: uppercase;

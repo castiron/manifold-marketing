@@ -43,11 +43,7 @@
   }
 
   .feature-name {
-    @include fontHead;
-    font-size: 14px;
-    font-weight: $semibold;
-    line-height: 1.2;
-    text-transform: uppercase;
+    @include subheadingQuaternary;
   }
 
   .feature-description {
