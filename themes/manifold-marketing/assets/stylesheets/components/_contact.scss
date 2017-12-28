@@ -56,21 +56,10 @@
       display: inline-block;
       padding: 11px 12px;
       cursor: pointer;
+      background-color: $gray01;
 
       &:hover {
-        input[type='submit'] {
-          color: $white;
-          background-color: $accentPrimary;
-        }
-      }
-
-      input[type='submit'] {
-        @include buttonPrimary;
-        color: $gray07;
-        cursor: pointer;
-        background-color: $gray01;
-        border: 0;
-        transition: background-color $timing $duration, color $timing $duration;
+        background-color: $accentPrimary;
       }
     }
   }
