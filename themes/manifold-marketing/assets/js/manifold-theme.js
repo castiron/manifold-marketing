@@ -21,6 +21,9 @@ class ManifoldTheme {
       // Initialize Accordions
       const accordions = new Accordions();
 
+      // Initialize Mobile Documentation Sidebar
+      const mobileDocSidebar = new ClassBurger('sidebar', 'open');
+
       // Initialize Documentation Sidebar Accordions
       const docSidebar = new DocumentationSidebar();
 

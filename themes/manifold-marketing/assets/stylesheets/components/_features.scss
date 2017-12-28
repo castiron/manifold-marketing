@@ -9,21 +9,37 @@
     }
 
     @include respond($break20) {
+      margin-left: -20px;
+    }
+
+    @include respond($break10) {
       margin-left: 0;
+    }
+
+    .col.col-3 {
+      padding-left: 124px;
+
+      @include respond($break110) {
+        padding-left: 10.33vw;
+      }
+
+      @include respond($break30) {
+        width: 50%;
+      }
+
+      @include respond($break20) {
+        padding-left: 20px;
+      }
+
+      @include respond($break10) {
+        width: 100%;
+        padding-left: 0;
+      }
     }
   }
 
   .feature {
-    padding-left: 124px;
     margin-top: 28px;
-
-    @include respond($break110) {
-      padding-left: 10.33vw;
-    }
-
-    @include respond($break20) {
-      padding-left: 0;
-    }
   }
 
   .feature-name {

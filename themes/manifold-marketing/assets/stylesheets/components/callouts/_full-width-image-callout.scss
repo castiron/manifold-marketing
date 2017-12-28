@@ -11,6 +11,21 @@
     }
   }
 
+  &.block {
+    padding-top: $blockPaddingMax;
+    padding-bottom: 63px;
+
+    @include respond($break110) {
+      padding-top: $blockPaddingFlex;
+      padding-bottom: 5.33vw;
+    }
+
+    @include respond($break20) {
+      padding-top: $blockPaddingMin;
+      padding-bottom: 23px;
+    }
+  }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -30,6 +45,24 @@
         .col.col-2 {
           width: 100%;
         }
+      }
+    }
+
+    &.block {
+      padding-top: $blockPaddingMax;
+      padding-bottom: $blockPaddingMax;
+
+      @include respond($break110) {
+        padding-top: $blockPaddingFlex;
+        padding-bottom: 5.33vw;
+      }
+
+      @include respond($break50) {
+        padding: 0;
+      }
+
+      @include respond($break20) {
+        padding: 0;
       }
     }
   }

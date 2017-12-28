@@ -37,10 +37,18 @@
 
 
   .question {
+    @include fontHead;
     display: inline-block;
     padding: 14px 26px 17px 0;
+    font-size: 18px;
+    font-weight: $medium;
+    line-height: 1.2;
     color: $gray07;
     transition: color $timing $duration;
+
+    @include respond($break20) {
+      font-size: 16px;
+    }
   }
 
   .answer {

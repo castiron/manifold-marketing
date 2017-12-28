@@ -103,6 +103,10 @@
     .icon {
       display: inline-block;
       padding-right: 11px;
+
+      &::after {
+        vertical-align: middle;
+      }
     }
 
     .action-name {

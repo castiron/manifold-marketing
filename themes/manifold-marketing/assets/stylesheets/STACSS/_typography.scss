@@ -21,7 +21,7 @@
   line-height: 1.2;
 
   @include respond($break20) {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -36,7 +36,7 @@
   line-height: 1.2;
 
   @include respond($break20) {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -49,10 +49,6 @@
   font-size: 15px;
   font-weight: $regular;
   line-height: 1.3;
-
-  @include respond($break20) {
-    font-size: 13px;
-  }
 }
 
 .copy-tertiary {
@@ -66,7 +62,7 @@
   line-height: 1.3;
 
   @include respond($break20) {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -381,4 +377,3 @@
   font-size: 17px;
   font-weight: $medium;
 }
-

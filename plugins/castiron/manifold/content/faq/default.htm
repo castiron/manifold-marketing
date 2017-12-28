@@ -6,7 +6,7 @@
         {% for faq in faqs %}
           <li class="faq">
             <div class="accordion-toggle" data-accordion-toggle="faq-{{loop.index}}" data-accordion-group="faqs">
-              <div class="copy-secondary question">{{faq.question | raw}}</div>
+              <div class="question">{{faq.question | raw}}</div>
             </div>
             <div class="accordion" data-accordion="faq-{{loop.index}}" data-accordion-group="faqs">
               <div class="accordion-inner">

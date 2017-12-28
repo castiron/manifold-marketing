@@ -38,8 +38,6 @@
 
     @include respond($break20) {
       display: none;
-      // bottom: -74px - $blockPaddingMin;
-      // height: 74px + $blockPaddingMin;
     }
   }
 

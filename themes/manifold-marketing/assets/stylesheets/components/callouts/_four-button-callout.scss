@@ -34,8 +34,15 @@
 
       @include respond($break20) {
         min-width: 100%;
+        padding-top: 20px;
         padding-right: 0;
         padding-left: 0;
+      }
+
+      .icon {
+        @include respond($break20) {
+          display: none;
+        }
       }
     }
   }

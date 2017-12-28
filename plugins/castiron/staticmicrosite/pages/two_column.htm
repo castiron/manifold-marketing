@@ -58,7 +58,15 @@ is_content_page = 0
         </div>
         <div class="documentation-pagination" data-documentation-pagination="documentation">
           {% for pager in navs.pagination %}
-            <a href="/{{root}}/{{ pager ? pager.path : '' }}" class="pager {{ loop.index == 1 ? 'page-left' : 'page-right' }} {{ pager ? '' : 'hidden' }}">{{ pager ? pager.title : '' }}</a>
+            <a href="/{{root}}/{{ pager ? pager.path : '' }}" class="pager {{ loop.index == 1 ? 'page-left' : 'page-right' }} {{ pager ? '' : 'hidden' }}">
+              {% if loop.index == 1 %}
+                <span class="icon"></span>
+              {% endif %}
+              <span>{{ pager ? pager.title : '' }}</span>
+              {% if loop.index == 2 %}
+                <span class="icon"></span>
+              {% endif %}
+            </a>
           {% endfor %}
         </div>
       </div>

@@ -15,12 +15,40 @@
     }
 
     &.active {
+      .actions-badge {
+        background-color: $accentPale;
+      }
+
       .tab-trigger-name {
         color: $gray07;
       }
 
       hr {
         background-color: $gray06;
+      }
+    }
+
+    &:hover {
+      .actions-badge {
+        background-color: $accentPale;
+
+        .icon {
+          &::before {
+            color: $accentPrimary;
+          }
+
+          &::after {
+            color: $gray05;
+          }
+        }
+      }
+
+      .tab-trigger-name {
+        color: $accentPrimary;
+      }
+
+      hr {
+        background-color: $accentPrimary;
       }
     }
 
@@ -39,6 +67,7 @@
       align-self: center;
       margin-top: 30px;
       color: $gray04;
+      transition: color $timing $duration;
     }
   }
 }

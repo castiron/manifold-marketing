@@ -71,24 +71,33 @@
       }
 
       &:hover {
-        .blog-post-title, .blog-post-summary {
+        .blog-post-title, .blog-post-summary, .blog-post-link {
           color: $gray04;
         }
 
-        .link-placeholder {
+        .blog-post-link {
           color: $gray07;
         }
       }
 
       .blog-post-title {
         color: $gray06;
+
+        @include respond($break50) {
+          /* stylelint-disable declaration-no-important  */
+          height: auto !important;
+          /* stylelint-enable */
+        }
       }
 
       .blog-post-summary {
-        flex-grow: 1;
+        // flex-grow: 1;
         margin-top: 18px;
 
         @include respond($break50) {
+          /* stylelint-disable declaration-no-important  */
+          height: auto !important;
+          /* stylelint-enable */
           margin-top: 8px;
         }
       }

@@ -33,7 +33,7 @@
 
       @include respond($break20) {
         padding-right: $containerPaddingMin;
-        padding-bottom: $blockPaddingMin;
+        padding-bottom: 45px;
         padding-left: $containerPaddingMin;
       }
     }

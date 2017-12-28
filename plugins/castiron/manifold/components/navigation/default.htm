@@ -21,6 +21,7 @@
       </div>
     </div>
     <ul class="mobile-main-nav">
+      <li class="mobile-main-nav-item {{'/' == navigation.activeUrl() ? 'active' : ''}}"><a href="/">Home</a></li>
       {% for item in items %}
         <li class="mobile-main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
       {% endfor %}

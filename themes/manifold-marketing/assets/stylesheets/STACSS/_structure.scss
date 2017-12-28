@@ -45,7 +45,7 @@
 
   @include respond($break20) {
     padding-top: $blockPaddingMin;
-    padding-bottom: $blockPaddingMin;
+    padding-bottom: 45px;
   }
 }
 
@@ -169,6 +169,17 @@
 
 .container-callout-tertiary {
   @include containerCalloutTertiary;
+}
+
+@mixin containerCalloutQuaternary {
+  @include containerMain;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+.container-callout-quaternary {
+  @include containerCalloutQuaternary;
 }
 
 

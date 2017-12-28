@@ -28,11 +28,20 @@
 
     a {
       @include navSecondary;
+      font-size: 16px;
       color: $white;
       text-decoration: none;
 
       &:hover {
         color: $accentPrimary;
+      }
+
+      @include respond($break20) {
+        font-size: 14px;
+      }
+
+      &.icon-github::before {
+        font-size: 14px;
       }
     }
   }

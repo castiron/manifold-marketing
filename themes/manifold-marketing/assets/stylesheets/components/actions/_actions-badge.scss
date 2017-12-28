@@ -5,6 +5,7 @@
   margin: 0 auto;
   background-color: $gray01;
   border-radius: 50%;
+  transition: background-color $timing $duration;
 
   @include respond($break20) {
     width: 66px;
@@ -39,6 +40,7 @@
     &::before{
       font-size: 70px;
       color: $gray02;
+      transition: color $timing $duration;
 
       @include respond($break20) {
         font-size: 50px;
@@ -51,6 +53,7 @@
 
     &::after {
       color: $gray03;
+      transition: color $timing $duration;
 
       .active & {
         color: $gray05;

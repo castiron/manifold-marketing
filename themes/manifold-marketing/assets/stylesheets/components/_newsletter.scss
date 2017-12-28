@@ -7,7 +7,15 @@
     display: block;
   }
 
-  .newsletter-summary, .newsletter-container {
+  .newsletter-summary {
+    width: 46%;
+
+    @include respond($break50) {
+      width: 100%;
+    }
+  }
+
+  .newsletter-container {
     width: 50%;
 
     @include respond($break50) {
@@ -16,7 +24,7 @@
   }
 
   .newsletter-form {
-    padding-left: 10%;
+    padding-left: 14%;
 
     @include respond($break50) {
       max-width: 360px;
@@ -93,6 +101,8 @@
   }
 
   .newsletter-form {
+    padding-left: 10%;
+
     @include respond($break60) {
       margin: 0;
     }

@@ -19,11 +19,6 @@
   @include respond($break30) {
     margin-right: 0;
     margin-left: 0;
-    // border: 0;
-
-    // &::after {
-    //   display: none;
-    // }
   }
 
   + .summaries-list {

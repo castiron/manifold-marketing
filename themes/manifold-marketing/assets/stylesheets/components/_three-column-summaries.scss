@@ -10,8 +10,11 @@
       display: block;
     }
 
+    @include respond($break30) {
+      margin-top: 45px;
+    }
+
     .summary {
-      // justify-content: space-between;
       width: calc(33.333% - 52px);
       padding-top: 20px;
       text-decoration: none;
@@ -25,7 +28,7 @@
           margin-top: 70px;
         }
 
-        @include respond($break20) {
+        @include respond($break30) {
           margin-top: 50px;
         }
       }
@@ -36,6 +39,10 @@
 
         @include respond($break50) {
           height: auto;
+        }
+
+        @include respond($break30) {
+          display: none;
         }
 
         img {
@@ -52,6 +59,10 @@
           /* stylelint-disable declaration-no-important */
           height: auto !important;
           /* stylelint-enable */
+        }
+
+        @include respond($break30) {
+          margin-top: 0;
         }
       }
 
@@ -72,6 +83,10 @@
         @include respond($break50) {
           display: block;
           font-size: 13px;
+        }
+
+        @include respond($break30) {
+          margin-top: 15px;
         }
       }
     }

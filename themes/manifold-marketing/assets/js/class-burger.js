@@ -12,7 +12,6 @@ class ClassBurger {
     const triggerSelector = "[data-hamburger-toggle=" + label + "]";
     const dataToggles = document.querySelectorAll(toggleSelector);
     const dataTriggers = document.querySelectorAll(triggerSelector);
-
     if (dataToggles.length > 0) {
       // Bind toggle trigger
       this.bindTrigger(dataToggles, dataTriggers, label, onClass, callback);

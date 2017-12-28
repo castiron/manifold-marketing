@@ -23,13 +23,13 @@
 
       &.active {
         a {
-          color: $gray07;
+          color: $accentPrimary;
         }
       }
 
       a {
         @include navPrimary;
-        color: $gray03;
+        color: $gray07;
         text-decoration: none;
         vertical-align: middle;
 
