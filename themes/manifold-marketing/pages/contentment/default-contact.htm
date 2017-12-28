@@ -1,0 +1,11 @@
+title = "Default with Contact Form"
+url = "/default-contact.htm"
+layout = "default"
+is_hidden = 0
+is_content_page = 1
+[contactform]
+==
+{{pageModel.renderContent()|raw}}
+<div class="full-width">
+  {% component 'contactform' %}
+</div>
