@@ -1,6 +1,5 @@
 <script src="modules/backend/assets/js/vendor/jquery.min.js"></script>
 {% framework %}
-
 <section class="background-gray">
   <div class="block">
     <div class="flex-row contact">
@@ -11,13 +10,9 @@
       <div class="contact-container">
         <div id="errors"></div>
         <div id="success">
-          {{form_ajax(
-            'onSubmit',
-            {
-              class: 'form-primary contact-form',
-              update: {'contactform::errors':'#errors'},
-            }
-          )}}
+          <form id="manifold-contact-form" method="POST" accept-charset="UTF-8" data-request="onSubmit" class="form-primary contact-form" data-request-update="'contactform::errors':'#manifold-contact-form'">
+            {{form_session_key()}}
+            {{form_token()}}
             <div class="form-input">
               <input type="text" value="{{form_value('name')}}" name="name" placeholder="First and Last Name">
             </div>
@@ -33,7 +28,7 @@
             <div class="form-input">
               <button class="submit-button button primary outlined" type="submit">Send</button>
             </div>
-          {{form_close}}
+          </form>
         </div>
       </div>
     </div>
