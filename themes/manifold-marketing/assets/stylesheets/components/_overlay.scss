@@ -1,0 +1,70 @@
+.overlay {
+  background-color: transparentize($gray07, 0.025);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-height: 0vh;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height $timing 0.5s,
+  visibility $timing 0.5s;
+
+  &.open {
+    max-height: 100vh;
+    visibility: visible;
+  }
+
+  .main-logo {
+    color: $white;
+
+    .mask-1 polygon, .mask-2 polygon{
+      fill: $gray07;
+    }
+
+    &:hover {
+      color: $gray04;
+    }
+  }
+
+  .toggle {
+    @include buttonBare;
+    color: $white;
+    transition: color $duration $timing;
+
+    &:hover {
+      color: $gray04;
+    }
+  }
+
+  .container-main {
+    display: flex;
+    height: 80vh;
+  }
+
+  .video-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    height: 0;
+    padding-top: 56.24%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .scroll-catch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 55px);
+    }
+  }
+}

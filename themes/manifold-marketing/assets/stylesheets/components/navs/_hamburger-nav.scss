@@ -1,13 +1,5 @@
 .hamburger-toggle {
-  @include fontHead;
-  font-size: 16px;
-  font-weight: $medium;
-  vertical-align: middle;
-  cursor: pointer;
-
-  @include respond($break20) {
-    font-size: 13px;
-  }
+  @include buttonBare;
 }
 
 .hamburger-menu {

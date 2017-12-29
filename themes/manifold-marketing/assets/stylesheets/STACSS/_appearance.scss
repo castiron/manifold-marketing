@@ -62,11 +62,6 @@
 
 // Layout
 // --------------------------------------------------------
-
-.overlay-open {
-  overflow: hidden;
-}
-
 .background-white {
   background-color: $white;
 }
@@ -122,7 +117,6 @@
 
 // Images
 // --------------------------------------------------------
-
 .main-logo {
   @include fontHead;
   display: flex;
@@ -307,6 +301,18 @@ $icons: (
     @include respond($break20) {
       padding: 8px 32px 10px;
     }
+  }
+}
+
+@mixin buttonBare {
+  @include fontHead;
+  font-size: 16px;
+  font-weight: $medium;
+  vertical-align: middle;
+  cursor: pointer;
+
+  @include respond($break20) {
+    font-size: 13px;
   }
 }
 

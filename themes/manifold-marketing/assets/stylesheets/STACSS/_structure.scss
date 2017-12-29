@@ -185,6 +185,13 @@
 
 // Layout
 // --------------------------------------------------------
+.of-hidden-y {
+  overflow-y: hidden;
+}
+
+.of-hidden-x {
+  overflow-x: hidden;
+}
 
 body {
   display: flex;

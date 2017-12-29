@@ -1,7 +1,7 @@
 .main-header {
   .mobile-main-nav {
     @include listUnstyled;
-    height: 100%;
+    max-height: 100%;
     padding: 48px 27px 27px calc(50px + 7.5vw);
 
     @include respond($break20) {
