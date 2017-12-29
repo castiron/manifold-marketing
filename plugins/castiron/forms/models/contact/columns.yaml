@@ -12,6 +12,8 @@ columns:
     email:
       label: Email
       searchable: true
+    phone:
+      label: Phone
     organization:
       label: Organization
       searchable: true
