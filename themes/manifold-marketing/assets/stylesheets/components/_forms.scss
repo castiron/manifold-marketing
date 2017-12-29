@@ -62,7 +62,7 @@
     color: $error;
     letter-spacing: 0.015em;
 
-    + textarea, + input {
+    + input[type='text'], + input[type='email'], + textarea {
       border: 2px solid $error;
     }
   }
