@@ -28,7 +28,6 @@
       @include subheadingTertiary;
       width: 100%;
       padding: 11px 12px 13px;
-      font-weight: $regular;
       color: $gray07;
       background: $white;
       background-color: $white;
@@ -40,7 +39,7 @@
         color: $gray03;
       }
 
-      &:focus {
+      &:focus, &:hover {
         border-color: $gray02;
       }
     }
@@ -51,6 +50,20 @@
       &:focus {
         outline: none;
       }
+    }
+  }
+
+  .error {
+    @include fontHead;
+    padding-bottom: 13px;
+    font-size: 18px;
+    font-weight: $regular;
+    line-height: 1.2;
+    color: $error;
+    letter-spacing: 0.015em;
+
+    + textarea, + input {
+      border: 2px solid $error;
     }
   }
 }

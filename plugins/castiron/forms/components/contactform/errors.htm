@@ -4,21 +4,36 @@
   {{form_session_key()}}
   {{form_token()}}
   <div class="form-input">
-    <input type="text" value="{{form_value('name')}}" name="name" placeholder="First and Last Name">{{errors.name.0}}
+    {% if errors.name.0 %}
+      <div class="error">{{errors.name.0}}</div>
+    {% endif %}
+    <input type="text" value="{{form_value('name')}}" name="name" placeholder="First and Last Name">
   </div>
   <div class="form-input">
-    <input type="email" value="{{form_value('email')}}" name="email" placeholder="Enter your email address">{{errors.email.0}}
+    {% if errors.email.0 %}
+      <div class="error">{{errors.email.0}}</div>
+    {% endif %}
+    <input type="email" value="{{form_value('email')}}" name="email" placeholder="Email address">
   </div>
   <div class="form-input">
-    <input type="text" value="{{form_value('organization')}}" name="organization" placeholder="Name of Institution or organization">{{errors.organization.0}}
+    {% if errors.organization.0 %}
+      <div class="error">{{errors.organization.0}}</div>
+    {% endif %}
+    <input type="text" value="{{form_value('organization')}}" name="organization" placeholder="Name of institution or organization">
   </div>
   <div class="form-input">
-    <textarea value="{{form_value('body')}}" name="body" placeholder="Body" cols="30" rows="10"></textarea>{{errors.body.0}}
+    {% if errors.phone.0 %}
+      <div class="error">{{errors.phone.0}}</div>
+    {% endif %}
+    <input type="text" value="{{form_value('phone')}}" name="phone" placeholder="Phone number">
   </div>
   <div class="form-input">
-    <div class="submit-button button primary outlined">
-      <input type="submit" value="Send">
-    </div>
+    {% if errors.body.0 %}
+      <div class="error">{{errors.body.0}}</div>
+    {% endif %}
+    <textarea value="{{form_value('body')}}" name="body" placeholder="Your message" cols="30" rows="10">{{form_value('body')}}</textarea>
+  </div>
+  <div class="form-input">
+    <button class="submit-button button primary outlined" type="submit">Send</button>
   </div>
 </form>
-
