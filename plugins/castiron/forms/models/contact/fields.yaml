@@ -9,6 +9,9 @@ fields:
   email:
     label: Email
     span: auto
+  phone:
+    label: Phone
+    span: auto
   organization:
     label: Organization
     span: auto

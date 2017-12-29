@@ -5,3 +5,6 @@
 1.0.3:
     - 'Updated table castiron_forms_contacts'
     - builder_table_update_castiron_forms_contacts.php
+1.0.4:
+    - 'Updated table castiron_forms_contacts'
+    - builder_table_update_castiron_forms_contacts_2.php

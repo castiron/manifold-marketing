@@ -31,6 +31,7 @@ class ContactForm extends ComponentBase
         'name'          => ['required'],
         'email'         => ['required', 'email'],
         'organization'  => ['required'],
+        'phone'         => ['alpha_dash'],
         'body'          => ['required']
     ];
 
