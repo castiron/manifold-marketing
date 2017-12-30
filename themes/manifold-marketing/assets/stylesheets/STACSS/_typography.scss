@@ -59,7 +59,7 @@
   @include fontCopy;
   font-size: 16px;
   font-weight: $regular;
-  line-height: 1.3125;
+  line-height: 1.313;
 
   @include respond($break20) {
     font-size: 13px;
@@ -269,10 +269,10 @@
   font-size: 12px;
   font-weight: $semibold;
   line-height: 1.2;
-  letter-spacing: 0.075em;
   color: $accentPrimary;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.075em;
 }
 
 

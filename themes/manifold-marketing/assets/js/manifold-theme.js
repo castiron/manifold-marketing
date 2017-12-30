@@ -19,7 +19,7 @@ class ManifoldTheme {
       const scrollLock = new ScrollLock();
 
       // Initialize Overlay Burgers
-      const hamburgerOverlay = new ClassBurger('hamburger', 'open', function(el) {
+      const hamburgerOverlay = new ClassBurger('hamburger', 'open', (el) => {
         scrollLock.lock(el);
       }, function(el) {
         scrollLock.unlock(el);
@@ -32,7 +32,7 @@ class ManifoldTheme {
       const videoEl = document.querySelector('[data-overlay-video]');
       const videoPlayer = new VimeoPlayer(videoEl);
 
-      const videoOverlay = new ClassBurger('video', 'open', function(el) {
+      const videoOverlay = new ClassBurger('video', 'open', (el) => {
         scrollLock.lock(el, 'flarbadarp');
         domHelp.addClass(document.body, 'of-hidden-y');
         videoPlayer.play();
