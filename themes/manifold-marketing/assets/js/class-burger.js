@@ -17,11 +17,9 @@ class ClassBurger {
     const triggerSelector = "[data-hamburger-toggle=" + label + "]";
     const dataToggles = document.querySelectorAll(toggleSelector);
     const dataTriggers = document.querySelectorAll(triggerSelector);
-    if (dataToggles.length > 0) {
+    if (dataToggles.length > 0 && dataTriggers.length > 0) {
       // Bind toggle trigger
       this.bindTrigger(dataToggles, dataTriggers, label, onClass, onCb, offCb);
-    } else {
-      console.log("Togglable element with value " + label + " does not exist.");
     }
   }
 

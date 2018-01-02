@@ -7,8 +7,8 @@ import ScrollTarget from "./scroll-target";
 import ScrollLock from "./ScrollLock";
 import CssSlider from "./css-slider";
 import Tabs from "./tabs";
+import VideoOverlay from "./video-overlay";
 import Rellax from "rellax";
-import VimeoPlayer from "@vimeo/player";
 import AjaxListener from "./lib/ajax-listener";
 import Modernizr from "./lib/modernizr-custom";
 
@@ -25,24 +25,8 @@ class ManifoldTheme {
         scrollLock.unlock(el);
       });
 
-      // Get scroll catch
-      const scrollCatch = document.querySelector('[data-scroll-catch]');
-
-      // Get video for autoplay/pause functionality
-      const videoEl = document.querySelector('[data-overlay-video]');
-      if (videoEl) {
-        const videoPlayer = new VimeoPlayer(videoEl);
-
-        const videoOverlay = new ClassBurger('video', 'open', (el) => {
-          scrollLock.lock(el, 'flarbadarp');
-          domHelp.addClass(document.body, 'of-hidden-y');
-          videoPlayer.play();
-        }, function(el) {
-          scrollLock.unlock(el);
-          domHelp.removeClass(document.body, 'of-hidden-y');
-          videoPlayer.pause();
-        });
-      }
+      // Instantiate video players with overlay
+      const videoOverlay = new VideoOverlay('[data-overlay-video]');
 
       // Initialize Accordions
       const accordions = new Accordions();
