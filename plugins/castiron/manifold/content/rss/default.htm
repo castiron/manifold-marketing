@@ -10,7 +10,7 @@
       <div class="flex-row blog-roll-grid">
       <!-- expires: {{ rssFeed.refresh }} fallback: {{ rssFeed.fallback ? 'true' : 'false' }} -->
       {% for post in rssFeed.posts %}
-        <a href="{{ post.link }}" class="col blog-post">
+        <a href="{{ post.link }}" target="_blank" class="col blog-post">
           <div class="subheading-primary blog-post-title" data-mh="blog-post-name">{{ post.title }}</div>
           <div class="copy-tertiary blog-post-summary" data-mh="blog-post-description">{{ post.description|raw }}</div>
           <span class="blog-post-link">Read More</span>
