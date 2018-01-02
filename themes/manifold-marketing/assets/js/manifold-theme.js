@@ -30,23 +30,27 @@ class ManifoldTheme {
 
       // Get video for autoplay/pause functionality
       const videoEl = document.querySelector('[data-overlay-video]');
-      const videoPlayer = new VimeoPlayer(videoEl);
+      if (videoEl) {
+        const videoPlayer = new VimeoPlayer(videoEl);
 
-      const videoOverlay = new ClassBurger('video', 'open', (el) => {
-        scrollLock.lock(el, 'flarbadarp');
-        domHelp.addClass(document.body, 'of-hidden-y');
-        videoPlayer.play();
-      }, function(el) {
-        scrollLock.unlock(el);
-        domHelp.removeClass(document.body, 'of-hidden-y');
-        videoPlayer.pause();
-      });
+        const videoOverlay = new ClassBurger('video', 'open', (el) => {
+          scrollLock.lock(el, 'flarbadarp');
+          domHelp.addClass(document.body, 'of-hidden-y');
+          videoPlayer.play();
+        }, function(el) {
+          scrollLock.unlock(el);
+          domHelp.removeClass(document.body, 'of-hidden-y');
+          videoPlayer.pause();
+        });
+      }
 
       // Initialize Accordions
       const accordions = new Accordions();
 
       // Initialize Mobile Documentation Sidebar
-      const mobileDocSidebar = new ClassBurger('sidebar', 'open');
+      if (document.querySelector('.sidebar')) {
+        const mobileDocSidebar = new ClassBurger('sidebar', 'open');
+      }
 
       // Initialize Documentation Sidebar Accordions
       const docSidebar = new DocumentationSidebar();
