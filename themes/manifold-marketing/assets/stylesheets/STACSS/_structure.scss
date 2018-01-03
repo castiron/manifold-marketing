@@ -169,6 +169,16 @@
 
 .container-callout-tertiary {
   @include containerCalloutTertiary;
+
+  &.tall {
+    padding-top: 24.33vh;
+    padding-bottom: 24.33vh;
+
+    @include respond($break20) {
+      padding-top: 18.33vh;
+      padding-bottom: 18.33vh;
+    }
+  }
 }
 
 @mixin containerCalloutQuaternary {
