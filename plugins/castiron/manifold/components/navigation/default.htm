@@ -2,7 +2,10 @@
 
 <ul class="main-nav flex-row vert-centered desktop-only">
   {% for item in items %}
-      <li class="main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
+    {% if item.url != "/get-started" %}
+    <li class="main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
+    {% endif %}
+
   {% endfor %}
   <!-- <li class="main-nav-item"><a href="/search" class="search-link"></a></li> -->
   <li class="nav-item {{'/get-started' == navigation.activeUrl() ? 'active' : ''}}"><a href="/get-started" class="button primary">Get Started</a></li>
@@ -23,7 +26,9 @@
     <ul class="mobile-main-nav">
       <li class="mobile-main-nav-item {{'/' == navigation.activeUrl() ? 'active' : ''}}"><a href="/">Home</a></li>
       {% for item in items %}
+        {% if item.url != "/get-started" %}
         <li class="mobile-main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
+        {% endif %}
       {% endfor %}
       <li class="mobile-main-nav-item {{'/get-started' == navigation.activeUrl() ? 'active' : ''}}"><a href="/get-started">Get Started</a></li>
       <!-- <li class="mobile-main-nav-item {{'/search' == navigation.activeUrl() ? 'active' : ''}}"><a href="/search" class="search-link">Search</a></li> -->
