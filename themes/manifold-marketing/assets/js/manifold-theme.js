@@ -32,7 +32,7 @@ class ManifoldTheme {
       const accordions = new Accordions();
 
       // Initialize Mobile Documentation Sidebar
-      if (document.querySelector('.sidebar')) {
+      if (document.querySelector('[data-hamburger-togglable=sidebar]')) {
         const mobileDocSidebar = new ClassBurger('sidebar', 'open');
       }
 
