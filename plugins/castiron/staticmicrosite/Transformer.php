@@ -58,20 +58,24 @@ class Transformer {
    * @return mixed
    */
   private function rewriteRelativePaths($markdownContent) {
+//    return $markdownContent;
     return preg_replace_callback( '/\[(.*?)\]\((.*?)\)/', function ($matches) {
       if (strpos($matches[2], '://') !== false) {
         // External path, don't touch
         return $matches[0];
       } else {
-        if(substr($matches[2],0,1) == '/') {
-          // Absolute internal path
+        $startsWith = substr($matches[2],0,1);
+        if($startsWith == '#') {
           $newUrl = $matches[2];
+        } elseif($startsWith == '/') {
+          // Absolute internal path
+          $newUrl = $this->urlForPath('/'.$this->entryUrlPath.$matches[2]);
         } else {
           // Relative internal path
-          $newUrl = '/'.$this->requestPathParent.$matches[2];
+          $newUrl = $this->urlForPath('/'.$this->entryUrlPath.'/'.$this->requestPathParent.'/'.$matches[2]);
         }
 
-        return '[' .$matches[1] . ']' . '(' . $this->urlForPath('/'.$this->entryUrlPath.$newUrl). ')';
+        return '[' .$matches[1] . ']' . '(' . $newUrl. ')';
       }
     }, $markdownContent);
   }
