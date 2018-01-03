@@ -18,6 +18,7 @@ class Repository
   public function pull() {
     if (!$this->path() || !$this->target()) return null;
     $commands = [
+      "cd ".$this->path()." && git remote prune origin 2>&1",
       "cd ".$this->path()." && git fetch --all 2>&1",
       "cd ".$this->path()." && git reset --hard ".$this->target(),
       "cd ".$this->path()." && git rev-parse HEAD > revision.txt"
