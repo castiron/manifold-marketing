@@ -4,7 +4,6 @@ const path = require("path");
 const webpack = require("webpack");
 
 // Plugin/Option Includes
-const PhpManifestPlugin = require("webpack-php-manifest");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const autoprefixer = require("autoprefixer");
@@ -31,30 +30,12 @@ const extractSass = new ExtractTextPlugin({
   disable: false
 });
 
-console.log("✨ Linting Styles...");
-const styleLint = new StyleLintPlugin({
-  configFile: path.resolve(projectRoot, ".stylelintrc.js"),
-  syntax: "scss"
-});
-
 const uglifyJs = new webpack.optimize.UglifyJsPlugin({
   compress: { warnings: false },
   sourceMap: true
 });
 
-const phpManifest = new PhpManifestPlugin({
-  path: "assets",
-  // True or false flag to include dev-server js
-  devServer: process.env.WEBPACK_DEV_SERVER,
-  // Path prefix for assets from dev-server
-  pathPrefix: process.env.WEBPACK_DEV_SERVER
-    ? `http://localhost:${devServerPort}`
-    : null
-});
-
 plugins.push(extractSass);
-plugins.push(styleLint);
-plugins.push(phpManifest);
 
 if (isProduction) {
   plugins.push(uglifyJs);
@@ -70,7 +51,7 @@ const ruleJavascript = {
     {
       loader: "babel-loader",
       options: {
-        presets: ["es2015", "stage-2"]
+        presets: ["es2015", "stage-2", "react"]
       }
     },
     {
@@ -142,24 +123,18 @@ module.exports = {
   entry: {
     [`${projectName}-theme`]: [
       path.resolve(projectRoot, `themes/${projectName}/assets/manifest.js`)
+    ],
+    [`contentment-previews`]: [
+      path.resolve(
+        projectRoot,
+        `plugins/castiron/manifold/content/contentmentPreviews.js`
+      )
     ]
   },
   // Depnding on process.env, this should be either a hash or a name
   output: {
     path: path.resolve(projectRoot, "www/assets"),
     filename: baseFileName + ".js"
-  },
-  devtool: "cheap-module-eval-source-map",
-  devServer: {
-    port: devServerPort,
-    contentBase: "www",
-    publicPath: "/assets/",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers":
-        "X-Requested-With, content-type, Authorization"
-    }
   },
   module: { rules },
   plugins

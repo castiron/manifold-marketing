@@ -27,5 +27,5 @@ publicFolder = www
 
     {# Theme CSS #}
     {# Load Site styles via webpack or built #}
-    {{ webpackAssets.css | raw }}
+    {{ webpackAssets.tag('manifold-marketing-theme.css') | raw }}
 </head>
