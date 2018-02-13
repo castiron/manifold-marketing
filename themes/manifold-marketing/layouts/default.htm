@@ -2,6 +2,12 @@ description = "Default layout"
 
 [navigation]
 ==
+function onStart() {
+  if (env('APP_ENV') == 'production') {
+    $this['includeTrackingSnippet'] = true;
+  }
+}
+==
 
 {% set isHome = this.page.url == navigation.getRootPage().url %}
 

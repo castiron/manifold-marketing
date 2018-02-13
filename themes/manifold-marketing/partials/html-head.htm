@@ -14,7 +14,12 @@ publicFolder = www
     <link rel="shortcut icon" sizes="16x16" href="{{ favicon | theme }}-16x16.png" type="image/png">
     <link rel="shortcut icon" href="{{ favicon | theme }}.ico" type="image/x-icon">
 
-    <!-- Typekit fonts -->
+    {% if includeTrackingSnippet %}
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      {% partial 'ga-snippet' %}
+    {% endif %}
+
+  <!-- Typekit fonts -->
     <script src="https://use.typekit.net/wso5cuh.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
