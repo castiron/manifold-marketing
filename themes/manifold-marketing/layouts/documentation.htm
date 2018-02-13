@@ -1,6 +1,12 @@
 description = "Default layout"
 
 ==
+function onStart() {
+  if (env('APP_ENV') == 'production') {
+    $this['includeTrackingSnippet'] = true;
+  }
+}
+==
 
 {% set navitems = [
   { url: "/", text: "Home" },
