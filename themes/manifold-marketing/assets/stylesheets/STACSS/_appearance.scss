@@ -196,6 +196,16 @@ $icons: (
   }
 }
 
+.icon-pencil-pre {
+  @include iconPre($pencil);
+
+  &::before {
+    margin-right: 9px;
+    font-size: 13px;
+  }
+}
+
+
 .icon-twitter {
   @include iconPre($twitter);
 
