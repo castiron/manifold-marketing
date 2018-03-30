@@ -5,6 +5,7 @@ set :application, "manifold_marketing"
 set :repo_url, "git@github.com:castiron/manifold-marketing.git"
 
 set :deploy_to, -> { "/home/#{fetch(:application)}/deploy" }
+set :deploy_docs_site, -> { "/home/#{fetch(:application)}/deploy-docs/current/_site" }
 set :log_level, :info
 
 namespace :deploy do
@@ -53,6 +54,16 @@ namespace :deploy do
       end
     end
   end
+
+  desc 'Create symbolic links for Jekyll documentation'
+  task :create_symlinks_for_docs do
+    on roles(:app) do
+      within "#{current_path}/www" do
+        execute :ln, '-s', "#{fetch(:deploy_docs_site)}/docs", 'docs'
+        execute :ln, '-s', "#{fetch(:deploy_docs_site)}/docs-assets", 'docs-assets'
+      end
+    end
+  end
 end
 
 # Update dependencies
@@ -63,6 +74,9 @@ before 'deploy:publishing', 'deploy:october_up'
 
 # Build Assets
 before 'deploy:publishing', 'deploy:build_assets'
+
+# Create symbloic links for Jekyll documentation (https://github.com/ManifoldScholar/manifold-docs-jekyll)
+after 'deploy:publishing', 'deploy:create_symlinks_for_docs'
 
 # Restart PHP (to clear opcaches)
 after 'deploy:publishing', 'deploy:restart'
