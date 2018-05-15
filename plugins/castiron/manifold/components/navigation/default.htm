@@ -3,7 +3,7 @@
 <ul class="main-nav flex-row vert-centered desktop-only">
   {% for item in items %}
     {% if item.url != "/get-started" %}
-    <li class="main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
+    <li class="main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{navigation.trimPageTitle(item.title)}}</a></li>
     {% endif %}
 
   {% endfor %}
@@ -27,7 +27,7 @@
       <li class="mobile-main-nav-item {{'/' == navigation.activeUrl() ? 'active' : ''}}"><a href="/">Home</a></li>
       {% for item in items %}
         {% if item.url != "/get-started" %}
-        <li class="mobile-main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{item.title}}</a></li>
+        <li class="mobile-main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{navigation.trimPageTitle(item.title)}}</a></li>
         {% endif %}
       {% endfor %}
       <li class="mobile-main-nav-item {{'/get-started' == navigation.activeUrl() ? 'active' : ''}}"><a href="/get-started">Get Started</a></li>

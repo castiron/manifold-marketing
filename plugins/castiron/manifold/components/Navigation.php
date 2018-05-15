@@ -63,4 +63,9 @@ class Navigation extends ComponentBase
     {
         return $_SERVER['REQUEST_URI'];
     }
+
+    public function trimPageTitle($pageTitle)
+    {
+        return str_replace('Manifold Scholarship: ', '', $pageTitle);
+    }
 }
