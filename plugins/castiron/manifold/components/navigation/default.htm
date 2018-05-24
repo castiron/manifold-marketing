@@ -1,14 +1,13 @@
 {% set items = navigation.navItems() %}
+{% set calloutNavItem = navigation.calloutNavItem() %}
 
 <ul class="main-nav flex-row vert-centered desktop-only">
   {% for item in items %}
-    {% if item.url != "/get-started" %}
     <li class="main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{navigation.trimPageTitle(item.title)}}</a></li>
-    {% endif %}
-
   {% endfor %}
-  <!-- <li class="main-nav-item"><a href="/search" class="search-link"></a></li> -->
-  <li class="nav-item {{'/get-started' == navigation.activeUrl() ? 'active' : ''}}"><a href="/get-started" class="button primary">Get Started</a></li>
+  {% if calloutNavItem %}
+    <li class="nav-item {{ calloutNavItem.url == navigation.activeUrl() ? 'active' : ''}}"><a href="{{ calloutNavItem.url }}" class="button primary">{{ calloutNavItem.title }}</a></li>
+  {% endif %}
 </ul>
 
 <div class="main-nav mobile-only">
@@ -26,12 +25,11 @@
     <ul class="mobile-main-nav">
       <li class="mobile-main-nav-item {{'/' == navigation.activeUrl() ? 'active' : ''}}"><a href="/">Home</a></li>
       {% for item in items %}
-        {% if item.url != "/get-started" %}
         <li class="mobile-main-nav-item {{item.active ? 'active' : '' }}"><a href="{{item.url}}">{{navigation.trimPageTitle(item.title)}}</a></li>
-        {% endif %}
       {% endfor %}
-      <li class="mobile-main-nav-item {{'/get-started' == navigation.activeUrl() ? 'active' : ''}}"><a href="/get-started">Get Started</a></li>
-      <!-- <li class="mobile-main-nav-item {{'/search' == navigation.activeUrl() ? 'active' : ''}}"><a href="/search" class="search-link">Search</a></li> -->
+      {% if calloutNavItem %}
+      <li class="mobile-main-nav-item {{ calloutNavItem.url == navigation.activeUrl() ? 'active' : ''}}"><a href="{{ calloutNavItem.url }}">{{ calloutNavItem.title }}</a></li>
+      {% endif %}
     </ul>
   </div>
 </div>
