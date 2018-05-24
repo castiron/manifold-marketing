@@ -13,7 +13,9 @@
     <div class="one-button-hero">
       <div class="heading-primary title">{{ title }}</div>
       <div class="sign-tertiary subtitle">{{ subtitle | raw }}</div>
+      {% if button_text %}
       <a href="{{ button_link }}" class="button tall {{button_style}}">{{ button_text }}</a>
+      {% endif %}
     </div>
   </div>
 </section>
