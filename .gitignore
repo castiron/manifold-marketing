@@ -1,5 +1,6 @@
 # Database
 .warewolf
+.DS_Store
 
 # Packages
 /vendor

@@ -12,7 +12,7 @@ const autoprefixer = require("autoprefixer");
 // Configuration
 // --------------------
 const projectRoot = path.resolve(__dirname, "../");
-const devServerPort = 8080;
+const devServerPort = 9090;
 // Project name
 const projectName = "manifold-marketing";
 const isProduction = process.env.NODE_ENV === "production";

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# script/cibuild: Setup environment for CI to run tests. This is primarily
+#                 designed to run on the continuous integration server.
+
+if ! brew check-strta-enabled ; then exit 1; fi
+
+echo "==> Running cibuild"
+echo "==> Darn, we haven't really built this yet for October."
