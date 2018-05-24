@@ -15,8 +15,8 @@ class Navigation extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'navigation Component',
-            'description' => 'No description provided yet...'
+            'name'        => 'Navigation Component',
+            'description' => 'Renders the primary navigation'
         ];
     }
 
@@ -32,7 +32,7 @@ class Navigation extends ComponentBase
      * @return mixed
      */
     public static function pages() {
-        return Page::where('site_root', 0)->visible()->get();
+        return Page::where('site_root', 0)->visible()->inMenu()->get();
     }
 
     /**
@@ -59,11 +59,23 @@ class Navigation extends ComponentBase
     /**
      * @return mixed
      */
+    public function calloutNavItem()
+    {
+        return Page::where('reference', 'callout')->visible()->first();
+    }
+
+    /**
+     * @return mixed
+     */
     public function activeUrl()
     {
         return $_SERVER['REQUEST_URI'];
     }
 
+    /**
+     * @param $pageTitle
+     * @return mixed
+     */
     public function trimPageTitle($pageTitle)
     {
         return str_replace('Manifold Scholarship: ', '', $pageTitle);

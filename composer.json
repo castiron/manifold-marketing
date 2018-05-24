@@ -65,7 +65,7 @@
         "laravelcollective/html": "5.0.*",
         "wikimedia/composer-merge-plugin": "dev-master",
         "castiron/lib-plugin": "dev-master",
-        "castiron/contentment-plugin": "dev-zd/dev#5e75ae1ec17ed84401ad23084dd3472c1cef9ea8",
+        "castiron/contentment-plugin": "4.3.3",
         "castiron/peaches": "dev-master",
         "castiron/castiron": "dev-master",
         "castiron/webpackassets-plugin": "1.0.5",
