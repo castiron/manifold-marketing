@@ -20,3 +20,7 @@ columns:
     body:
       label: Body
       searchable: true
+    created_at:
+      label: Created at
+      searchable: true
+      type: datetime
