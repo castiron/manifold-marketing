@@ -55,11 +55,6 @@ class ContactForm extends ComponentBase
     public function onSubmit() {
         $input = Input::all();
 
-        // Truncate inputs at 200 characters
-        foreach($input as $key => &$value) {
-            $input[$key] = substr($value, 0, 200);
-        }
-
         $validator = Validator::make($input, $this->rules);
 
         if($validator->fails()) {
