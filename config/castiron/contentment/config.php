@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'enableSiteRoot' => true,
+  'enableSiteRoot' => true,
+
+  # Disable content only endpoints
+  'contentOnlyPrefix' => ''
 ];
