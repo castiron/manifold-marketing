@@ -1,0 +1,25 @@
+description = "Placeholder page layout"
+
+==
+
+<!DOCTYPE html>
+<html style="height: 100%">
+    {% partial "html-head" %}
+    <body style="height: 100%">
+
+        <!-- Main page content -->
+        <main class="placeholder-callout-container">
+          <section class="background-patterned">
+            <div class="placeholder-callout block">
+              <div class="flex-row">
+                <div class="col col-2 blurb">
+                  {% page %}
+                </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Scripts (Load Javscript) -->
+        {% partial "footer-scripts" %}
+    </body>
+</html>
