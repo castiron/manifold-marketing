@@ -1,0 +1,26 @@
+description = "Utility Layout"
+
+[navigation]
+==
+function onStart() {
+  if (env('APP_ENV') == 'production') {
+    $this['includeTrackingSnippet'] = true;
+  }
+}
+==
+<!DOCTYPE html>
+<html>
+    {% partial "html-head" %}
+    <body>
+        <!-- Site Header, Nav -->
+        {% partial "header" animatedlogo=isHome %}
+        <!-- Main page content -->
+        <main>
+          {% page %}
+        </main>
+        <!-- Footer navigation, colophon -->
+        {% partial "footer" animatedlogo=false hideNewsletter=true %}
+        <!-- Footer Scripts (Load Javscript) -->
+        {% partial "footer-scripts" %}
+    </body>
+</html>
