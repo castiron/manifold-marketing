@@ -9,8 +9,7 @@ function onStart() {
 }
 ==
 
-{% set isHome = this.page.url == navigation.getRootPage().url %}
-
+{% set isHome = this.page.url == "/" %}
 <!DOCTYPE html>
 <html>
     {% partial "html-head" %}
