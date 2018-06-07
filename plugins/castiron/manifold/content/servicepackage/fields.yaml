@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  title:
+    label: Title
+    required: true
+  cost:
+    label: Cost
+  description:
+    label: Description
+    type: richeditor
+  services:
+    label: Services
+    type: richeditor
+  additionalServices:
+    label: Additional Services
+    type: richeditor
+  extendedDescription:
+    label: Extended Description
+    type: richeditor

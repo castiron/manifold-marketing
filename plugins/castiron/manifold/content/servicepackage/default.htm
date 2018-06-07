@@ -1,0 +1,19 @@
+<div class="summary">
+  <div class="summary-header">
+    <span class="summary-name sign-tertiary">{{ title }}</span>
+    <span class="summary-subtitle sign-tertiary">{{ cost }}</span>
+  </div>
+  <div class="summary-body">
+    <div class="copy-secondary">{{ description | raw }}</div>
+    <div class="flex-row">
+      <div class="col">{{ services | raw }}</div>
+      {% if additionalServices %}
+      <div class="col">{{ additionalServices | raw }}</div>
+      {% endif %}
+    </div>
+    {% if extendedDescription %}
+    <div class="copy-secondary">{{ extendedDescription | raw }}</div>
+    {% endif %}
+
+  </div>
+</div>

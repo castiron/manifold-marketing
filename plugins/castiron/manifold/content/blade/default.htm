@@ -1,0 +1,25 @@
+
+{% if type == "green" %}
+<section class="background-primary">
+  <div class="block">
+	   {{slots.content.rendered|raw}}
+  </div>
+</section>
+{% endif %}
+
+{% if type == "gray" %}
+<section class="background-gray">
+  <div class="block">
+	   {{slots.content.service-packages|raw}}
+  </div>
+</section>
+{% endif %}
+
+{% if type == "services" %}
+<section class="background-primary">
+  <div class="block narrow services">
+    <div class="title heading-primary">Our Service Packages</div>
+      {{slots.content.rendered|raw}}
+  </div>
+</section>
+{% endif %}

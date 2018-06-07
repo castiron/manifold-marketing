@@ -5,7 +5,7 @@ namespace Castiron\Manifold\Content;
 use Castiron\Contentment\Content\Element;
 use Castiron\Contentment\Content\Traits\Twiggable;
 
-class GrayBlade extends Element
+class Blade extends Element
 {
     use Twiggable;
 

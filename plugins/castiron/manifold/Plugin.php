@@ -18,11 +18,13 @@ use Castiron\Manifold\Content\OneButtonCallout;
 use Castiron\Manifold\Content\OneButtonHero;
 use Castiron\Manifold\Content\ParallaxCallout;
 use Castiron\Manifold\Content\Rss;
-use Castiron\Manifold\Content\ServicePackages;
+use Castiron\Manifold\Content\ServicePackageGroup;
+use Castiron\Manifold\Content\ServicePackage;
 use Castiron\Manifold\Content\Testimonials;
 use Castiron\Manifold\Content\TwoColumnBlock;
 use Castiron\Manifold\Content\Text;
-use Castiron\Manifold\Content\GrayBlade;
+use Castiron\Contentment\Content\Elements\Html;
+use Castiron\Manifold\Content\Blade;
 
 use App;
 
@@ -234,9 +236,9 @@ class Plugin extends PluginBase
           'category' => 'Block',
         ]);
 
-        ContentManager::registerElement(ServicePackages::class, [
+        ContentManager::registerElement(ServicePackage::class, [
           'icon' => 'list',
-          'label' => 'Services',
+          'label' => 'Service Package',
           'position' => 100,
           'category' => 'Block',
         ]);
@@ -260,9 +262,9 @@ class Plugin extends PluginBase
           'label' => 'Text'
         ]);
 
-        ContentManager::registerElement(GrayBlade::class, [
+        ContentManager::registerElement(Blade::class, [
             'icon' => 'bars',
-            'label' => 'Gray Blade',
+            'label' => 'Blade',
             'nesting' => [
                 'slots' => [
                     [
@@ -271,7 +273,28 @@ class Plugin extends PluginBase
                         "accepts" => [
                             Text::class,
                             Image::class,
-                            Html::class
+                            Html::class,
+                            ServicePackageGroup::class
+                        ],
+                        "max" => null
+                    ]
+                ]
+            ],
+            'hasFields' => false,
+            'group' => 'Containers',
+            'groupIcon' => 'columns'
+        ]);
+
+        ContentManager::registerElement(ServicePackageGroup::class, [
+            'icon' => 'bars',
+            'label' => 'Service Package Group',
+            'nesting' => [
+                'slots' => [
+                    [
+                        "id" => "packages",
+                        "label" => "Packages",
+                        "accepts" => [
+                            ServicePackage::class
                         ],
                         "max" => null
                     ]

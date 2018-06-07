@@ -61,6 +61,10 @@
       @include respond($break50) {
         display: block;
       }
+
+      + .copy-secondary {
+        margin-top: 28px;
+      }
     }
 
     .col {
@@ -88,7 +92,8 @@
       }
     }
 
-    .subheading-secondary {
+    .subheading-secondary, h4 {
+      @include subheadingSecondary;
       text-transform: uppercase;
 
       + ul {

@@ -8,7 +8,7 @@ use Castiron\Contentment\Content\Traits\Twiggable;
 /**
  * ServicePackages Element
  */
-class ServicePackages extends Element
+class ServicePackage extends Element
 {
 
     use Twiggable;

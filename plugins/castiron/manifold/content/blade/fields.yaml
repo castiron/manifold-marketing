@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  type:
+    label: Type
+    type: dropdown
+    options:
+      gray: Gray
+      green: Green
+      services: Services
