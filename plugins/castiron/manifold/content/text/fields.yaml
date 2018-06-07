@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  section_heading:
+    label: Section Heading
+  title:
+    label: Title
+  body:
+    type: richeditor
+    size: huge

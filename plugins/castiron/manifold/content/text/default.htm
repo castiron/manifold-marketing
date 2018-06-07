@@ -1,0 +1,11 @@
+{% if section_heading %}
+<div class="block-label">{{section_heading}}</div>
+{% endif %}
+<div class="text-element">
+  {% if title %}
+  <div class="heading-primary title">{{title}}</div>
+  {% endif %}
+  <div class="copy-quaternary body">
+    {{ body | raw }}
+  </div>
+</div>

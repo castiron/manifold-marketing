@@ -21,6 +21,8 @@ use Castiron\Manifold\Content\Rss;
 use Castiron\Manifold\Content\ServicePackages;
 use Castiron\Manifold\Content\Testimonials;
 use Castiron\Manifold\Content\TwoColumnBlock;
+use Castiron\Manifold\Content\Text;
+use Castiron\Manifold\Content\GrayBlade;
 
 use App;
 
@@ -45,7 +47,7 @@ class Plugin extends PluginBase
             'name'        => 'manifold',
             'description' => 'Functionality for the Manifold Marketing Site',
             'author'      => 'castiron',
-            'icon'        => 'icon-leaf'
+            'icon'        => 'leaf'
         ];
     }
 
@@ -135,110 +137,151 @@ class Plugin extends PluginBase
      */
     public function registerContentElements()
     {
+
+        ContentManager::disableElement(
+          \Castiron\Contentment\Content\Elements\Text::class
+        );
+
+        ContentManager::disableElement(
+          \Castiron\Contentment\Content\Elements\Image::class
+        );
+
+        ContentManager::disableElement(
+          \Castiron\Contentment\Content\Elements\TwoColumn::class
+        );
+
         ContentManager::registerElement(VideoHero::class, [
-          'icon' => 'icon-video-camera',
+          'icon' => 'video-camera',
           'label' => 'Video Hero',
           'position' => 100,
           'category' => 'Hero',
         ]);
 
         ContentManager::registerElement(OneButtonHero::class, [
-          'icon' => 'icon-dot-circle-o',
+          'icon' => 'dot-circle-o',
           'label' => 'One Button Hero',
           'position' => 100,
           'category' => 'Hero',
         ]);
 
         ContentManager::registerElement(FeaturedProjectHero::class, [
-          'icon' => 'icon-picture-o',
+          'icon' => 'picture-o',
           'label' => 'Featured Project Hero',
           'position' => 100,
           'category' => 'Hero',
         ]);
 
         ContentManager::registerElement(AnimatedCallout::class, [
-          'icon' => 'icon-film',
+          'icon' => 'film',
           'label' => 'Animated Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
 
         ContentManager::registerElement(Announcement::class, [
-          'icon' => 'icon-bullhorn',
+          'icon' => 'bullhorn',
           'label' => 'Announcement',
           'position' => 100,
           'category' => 'Callout',
         ]);
 
         ContentManager::registerElement(MultiButtonCallout::class, [
-          'icon' => 'icon-dot-circle-o',
+          'icon' => 'dot-circle-o',
           'label' => 'Multi-Button Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
 
         ContentManager::registerElement(OneButtonCallout::class, [
-          'icon' => 'icon-dot-circle-o',
+          'icon' => 'dot-circle-o',
           'label' => 'One Button Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
 
         ContentManager::registerElement(ParallaxCallout::class, [
-          'icon' => 'icon-arrows-v',
+          'icon' => 'arrows-v',
           'label' => 'Parallax Image Callout',
           'position' => 100,
           'category' => 'Callout',
         ]);
 
         ContentManager::registerElement(ActionsListing::class, [
-          'icon' => 'icon-list-alt',
+          'icon' => 'list-alt',
           'label' => 'Actions Listing',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(DocumentationNav::class, [
-          'icon' => 'icon-search-plus',
+          'icon' => 'search-plus',
           'label' => 'Documentation Navigation',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(Testimonials::class, [
-          'icon' => 'icon-comments-o',
+          'icon' => 'comments-o',
           'label' => 'Testimonials',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(Faq::class, [
-          'icon' => 'icon-list',
+          'icon' => 'list',
           'label' => 'FAQs',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(ServicePackages::class, [
-          'icon' => 'icon-list',
+          'icon' => 'list',
           'label' => 'Services',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(TwoColumnBlock::class, [
-          'icon' => 'icon-newspaper-o',
+          'icon' => 'paragraph',
           'label' => 'Two Column Block',
           'position' => 100,
           'category' => 'Block',
         ]);
 
         ContentManager::registerElement(Rss::class, [
-          'icon' => 'icon-newspaper-o',
+          'icon' => 'newspaper-o',
           'label' => 'RSS Feed Items',
           'position' => 100,
           'category' => 'Special',
         ]);
+
+        ContentManager::registerElement(Text::class, [
+          'icon' => 'paragraph',
+          'label' => 'Text'
+        ]);
+
+        ContentManager::registerElement(GrayBlade::class, [
+            'icon' => 'bars',
+            'label' => 'Gray Blade',
+            'nesting' => [
+                'slots' => [
+                    [
+                        "id" => "content",
+                        "label" => "Content",
+                        "accepts" => [
+                            Text::class,
+                            Image::class,
+                            Html::class
+                        ],
+                        "max" => null
+                    ]
+                ]
+            ],
+            'hasFields' => false,
+            'group' => 'Containers',
+            'groupIcon' => 'columns'
+        ]);
+
     }
 
     /**
@@ -271,23 +314,23 @@ class Plugin extends PluginBase
             'manifold' => [
                 'label'       => 'Manifold',
                 'url'         => Backend::url('castiron/manifold/features'),
-                'icon'        => 'icon-book',
+                'icon'        => 'book',
                 'permissions' => ['castiron.manifold.*'],
                 'order'       => 500,
                 'sideMenu'    => [
                   'features' => [
                        'label' => 'Features',
-                       'icon'  => 'icon-check-circle-o',
+                       'icon'  => 'check-circle-o',
                        'url'   => Backend::url('castiron/manifold/features')
                    ],
                    'feature_categories' => [
                         'label' => 'Feature Categories',
-                        'icon'  => 'icon-list',
+                        'icon'  => 'list',
                         'url'   => Backend::url('castiron/manifold/featurecategories')
                     ],
                     'user_types' => [
                          'label' => 'User Types',
-                         'icon'  => 'icon-users',
+                         'icon'  => 'users',
                          'url'   => Backend::url('castiron/manifold/usertypes')
                      ],
                 ]
