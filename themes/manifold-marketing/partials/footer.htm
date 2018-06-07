@@ -1,8 +1,10 @@
 
-{% if '/' == this.page.url %}
-  {% partial 'newsletter' %}
-{% else %}
-  {% partial 'newsletter' small=1 extra_class=extra_class %}
+{% if hideNewsletter != true %}
+  {% if '/' == this.page.url %}
+    {% partial 'newsletter' %}
+  {% else %}
+    {% partial 'newsletter' small=1 extra_class=extra_class %}
+  {% endif %}
 {% endif %}
 
 
