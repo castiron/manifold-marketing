@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ca82e3ddbf7c22f84cfe48ab5edd921",
+    "content-hash": "773c3dccbb3e4d13fa72d0b412d98401",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -44,16 +44,16 @@
         },
         {
             "name": "castiron/contentment-plugin",
-            "version": "4.3.5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "d6ef17e2ab2475dde27b7cbbe2862c2f0aa19fad"
+                "reference": "28b10acf61e5137dfa1cc3eb49066c6ddd735d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/d6ef17e2ab2475dde27b7cbbe2862c2f0aa19fad",
-                "reference": "d6ef17e2ab2475dde27b7cbbe2862c2f0aa19fad",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/28b10acf61e5137dfa1cc3eb49066c6ddd735d2c",
+                "reference": "28b10acf61e5137dfa1cc3eb49066c6ddd735d2c",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2018-06-06T21:01:38+00:00"
+            "time": "2018-05-24T21:31:46+00:00"
         },
         {
             "name": "castiron/lib-plugin",
@@ -2975,6 +2975,66 @@
             "time": "2017-09-22T20:46:04+00:00"
         },
         {
+            "name": "rollbar/rollbar",
+            "version": "v1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rollbar/rollbar-php.git",
+                "reference": "2c60568c28b837ad87b802abf3ae47dfbe579db9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/2c60568c28b837ad87b802abf3ae47dfbe579db9",
+                "reference": "2c60568c28b837ad87b802abf3ae47dfbe579db9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "monolog/monolog": "^1.23",
+                "psr/log": "^1.0.1"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "0.9.*",
+                "monolog/monolog": "^1.23",
+                "packfire/php5.3-compat": "*",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "fluent/logger": "Needed to use the 'fluent' handler for fluentd support",
+                "packfire/php5.3-compat": "for backward compatibility with PHP 5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rollbar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rollbar, Inc.",
+                    "email": "support@rollbar.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Monitors errors and exceptions and reports them to Rollbar",
+            "homepage": "http://github.com/rollbar/rollbar-php",
+            "keywords": [
+                "debugging",
+                "errors",
+                "exceptions",
+                "logging",
+                "monitoring"
+            ],
+            "time": "2018-06-06T03:11:44+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.0.2",
             "source": {
@@ -4846,65 +4906,6 @@
             "time": "2014-08-18T19:47:10+00:00"
         },
         {
-            "name": "rollbar/rollbar",
-            "version": "v1.3.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rollbar/rollbar-php.git",
-                "reference": "a8a977976d62325453ac3366de6f91ae7b6fffcb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rollbar/rollbar-php/zipball/a8a977976d62325453ac3366de6f91ae7b6fffcb",
-                "reference": "a8a977976d62325453ac3366de6f91ae7b6fffcb",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "psr/log": "^1.0.1"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "mockery/mockery": "0.9.*",
-                "monolog/monolog": "^1.12.0",
-                "packfire/php5.3-compat": "*",
-                "phpmd/phpmd": "@stable",
-                "phpunit/phpunit": "4.8.*",
-                "squizlabs/php_codesniffer": "2.*"
-            },
-            "suggest": {
-                "fluent/logger": "Needed to use the 'fluent' handler for fluentd support",
-                "packfire/php5.3-compat": "for backward compatibility with PHP 5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Rollbar\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rollbar, Inc.",
-                    "email": "support@rollbar.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Monitors errors and exceptions and reports them to Rollbar",
-            "homepage": "http://github.com/rollbar/rollbar-php",
-            "keywords": [
-                "debugging",
-                "errors",
-                "exceptions",
-                "logging",
-                "monitoring"
-            ],
-            "time": "2017-12-02T10:43:04+00:00"
-        },
-        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.1",
             "source": {
@@ -5473,6 +5474,7 @@
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
         "castiron/lib-plugin": 20,
+        "castiron/contentment-plugin": 20,
         "castiron/peaches": 20,
         "castiron/castiron": 20,
         "owl/list-delete": 20

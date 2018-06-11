@@ -65,13 +65,14 @@
         "laravelcollective/html": "5.0.*",
         "wikimedia/composer-merge-plugin": "dev-master",
         "castiron/lib-plugin": "dev-master",
-        "castiron/contentment-plugin": "4.3.5",
+        "castiron/contentment-plugin": "dev-master#28b10acf61e5137dfa1cc3eb49066c6ddd735d2c",
         "castiron/peaches": "dev-master",
         "castiron/castiron": "dev-master",
         "castiron/webpackassets-plugin": "1.0.5",
         "castiron/queequeg": "^1.1",
         "castiron/search-plugin": "1.1.3",
-        "castiron/news-plugin": "0.0.5"
+        "castiron/news-plugin": "0.0.5",
+        "rollbar/rollbar": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
