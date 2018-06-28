@@ -36,6 +36,8 @@
 !/plugins/castiron/forms
 !/plugins/castiron/staticmicrosite
 
+/plugins/castiron/manifold/node_modules
+
 
 /storage/*
 /storage/framework/classes.php

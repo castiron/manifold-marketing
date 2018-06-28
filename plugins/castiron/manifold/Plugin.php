@@ -5,6 +5,8 @@ use System\Classes\PluginBase;
 use Castiron\Manifold\Components\Navigation;
 use Castiron\Manifold\Components\SearchResults;
 
+use Castiron\WebpackAssets\Services\ManifestLoader;
+
 use Castiron\Contentment\Content\Manager as ContentManager;
 use Castiron\Manifold\Content\VideoHero;
 use Castiron\Manifold\Content\ActionsListing;
@@ -70,7 +72,8 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+      $manifest = (new ManifestLoader())->getManifest();
+      ContentManager::registerPreviewJs($manifest['contentment-previews.js']);
     }
 
     /**
