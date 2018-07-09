@@ -49,7 +49,7 @@ class Plugin extends PluginBase
             'name'        => 'manifold',
             'description' => 'Functionality for the Manifold Marketing Site',
             'author'      => 'castiron',
-            'icon'        => 'leaf'
+            'icon'        => 'iconleaf'
         ];
     }
 
@@ -337,23 +337,23 @@ class Plugin extends PluginBase
             'manifold' => [
                 'label'       => 'Manifold',
                 'url'         => Backend::url('castiron/manifold/features'),
-                'icon'        => 'book',
+                'icon'        => 'icon-book',
                 'permissions' => ['castiron.manifold.*'],
                 'order'       => 500,
                 'sideMenu'    => [
                   'features' => [
                        'label' => 'Features',
-                       'icon'  => 'check-circle-o',
+                       'icon'  => 'icon-check-circle-o',
                        'url'   => Backend::url('castiron/manifold/features')
                    ],
                    'feature_categories' => [
                         'label' => 'Feature Categories',
-                        'icon'  => 'list',
+                        'icon'  => 'icon-list',
                         'url'   => Backend::url('castiron/manifold/featurecategories')
                     ],
                     'user_types' => [
                          'label' => 'User Types',
-                         'icon'  => 'users',
+                         'icon'  => 'icon-users',
                          'url'   => Backend::url('castiron/manifold/usertypes')
                      ],
                 ]
