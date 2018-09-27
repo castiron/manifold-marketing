@@ -300,7 +300,7 @@ class Plugin extends PluginBase
                     ]
                 ]
             ],
-            'hasFields' => false,
+            'hasFields' => true,
             'group' => 'Containers',
             'groupIcon' => 'columns'
         ]);
