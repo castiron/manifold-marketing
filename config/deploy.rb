@@ -9,10 +9,10 @@ set :deploy_docs_site, -> { "/home/#{fetch(:application)}/deploy-docs/current/_s
 set :log_level, :info
 
 namespace :deploy do
-  desc 'Restart php7.0-fpm service'
+  desc 'Restart php7.2-fpm service'
   task :restart do
     on roles(:app) do
-      execute :sudo, :systemctl, :restart, 'php7.0-fpm'
+      execute :sudo, :systemctl, :restart, 'php7.2-fpm'
     end
   end
 
