@@ -38,10 +38,8 @@ config.devServer = {
     "Access-Control-Allow-Headers":
       "X-Requested-With, content-type, Authorization"
   },
-  host: '0.0.0.0',
-  allowedHosts: [
-    'manifold-marketing.lvh'
-  ]
+  host: "0.0.0.0",
+  allowedHosts: ["manifold-marketing.lvh"]
 };
 
 module.exports = config;
