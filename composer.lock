@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21e97fa76d5069aed346dc32475ebf83",
+    "content-hash": "6fbe8ef22f489e35686909c3dcb4028d",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -273,16 +273,16 @@
         },
         {
             "name": "castiron/webpackassets-plugin",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/castiron/webpackassets-plugin.git",
-                "reference": "f56b15f0f3476c4729683a061daa0bdf4c4d15d1"
+                "reference": "2c21d978d53b65f0d67e3eda328b5870e8446276"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/webpackassets-plugin/zipball/f56b15f0f3476c4729683a061daa0bdf4c4d15d1",
-                "reference": "f56b15f0f3476c4729683a061daa0bdf4c4d15d1",
+                "url": "https://api.github.com/repos/castiron/webpackassets-plugin/zipball/2c21d978d53b65f0d67e3eda328b5870e8446276",
+                "reference": "2c21d978d53b65f0d67e3eda328b5870e8446276",
                 "shasum": ""
             },
             "require": {
@@ -314,10 +314,10 @@
                 "webpack"
             ],
             "support": {
-                "source": "https://github.com/castiron/webpackassets-plugin/tree/2.0.0",
+                "source": "https://github.com/castiron/webpackassets-plugin/tree/2.0.1",
                 "issues": "https://github.com/castiron/webpackassets-plugin/issues"
             },
-            "time": "2018-05-10T15:50:40+00:00"
+            "time": "2018-08-15T00:06:18+00:00"
         },
         {
             "name": "composer/installers",
