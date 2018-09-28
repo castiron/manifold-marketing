@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "9185311be98c442e5eb6d5fa31cd8abd5b1e51b0"
+                "reference": "affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/9185311be98c442e5eb6d5fa31cd8abd5b1e51b0",
-                "reference": "9185311be98c442e5eb6d5fa31cd8abd5b1e51b0",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3",
+                "reference": "affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2018-09-28T15:27:37+00:00"
+            "time": "2018-09-28T20:09:29+00:00"
         },
         {
             "name": "castiron/lib-plugin",

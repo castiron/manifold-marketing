@@ -36,5 +36,5 @@ const previews = {
 
 // Add the previews to the plugin manager
 Object.keys(previews).forEach(key => {
-  window.pluginPreviewManger.add({ [key]: previews[key] });
+  window.pluginPreviewManager.add({ [key]: previews[key] });
 });
