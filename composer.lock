@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df4101b4415c6e2d3042a41c6b40f61c",
+    "content-hash": "21e97fa76d5069aed346dc32475ebf83",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -44,16 +44,16 @@
         },
         {
             "name": "castiron/contentment-plugin",
-            "version": "4.3.13",
+            "version": "dev-zd/previews",
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "7a62dca5ab4bfba4372c7a2d3cf164cd3515406c"
+                "reference": "9185311be98c442e5eb6d5fa31cd8abd5b1e51b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/7a62dca5ab4bfba4372c7a2d3cf164cd3515406c",
-                "reference": "7a62dca5ab4bfba4372c7a2d3cf164cd3515406c",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/9185311be98c442e5eb6d5fa31cd8abd5b1e51b0",
+                "reference": "9185311be98c442e5eb6d5fa31cd8abd5b1e51b0",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2018-09-26T17:37:12+00:00"
+            "time": "2018-09-28T15:27:37+00:00"
         },
         {
             "name": "castiron/lib-plugin",
@@ -5480,6 +5480,7 @@
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
         "castiron/lib-plugin": 20,
+        "castiron/contentment-plugin": 20,
         "castiron/peaches": 20,
         "castiron/castiron": 20,
         "owl/list-delete": 20
