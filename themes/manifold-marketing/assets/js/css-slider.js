@@ -7,8 +7,8 @@ class CssSlider {
     this.max = count - 1;
     this.node = node;
     // this.nav = this.node.querySelector('[data-slider-nav]');
-    this.element = this.node.querySelector('[data-element]');
-    this.element.style.width = (this.count * 100) + 'vw';
+    this.element = this.node.querySelector("[data-element]");
+    this.element.style.width = this.count * 100 + "vw";
     this.autoplay = node.dataset.autoplay;
     this.autoplayTimer = null;
 
@@ -19,12 +19,12 @@ class CssSlider {
     this.updateOrdinals();
     this.autoAdvance();
 
-    node.addEventListener('custom_swipe', (event) => {
-      switch(event.detail) {
-        case 'left':
+    node.addEventListener("custom_swipe", event => {
+      switch (event.detail) {
+        case "left":
           this.pageLeft();
           break;
-        case 'right':
+        case "right":
           this.pageRight();
           break;
         default:
@@ -34,30 +34,30 @@ class CssSlider {
   }
 
   initOrdinals() {
-    const ordinals = this.node.querySelectorAll('[data-pager-ordinal]');
+    const ordinals = this.node.querySelectorAll("[data-pager-ordinal]");
     this.ordinals = Array.from(ordinals);
 
-    this.ordinals.forEach((ordinal) => {
-      ordinal.addEventListener('click', ()=> {
-        this.current = parseInt(ordinal.getAttribute('data-pager-ordinal')) - 1;
+    this.ordinals.forEach(ordinal => {
+      ordinal.addEventListener("click", () => {
+        this.current = parseInt(ordinal.getAttribute("data-pager-ordinal")) - 1;
         this.updatePosition();
         this.updateOrdinals();
-      })
-    })
+      });
+    });
   }
 
   initPagers() {
     const pagersLeft = this.node.querySelectorAll('[data-pager="left"]');
     const pagersRight = this.node.querySelectorAll('[data-pager="right"]');
 
-    Array.from(pagersLeft).forEach((pager) => {
-      pager.addEventListener('click', () => {
+    Array.from(pagersLeft).forEach(pager => {
+      pager.addEventListener("click", () => {
         this.pageLeft();
       });
     });
 
-    Array.from(pagersRight).forEach((pager) => {
-      pager.addEventListener('click', () => {
+    Array.from(pagersRight).forEach(pager => {
+      pager.addEventListener("click", () => {
         this.pageRight();
       });
     });
@@ -101,20 +101,20 @@ class CssSlider {
   }
 
   updateOrdinals() {
-    this.ordinals.forEach((ordinal) => {
-      const next = this.current + 1 + '';
-      if (hasClass(ordinal, 'active')) {
-        removeClass(ordinal, 'active');
+    this.ordinals.forEach(ordinal => {
+      const next = this.current + 1 + "";
+      if (hasClass(ordinal, "active")) {
+        removeClass(ordinal, "active");
       }
 
-      if (ordinal.getAttribute('data-pager-ordinal') === next) {
-        addClass(ordinal, 'active');
+      if (ordinal.getAttribute("data-pager-ordinal") === next) {
+        addClass(ordinal, "active");
       }
     });
   }
 
   updatePosition() {
-    const translation = 'translateX(-' + (this.current * 100) + 'vw)';
+    const translation = "translateX(-" + this.current * 100 + "vw)";
     this.element.style.transform = translation;
   }
 }

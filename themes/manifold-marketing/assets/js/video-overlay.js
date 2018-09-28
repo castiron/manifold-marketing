@@ -20,14 +20,19 @@ export default class VideoOverlay {
     const videoPlayer = new VimeoPlayer(el);
 
     // Build overlay hamburger with play/pause from Vimeo API
-    const videoOverlay = new ClassBurger('video', 'open', (overlay) => {
-      scrollLock.lock(overlay);
-      domHelp.addClass(document.body, 'of-hidden-y');
-      videoPlayer.play();
-    }, function(overlay) {
-      scrollLock.unlock(overlay);
-      domHelp.removeClass(document.body, 'of-hidden-y');
-      videoPlayer.pause();
-    });
+    const videoOverlay = new ClassBurger(
+      "video",
+      "open",
+      overlay => {
+        scrollLock.lock(overlay);
+        domHelp.addClass(document.body, "of-hidden-y");
+        videoPlayer.play();
+      },
+      function(overlay) {
+        scrollLock.unlock(overlay);
+        domHelp.removeClass(document.body, "of-hidden-y");
+        videoPlayer.pause();
+      }
+    );
   }
 }

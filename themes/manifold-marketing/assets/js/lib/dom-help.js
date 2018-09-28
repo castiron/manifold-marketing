@@ -56,7 +56,8 @@ var domHelp = {
   debounce: function(func, wait, immediate) {
     var timeout;
     return function() {
-      var context = this, args = arguments;
+      var context = this,
+        args = arguments;
       var later = function() {
         timeout = null;
         if (!immediate) func.apply(context, args);
@@ -92,7 +93,7 @@ var domHelp = {
 
     for (var p = 0; p < prefixes.length; p++) {
       if (!prefixes[p]) type = type.toLowerCase();
-      element.addEventListener(prefixes[p]+type, callback);
+      element.addEventListener(prefixes[p] + type, callback);
     }
   }
 };

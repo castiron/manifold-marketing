@@ -58,12 +58,12 @@ class AccordionTrigger {
 
     // Bind click handler
     this.bindTrigger();
-    window.addEventListener('resize', this.resizeHandler);
+    window.addEventListener("resize", this.resizeHandler);
   }
 
   resizeHandler = () => {
     debounce(this.collapseAll(), 500);
-  }
+  };
 
   bindTrigger() {
     this.trigger.addEventListener("click", event => {

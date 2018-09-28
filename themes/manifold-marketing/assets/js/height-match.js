@@ -1,10 +1,10 @@
 import { debounce } from "./lib/dom-help.js";
 
 class HeightMatch {
-  constructor(selector = '[data-mh]') {
+  constructor(selector = "[data-mh]") {
     this.selector = selector;
     this.sameHeights(this.selector);
-    window.addEventListener('resize', this.resizeHandler);
+    window.addEventListener("resize", this.resizeHandler);
   }
 
   sameHeights(selector) {
@@ -16,7 +16,7 @@ class HeightMatch {
       while (elements--) {
         const element = query[elements];
         const height = element.clientHeight;
-        element.style.height = 'auto';
+        element.style.height = "auto";
 
         if (element.clientHeight > max) {
           max = element.clientHeight;
@@ -29,14 +29,14 @@ class HeightMatch {
 
       while (elements--) {
         const element = query[elements];
-        element.style.height = max + 'px';
+        element.style.height = max + "px";
       }
     }
   }
 
   resizeHandler = () => {
     debounce(this.sameHeights(this.selector), 300);
-  }
+  };
 }
 
 module.exports = HeightMatch;

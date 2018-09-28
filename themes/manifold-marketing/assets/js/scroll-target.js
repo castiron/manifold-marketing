@@ -1,11 +1,11 @@
 import { debounce, hasClass, addClass, removeClass } from "./lib/dom-help.js";
 
 class ScrollTarget {
-  constructor(el, onClass = 'active') {
+  constructor(el, onClass = "active") {
     this.target = el;
-    this.onClass = onClass
+    this.onClass = onClass;
 
-    window.addEventListener('scroll', this.scrollHandler);
+    window.addEventListener("scroll", this.scrollHandler);
   }
 
   posCheck() {
@@ -19,12 +19,11 @@ class ScrollTarget {
     } else if (pos <= -this.target.offsetHeight || pos > viewportHeight) {
       removeClass(this.target, this.onClass);
     }
-
   }
 
   scrollHandler = () => {
     debounce(this.posCheck(), 400);
-  }
+  };
 }
 
 module.exports = ScrollTarget;

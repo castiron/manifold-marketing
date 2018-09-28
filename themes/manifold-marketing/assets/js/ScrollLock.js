@@ -3,12 +3,12 @@
 
 const upKeys = [
   33, // pageUp
-  38  // arrowUp
+  38 // arrowUp
 ];
 const downKeys = [
   32, // space
   34, // pageDown
-  40  // arrowDown
+  40 // arrowDown
 ];
 
 export default class ScrollLock {
@@ -42,21 +42,21 @@ export default class ScrollLock {
     }
   };
 
-  onWheelHandler = (e) => {
+  onWheelHandler = e => {
     this.handleEventDelta(e, e.deltaY);
   };
 
-  onTouchStartHandler = (e) => {
+  onTouchStartHandler = e => {
     // set touch start so we can calculate touchmove delta
     this.touchStart = e.changedTouches[0].clientY;
   };
 
-  onTouchMoveHandler = (e) => {
+  onTouchMoveHandler = e => {
     const delta = this.touchStart - e.changedTouches[0].clientY;
     this.handleEventDelta(e, delta);
-  }
+  };
 
-  onKeyDownHandler = (e) => {
+  onKeyDownHandler = e => {
     if (e.target !== this.scrollingElement) {
       return;
     }
@@ -66,25 +66,25 @@ export default class ScrollLock {
     } else if (downKeys.indexOf(e.keyCode) >= 0) {
       this.handleEventDelta(e, 1);
     }
-  }
+  };
 
-  cancelScrollEvent = (e) => {
+  cancelScrollEvent = e => {
     e.stopImmediatePropagation();
     e.preventDefault();
     return false;
-  }
+  };
 
   listenToScrollEvents(el) {
-    el.addEventListener('wheel', this.onWheelHandler, false);
-    el.addEventListener('touchstart', this.onTouchStartHandler, false);
-    el.addEventListener('touchmove', this.onTouchMoveHandler, false);
-    el.addEventListener('keydown', this.onKeyDownHandler, false);
+    el.addEventListener("wheel", this.onWheelHandler, false);
+    el.addEventListener("touchstart", this.onTouchStartHandler, false);
+    el.addEventListener("touchmove", this.onTouchMoveHandler, false);
+    el.addEventListener("keydown", this.onKeyDownHandler, false);
   }
 
   stopListeningToScrollEvents(el) {
-    el.removeEventListener('wheel', this.onWheelHandler, false);
-    el.removeEventListener('touchstart', this.onTouchStartHandler, false);
-    el.removeEventListener('touchmove', this.onTouchMoveHandler, false);
-    el.removeEventListener('keydown', this.onKeyDownHandler, false);
+    el.removeEventListener("wheel", this.onWheelHandler, false);
+    el.removeEventListener("touchstart", this.onTouchStartHandler, false);
+    el.removeEventListener("touchmove", this.onTouchMoveHandler, false);
+    el.removeEventListener("keydown", this.onKeyDownHandler, false);
   }
 }

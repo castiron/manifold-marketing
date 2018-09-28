@@ -2,7 +2,7 @@ import { addClass, removeClass, addEscListener } from "./lib/dom-help.js";
 
 class ClassBurger {
   constructor(
-    label = 'hamburger',
+    label = "hamburger",
     onClass = "open",
     onCb = function() {
       return true;
@@ -24,7 +24,7 @@ class ClassBurger {
   }
 
   open(items, className) {
-    items.forEach((item) => {
+    items.forEach(item => {
       addClass(item, className);
     });
     // Set state for later
@@ -32,7 +32,7 @@ class ClassBurger {
   }
 
   close(items, className) {
-    items.forEach((item) => {
+    items.forEach(item => {
       removeClass(item, className);
     });
     // Set state for later
@@ -54,7 +54,7 @@ class ClassBurger {
 
         document.removeEventListener("keyup", onEscHandler);
       }
-    };
+    }
 
     function onClickHandler(event) {
       let parenting = true;
@@ -66,8 +66,10 @@ class ClassBurger {
           shouldClose = true;
           parenting = false;
           break;
-        } else if (parent.hasAttribute('data-hamburger-togglable') ||
-            parent.hasAttribute('data-hamburger-toggle')) {
+        } else if (
+          parent.hasAttribute("data-hamburger-togglable") ||
+          parent.hasAttribute("data-hamburger-toggle")
+        ) {
           shouldClose = false;
           parenting = false;
           break;
@@ -79,7 +81,7 @@ class ClassBurger {
       if (shouldClose) {
         this.close(toggleables, onClass);
       }
-    };
+    }
 
     if (triggers.length > 0) {
       // Bind click handler
@@ -88,7 +90,7 @@ class ClassBurger {
           if (!this.state) {
             // Hamburger is closed, so open it!
             this.open(toggleables, onClass);
-            [...nodes].forEach((toggle) => {
+            [...nodes].forEach(toggle => {
               onCb(toggle);
             });
             document.addEventListener("keyup", onEscHandler);
@@ -96,7 +98,7 @@ class ClassBurger {
           } else {
             // Hamburger is open, so close it!
             this.close(toggleables, onClass);
-            [...nodes].forEach((toggle) => {
+            [...nodes].forEach(toggle => {
               offCb(toggle);
             });
             document.removeEventListener("keyup", onEscHandler);

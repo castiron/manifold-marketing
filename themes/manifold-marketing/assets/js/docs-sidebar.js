@@ -9,9 +9,9 @@ import { expand, collapse } from "./lib/height-help.js";
 
 class DocumentationSidebar {
   constructor(
-    toggleSelector = '[data-sidebar-accordion-toggle]',
-    revealSelector = '[data-sidebar-accordion-reveal]',
-    onClass = 'open',
+    toggleSelector = "[data-sidebar-accordion-toggle]",
+    revealSelector = "[data-sidebar-accordion-reveal]",
+    onClass = "open"
   ) {
     const toggleAttr = toggleSelector.match(/\[(.*)\]/)[1];
     const revealAttr = revealSelector.match(/\[(.*)\]/)[1];
@@ -22,11 +22,7 @@ class DocumentationSidebar {
       const reveal = document.querySelector(
         "[" + revealAttr + "=" + toggleId + "]"
       );
-      const accordionTrigger = new AccordionTrigger(
-        toggle,
-        reveal,
-        onClass
-      );
+      const accordionTrigger = new AccordionTrigger(toggle, reveal, onClass);
     }
   }
 }
@@ -43,7 +39,7 @@ class AccordionTrigger {
 
   resizeHandler = () => {
     debounce(this.close(), 500);
-  }
+  };
 
   bindTriggers() {
     prefixedEvent(this.reveal, "TransitionEnd", this.resetHeightDefault);
@@ -55,9 +51,9 @@ class AccordionTrigger {
 
   resetHeightDefault = () => {
     if (hasClass(this.reveal, this.onClass)) {
-      this.reveal.style.maxHeight = 'none';
+      this.reveal.style.maxHeight = "none";
     }
-  }
+  };
 
   open() {
     addClass(this.trigger, this.onClass);
@@ -67,7 +63,7 @@ class AccordionTrigger {
 
   hide() {
     removeClass(this.trigger, this.onClass);
-    this.reveal.style.maxHeight = this.reveal.offsetHeight + 'px';
+    this.reveal.style.maxHeight = this.reveal.offsetHeight + "px";
     setTimeout(() => {
       collapse(this.reveal);
       removeClass(this.reveal, this.onClass);
