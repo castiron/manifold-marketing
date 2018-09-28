@@ -31,7 +31,7 @@ module.exports = {
     "padded-blocks": 0,
     "comma-dangle": 0,
     "comma-spacing": 1,
-    indent: [2, 2, { SwitchCase: 1 }],
+    indent: [1, 1, { SwitchCase: 1 }],
     "no-console": 0,
     "no-alert": 0,
     "prefer-const": 1,
