@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de289ab0b8a27b26b90dfd389110d984",
+    "content-hash": "df4101b4415c6e2d3042a41c6b40f61c",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -273,16 +273,16 @@
         },
         {
             "name": "castiron/webpackassets-plugin",
-            "version": "1.0.5",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/castiron/webpackassets-plugin.git",
-                "reference": "38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d"
+                "reference": "f56b15f0f3476c4729683a061daa0bdf4c4d15d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/webpackassets-plugin/zipball/38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d",
-                "reference": "38ebe937c9191e0d4eb83a6f2187a68dc4aa1a6d",
+                "url": "https://api.github.com/repos/castiron/webpackassets-plugin/zipball/f56b15f0f3476c4729683a061daa0bdf4c4d15d1",
+                "reference": "f56b15f0f3476c4729683a061daa0bdf4c4d15d1",
                 "shasum": ""
             },
             "require": {
@@ -292,10 +292,10 @@
             "type": "october-plugin",
             "autoload": {
                 "psr-4": {
+                    "Castiron\\WebpackAssets\\Services\\": "services/",
                     "Castiron\\": "plugins/castiron/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -313,7 +313,11 @@
                 "octobercms",
                 "webpack"
             ],
-            "time": "2017-08-02T01:12:39+00:00"
+            "support": {
+                "source": "https://github.com/castiron/webpackassets-plugin/tree/2.0.0",
+                "issues": "https://github.com/castiron/webpackassets-plugin/issues"
+            },
+            "time": "2018-05-10T15:50:40+00:00"
         },
         {
             "name": "composer/installers",

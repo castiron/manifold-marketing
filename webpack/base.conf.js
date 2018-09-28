@@ -1,21 +1,28 @@
 // Includes
 // --------------------
-const path = require("path");
 const webpack = require("webpack");
+const path = require("path");
+const paths = require("./paths");
 
 // Plugin/Option Includes
-const PhpManifestPlugin = require("webpack-php-manifest");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+// const WebpackAssetsManifest = require('webpack-assets-manifest');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const StyleLintPlugin = require("stylelint-webpack-plugin");
+
+// PostCSS plugins
+const cssCustomProperties = require("postcss-custom-properties");
 const autoprefixer = require("autoprefixer");
 
 // Configuration
 // --------------------
 const projectRoot = path.resolve(__dirname, "../");
-const devServerPort = 9090;
 // Project name
 const projectName = "manifold-marketing";
+// Mode
+// isProduction used internally
 const isProduction = process.env.NODE_ENV === "production";
+// mode used by webpack
+const mode = isProduction ? "production" : "development";
 
 // Filename is always hashed, but can be branched here if need
 const baseFileName = "[name]-[hash]";
@@ -23,7 +30,7 @@ process.traceDeprecation = true;
 
 // Plugins
 // --------------------
-// Decalred before rules so they can be used inside rules
+// Declared before rules so they can be used inside rules
 const plugins = [];
 
 const extractSass = new ExtractTextPlugin({
@@ -31,30 +38,14 @@ const extractSass = new ExtractTextPlugin({
   disable: false
 });
 
-console.log("✨ Linting Styles...");
-const styleLint = new StyleLintPlugin({
-  configFile: path.resolve(projectRoot, ".stylelintrc.js"),
-  syntax: "scss"
-});
-
-const uglifyJs = new webpack.optimize.UglifyJsPlugin({
-  compress: { warnings: false },
-  sourceMap: true
-});
-
-const phpManifest = new PhpManifestPlugin({
-  path: "assets",
-  // True or false flag to include dev-server js
-  devServer: process.env.WEBPACK_DEV_SERVER,
-  // Path prefix for assets from dev-server
-  pathPrefix: process.env.WEBPACK_DEV_SERVER
-    ? `http://localhost:${devServerPort}`
-    : null
+const uglifyJs = new UglifyJsPlugin({
+  sourceMap: true,
+  uglifyOptions: {
+    compress: { warnings: false }
+  }
 });
 
 plugins.push(extractSass);
-plugins.push(styleLint);
-plugins.push(phpManifest);
 
 if (isProduction) {
   plugins.push(uglifyJs);
@@ -70,7 +61,8 @@ const ruleJavascript = {
     {
       loader: "babel-loader",
       options: {
-        presets: ["es2015", "stage-2"]
+        presets: ["env", "react"],
+        plugins: ["transform-class-properties"]
       }
     },
     {
@@ -90,11 +82,13 @@ const ruleScss = {
       {
         loader: "css-loader"
       },
+      // NB: Post CSS Loader must come before SASS
+      // or it will be skipped
       {
         loader: "postcss-loader",
         options: {
           syntax: "postcss-scss",
-          plugins: [autoprefixer()]
+          plugins: [cssCustomProperties(), autoprefixer()]
         }
       },
       {
@@ -122,6 +116,7 @@ const fileRuleTypes = [
   "jpg",
   "gif",
   "png",
+  "otf",
   "eot",
   "ttf",
   "woff",
@@ -139,27 +134,24 @@ fileRuleTypes.forEach(type => {
 // Output
 // ---------------------
 module.exports = {
+  mode,
   entry: {
     [`${projectName}-theme`]: [
       path.resolve(projectRoot, `themes/${projectName}/assets/manifest.js`)
+    ],
+    [`contentment-previews`]: [
+      path.resolve(
+        projectRoot,
+        `plugins/castiron/manifold/content/contentmentPreviews.js`
+      )
     ]
   },
-  // Depnding on process.env, this should be either a hash or a name
+  resolve: {
+    modules: [paths.js(projectName), "node_modules"]
+  },
   output: {
     path: path.resolve(projectRoot, "www/assets"),
     filename: baseFileName + ".js"
-  },
-  devtool: "cheap-module-eval-source-map",
-  devServer: {
-    port: devServerPort,
-    contentBase: "www",
-    publicPath: "/assets/",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers":
-        "X-Requested-With, content-type, Authorization"
-    }
   },
   module: { rules },
   plugins
