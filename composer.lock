@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fbe8ef22f489e35686909c3dcb4028d",
+    "content-hash": "a38c925a3d5c0931e5c4eca0eb84c708",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -44,16 +44,16 @@
         },
         {
             "name": "castiron/contentment-plugin",
-            "version": "dev-zd/previews",
+            "version": "4.4.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:castiron/contentment-plugin.git",
-                "reference": "affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3"
+                "reference": "81d358370fbe0d926577b70d65efbd7be35de0ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3",
-                "reference": "affd7fe93a18a4f01e24178a46f40ad3b5c8f5f3",
+                "url": "https://api.github.com/repos/castiron/contentment-plugin/zipball/81d358370fbe0d926577b70d65efbd7be35de0ea",
+                "reference": "81d358370fbe0d926577b70d65efbd7be35de0ea",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "irc": "irc://irc.freenode.net/october",
                 "source": "https://github.com/octobercms/october"
             },
-            "time": "2018-09-28T20:09:29+00:00"
+            "time": "2019-02-25T22:18:11+00:00"
         },
         {
             "name": "castiron/lib-plugin",
@@ -2223,12 +2223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/backend.git",
-                "reference": "14fcd881fd057ebc01af9c30ef89cdaf72f52676"
+                "reference": "af7a4cfa8d0797ec32475384583ec9d261896279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/backend/zipball/14fcd881fd057ebc01af9c30ef89cdaf72f52676",
-                "reference": "14fcd881fd057ebc01af9c30ef89cdaf72f52676",
+                "url": "https://api.github.com/repos/octoberrain/backend/zipball/af7a4cfa8d0797ec32475384583ec9d261896279",
+                "reference": "af7a4cfa8d0797ec32475384583ec9d261896279",
                 "shasum": ""
             },
             "require": {
@@ -2276,12 +2276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/cms.git",
-                "reference": "4321b02777ee453d5880615571c439a4a3367c45"
+                "reference": "249b33bc6621e05d35a07b76f9de825f069578ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/cms/zipball/4321b02777ee453d5880615571c439a4a3367c45",
-                "reference": "4321b02777ee453d5880615571c439a4a3367c45",
+                "url": "https://api.github.com/repos/octoberrain/cms/zipball/249b33bc6621e05d35a07b76f9de825f069578ee",
+                "reference": "249b33bc6621e05d35a07b76f9de825f069578ee",
                 "shasum": ""
             },
             "require": {
@@ -2428,12 +2428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/octoberrain/system.git",
-                "reference": "d94ebca9f1135fef5f2cc4499cb40d2c69236286"
+                "reference": "de84373f698e608c568c653e15c1cf533b88b291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octoberrain/system/zipball/d94ebca9f1135fef5f2cc4499cb40d2c69236286",
-                "reference": "d94ebca9f1135fef5f2cc4499cb40d2c69236286",
+                "url": "https://api.github.com/repos/octoberrain/system/zipball/de84373f698e608c568c653e15c1cf533b88b291",
+                "reference": "de84373f698e608c568c653e15c1cf533b88b291",
                 "shasum": ""
             },
             "require": {
@@ -4854,6 +4854,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-06-30T09:13:00+00:00"
         },
         {
@@ -5480,7 +5481,6 @@
     "stability-flags": {
         "wikimedia/composer-merge-plugin": 20,
         "castiron/lib-plugin": 20,
-        "castiron/contentment-plugin": 20,
         "castiron/peaches": 20,
         "castiron/castiron": 20,
         "owl/list-delete": 20
