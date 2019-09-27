@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a38c925a3d5c0931e5c4eca0eb84c708",
+    "content-hash": "37bec6b1835f034b13d866468c458baa",
     "packages": [
         {
             "name": "castiron/castiron",
@@ -270,6 +270,58 @@
                 "issues": "https://github.com/castiron/search-plugin/issues"
             },
             "time": "2017-05-12T22:30:18+00:00"
+        },
+        {
+            "name": "castiron/social-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:castiron/social-plugin.git",
+                "reference": "22567697642dbc66743c90b903ae7531f6dcb798"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/castiron/social-plugin/zipball/22567697642dbc66743c90b903ae7531f6dcb798",
+                "reference": "22567697642dbc66743c90b903ae7531f6dcb798",
+                "shasum": ""
+            },
+            "require": {
+                "castiron/contentment-plugin": ">=1.1.0",
+                "october/rain": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "october-plugin",
+            "autoload-dev": {
+                "psr-4": {
+                    "Castiron\\": "plugins/castiron/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Pratuch",
+                    "email": "kyle@castironcoding.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "An October CMS plugin for adding sharing meta tags.",
+            "homepage": "https://github.com/castiron/social-plugin",
+            "keywords": [
+                "cms",
+                "laravel",
+                "october",
+                "octobercms",
+                "plugin",
+                "social"
+            ],
+            "support": {
+                "issues": "https://github.com/castiron/social-plugin/issues",
+                "docs": "https://github.com/castiron/social-plugin/README.md",
+                "source": "https://github.com/castiron/social-plugin"
+            },
+            "time": "2019-09-27T16:17:45+00:00"
         },
         {
             "name": "castiron/webpackassets-plugin",
@@ -5483,6 +5535,7 @@
         "castiron/lib-plugin": 20,
         "castiron/peaches": 20,
         "castiron/castiron": 20,
+        "castiron/social-plugin": 20,
         "owl/list-delete": 20
     },
     "prefer-stable": true,
