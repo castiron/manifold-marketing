@@ -16,6 +16,9 @@
 /.idea
 /idea
 
+# Exclude Brewfile.lock since it is machine dependent
+Brewfile.lock.json
+
 # Ignore everything in the public dir with some whitelist
 /www/*
 !/www/favicon.ico
